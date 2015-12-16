@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="2395.html" />
+<link rel="canonical" href="2395.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Быстрые клики в макросе | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Быстрые клики в макросе</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-2395" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Li0n13</span></strong> / 21.06.2011, 15:28/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Написала макрос для выполнения несложных задач (разного рода изменение размеров объектов). Для выполнения операций есть форма с кнопками. Проблема в следующем: между нажатиями на кнопки нужно выдержать паузу примерно 0,5-1 с, иначе кнопка не реагирует на нажатие. Т. е. у меня есть кнопка изменения размера на 0,5 мм (операция простая). Я быстро кликаю на нее, а она срабатывает, как будто нажатие было только одно. Можно ли обойти эти тормоза?<br />
+P.S. Corel DRAW 11 (если это важно). Задержка одинакова на машинах с разными параметрами.</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-6333"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 21.06.2011, 16:14    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Если я правильно понял... дело не в кнопке, а в том что быстрые щелчки по кнопке воспринимаются ею как событие DblClick а не Click.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-6334"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Li0n13</span></strong> / 21.06.2011, 16:35    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>О чудо! Похоже, что так и было! Уменьшила в системе время на двойной клик, и вроде как быстрее стало. Простите, а как задать действие на двойной клик по кнопке (чтобы вернуть привычные системные параметры)?<br />
+...или вообще игнорировать, что клик - дабл, а каждый клик воспринимать как отдельный...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-6337"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 21.06.2011, 16:58/16:59    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Все функции есть в выпадающих списках в верхней части окна с кодом.<br />
+А проблема решается так:</p>
+<p><code><br />
+Private Sub cmB_DblClick(ByVal Cancel As MSForms.ReturnBoolean)<br />
+    Call cmB_Click<br />
+End Sub<br />
+Private Sub cmB_Click()<br />
+    'операции<br />
+End Sub<br /></code></p>
+</div></div></div>	</div>
+</div>
+<a id="comment-6338"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Li0n13</span></strong> / 21.06.2011, 16:59    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Как альтернативу можно использовать свойство кнопки Accelerator. Уже хорошо, но все-таки хотелось бы и мышью (для других задач).</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-6339"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Li0n13</span></strong> / 21.06.2011, 17:11    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Получилось! Спасибо! Хоть и два клика работают как один, но все равно хорошо!</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-6357"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 23.06.2011, 13:52    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Можно просто попробовать из процедуры cmB_DblClick два раза вызывать Call cmB_Click</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

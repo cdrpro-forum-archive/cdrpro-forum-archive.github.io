@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="4089.html" />
+<link rel="canonical" href="4089.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>как програмно вставить во фрейм текст | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">как програмно вставить во фрейм текст</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-4089" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Nezar</span></strong> / 17.12.2013, 22:17	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">16.4.0.1280 (sp4)</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Собственно нужно программно вставить во фрейм определенный текст.<br />
+Или подскажите как программно преобразовать фрейм в текстовый фрейм<br />
+Спасибо!</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-12107"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 17.12.2013, 22:50    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>В редакторе VBA есть замечательная вещь - <strong>Object Browser</strong>, в котором можно быстро найти ответы на все вопросы. А конвертнуть можно так <em>Text.ConvertToParagraph()</em></p>
+</div></div></div>	</div>
+</div>
+<a id="comment-12108"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Nezar</span></strong> / 18.12.2013, 00:25    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>пробовал уже (только без () т.к. с ними ругается)<br />
+ошибка<br />
+"объект неверного типа и не поддерживается при данной операции"<br />
+Pub</p>
+<pre class="brush: vb">lic Sub Text()
+    Dim s As Shape
+    ActiveDocument.BeginCommandGroup "Text"
+    For Each s In ActiveDocument.ActivePage.Shapes
+        
+    If s.Type = 3 Then
+        s.Text.ConvertToParagraph
+    End If
+       Next s
+    ActiveDocument.EndCommandGroup
+End Sub</pre></div></div></div>	</div>
+</div>
+<a id="comment-12109"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 18.12.2013, 00:45    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>Nezar</strong>, а, мне почему то показалось что обычный текст во фрейм нужно.<br />
+Для кривой такой функции в ВБА вроде нету, по крайней мере я не помню такой. Но вообще можно через выделение и вызов функции через <em>Automation.Invoke</em>. Но опять же как потом туда вставить текст, я не пробовал, так что не знаю.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-12110"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Nezar</span></strong> / 18.12.2013, 00:53    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>жаль (( вроде элементарная задача. в короле всего две кнопки нажать нужно. а программно - не получается.<br />
+может кто то еще подскажет</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-12111"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Nezar</span></strong> / 18.12.2013, 02:28    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>а как вызвать функцию через Automation.Invoke?<br />
+как узнать ее номер?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-12112"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 19.12.2013, 19:26    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>есть еще функция  <em>CreateParagraphTextWide</em></p>
+</div></div></div>	</div>
+</div>
+<a id="comment-12114"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Nezar</span></strong> / 20.12.2013, 03:41    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>shark</strong> и как с помощью этой функции вставить текст в существующий контур??<br />
+...<br />
+задачу решил. спасибо  Sancho за наводку!</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

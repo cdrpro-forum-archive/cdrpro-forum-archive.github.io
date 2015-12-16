@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="4448.html" />
+<link rel="canonical" href="4448.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Как через VBA обратиться к конкретному слою на MasterPage | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Как через VBA обратиться к конкретному слою на MasterPage</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-4448" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">dastin</span></strong> / 22.01.2015, 18:55	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">17.3.0.772</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Интересует пример не на конкретном файле с именами этих слоёв , а вообще.<br />
+В свойствах таких слоев указано<br />
+Master Type<br />
+- Master<br />
+- Master (all pages)<br />
+- Master (odd pages)<br />
+- Master (even pages)<br />
+может индексы какие есть ...<br />
+ведь есть же счетчик</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-13500"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 23.01.2015, 14:19    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>вот я и не пойму ... конструкция</p>
+<pre class="brush: vb">For Each lyr In ActiveDocument.MasterPage.Layers
+    
+    With lyr
+        .Editable = False
+    End With
+            On Error Resume Next
+    Next
+    MsgBox "All MasterLayer Editable False", vbInformation</pre><p>
+успешно блокирует все odd/even - видимы они или не видимы ... но как только переходим к конкретному слою<br />
+не работает</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13501"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 23.01.2015, 15:10    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Вот так заработало</p>
+<pre class="brush: vb">Sub test2()
+Dim l As Layer, namel As String, indexl As String
+   
+  For Each l In ActivePage.AllLayers
+    If l.Master And l.IsSpecialLayer = False And l.Visible = False Then
+    namel = l.Name
+    
+               On Error Resume Next
+    MsgBox l.Name &amp; " - " &amp; l.Editable
+    End If
+  Next
+    With ActivePage.Layers(namel)
+
+        .Editable = False
+
+    End With
+End Sub</pre></div></div></div>	</div>
+</div>
+<a id="comment-13502"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 23.01.2015, 18:43    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>код можно еще немного улучшить: выйти из цикла через Exit For и обращаться к слою через переменную цикла L, например, l.Editable = false</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13503"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 23.01.2015, 22:17    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>так<strong>shark</strong>,<br /></p><blockquote>например, l.Editable = false</blockquote>
+<p>так у меня не работает - компилируется, ошибок нет, но и результата нет<br />
+наверное потому, что при выходе из For переменная l теряет значение</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13504"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 23.01.2015, 23:54    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>а средствами отладки пользуешься? Watches'ами (Наблюдатели)  и Брекпоинтами, чтобы отслеживать пошаговое выполнение кода и изменение переменных. Если бы переменная потеряла значение, тогда была бы ошибка исполнения</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13505"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 24.01.2015, 00:03    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Immediate и Msgbox ... до остальных не добрался :)</p>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-first first"><a title="На первую страницу" href="4448.html">« первая</a></li>
+<li class="pager-previous"><a title="На предыдущую страницу" href="4448.html">‹ предыдущая</a></li>
+<li class="pager-item"><a title="На страницу номер 1" href="4448.html">1</a></li>
+<li class="pager-current last">2</li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

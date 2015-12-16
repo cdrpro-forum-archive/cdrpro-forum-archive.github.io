@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="2911.html" />
+<link rel="canonical" href="2911.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Публикование объектов с растровыми заливками в PDF | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Публикование объектов с растровыми заливками в PDF</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-2911" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">rare_guest</span></strong> / 06.06.2012, 16:57/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../forum/16.html">CorelDRAW</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">14.0.0.567</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Приветствую участников форума</p>
+<p>передо мной возникла задача<br />
+создать объект (к примеру квадрат)<br />
+задать ему заливку растровой картинкой<br />
+и опубликовать в PDF</p>
+<p>Рис.1 растровая картинка, вставленная в Corel<br />
+<img src="../sites/default/files/forum/images/001.png" alt="Публикование объектов с растровыми заливками в PDF" title="Публикование объектов с растровыми заливками в PDF" /><br />
+Рис.2 квадрат с растровой картинкой и параметрами заливки<br />
+<a href="../sites/default/files/forum/images/002.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/large/public/forum/images/002-itok=gamUbRnL.png" alt="Публикование объектов с растровыми заливками в PDF" title="Публикование объектов с растровыми заливками в PDF" /></a><br />
+возникла странная проблема<br />
+в файле PDF моя растровая заливка совершенно поехала<br />
+версия Adobe Reader 9.4.2</p>
+<p>Рис.3 опубликование в PDF и смещение растровой заливки<br />
+<img src="../sites/default/files/forum/images/003.png" alt="Публикование объектов с растровыми заливками в PDF" title="Публикование объектов с растровыми заливками в PDF" /></p>
+<p>собственно вопрос<br />
+как добиться нормального отображения заливки ?</p>
+<p>(ниже - некоторые результаты экспериментов с настройками)</p>
+<p>знаю, что в Corel есть функция сложные заливки представлять как изображения<br />
+но в силу специфики работы это действие не приемлемо<br />
+вставленные изображения можно выделить, как это сделано на Рис.3<br />
+объекты с растровой заливкой - не выделяются (во всяком случае у меня, в Reader 9)</p>
+<p>галочка напротив "преобразовывать заливку вместе с объектом" конечно на результат не повлияла - заливка едет</p>
+<p>есть параметр "сдвиг строки или столбца"<br />
+так вот если там поставить ЛЮБОЕ значение - получится странный эффект<br />
+заливка не едет, но объект выделяется ЧАСТЯМИ (<br />
+четвертями или т.п.)<br /><strong>*если б можно было задать подобное "дробление" не на 4, а на 10 или более частей - это было бы альтернативным решением моей задачи<br />
+будет здорово если кому-либо известно как это можно сделать</strong></p>
+<p>Рис.4 частичное выделение блока,<br />
+с отличным от нуля значением параметра "сдвиг строки или столбца"<br />
+<img src="../sites/default/files/forum/images/004.png" alt="Публикование объектов с растровыми заливками в PDF" title="Публикование объектов с растровыми заливками в PDF" /><br />
+условный успех дал подбор значений параметра "начало координат"<br />
+но поскольку метод подбора невероятно долгий, а изображений много.... не вариант</p>
+<p>Рис.5 "успешный (не)вариант" - нижний правый квадрат<br />
+<img src="../sites/default/files/forum/images/005.png" alt="Публикование объектов с растровыми заливками в PDF" title="Публикование объектов с растровыми заливками в PDF" /><br />
+была замечена странная особенность<br />
+при изменении размеров исходного документа - изменилось и отображение растровой заливки в PDF<br />
+заливки конечно едут, но уже по-другому</p>
+<p>Рис.6 объекты и параметры те же, размер документа - другой<br />
+"успешный (не)вариант" тоже сполз<br />
+<img src="../sites/default/files/forum/images/006.png" alt="Публикование объектов с растровыми заливками в PDF" title="Публикование объектов с растровыми заливками в PDF" /></p>
+<p>выходит, Reader сам решает, откуда ему отсчитывать начало заливки<br />
+и ориентируется он на длины сторон документа (а даже не на положение элементов)</p>
+<p>если кто то знает в чём тут хитрость<br />
+и как обойти подобную "инициативу" Reader-а - призываю поделиться опытом</p>
+<p>в любом случае<br />
+Спасибо заранее Всем проучаствовавшим</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="2911.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/001.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/001-itok=wR-HTK9V.png" alt="Публикование объектов с растровыми заливками в PDF" title="Публикование объектов с растровыми заливками в PDF" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/002.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/002-itok=N5hXbbot.png" alt="Публикование объектов с растровыми заливками в PDF" title="Публикование объектов с растровыми заливками в PDF" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/003.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/003-itok=_urLnHY3.png" alt="Публикование объектов с растровыми заливками в PDF" title="Публикование объектов с растровыми заливками в PDF" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/004.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/004-itok=5t7htLFK.png" alt="Публикование объектов с растровыми заливками в PDF" title="Публикование объектов с растровыми заливками в PDF" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/005.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/005-itok=tvL9eyNQ.png" alt="Публикование объектов с растровыми заливками в PDF" title="Публикование объектов с растровыми заливками в PDF" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/006.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/006-itok=5SOvfInA.png" alt="Публикование объектов с растровыми заливками в PDF" title="Публикование объектов с растровыми заливками в PDF" /></a>      </div>
+      </div>
+</div>
+    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-9446"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">rare_guest</span></strong> / 08.06.2012, 17:47    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>.....впечатляющая активность на форуме.....</p>
+<p>проблема решена через обновление с X4 до X5 версии<br />
+всем спасибо...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9462"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 13.06.2012, 20:57    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Да не за что, обращайтесь еще !  :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9472"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">themadman</span></strong> / 14.06.2012, 19:54    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>rare_guest</strong>, приносим свои извинения, лето...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9473"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">rare_guest</span></strong> / 14.06.2012, 20:15    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Всё в порядке, понимаю )</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

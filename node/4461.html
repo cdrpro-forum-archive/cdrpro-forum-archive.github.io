@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="4461.html" />
+<link rel="canonical" href="4461.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Размеры для рамочки | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Размеры для рамочки</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-4461" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">toxeec</span></strong> / 04.02.2015, 11:26	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">17.3.0.772</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Проблема вот в чем. Требуется макрос, который проставляет метки по углам выделенной области на расстоянии 5 мм, метки (уголки) 5 мм. После этого он должен проставить размеры по вертикали и горизонтали внутренней части метки и внешней части метки (флексоформа). В программировании я слаб. Методом записи макроса удалось дойти до этапа проставления меток, здесь все ок. Но проблема с размерами. Они стандартным инструментом проставляются в кореле и привязываются к конкретным координатам в рабочей области. Т.е. если запускаем макрос на новом месте размеры будут на старом, хотя привязаны к объекту. А нужно чтобы размеры стояли по краям выделенной области с уголками.</p>
+<p>Sub corner5()<br />
+    ' Recorded 28.01.2015<br />
+    Dim OrigSelection As ShapeRange<br />
+    Set OrigSelection = ActiveSelectionRange<br />
+    Dim s1 As Shape<br />
+    Set s1 = ActiveLayer.CreateRectangle(2.097531, 6.143268, 2.251441, 6.10078)<br />
+    s1.Rectangle.CornerType = cdrCornerTypeRound<br />
+    s1.Rectangle.RelativeCornerScaling = True<br />
+    s1.Fill.UniformColor.CMYKAssign 0, 0, 0, 0<br />
+    s1.Outline.SetNoOutline<br />
+    ActiveDocument.ReferencePoint = cdrCenter<br />
+    s1.SetSize 0.19685, 0.01378<br />
+    s1.Style.StringAssign "{""fill"":{""type"":""1"",""primaryColor"":""REGCOLOR,USER,100,00000000-0000-0000-0000-000000000000""},""outline"":{""type"":""0"",""overprint"":""0"",""angle"":""0"",""screenSpec"":""0,0,45000000,60,0"",""behindFill"":""0"",""scaleWithObject"":""0"",""overlapArrow"":""0"",""shareArrow"":""0"",""endCaps"":""0"",""joinType"":""0"",""width"":""0"",""aspect"":""100"",""matrix"":""1,0,0,0,1,0"",""color"":""CMYK255,USER,0,0,0,255,100,cccd19cb-4675-4a5e-8bda-d0bbbaab8af0"",""dashDotSpec"":""0"",""leftArrow"":""|0"",""leftArrowAttributes"":""0|0|0|0|0|0|0"",""rightArrow"":""|0"",""rightArrowAttributes"":""0|0|0|0|0|0|0"",""widelineWidth"":""5000"",""miterLimit"":""5"",""justification"":""0""},""transparency"":{}}"<br />
+    Dim s2 As Shape<br />
+    Set s2 = s1.Duplicate<br />
+    s2.Rotate -90#<br />
+    ActiveDocument.CreateShapeRangeFromArray(s1, s2).AlignAndDistribute 0, 1, 0, 0, False, 2<br />
+    ActiveDocument.CreateShapeRangeFromArray(s1, s2).AlignAndDistribute 2, 0, 0, 0, False, 2<br />
+    Dim s3 As Shape<br />
+    Set s3 = s2.Weld(s1, True, True)<br />
+    s1.Delete<br />
+    s2.Delete<br />
+      Dim s4 As Shape<br />
+    Set s4 = s3.Duplicate<br />
+    ActiveDocument.ReferencePoint = cdrMiddleRight<br />
+    s4.Stretch -1#, 1#<br />
+    s4.OrderToFront<br />
+    Dim dup1 As ShapeRange<br />
+    Set dup1 = ActiveDocument.CreateShapeRangeFromArray(s3, s4).Duplicate<br />
+    ActiveDocument.ReferencePoint = cdrBottomMiddle<br />
+    dup1.Stretch 1#, -1#<br />
+    dup1.OrderToFront<br />
+    Dim eff1 As Effect<br />
+    Set eff1 = OrigSelection(1).CreateContour(0, 0.19685, 1, 0, CreateCMYKColor(0, 0, 0, 100), CreateCMYKColor(0, 0, 0, 100), CreateCMYKColor(0, 0, 0, 100), 0, 0, 2, 4, 15#)<br />
+    eff1.Contour.Direction = 1<br />
+    eff1.Contour.OutlineColor = CreateRGBColor(255, 255, 255)<br />
+    eff1.Contour.FillColor = CreateRGBColor(255, 255, 255)<br />
+    ActiveDocument.CreateSelection eff1.Contour.ContourGroup, OrigSelection<br />
+    ActiveSelection.Separate<br />
+    ' Recording of this command is not supported: SplitDualSpotObject<br />
+    ActiveDocument.CreateShapeRangeFromArray(ActiveLayer.Shapes(6), s3).AlignAndDistribute 0, 1, 0, 0, False, 2<br />
+    ActiveDocument.CreateShapeRangeFromArray(ActiveLayer.Shapes(6), s3).AlignAndDistribute 2, 0, 0, 0, False, 2<br />
+    ActiveDocument.CreateShapeRangeFromArray(ActiveLayer.Shapes(6), s4).AlignAndDistribute 0, 1, 0, 0, False, 2<br />
+    ActiveDocument.CreateShapeRangeFromArray(ActiveLayer.Shapes(6), s4).AlignAndDistribute 1, 0, 0, 0, False, 2<br />
+    ActiveDocument.CreateShapeRangeFromArray(ActiveLayer.Shapes(6), dup1(1)).AlignAndDistribute 0, 2, 0, 0, False, 2<br />
+    ActiveDocument.CreateShapeRangeFromArray(ActiveLayer.Shapes(6), dup1(1)).AlignAndDistribute 2, 0, 0, 0, False, 2<br />
+    ActiveDocument.CreateShapeRangeFromArray(ActiveLayer.Shapes(6), dup1(2)).AlignAndDistribute 0, 2, 0, 0, False, 2<br />
+    ActiveDocument.CreateShapeRangeFromArray(ActiveLayer.Shapes(6), dup1(2)).AlignAndDistribute 1, 0, 0, 0, False, 2<br />
+    OrigSelection.Delete<br />
+    ActiveLayer.Shapes(5).Delete<br />
+End Sub</p>
+</div></div></div>    	</div>
+
+	
+	
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

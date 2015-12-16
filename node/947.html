@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="947.html" />
+<link rel="canonical" href="../forum/13-634-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Export to Eps - нужна помощь. | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Export to Eps - нужна помощь.</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-947" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">olegiy</span></strong> / 17.01.2011, 22:08/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Приветствую всех. <br /> Из разных кусочков создал под себя макрос для быстрого экспорта в EPS. Но так как последний раз программировал лет эдак 15-20 назад (в Pascal-e), то естественно имеются сложности. <br /> Вот текст "моего" шедевра:
+</p><p> <code>Sub EPS_1() <br /> If ActiveDocument Is Nothing Then Beep: Exit Sub <br /> Dim expopt As StructExportOptions, expflt As ExportFilter, d As Document, s$ <br /> Set expopt = CreateStructExportOptions <br /> expopt.UseColorProfile = True <br /> Set d = ActiveDocument <br /> s = "C:\export\" &amp; d.Name &amp; ".eps" <br /> Set expflt = ActiveDocument.ExportEx(s, cdrEPS, cdrSelection, expopt) <br /> With expflt <br /> .Header = 1 ' FilterEPSLib.epsTIFFHeader <br /> .TIFFHeaderType = 4 ' FilterEPSLib.epsTIFFColor8 <br /> .Resolution = 96 <br /> .Transparent = False <br /> .TextAsCurves = True <br /> .IncludeFonts = False <br /> .MaintainOPILinks = False <br /> .AdjustFountainSteps = False <br /> .FountainSteps = 128 <br /> .PSLevel = 3 ' FilterEPSLib.epsPSLevel3 <br /> .UserName = "" <br /> .UseJPEGCompression = False <br /> .JPEGCompression = 2 <br /> .PreserveOverprints = True <br /> .OverprintBlack = False <br /> .AutoSpread = False <br /> .FixedWidth = False <br /> .MaxSpread = 0.000142 <br /> .TextSpread = 0.005102 <br /> .BoundingBox = 0 ' FilterEPSLib.epsObjects <br /> .UseBleed = False <br /> .Bleed = 31750# <br /> .CropMarks = False <br /> .UseFloatNumbers = False <br /> .ConvertSpot = False <br /> .OutputObjectColorMode = 3 ' FilterEPSLib.epsObjectsNative <br /> .ConvertSpotColorsTo = 0 ' FilterEPSLib.epsColorCMYK <br /> .Finish </code></p>
+<p> End With <br /> End Sub
+</p><p> 1. При сохранении файл получается следующего вида "XXX.cdr.eps" <br /> где ".cdr" явно лишнее. С этим можно жить, но как то не красиво.
+</p><p> 2. Если из одного открытого файла необходимо отправит на экспорт 2 и более раз, то каждый последующий замещает предыдущий. Можно ли в название файла вставить какую нибудь переменную, например текущее время?</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-3861"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 17.01.2011, 22:43/22:44    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>1. Вообще Name возвращает только имя, без типа. Хотя может в старых версиях это иначе работает.
+</p><p> А вообще так: <br /><code>s = "C:\export\" &amp; Replace(d.Name, ".cdr", "") &amp; _ <br /> Hex$(Now) &amp; Hex$(Timer) &amp; ".eps"</code>
+</p><p> п.с. оборачивай код тегом code</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3862"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">olegiy</span></strong> / 18.01.2011, 03:48    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Огромное спасибо. Дальше я разберусь.
+</p><p> p.s. Дата и время получаются в неудобоваримом виде ( xxx9E711163B.eps) , а как их привести нормальному виду? Нужно HEX заменить на что то?
+</p><p><b>Добавлено</b> (18.01.2011, 00:48)<br />---------------------------------------------<br />Разобрался. Может кому пригодится. <br /><code> <br /> Sub EPS_1() <br /> If ActiveDocument Is Nothing Then Beep: Exit Sub <br /> Dim expopt As StructExportOptions, expflt As ExportFilter, d As Document, s$ <br /> Set expopt = CreateStructExportOptions <br /> expopt.UseColorProfile = True <br /> Set d = ActiveDocument <br /> s = "C:\Documents and Settings\Администратор\Рабочий стол\" &amp; Replace(d.Name, ".cdr", "") &amp; "_" &amp; Format(Now, "dd.mm.yy _ hh.nn.ss") &amp; ".eps" <br /> Set expflt = ActiveDocument.ExportEx(s, cdrEPS, cdrSelection, expopt) <br /> With expflt <br /> .Header = 1 ' FilterEPSLib.epsTIFFHeader <br /> .TIFFHeaderType = 4 ' FilterEPSLib.epsTIFFColor8 <br /> .Resolution = 96 <br /> .Transparent = False <br /> .TextAsCurves = True <br /> .IncludeFonts = False <br /> .MaintainOPILinks = False <br /> .AdjustFountainSteps = False <br /> .FountainSteps = 128 <br /> .PSLevel = 3 ' FilterEPSLib.epsPSLevel3 <br /> .UserName = "" <br /> .UseJPEGCompression = False <br /> .JPEGCompression = 2 <br /> .PreserveOverprints = True <br /> .OverprintBlack = False <br /> .AutoSpread = False <br /> .FixedWidth = False <br /> .MaxSpread = 0.000142 <br /> .TextSpread = 0.005102 <br /> .BoundingBox = 0 ' FilterEPSLib.epsObjects <br /> .UseBleed = False <br /> .Bleed = 31750# <br /> .CropMarks = False <br /> .UseFloatNumbers = False <br /> .ConvertSpot = False <br /> .OutputObjectColorMode = 3 ' FilterEPSLib.epsObjectsNative <br /> .ConvertSpotColorsTo = 0 ' FilterEPSLib.epsColorCMYK <br /> .Finish <br /> End With <br /> End Sub <br /></code></p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

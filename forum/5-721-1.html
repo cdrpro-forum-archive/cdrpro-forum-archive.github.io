@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/1034.html" />
+<link rel="canonical" href="5-721-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Описание работы с кривыми | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Описание работы с кривыми</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-1034" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">LeoPolunin</span></strong> / 12.04.2011, 19:23/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="16.html">CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>я работаю в corel desiner x5, разница с draw - дополнительные чертежные прибамбасы - скорее всего технически не отличается - потому вопрос : подскажите - можно ли кривую нн-ой длины - равномерно разделить на нной количество сегментов одинаковой длины - если да то как ? <br /> я когда то видел макрос для draw, он стоил 500 рублей - я даже купил его - но он не подошел для disigner - и если нет - то было бы здорово добавить в лист пожеланий к X6 ) а то там тема уже закрылась - к тому моменту как я нашел этот сайт )</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-4862"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 12.04.2011, 21:27    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Не знаю как в дезигнере, но в кореле легко:
+</p><p> <code>Sub Test() <br />     Dim sp As SubPath, t#, l# <br />     For Each sp In ActiveShape.Curve.SubPaths <br />         l = sp.Length <br />         For t = 1 To 2 <br />             sp.AddNodeAt l / 3 * t, cdrAbsoluteSegmentOffset <br />         Next t <br />     Next sp <br /> End Sub</code></p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4863"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">LeoPolunin</span></strong> / 12.04.2011, 22:49    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>не совсем понял как этим пользоваться - через добавление точек все ясно - ну если кривая имеет на своем пути несколько точек не равноудаленных друг от друга - а делить мне ее надо всю на равные части.... - причем я должен сам задать количество частей или длину отрезков. вот примерно так )</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4864"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 12.04.2011, 22:53    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>LeoPolunin</b>, я лишь показал как в DRAW разделить путь на 3 ровных отрезка (точнее макрос добавляет 2 узла), дальше сами, или просите кого-то кто умеет писать макросы, не ленив и обладает свободным временем )))</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4865"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Solowejka</span></strong> / 13.04.2011, 16:22/19:25    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>LeoPolunin</b>, Вы бы чуть подробнее, для чего это, куда это дальше. Может быть какие-то иные решения найдутся. <br /> Программный код, который любезно предоставил Sancho, попробовал, работает. <br /> Но для кривых с большим количеством точек будет неудобен тем, что вновь добавленные точки (которые как раз делят кривую на нужные вам отрезки) добавяся к тем, которые были, и придётся с ними разбираться. <br /> На приведённом ниже рисунке произвольная кривая была разбита на 25 отрезков. Но после всех действий между отрезками появляются зазоры (на фрагменте с сильным увеличением показан стык отрезков толщиной 0,25 мм; зазор составляет 0,05 мм). <br /> Если такое качество устраивает, тогда может быть написать урок на данную тему? <br /> Впрочем, можно в зазорах точки соединить.</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="5-721-1.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/8853759_9827162.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/8853759_9827162-itok=KRLSBuJi.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="3254.html" />
+<link rel="canonical" href="3254.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>как делать макрос в записи  newbie | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">как делать макрос в записи  newbie</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-3254" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">I have nothing ...</span></strong> / 04.03.2013, 14:50	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">15.1.0.486/488/489</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Добрый день!<br />
+Хочу макрос делать после записи макрос. Макрос записать получается. Макрос делает не все что делать когда записать. Я найти как открыть макрос и исправлять но не знать какие строки будут отвечать за какие действия когда запись быть. Если может кто сказать буду желать блага.</p>
+<p>CorelDRAW X5<br />
+Version 15.0.0.486<br />
+winXP SP3 pro</p>
+<div class="sp-wrap">
+<div class="sp-head">macros</div>
+<div class="sp-body">
+<p>Sub vizitka50x90()<br />
+    ' Recorded 04.03.2013<br />
+    Dim createopt As StructCreateOptions<br />
+    Set createopt = CreateStructCreateOptions<br />
+    With createopt<br />
+        .Name = "vizitka"<br />
+        .Units = cdrMillimeter<br />
+        .PageWidth = 90#<br />
+        .PageHeight = 50#<br />
+        .Resolution = 300#<br />
+        .ColorContext = CreateColorContext2("sRGB IEC61966-2.1,ISO Coated v2 (ECI),Dot Gain 15%", BlendingColorModel:=clrColorModelCMYK)<br />
+    End With<br />
+    Dim doc1 As Document<br />
+    Set doc1 = CreateDocumentEx(createopt)<br />
+    Dim s1 As Shape<br />
+    Set s1 = doc1.MasterPage.GuidesLayer.CreateGuideAngle(0#, 0#, 90#)<br />
+    s1.Outline.SetProperties Color:=CreateRGBColor(0, 0, 255)<br />
+    Dim s2 As Shape<br />
+    Set s2 = doc1.MasterPage.GuidesLayer.CreateGuideAngle(1.771654, 1.968504, 0#)<br />
+    s2.Outline.SetProperties Color:=CreateRGBColor(0, 0, 255)<br />
+    Dim s3 As Shape<br />
+    Set s3 = doc1.MasterPage.GuidesLayer.CreateGuideAngle(1.771654, 0#, 0#)<br />
+    s3.Outline.SetProperties Color:=CreateRGBColor(0, 0, 255)<br />
+    Dim s4 As Shape<br />
+    Set s4 = doc1.MasterPage.GuidesLayer.CreateGuideAngle(3.543307, 0.984252, 90#)<br />
+    s4.Outline.SetProperties Color:=CreateRGBColor(0, 0, 255)<br />
+    Dim s5 As Shape<br />
+    Set s5 = doc1.MasterPage.GuidesLayer.CreateGuideAngle(-0.044547, 0.984252, 90#)<br />
+    s5.Outline.SetProperties Color:=CreateRGBColor(0, 0, 255)<br />
+    doc1.ReferencePoint = cdrCenter<br />
+    s5.SetPosition -0.11811, 0.984252<br />
+    Dim s6 As Shape<br />
+    Set s6 = doc1.MasterPage.GuidesLayer.CreateGuideAngle(1.771654, 2.068898, 0#)<br />
+    s6.Outline.SetProperties Color:=CreateRGBColor(0, 0, 255)<br />
+    s6.SetPosition 1.771654, 2.086614<br />
+    Dim s7 As Shape<br />
+    Set s7 = doc1.MasterPage.GuidesLayer.CreateGuideAngle(1.771654, -0.113079, 0#)<br />
+    s7.Outline.SetProperties Color:=CreateRGBColor(0, 0, 255)<br />
+    s7.SetPosition 1.771654, -0.11811<br />
+    Dim s8 As Shape<br />
+    Set s8 = doc1.MasterPage.GuidesLayer.CreateGuideAngle(3.638598, 0.984252, 90#)<br />
+    s8.Outline.SetProperties Color:=CreateRGBColor(0, 0, 255)<br />
+    s8.SetPosition 3.661417, 0.984252<br />
+    Dim s9 As Shape<br />
+    Set s9 = doc1.MasterPage.GuidesLayer.CreateGuideAngle(0.251457, 0.984252, 90#)<br />
+    s9.Outline.SetProperties Color:=CreateRGBColor(0, 0, 255)<br />
+    s9.SetPosition 0.19685, 0.984252<br />
+    Dim s10 As Shape<br />
+    Set s10 = doc1.MasterPage.GuidesLayer.CreateGuideAngle(1.771654, 1.777122, 0#)<br />
+    s10.Outline.SetProperties Color:=CreateRGBColor(0, 0, 255)<br />
+    s10.SetPosition 1.771654, 1.771654<br />
+    Dim s11 As Shape<br />
+    Set s11 = doc1.MasterPage.GuidesLayer.CreateGuideAngle(1.771654, 0.174469, 0#)<br />
+    s11.Outline.SetProperties Color:=CreateRGBColor(0, 0, 255)<br />
+    s11.SetPosition 1.771654, 0.19685<br />
+    Dim s12 As Shape<br />
+    Set s12 = doc1.MasterPage.GuidesLayer.CreateGuideAngle(3.359508, 0.984252, 90#)<br />
+    s12.Outline.SetProperties Color:=CreateRGBColor(0, 0, 255)<br />
+    s12.SetPosition 3.346457, 0.984252<br />
+    Dim s13 As Shape<br />
+    Set s13 = ActiveLayer.CreateRectangle(-0.11811, 2.086614, 3.661417, -0.11811)<br />
+    s13.Rectangle.CornerType = cdrCornerTypeRound<br />
+    s13.Rectangle.RelativeCornerScaling = True<br />
+    s13.Fill.ApplyNoFill<br />
+    s13.Outline.SetProperties 0.007874, OutlineStyles(0), CreateCMYKColor(0, 0, 0, 100), ArrowHeads(0), ArrowHeads(0), cdrFalse, cdrFalse, cdrOutlineButtLineCaps, cdrOutlineMiterLineJoin, 0#, 100, MiterLimit:=5#<br />
+    s13.Fill.UniformColor.CMYKAssign 0, 0, 0, 10<br />
+    s13.Outline.SetNoOutline<br />
+    Windows.FindWindow("vizitka").ActiveView.SetViewPoint 1.143701, 0.115268, 125<br />
+    Windows.FindWindow("vizitka").ActiveView.SetViewPoint 2.031205, 0.127768, 63<br />
+    Windows.FindWindow("vizitka").ActiveView.SetViewPoint 2.114524, 1.927768, 125<br />
+    Windows.FindWindow("vizitka").ActiveView.SetViewPoint 2.222858, 2.119433, 63<br />
+    Windows.FindWindow("vizitka").ActiveView.SetViewPoint 2.02285, 1.136094, 125<br />
+    Dim s14 As Shape<br />
+    Set s14 = ActiveLayer.CreateArtisticText(0.489504, 1.452752, "Text")<br />
+    s14.Fill.UniformColor.CMYKAssign 0, 0, 0, 100<br />
+    s14.Outline.SetNoOutline<br />
+    ' Recording of this command is not supported: TextUndoRedo<br />
+    Windows.FindWindow("vizitka").ActiveView.SetViewPoint 0.872846, 0.886094, 250<br />
+    s14.Move -0.292661, 0.076059<br />
+    doc1.ReferencePoint = cdrTopLeft<br />
+    s14.Stretch 0.751571<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    s14.Move 0#, 0.000508<br />
+    Dim s15 As Shape<br />
+    Set s15 = s14.Duplicate<br />
+    s15.Move 0.954169, -0.557724<br />
+    s15.OrderToFront<br />
+    ' Recording of this command is not supported: TextUndoRedo<br />
+    ' Recording of this command is not supported: TextUndoRedo<br />
+    ' Recording of this command is not supported: TextUndoRedo<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    s15.AlignToPageCenter cdrAlignLeft + cdrAlignRight + cdrAlignTop + cdrAlignBottom, cdrTextAlignBoundingBox<br />
+    Dim s16 As Shape<br />
+    Set s16 = s14.Duplicate<br />
+    s16.Move 1.711102, -1.38976<br />
+    s16.OrderToFront<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    s16.Move 1.416882, 0#<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    ' Recording of this command is not supported: TextUndoRedo<br />
+    ' Recording of this command is not supported: TextUndoRedo<br />
+    ' Recording of this command is not supported: TextUndoRedo<br />
+    ' Recording of this command is not supported: TextUndoRedo<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    s16.Move 0#, 0.336508<br />
+    Windows.FindWindow("vizitka").ActiveView.SetViewPoint 1.439508, 1.252764, 125<br />
+    Windows.FindWindow("vizitka").ActiveView.SetViewPoint 2.260346, 0.548594, 250<br />
+    Windows.FindWindow("vizitka").ActiveView.SetViewPoint 3.852016, 0.923598, 125<br />
+    Windows.FindWindow("vizitka").ActiveView.SetViewPoint 1.927008, 0.856929, 250<br />
+    Dim s17 As Shape<br />
+    Set s17 = s15.Duplicate<br />
+    s17.Move 0#, -0.241665<br />
+    s17.OrderToFront<br />
+    ' Recording of this command is not supported: TextUndoRedo<br />
+    ' Recording of this command is not supported: TextUndoRedo<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    s17.Fill.UniformColor.CMYKAssign 0, 0, 0, 40<br />
+    s17.Fill.UniformColor.CMYKAssign 0, 0, 0, 70<br />
+    s17.AlignToPageCenter cdrAlignLeft + cdrAlignRight + cdrAlignTop + cdrAlignBottom, cdrTextAlignBoundingBox<br />
+    s17.Move 0#, -0.235657<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    s17.Move 0.324181, 0#<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    s17.AlignToPageCenter cdrAlignLeft + cdrAlignRight + cdrAlignTop + cdrAlignBottom, cdrTextAlignBoundingBox<br />
+    s17.Move 0#, -0.231488<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    s15.Move 0.785039, 0#<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    s15.AlignToPageCenter cdrAlignLeft + cdrAlignRight + cdrAlignTop + cdrAlignBottom, cdrTextAlignBoundingBox<br />
+End Sub
+</p></div>
+</div>
+<p>Я хотеть изучать макрос,. Макрос делать<br />
+лист 50з90 mm 300dpi cmyk<br />
+12 направлять объект<br />
+1 блок серый<br />
+3 текста</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-10906"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">chally</span></strong> / 05.03.2013, 19:05    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Дааа... ПРОМТ нынче не тот....</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-10915"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">I have nothing ...</span></strong> / 12.03.2013, 16:40    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Hello! I'd like to create a macros through putting down a new macros with its further alteration. The macros put down all my actions – created a document, chose graphic pallet in cmyk, indicated the height and the width of the working space, set up the guidelines and created a rectangular object and 3 texts, but when I try to reproduce the macros, it doesn’t perform all as I put it down. For example, the guidelines and the rectangular block are on working space and the working space was with coordinates y=0, x=0, but after reproduction it became lower and more left handed. And my text was replaced with just a text object without any symbol. I found how to open this macros in VBA, but didn’t understand the functions of the lines.<br />
+Maybe anybody could help me with alteration of the macros or direct me to the similar topic.<br />
+I have problems with Russian language and I use google translator. Thank you in advance.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-10916"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">themadman</span></strong> / 12.03.2013, 16:46    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>I have nothing to hide</strong>,  hello interesting question, but only <strong>Sancho</strong> can help you with it</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-10917"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 12.03.2013, 16:52    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>I have nothing to hide</strong>, simple question for you. Why it must be exactly macro, but not the template document?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-10918"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">I have nothing ...</span></strong> / 12.03.2013, 17:15    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>I don't know about creation of a template, I thought it is possible to do it only through macro. Maybe you can help me how to do it?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-10921"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">themadman</span></strong> / 12.03.2013, 21:22/21:23    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>Olga</strong>,  try this link <a href="http://coreldraw.com/forums/p/8233/32014.aspx" target="_blank" rel="nofollow">coreldraw template</a></p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

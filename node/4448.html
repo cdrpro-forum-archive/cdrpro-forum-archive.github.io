@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="4448.html" />
+<link rel="canonical" href="4448.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Как через VBA обратиться к конкретному слою на MasterPage | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Как через VBA обратиться к конкретному слою на MasterPage</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-4448" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">dastin</span></strong> / 22.01.2015, 18:55	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">17.3.0.772</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Интересует пример не на конкретном файле с именами этих слоёв , а вообще.<br />
+В свойствах таких слоев указано<br />
+Master Type<br />
+- Master<br />
+- Master (all pages)<br />
+- Master (odd pages)<br />
+- Master (even pages)<br />
+может индексы какие есть ...<br />
+ведь есть же счетчик</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-13489"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 22.01.2015, 21:51    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Без контекста задачи трудно понять что тебе нужно. К конкретному слою можно обратиться только по имени или индексу. Если тебе нужно получить мастер слои конкретной страницы, тогда и ищи их через Page, а не через Document.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13490"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 22.01.2015, 23:46    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Задача:<br />
+Есть документ с произвольным количеством страниц и мастер слоев.<br />
+Необходимо по определенному пресету смасштабировать содержимое произвольного диапазона страниц и размер самих страниц по двум координатам раздельно.<br />
+Реальная цель - скомпенисировать "милую", нерегулируюмую, особенность младших лазерных принтеров печатать вместо 300*400мм - к примеру 298,9*398,5.<br />
+Драйвер принтера, как и диалог печати, не позволяют так точно масштабировать,  ибо имеют шаг в 1%.<br />
+И все как бы реализуемо, пока на сцену не выходят мастер-слои. Они, родимые, при масштабировании  норовят отреагировать всякий раз, как масштабируется страница - 5 страниц - пятикратное реагирование, 7 - семикратное....<br />
+Способ обойти это нашелся в выставлении флага Editable для слоев.<br />
+Т.е. при старте макроса Editable блокируются все мастер-слои, запускается отработка масштаба по пресету для выбранного диапазона. Блокировка мастер-слоев снимается, а блокировка страниц наоборот устанавливается,  далее отрабатывается масштабирование для мастер слоев ... причем запустить масштабирование можно только для всех разом  -  именно через оставшуюся активной незаблокированную мастер страницу - по крайней мере другого способа я не нашел.</p>
+<p>    ActivePage.Shapes.All.CreateSelection<br />
+    ActiveSelection.Stretch (XX / 100), (YY / 100)</p>
+<p> Слой DeskTop и мастер-слой для всех страниц отрабатывается нормально ... а вот с odd pages и event pages выходит ерунда - отрабатывается только один из них ... слою можно сказать что он мастер - но какой именно?</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="4448.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/lyr.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/lyr-itok=Xkl9VHoS.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-13491"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 23.01.2015, 00:52/00:55    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Пусти цикл масштабирования сначала по мастер станицам Document, без захвата объектов с обычных страниц. Потом цикл по страницам, масштабируя их содержимое, исключая мастер страницы.</p>
+<p>П.С. Я не помню объектную модель, но ни каких проблем с этом не должно быть.</p>
+<p>П.С.С. Если тебе прям нужно получить эти слои по "типам", сделай цикл по страницам, и на его основе сформируй список мастер слоёв, фильтруя по имени или ID, если доступен.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13492"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 23.01.2015, 01:23    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Абстрактный пример цикла по слоям:</p>
+<pre class="brush: vb">Sub test()
+  Dim l As Layer
+  
+  For Each l In ActiveDocument.MasterPage.Layers
+    MsgBox l.Name &amp; " - " &amp; l.Index
+  Next
+  
+  For Each l In ActivePage.AllLayers
+    If l.Master And l.IsSpecialLayer = False And l.Visible = True Then
+        MsgBox l.Name &amp; " - " &amp; l.Index
+    End If
+  Next
+End Sub</pre></div></div></div>	</div>
+</div>
+<a id="comment-13494"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 23.01.2015, 08:59    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>Sancho, <strong><br /><blockquote>Пусти цикл масштабирования сначала по мастер станицам Documen</blockquote></strong></strong></p>
+<p>дык ....<br />
+мастер-страница <strong>одна</strong> и цикл надо пускать по слоям<br />
+при выборе конкретной физической страницы - на ней присутствует <strong>либо</strong> odd <strong>либо</strong> even мастер-слой</p>
+<p>С индексами и именами? ... попробую "завести копилочку" ... но похоже придется это делать дважды - с переходом с четной на нечетную - чтобы оба слоя зацепить</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13495"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 23.01.2015, 12:51    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Тестовый файл. Вывел имена и индексы по обоим IF в листбоксы. Всё замечательно ... но<br />
+по строке<br />
+If l.Master And l.IsSpecialLayer = False And l.Visible = True Then<br />
+вопросы - если слой видимый и либо он не Master либо он не Special  - то он выводится<br />
+видимый - ДА, мастер - ДА, не Special? тогда, что такое Special?</p>
+<p>какой из слоев - odd, а какой even по прежнему не понятно</p>
+<p>правда есть зацепка - оставляя в стороне Grid, Desktop и Guide - их имена нельзя изменить и их индекс всегда 0 - по результату сравнения 1 и 3 колонок можно вычислить что в третьей колонке нет именно какого-то из odd/even ...</p>
+<p>добавлено<br />
+блин ... балбес ....<br />
+If l.Master And l.IsSpecialLayer = False And l.Visible = False<br />
+это и есть ОН - второй из odd/even</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="4448.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/l.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/l-itok=ihsSUJCm.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-13496"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 23.01.2015, 12:36    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>dastin</strong>,  ну хоть маленько смотри в объектную модель... про Special там чётко написано что это такое.<br />
+odd — нечётный.<br />
+even — чётный.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13497"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 23.01.2015, 12:56    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>эх Sancho! Я ж как тот сапожник - за дело взялся первый раз. Чего поправить ... а вот написать. Спасибо! Попробуем ...<br />
+надо ещё чтобы от Х5 до Х7 заводилось, но вроде я функций нигде не использовал</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13498"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 23.01.2015, 14:25    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><pre class="brush: vb">Sub test2()
+Dim l As Layer, namel As String, indexl As String
+  
+  For Each l In ActivePage.AllLayers
+    If l.Master And l.IsSpecialLayer = False And l.Visible = False Then
+    l.Editable = False
+               On Error Resume Next
+    MsgBox l.Name &amp; " - " &amp; l.Editable
+    End If
+  Next
+
+End Sub</pre><p>
+показывает - что<br />
+Layer3.Editable = False<br />
+но по факту - слой остается редактируемым</p>
+<p>и так тоже не работает</p>
+<pre class="brush: vb">        With l
+        .Editable = False
+    End With</pre></div></div></div>	</div>
+</div>
+<a id="comment-13499"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 23.01.2015, 14:08    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>dastin</strong>,  как ты смог проверить редактируемый он или нет, если на этой странице его не видно? В кореле все слои могут иметь индивидуальные настройки на каждой странице!!! Если тебе нужно заблокировать слой на всех страницах, это нужно делать или через ActiveDocument.MasterPage или циклом по всем страницам, точно не скажу.</p>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="На страницу номер 2" href="4448-page=1.html">2</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="4448-page=1.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="4448-page=1.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="2684.html" />
+<link rel="canonical" href="2684.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Помогите написать макрос | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Помогите написать макрос</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-2684" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">pavgrig</span></strong> / 12.01.2012, 19:57/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">14.0.0.701 (sp2)</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Задача такая. Рисунок состоит из множества горизонтальных кривых. Нужно чтобы макрос делал реверс для всех линий, которые находятся на четных или нечетных строчках. Под "реверсом" я имею в виду функцию, которая в русской версии называется "Обращение направления кривой для выбранных фрагментов".</p>
+<p>Буду очень признателен за помощь.</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-8171"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 12.01.2012, 21:37    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Не совсем понятно что имелось виду под "реверсом", возможно это</p>
+<p><code>Curve.ReverseDirection</code></p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8172"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">pavgrig</span></strong> / 12.01.2012, 22:29    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Ну вероятно это и есть "обращение направления кривой". В общем нужно чтобы кривая осталась  на своем месте, а начальная и конечная точки поменялись местами.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8174"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 13.01.2012, 12:53    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><div class="off">Похоже, это для того, чтобы оптимизировать процесс резки на плоттере.<br />
+Как вариант, четные кривые можно просто развернуть на 180 градусов.</div>
+</div></div></div>	</div>
+</div>
+<a id="comment-8175"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">pavgrig</span></strong> / 13.01.2012, 13:42    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Это я как раз и хочу сделать. Команда 'реверс' как раз и меняет направление на 180 градусов. Вопрос в том, что я никогда не сталкивался с написанием макросов в кореле. А вообще по логике надо чтобы макрос мог определить и выбрать четные кривые и применить к ним команду реверса. Вроде несложно, но как составить код я не знаю. Буду признателен за вашу помощь.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8192"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 16.01.2012, 14:06    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Такую ерунду вполне можно сделать очень быстро и без макроса.<br />
+Мне приходилось резать много узких полосок для оклейки карманов на стендах и процесс подготовки всегда занимал не больше минуты.<br />
+Сначала рисуете первую прямую горизонтальную линию.<br />
+Затем дублируете ее вниз на заданную ширину полоски. Для проверки можно даже выделить ее другим цветом. Скопированную линию просто переворачиваем на 180 градусов, выделяем теперь уже обе линии и группируем. Далее дублируем вниз на удвоенную ширину полоски. Если вы пользователь X5-го Корела, то можно сразу выставить количество копий в докере трансформации, если других версий - повторяем копирование, нажав и удерживая Ctrl-R. После этого можно выделить всю эту кучу сгруппированных полосок и расгруппировать.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8203"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">pavgrig</span></strong> / 17.01.2012, 20:08    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Ну это если Вы только квадратики рисуете. А если например текст или более сложный рисунок, то так не получится сделать.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8243"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">ekali</span></strong> / 21.01.2012, 22:25    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Вам надо змейкой фрезу пустить? Так циклом их обработайте с шагом 2</p>
+<p>iE = ActiveLayer.Shapes.Count ' это если надо все линии на листе обработать, а иначе надо задавать все Shapes, например, например, в активном выделении (или по каким еще признакам)</p>
+<p>For i = 1 To iE Step 2<br />
+     ActiveLayer.Shapes(i).Curve.ReverseDirection ' (саму команду я не проверяла, как Санчо написал, пишу)<br />
+Next i</p>
+<p>Это все</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

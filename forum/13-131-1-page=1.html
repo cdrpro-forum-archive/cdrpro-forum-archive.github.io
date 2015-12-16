@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/444.html" />
+<link rel="canonical" href="13-131-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Export To JPG (SanM_ExportToJPG) | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Export To JPG (SanM_ExportToJPG)</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-444" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Sancho</span></strong> / 07.07.2008, 23:20/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even">Макрос для быстрого и удобного экспорта в *.jpg, как выделенного, так и всех страниц за раз. Также есть возможность автоматической генерации письма в TheBat с прикреплённым макетом(ми). <p> <img src="../sites/default/files/forum/images/2184964_4267757.gif" alt="Export To JPG (SanM_ExportToJPG)" title="Export To JPG (SanM_ExportToJPG)" /> </p><p> Узнать подробнее можно <a class="link" href="http://cdrpro.ru/news/2009-08-25-178" rel="nofollow" target="_blank">тут</a></p></div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="13-131-1-page=1.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/2184964_4267757.gif" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/2184964_4267757-itok=7YVhPdlX.gif" alt="Export To JPG (SanM_ExportToJPG)" title="Export To JPG (SanM_ExportToJPG)" /></a>      </div>
+      </div>
+</div>
+    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-4678"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 24.03.2011, 00:37    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even">Да конечно же можно — просто написать новый макрос, но это не ко мне, ибо некогда и лень ))))</div></div></div>	</div>
+</div>
+<a id="comment-4679"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">OKrill</span></strong> / 24.03.2011, 01:35    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even">Ясно. <br /> Спасибо...</div></div></div>	</div>
+</div>
+<a id="comment-4680"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">kuman</span></strong> / 25.03.2011, 15:14    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote>Есть хоть какая нить возможность это реализовать?</blockquote> <br /> Есть такой макрос, написан не мной <br /><code> <br /> Private Sub MultiPage_Click() <br /><br />     Dim ss5 As Shape <br />     Dim opt As New StructSaveAsOptions <br />     Dim fso, MyFile, n, v, m, d <br />     Dim CreatePage As Page <br />     Dim Doc As Document <br />     Dim x As Double, y As Double, w As Double, h As Double <br />      <br />     ActiveDocument.Unit = cdrMillimeter <br />             With opt <br />                 .EmbedVBAProject = False <br />                 .Filter = cdrCDR <br />                 .IncludeCMXData = False <br />                 .Range = cdrSelection <br />                 .EmbedICCProfile = False <br />                 .ThumbnailSize = cdr10KColorThumbnail <br />                 .Version = cdrCurrentVersion <br />             End With <br />         Set fso = CreateObject("Scripting.FileSystemObject") <br />         v = ActiveSelection.Shapes.Count <br />         n = 1 <br />         m = n &amp; ".cdr" <br />     If ActiveSelection.Shapes.Count = 0 Then <br />         MsgBox "Ничего не выделено", vbInformation, "Ошибка" <br />         End <br />         End If <br />     For Each ss5 In ActiveSelection.Shapes <br />         ss5.CreateSelection <br />         ActiveDocument.SaveAs "c:\1_" &amp; n &amp; ".cdr", opt <br />         n = n + 1 <br />     Next ss5 <br />      <br /><br /> Set Doc = CreateDocument() <br /> Set CreatePage = ActiveDocument.InsertPages(v - 1, False, ActivePage.Index) <br />     For d = 1 To v <br />         ActiveDocument.Pages(d).Activate <br />         ActiveLayer.Import "c:\1_" &amp; d &amp; ".cdr" <br />             Set MyFile = fso.GetFile("c:\1_" &amp; d &amp; ".cdr") <br />             MyFile.Delete <br />              <br />          <br />                         <br />         ActiveSelection.GetBoundingBox x, y, w, h, True <br />         ActivePage.SetSize w, h <br />         ActiveSelection.GetBoundingBox x, y, w, h, True <br />         ActiveSelection.Move -x, -y <br />          <br />        <br />          <br />     Next d <br /><br /> End Sub</code></div></div></div>	</div>
+</div>
+<a id="comment-4681"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Dryundel</span></strong> / 31.03.2011, 00:19    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><b>OKrill,</b> если нужно экспортировать каждый объект в отдельный файл, они должны находится на разных страницах. Например 30 объектов должны быть раскиданы на 30 страниц.</blockquote> <br /> А чем exp2gpg лучше стандартного File Converter? <br /><blockquote>Генерация письма в TheBat с прикреплённым макетом(ми)</blockquote> <br /> А надо ли оно? Лучше наверное сначала посмотреть то, что отправляешь.</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="13-131-1-page=1.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/4482818_9268529.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/4482818_9268529-itok=01Gf-eDf.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-9853"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">cmyky_mouse</span></strong> / 21.09.2012, 13:17    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Макрос - просто <strong>"супер-хит"</strong>!!!!<br />
+создание превьюшек из муры и рутины превратилось в нажатие одной кнопки!<br />
+респект Санчосу! в Ваших макросах прям чувствуется, что писались дизайнером, а не програмистом.<br />
+как говорят <strike>гомосексуалисты</strike> "дизайнер точно знает чего хочет другой дизайнер" ))))</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-12011"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">korres</span></strong> / 28.11.2013, 18:24    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Крутой макрос, скажите а каким образом можно былоб сделать так чтобы макрос считывал названия страниц в многостраничном документе и сохранял файлы именно под этими названиями, а не 1,2,3 итд...? Буду очень благодарна за эту модификацию!</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-12261"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">aleksandr11</span></strong> / 19.02.2014, 08:50    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Друзья, бьюсь огромное количество времени.<br />
+Проблема - в Корел 12 нарисовал фон, используя "фонтанную" заливку- коническую (Fountain fill-Conical)<br />
+При переводе для печати в JPG, TIFF и некот. другие – один и тот же результат – на фото после печати появляются полосы-лучи – видимо, границы разделения цветов.<br />
+Пробовал перевести, например, в Фотошоповский файл – там те же полосы. Пробовал перевести в самом Кореле в ростр – тот же эффект.<br />
+Подскажите, пожалуйста, как в печати (не имея кореловских принтеров, может есть такие?!)  получить фото (картинку) без этих лучей. Заранее благодарен. Александр</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-12263"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Hepatitis C</span></strong> / 19.02.2014, 13:25    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong> aleksandr11</strong>, а можно увидеть файл? возможно некорректно построенный градиент, соотношение цветов и шагов...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-12268"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">aleksandr11</span></strong> / 19.02.2014, 22:02    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Добрый день, огромное вам спасибо за соучастие в моей проблеме.<br />
+Я попробовал загрузить оригинальный файл (он 12 кб), но расширение cdr. не прикрепляется на этом форуме.<br />
+Подскажите, пожалуйста, как мне лучше поступить - может я могу вам выслать этот файл по имейл?<br />
+Честно скажу, я просто умучился с тем, что при печати (самой разной и массовой и студийной)- одни и те же лучи, и до меня долго доходило, что дело не в технике, а в файле. К сожалению мои познания и опыт не находят выход из этой ситуации... Еще раз спасибо вам за помощь.<br />
+Александр</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-12269"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 19.02.2014, 22:16    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>aleksandr11</strong>,<br />
+1. ну да cdr "не прикрепляется" )))<br />
+<img src="../sites/default/files/forum/images/lnvjrtnvrt.png" alt="Export To JPG (SanM_ExportToJPG)" title="Export To JPG (SanM_ExportToJPG)" /></p>
+<p>2. Правила портала почитайте, особенно на счёт дублирования сообщения/тем.</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="13-131-1-page=1.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/lnvjrtnvrt.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/lnvjrtnvrt-itok=x_PmIOeH.png" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-first first"><a title="На первую страницу" href="13-131-1.html">« первая</a></li>
+<li class="pager-previous"><a title="На предыдущую страницу" href="13-131-1.html">‹ предыдущая</a></li>
+<li class="pager-item"><a title="На страницу номер 1" href="13-131-1.html">1</a></li>
+<li class="pager-current">2</li>
+<li class="pager-item"><a title="На страницу номер 3" href="13-131-1-page=2.html">3</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="13-131-1-page=2.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="13-131-1-page=2.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="3302.html" />
+<link rel="canonical" href="3302.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>PrintSettings.ShowDialog | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">PrintSettings.ShowDialog</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-3302" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">GoodvinVV</span></strong> / 09.04.2013, 18:15/22:07	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">16.1.0.843 (sp1)</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>кто знает почему так?<br />
+стоит только скопировать (Ctrl+C) какой-либо объект на странице дока, перестает работать строка кода </p>
+<pre class="brush: vbnet">ActiveDocument.PrintSettings.ShowDialog()</pre><p>и как с этим бороться?</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-11126"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">GoodvinVV</span></strong> / 12.04.2013, 17:06    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>диалоговые окна хранят свои настройки в ini/xml файлах.</p></blockquote>
+<p>как файлы называются или путь где посмотреть....</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-11127"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">GoodvinVV</span></strong> / 12.04.2013, 17:54    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>делай печать полностью через VBA</p></blockquote>
+<p>отпечатать только одну краску из файла по названию цвета не получается поэтому и диалог ...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-11128"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">GoodvinVV</span></strong> / 12.04.2013, 17:58    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>когда PS— там сделал : отписываю все, потом грохаю не нужные, однако время много уходит красок бывает 9и 10</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-11129"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 12.04.2013, 23:27    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>GoodvinVV</strong>, во-первых есть кнопка редактировать, не нужно плодить посты по одной строчке.<br />
+Во-вторых, по названию можно отпечатать одну краску. Простой пример:</p>
+<pre class="brush: vb">
+Sub Macro1()
+    Dim sp As SeparationPlate
+    With ActiveDocument.PrintSettings
+      .Separations.Enabled = True
+      .Separations.Hexachrome = False
+      For c = 1 To .Separations.Plates.Count
+        Set sp = .Separations.Plates.item(c)
+        If sp.Color &lt;&gt; "Magenta" Then _
+          sp.Enabled = False Else sp.Enabled = True
+      Next
+      .PrintOut
+    End With
+End Sub
+</pre></div></div></div>	</div>
+</div>
+<a id="comment-11135"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">GoodvinVV</span></strong> / 15.04.2013, 12:17/12:33    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Sancho, спасибо, нашел где редактировать...,<br />
+с СMYK'ом все понятно спасибо</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-11140"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">GoodvinVV</span></strong> / 16.04.2013, 15:01/15:22    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Замкнутый круг какой то...<br />
+включаю "использовать ppd" и всё, капут. отписывает все сепарации</p>
+<pre class="brush: vbnet">With ActiveDocument.PrintSettings
+.UsePPD = True
+            .PPDFile = "C:\***\***\страница нужного размера.PPD"
+...
+...
+.Separations.Enabled = True
+      .Separations.Hexachrome = False
+      For c = 1 To .Separations.Plates.Count
+        Set sp = .Separations.Plates.item(c)
+        If sp.Color &lt;&gt; "Magenta" Then _
+          sp.Enabled = False Else sp.Enabled = True
+      Next
+ .PrintOut
+    End With</pre></div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-first first"><a title="На первую страницу" href="3302.html">« первая</a></li>
+<li class="pager-previous"><a title="На предыдущую страницу" href="3302.html">‹ предыдущая</a></li>
+<li class="pager-item"><a title="На страницу номер 1" href="3302.html">1</a></li>
+<li class="pager-current last">2</li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

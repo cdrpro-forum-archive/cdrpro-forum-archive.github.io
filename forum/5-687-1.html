@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/1000.html" />
+<link rel="canonical" href="5-687-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Clipboard и OLE-объект | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Clipboard и OLE-объект</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-1000" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Violet</span></strong> / 16.03.2011, 16:26/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="16.html">CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>В требованиях одной из типографий, с которой я сотрудничаю, стоит :"недопустимо наличие в вёрстке изображений, помещённых через Clipboard или как OLE-объект". <br /> 1. Почему? <br /> 2. Что же мне делать, во многих моих работах Clipboard и OLE-объект???</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-4769"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 16.03.2011, 16:35/16:45    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>Violet</b>, ну так это же их требования, вот у них и спросите, чем они эти требования аргументируют.
+</p><p> П.С. допустим с ОЛЕ всё ясно, а что плохого в картинках вставленных как растр? Пусть ответят, а вы нам расскажите, мы хоть поудивляемся выдумке народа :D</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4770"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Solowejka</span></strong> / 18.03.2011, 15:47/18:01    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>"Буферобоязнь" возможно появляется от того, что при попытке скопировать картинки из Word-овских макетов, мы получаем лишь их экранные копии с разрешением 72 dpi, хотя вставлены картинки в высоком разрешении. <br /> Поэтому более обосновано требование к материалам заказчика: прикладывать изображения отдельными файлами. Но потребуется вёрстка заново. Приличные типографии вообще не работают с Word-овскими макетами. <br /> OLE-объекты в макетах прекрасно распечатываются непосредственно из программы CorelDRAW. Их боязнь в конкретной типографии скорее всего объясняется тем, что там не научились работать с программой CorelDRAW, которая прекрасно приспособлена для того. чтобы делать спуски. Возможно где-то принимают для печати макеты, сделанные в CorelDRAW, c рассчётом сконвертировать из них файлы-PDF. А OLE-объекты в PDF не конвертируются.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4771"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">splxgf</span></strong> / 18.03.2011, 16:54    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Чем чревато использование буфера обмена: <br /> 1. Картинка лишний раз подвергнется преобразованию между разными цветовыми моделями, в буфере в чистом виде пригодном для обмена между разными программами может находиться только RGB и все это будет происходить без использования управления цветом. <br /> 2. Использование OLE, просто абзац... в целом конечно не страшно, поскольку начиная с x3 корел такие объекты стал нормально экспортировать. Как узнать разрешение, цветовую модель и прочее? Сохранить без потери в качестве? <br /> Хотите поразвлекаться сделайте в фотошопе картинку, вставьте в Corel как оле, а потом попробуйте этот объект сохранить из корела как картинку и сравнить с оригиналом поканально.
+</p><p><b>Добавлено</b> (18.03.2011, 13:54)<br />---------------------------------------------<br />По второму вопросу непонятно чем вызвана необходимость использования OLE и буфера обмена. <br /> Либо программа может нормально экспортировать и файл помещается в корел, либо печать на PDF принтер и забираем картинку из PDF. В обоих случаях зачастую требуется доработка картинок напильником.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4772"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 20.03.2011, 15:41    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Ну лично я часто использую буфер обмена между CorelDRAW и Illustator. В буфер данные пишутся (и берутся из него) в формате PDF, который прекрасно поддерживает СМИК, так что ни каких конвертаций не происходит, как для вектора, так и для растра.
+</p><p> Или например я часто нахожу нужный клипарт в интернете и опять же использую буфер для копирования в Корел, шоп, Илл или ещё какое то приложение. Оно изначально находится в sRGB модели, так что все преобразования будут проходить под моим контролем.
+</p><p> Вывод: использовать можно всё, просто нужно грамотно подходить к этому.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4773"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 21.03.2011, 13:11    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Недавно столкнулся с таким глюком - в X3-м Кореле в макете, содержащем OLE-объект, после поворота на 90 градусов повернулось все, кроме OLE-объекта. Местоположение его сместилось, а направление осталось прежним.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4774"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Solowejka</span></strong> / 21.03.2011, 22:02    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Это не глюк. Не только в Х3. OLE-объекты не поворачиваются. Писал уже об этом ранее.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4775"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 21.03.2011, 22:13    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Ну почему же не поворачиваются... поворачиваются ещё как, только макросами или за маркеры.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4776"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">kpars</span></strong> / 31.03.2011, 03:41    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Вы, видимо, не совсем правильно поняли информацию о требованиях к макетам. Типографии (имею в виду офсетная и пр. полиграфия), как правило, никогда не работают с файлами корела и крайне негативно относятся к корелу вообще (уж так сложилось исторически). Эти требования относятся к верстке, сделанной в QuarkXpress или Adobe InDesign. Менее охотно принимают Adobe Illustrator. В этих программах одним из основных правил хорошего тона является то, что все растровые и пр. картинки должны быть определенных требованиями типографии форматов, залинкованы и прилагаться вместе с файлом верстки. Ole-объекты не должны находится в верстке, поскольку часто за их вывод на печать отвечает не программа верстки, а программа, в которой и был сделан объект, и которая может сделать сделать всё что угодно, кроме того что нужно, особенно не на вашем компе, а на стороне. <br /> В типографии сотрудники проверяют ваши файлы, и если всё ок, сами отпишут постскрипты и т.д. <br /> В случае если ваша верстка выполнена в кореле, то для типографии оптимальней всего нужно будет делать пдф или экспорт в Adobe Illustrator (ai/eps). Необходимо, чтобы в файле также не было Ole-объектов. Поскольку вся растровая графика по умолчанию внедрена в кореловский файл, то путь, каким вы эту графику туда поместили - через импорт или клипборд из др файлов или программ - не имеет никакого полового значения.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4777"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 31.03.2011, 07:33/07:36    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>kpars</b>, хе хе ))) Как правило говоришь? Ну это смотря где... меня лично уже достало когда отдаёшь ПДФ, а тебе "сиротки" так "Ой! А не могли бы вы в корАли прислать?". Орфография сохранена :D
+</p><p> П.С. А когда говоришь "Нет!", начинают со скрипом в мозгах тащить этот ПДФ в Корел. И попробуй объясни клиенту что это не типография а так себе.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4778"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Zivotnoe</span></strong> / 01.04.2011, 14:22    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>kpars</b>, все зависит, конечно, от конкретной типографии. В нашем городе (про регион не пишу, не знаю) все типографии прекрасно работают с файлами кореля; корелобоязни нет никакой. Скорее даже наоборот - проблема будет с файлами иллюстратора и кварка (народ элементарно не знает матчасть). Отрицание кореля - это скорее дань прошлому, когда в полиграфии стандартом были программы от адоб. <br /> Что касается оле-объектов, то тут картина такая. При отправке файлов с оле- объектами на рип (пс/ пдф) после обработки вместо таких объектов - пустое место. Т.е. тут имеет место быть проблема рипа, а не кореля. <br /> Со вставленными из клипбоарда объектами нет никаких проблем.</p>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="На страницу номер 2" href="5-687-1-page=1.html">2</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="5-687-1-page=1.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="5-687-1-page=1.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

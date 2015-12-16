@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="4573.html" />
+<link rel="canonical" href="4573.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Форма объекта | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Форма объекта</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-4573" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Auto</span></strong> / 17.07.2015, 15:14	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">17.3.0.772</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Здравствуйте.</p>
+<p>Есть скрипт который создает подложку под объект по его контейнеру(BoundingBox)<br />
+скрипт не мой, взял на форуме, уже точно не помню на каком, возможно на этом</p>
+<p>Sub makeRect()<br />
+Dim s As Shape, sRect As Shape<br />
+Dim x As Double, y#, h#, w#<br />
+Set s = ActiveShape<br />
+If s Is Nothing Then Exit Sub<br />
+s.GetBoundingBox x, y, w, h<br />
+' ActiveLayer.CreateRectangle x,y,w,h<br />
+Set sRect = ActiveLayer.CreateRectangle2(x, y, w, h)<br />
+sRect.Fill.UniformColor.RGBAssign 80, 0, 0<br />
+sRect.OrderToBack<br />
+End Sub</p>
+<p>Контейнер дает нам координаты и габариты.  Можно как то определять форму объекта и делать подложку этой формы? Формы-простые фигуры, круг, квадрат, треугольник, все.<br />
+Назначить эти формы подложке не проблема. Вопрос в том чтобы изначально определить какой формы фигура чтобы выбрать что назначать.</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-14188"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 17.07.2015, 16:00    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>а просто делать копию объекта не годится?</p>
+<p>... кнопочкой "+" при выделенном объекте</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-14190"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 17.07.2015, 16:26    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>можно добавить проверку на тип объекта<br />
+...</p>
+<pre class="brush: vb">Select Case s.Type
+case cdrRectangleShape
+    Set sRect = ActiveLayer.CreateRectangle2(x, y, w, h)
+case cdrEllipseShape
+    Set sRect = ActiveLayer.CreateEllipse(x, y, w, h)
+case cdrCurveShape ' треугольники и другие нестандартные кривые
+'сделать копию объекта
+end  Select
+</pre></div></div></div>	</div>
+</div>
+<a id="comment-14191"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Auto</span></strong> / 17.07.2015, 17:07    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>dastin</strong>,<br />
+годится если это просто круг или любая фигура (одна сама по себе)<br />
+а если круг является только рамкой содержащей другие объекты то не совсем годится в плане экономии ресурсов. Получается копируем все заливаем вот и подложка, это правильно, а то что внутри могут быть еще десяток объектов это утяжеляет файл.<br />
+Да и смысл тогда в скирипте какой он есть изначально, зачем делать отдельно подложку если можно скопировать объект, залить и положить в нижний слой?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-14192"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Auto</span></strong> / 17.07.2015, 17:07    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>shark</strong>,<br />
+В принципе понял, лучше делать три скрипта на три объекта</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-14193"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 17.07.2015, 20:34    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>нет, это все можно сделать в рамках одной процедуры, то есть одним макросом. После <em>s.GetBoundingBox </em>ставите вышеприведенную проверку на тип, а после <em>End Select</em> продолжаете свой код, т.е. <em>sRect.Fill.UniformColor.RGBAssign 80, 0, 0</em>. В случае с треугольником или какой-то одной кривой делаете копию объекта через <em>s.Duplicate.</em></p>
+</div></div></div>	</div>
+</div>
+<a id="comment-14194"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Auto</span></strong> / 17.07.2015, 22:17    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Спасибо!<br />
+буду пробовать</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-14205"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">ildar_1988</span></strong> / 21.07.2015, 00:20    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Как насчёт команды <strong>Создать границу</strong>?<br />
+<a href="../sites/default/files/forum/images/sozdat_granicu_0.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/large/public/forum/images/sozdat_granicu_0-itok=rxbhWgSf.jpg" alt="Форма объекта" title="Форма объекта" /></a><br />
+Корел создаст кривую, описывающую все выделенные объекты. Или это не подойдёт?</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="4573.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/sozdat_granicu_0.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/sozdat_granicu_0-itok=Ad7kg4UG.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

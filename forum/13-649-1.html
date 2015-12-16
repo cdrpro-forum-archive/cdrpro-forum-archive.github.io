@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/962.html" />
+<link rel="canonical" href="13-649-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>работа с кривыми | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">работа с кривыми</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-962" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">San</span></strong> / 12.02.2011, 19:48/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Доброго всем времени суток! Есть изображение, нужно найти в нём все кривые короче 2 см. вручную проверять каждую кривую очень долго, подскажите пожалуйста, может есть что нибудь такое, что может это сделать???</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-3931"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 12.02.2011, 23:09    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Написать цикл по объектам, внутри цикл по путям кривой, а в нём цикл по сегментам. Готового макроса я не видел.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3932"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">San</span></strong> / 13.02.2011, 19:10    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>это как?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3933"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 13.02.2011, 23:08/00:12    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>ну вот так :) <br /> Возможно кто то, у кого есть время и знание VBA, поможет. А мне некогда...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8238"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">ekali</span></strong> / 21.01.2012, 18:29    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Sub minusType() ' ubrat' vse objekty odnogo tipa<br />
+Dim i As Long, iE As Long</p>
+<p>ActiveDocument.Unit = cdrMillimeter</p>
+<p>iE = ActiveLayer.Shapes.Count<br />
+For i = iE To 1 Step -1<br />
+    If ActiveLayer.Shapes(i).Type &lt; 20  Then<br />
+        ActiveLayer.Shapes(i).Delete<br />
+    End If<br />
+Next i</p>
+<p>End Sub</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8239"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 21.01.2012, 18:57/19:09    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>ekali</strong>, сами то поняли что написали? Человек просил как удалить кривые короче 2см. К тому же код удаляет объекты не одного типа как написано в комментарии, а все у которых тип меньше 20, а это считай почти 90% объектов.</p>
+<p>П.С. и насколько я помню, в кореле обратную последовательность в цикле можно в таких случаях не использовать, к тому же удобнее пользоваться циклом for each.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8242"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">ekali</span></strong> / 21.01.2012, 21:40    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>А, вылетел кусок при правке-вставке. Вот так надо</p>
+<p>Вместо: ActiveLayer.Shapes(i).Type &lt; 20 Then</p>
+<p>Надо: If ActiveLayer.Shapes(i).Type = 3 Then<br />
+           If ActiveLayer.Shapes(i).Curve.Length &lt; 20 Then</p>
+<p>в кореле обратную последовательность в цикле можно в таких случаях не использовать</p>
+<p>- Почему? Я массивы на выкидыш всегда только в обратном порядке перебираю. С корелом пока мало знакома, но успела заметить, что порядковые номера при удалении / создании объектов меняются очень даже.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8245"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 21.01.2012, 22:42    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>ekali</strong>, открою секрет — здесь, как и на большинстве других форумов, нужно пользоваться специальными тегами для кода и цитат. :) только внутри кода не делайте пустых абзацев!</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

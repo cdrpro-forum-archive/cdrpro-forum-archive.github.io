@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="822.html" />
+<link rel="canonical" href="../forum/5-509-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Черно-белая печать и цветокоррекция в X5 | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Черно-белая печать и цветокоррекция в X5</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-822" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">pablomedok</span></strong> / 18.09.2010, 16:46/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../forum/16.html">CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Интересуют настройки цветокоррекции или настройки печати для вывода документов на ч/б лазерных PCL-принтерах.
+</p><p> Большая часть моих черно-белых документов (реклама в газеты, листовки, бланки, формы, макеты печатей и штампов) созданы в предыдущих версиях корела в CMYK-модели.
+</p><p> Раньше любой черный (R0G0B0, C0M0Y0K100, C30M30Y30K100, G255) печатался на простом офисном принтере как 100% черный. Сейчас RGB черный и белый цвет выводится нормально, а все остальные - как серый (с растром). Переводить все документы в RGB совершенно не хочется. Нужно что-то делать в настройках. Но что?
+</p><p> При печати есть несколько опций, которые иногда дают нормальный результат. В настройках цвета есть вариант srgb XXXX Black Scaled. Есть настройки, где делать цветокоррекцию - в программе или на принтере, галочка Preserve RGB numbers, есть метод цветокоррекции и куча всяких опций, которые все равно не дают нужный результат. Я уже перепробовал штук 20 сочетаний, результат разный, но неудовлетворительный. Иногда черный становится нормальным, но зато белый цвет - светло-серым.
+</p><p> Можно, конечно, перекрасить объекты в файле, но поиск и замена цветовой модели не помогает. Нужно делать вручную или использовать макросы.
+</p><p> Проблема усугубляется тем, что в документе, как правило, объекты из разных цветовых моделей - может быть, макет в RGB, с картинкой в Grayscale и логотипом в CMYK или Panatone и импортированным из старого документа элементом в CMYK.
+</p><p> Если это полноцветный макет для типографии, то конечно, я обычно трачу время и перевожу все к одной цветовой модели. Но для мелких повседневных задач - это слишком затратно по времени. Например, открыл чужой PDF, добавил 2 слова и распечатал его. Или открыл старую листовку или бланк заявки, исправил год и отправил ее не печать на ризограф. Не хочется тратить время на перекрашивание объектов в таких мелочных ситуациях.
+</p><p> Проще вернуться на 12 корел.
+</p><p> Можете ли вы что-то посоветовать в данной ситуации?</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-3727"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 19.09.2010, 00:01/17:12    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Ключевым моментом в этом вопросе, если не касаться конкретных профилей, является правильно выбранный способ цветопередачи (Rendering intent). Необходимо установить Перцепционный. Этот способ цветопередачи сохраняет взаимосвязи между цветами, позволяя получить наилучшие результаты.
+</p><p> Разберёмся немного в сути вопроса. 100% чёрного в смик, никогда не был полностью чёрным цветом! Это легко заметно, если положить рядом две плашки. Одну K100, другую СМИК все по 100. Последний значительно чернее и визуально похож на чёрный RGB. Из этого, весьма логичным образом, следует, что К100 при преобразовании в Gray не должен давать G0!!!
+</p><p> Так вот, при правильно подобранном способе цветопередачи, К100 даёт G15. И это нормально! Как всё это выглядит, можно посмотреть на изображении ниже.
+</p><p> <img src="../sites/default/files/forum/images/2450307_5213091.png" alt="Черно-белая печать и цветокоррекция в X5" title="Черно-белая печать и цветокоррекция в X5" />
+</p><p> Для особо жаждущих получить K100 = G0, есть два пути, НО оба имеют свои серьёзные недостатки.
+</p><p> Первый довольно подробно изложен в справке по программе: <br /><br /></p><blockquote>Обработка чистых черных цветов и оттенков серого <br /> В процессе преобразования цвета можно сохранить чистый черный цвет в цветовом пространстве назначения. Например, при преобразовании документа RGB в цветовое пространство CMYK чистый черный цвет RGB (R=0, G=0, B=0) можно сопоставить с чистыми черными цветами CMYK (K=100). Эта возможность рекомендуется для документов в оттенках серого или для документов, которые состоят в основном из текста. Следует отметить, что сохранение чистого черного во время преобразования цвета может привести к образованию сплошных черных краев в эффектах и градиентных заливках, содержащих черный цвет.</blockquote>
+<p>Тут конечно есть что добавить, но я воздержусь.
+</p><p> Второй — отключить управление цветом на время преобразования в оттенки серого.
+</p><p> П.С. Вот собственно и всё! Ни какой великой тайны или загадки тут нет. :)</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="822.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/2450307_5213091.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/2450307_5213091-itok=1gV6tQDh.png" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-3728"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">pablomedok</span></strong> / 21.09.2010, 02:37    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Начнем с того, что режим Perceptual у меня стоит всегда.
+</p><p> Я знаю, что простой черный не самый черный на экране, но меня интересует принтер, а не экран. Хотя я не соглашусь с "никогда не был" - в старых версиях корела, может быть, в 10-й и более ранних C0M0Y0K100 на экране выглядел идентично C100M100Y100K100. В 12-й версии хотя на экране они и выглядели по-разному, но C0M0Y0K100 печатался на принтере именно черным (ровно как и R0G0B0).
+</p><p> Здесь <a href="http://pablomedok.at.tut.by/cdr.jpg">http://pablomedok.at.tut.by/cdr.jpg</a> - первый ряд - это Корел 12, второй и третий - X5. Буду еще экспериментировать
+</p><p> P.S. почему-то файл не прикрепляется - подвисает при закрузке на 35%</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3729"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 21.09.2010, 08:39    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>С принтером всё аналогично ибо CMS одна на всё!</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3730"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Xose</span></strong> / 19.12.2010, 18:54    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>у меня такая же проблема как у pablomedok. Когда стояла Х13 - черный выдавал как черный и заливку делал полностью - якрко выражанный черный, градация серого не происходила. Особенно это видно при печати на пленках, может на бумаге это вы не уведите ну на пленке отчетливо имеется существенная разница. На х15 версии черный дает как серый, т.е. черный выстреливает по пикселям (точками) и белый также заливает, т.е. получается не точный белый. Вся страница печатеться по пикселям. сколько настроить перепробовал все тоже самое. Перцепционную цветопередачу ставил но эффект не тот. Ребята как вышли из положения?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3731"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Des425</span></strong> / 20.12.2010, 11:09    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Если печатаете на принтерах где установлен PCL драйвер, то черный (К=100) будет серым, какой именно Sancho уже написал. Ставьте R=0, G=0, B=0 (для PCL).
+</p><p> Если у вас стоит CMS типа Europe General Purpose то черный на экране будет выглядеть серым, чтоб этого не было, включите Preserve pure black</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3732"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">mmgs</span></strong> / 20.12.2010, 20:59    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>правильно говорит <b>Des425</b>, в настройках цвета по умолчанию поставьте галку Preserve pure black (Сохранить чистый черный) и все должно стать путем.
+</p><p> за неимением принтера пробовал печатать на XPS принтер и получал тот же эффект что у автора топика. поставил галку - черный стал нормальным черным.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3733"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Xose</span></strong> / 21.12.2010, 22:20    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Ребята спасибо за ответы. Я извеняюсь может за тупой вопрос ? Где это функция : - Если у вас стоит CMS типа Europe General Purpose то черный на экране будет выглядеть серым, чтоб этого не было, включите Preserve pure black.
+</p><p> Эти изменения в кореле делать или настройках принтера. В настройках принтера такого нет...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3734"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">mmgs</span></strong> / 22.12.2010, 00:21    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>это в настройках цвета по умолчанию
+</p><p> профили там вобще не причем, надо тока галку поставить Preserve pure black (Сохранить чистый черный)
+</p><p> после этого корел будет отображать все разновидности черного хорошим черным.
+</p><p> отдельный вопрос для чего они это сделали, может Санчо прояснит. <br /> я так понимаю чтобы типа различать на глаз просто черный и богатый черный и регистэйшн, но почему такая петрушка уходит на печать? нет возможности проверить с 15 но подозреваю что это оттого что PCL принтер принимает в RGB а корел как раз в RGB и генерирует разный оттенок черного для разных черных если эта галка не стоит. с постскрипт-принтерами наверно такого эффекта не наблюдается. или тоже есть?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3735"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Des425</span></strong> / 22.12.2010, 00:27    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><a class="link" target="_blank" href="http://cdrpro.ru/news/2010-12-14-291" rel="nofollow">http://cdrpro.ru/news/2010-12-14-291</a></p>
+</div></div></div>	</div>
+</div>
+<a id="comment-11717"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Дмитрий 1</span></strong> / 13.09.2013, 00:40    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>А где эти настройки находятся Preserve pure black (Сохранить чистый черный)?</p>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="На страницу номер 2" href="../forum/5-509-1-page=1.html">2</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="../forum/5-509-1-page=1.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="../forum/5-509-1-page=1.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

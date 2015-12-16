@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="1007.html" />
+<link rel="canonical" href="../forum/13-694-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Как заставить макросы работать, если нет VBA-редактора? | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Как заставить макросы работать, если нет VBA-редактора?</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-1007" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">rrenard</span></strong> / 24.03.2011, 08:15/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Откомпилировать, сконвертировать в сценарий или еще как-нибудь?
+</p><p> Подробно: есть Корел 13, лицензионный, для образовательных учреждений - и потому урезанный в некоторых возможностях. Есть VBA-код. И есть предположение, что у корела имеется средство, аналогичное фотошоповскому droplet...
+</p><p> Интересно решить проблему "в общем виде", не для конкретного кода. Подскажите, куда копать?</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-4643"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 24.03.2011, 09:43    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Если в Кореле не установлен VBA, макросы не будут работать. Можно попробовать написать аналогичный код только на С++ и скомпилировать в плагин, но не уверен что будет работать, хотя теоретически должно :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4644"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Anderos64</span></strong> / 25.03.2011, 13:34    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Вопрос рядом с темой. <br /> На новую машину установили свежий лицензионный софт. Семерка и Х5. Старый рабочий макрос на Х3, написанный по крупинкам перестал понимать некоторые команды. ScrollScreen к примеру. <br /> Видимо не хватает какой то библиотеки. Подскажите как обучить машину.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4645"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 25.03.2011, 14:04    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>Anderos64</b>, нужно переписать макрос. Дело не в библиотеках (при условии что ВБА стоит), а в объектной модели, которая имеет свойства незначительно меняться из версии в версию.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4646"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Anderos64</span></strong> / 25.03.2011, 14:48    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Да макрос в принципе работает. Только некоторые команды потерялись. Поправлю конечно. ScrollScreen чем заменить к примеру?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4647"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 25.03.2011, 15:03    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>А что она делал то, куда и зачем она экран прокручивала? Я просто не помню такой команды.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4648"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Anderos64</span></strong> / 25.03.2011, 15:22    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Она сдвигала рабочий стол влево.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4649"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 25.03.2011, 15:33    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>ActiveDocument.ActiveWindow.ActiveView. а тут любую подходящую функцию на выбор, например SetViewArea, всё зависит от конкретной надобности.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4650"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Anderos64</span></strong> / 25.03.2011, 15:54    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Этот показывает какую-то часть документа. А мне надо документ сдвинуть влево до упора, т.к. справа открыто окно макроса. Как, пока не могу найти. Если подскажите, буду благодарен.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4651"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 25.03.2011, 16:08    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Если честно то до конца не понятно всё же что вы там двигать хотите и до какого упора. SetViewArea позволяет установить любую координату и зум для просмотра. Возможно просто нужно поменять значения Х и У. У ActiveView не так уж и много свойств/функция что бы заблудиться. Читайте их описания и делайте.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4652"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Anderos64</span></strong> / 25.03.2011, 17:40    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Спасибо за направление мысли. Получилось через
+</p><p> ActiveDocument.ActiveWindow.ActiveView.ToFitArea</p>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="На страницу номер 2" href="../forum/13-694-1-page=1.html">2</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="../forum/13-694-1-page=1.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="../forum/13-694-1-page=1.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

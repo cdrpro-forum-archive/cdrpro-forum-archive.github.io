@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="3012.html" />
+<link rel="canonical" href="3012.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Избыток синего | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Избыток синего</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-3012" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Инга</span></strong> / 07.09.2012, 19:11/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../forum/61.html">Photo-Paint</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">16.1.0.843 (sp1)</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Подскажите, пожалуйста, на конкретном примере, как привести фотографию в нормальный вид. В архиве фотография с избытком синего цвета. Моя попытка Adjust-&gt;Color Balance убрать синий - не дает нормального результата.<br />
+Какие наиболее <strong>правильные шаги</strong> надо предпринять, чтобы фотография выглядела нормально?<br />
+Спасибо.</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="3012.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/blue.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/blue-itok=FFOyo4UL.jpg" alt="Избыток синего" title="Избыток синего" /></a>      </div>
+      </div>
+</div>
+    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-9799"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Baryga88</span></strong> / 08.09.2012, 20:09    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Итак, у нас конкретная, реальная фотография, имеющая не такой уж редкий случай отклонения от нормы. Давайте немного проанализируем эту фотографию. Попытка слету ее исправить каким-либо фильтром хорошего результата не даст, как нам бы того хотелось. Т. к. основная масса информации находится на большом расстоянии, резкости нам не хватает, и нет ничего такого, от чего мы могли бы легко оттолкнуться. Единственная зацепка – это асфальт. Мы заведомо знаем, что он темный и более или менее близок к нейтральному цвету, хотя небольшой синий оттенок возможен.<br />
+Кроме того, итак видно, что избыток синего есть везде. Но для старта лучше заглянуть в каналы (рис. 1).</p>
+<p><img src="../sites/default/files/forum/images/ris_1_16.jpg" alt="Избыток синего" title="Избыток синего" /></p>
+<p>Самым темным оказался красный канал (слева), а как и предполагалось, самый светлый – синий канал (справа). Для неба избыток синего не порок и в данной ситуации нам бы не хотелось там сильно что-то изменять, а в остальной части изображения с этим надо бороться. Т. к. фильтры по большей части воздействуют на все изображение, то глобальная коррекция не совсем то, что хотелось бы. Поэтому начнем с нашей отправной точки – асфальта. Т. к. мы не были на месте съемки, мы можем только догадываться, какие были цвета на самом деле. Заглянув в докер <strong>Info</strong> и пройдясь <em>Пипеткой</em> по асфальту, видим, что значения <strong>R:</strong> 91-123; <strong>G:</strong> 87-155; <strong>B:</strong> 135-180. Становится очевидным, что значения <strong>B:</strong> примерно на 20-30 больше, чем нужно. Откорректировать эти значения в довольно узком диапазоне можно только с помощью <strong>Tone curve</strong> (Цветовая кривая). Вот давайте туда и обратимся. Откройте фильтр: <strong>Adjust &gt; Tone Curve</strong> (Настройка &gt; Цветовая кривая). В раскрывающемся списке <strong>Active Channel</strong> (Активный канал) выбираем <strong>Blue</strong>, а в списке <strong>Style</strong> (Стиль) выбираем <strong>Straight</strong> (Прямая). На кривой ставим точки с координатами 135 и 180 (рис. 2) и добавляем выше и ниже на кривой дополнительные точки, чтобы изменилась форма только нужного участка.</p>
+<p><img src="../sites/default/files/forum/images/ris_2_16.jpg" alt="Избыток синего" title="Избыток синего" /></p>
+<p>Меняем с помощью счетчика <strong>Y:</strong> значения с 135 на 111 в первой точке и с 180 на 154 во второй точке.<br />
+Однако, результат не получился достаточно хорошим, поэтому я уже интерактивно сместил нижнюю и верхнюю дополнительные точки. Также немного добавил яркости в красном канале (рис. 3).</p>
+<p><img src="../sites/default/files/forum/images/ris_3_16.jpg" alt="Избыток синего" title="Избыток синего" /></p>
+<p>Результат показан на рис. 4 (изображение уменьшено). Файл кривой в прикрепленных файлах.</p>
+<p><img src="../sites/default/files/forum/images/ris_4_16.jpg" alt="Избыток синего" title="Избыток синего" /></p>
+<p>Но результат пока еще не впечатляет. Изображение немного темновато и расплывчато. Надо его сделать светлее и я это сделал с помощью фильтра <strong>Gamma</strong> (Гамма). Выполните команду <strong>Adjust &gt; Gamma</strong> (Настройка &gt; Гамма) и установите в окне фильтра значение гаммы равным 1,53. Получится, как на рис. 5</p>
+<p><img src="../sites/default/files/forum/images/ris_5_14.jpg" alt="Избыток синего" title="Избыток синего" /></p>
+<p>Картинка стала заметно светлее, но выглядит плоско (невыразительно) нет желаемой резкости. Добавим резкости с помощью фильтра <strong>High Pass</strong> (Удаление мелких деталей). Но для его применения нужен объект. Для этого выделим все изображение, нажав <strong>Ctrl + A</strong>, а затем <strong>Ctrl + стрелка вверх</strong>, чтобы создать из маски объект. Выполните команду <strong>Effects &gt; Sharpen &gt; High Pass</strong> (Эффекты &gt; Повышение резкости &gt; Удаление мелких деталей). Установите значение <strong>Percentage</strong> (Процент) = 100, а значение <strong>Radius</strong> (Радиус) = 10.<br />
+В докере <strong>Objects</strong> (Объекты) выберите режим наложения <strong>Overlay</strong> (Перекрытие) и объедините объект с фоном (<strong>Ctrl + стрелка вниз</strong>). Получится, как на рис. 6.</p>
+<p><img src="../sites/default/files/forum/images/ris_6_15.jpg" alt="Избыток синего" title="Избыток синего" /></p>
+<p>Из-за уменьшения исходного изображения на 60 % (для размещения на сайте), увеличение резкости не сильно заметно. От заметного синего оттенка мы избавились, но потеряли контраст в деревьях и в районе перил тоже. Надо это исправить. Т. к. с помощью <strong>Tone curve</strong> (Цветовая кривая) это будет сделать на данном этапе сложновато, то используем фильтр <strong>Hue/Saturation/Lightness</strong> (Оттенок/Насыщенность/Яркость). В фильтре с помощью переключателя <strong>Channels</strong> (Каналы), переключитесь на <strong>Green</strong> (Зеленый) и установите значения: <strong>Hue</strong> (Оттенок) = 18; <strong>Saturation</strong> (Насыщенность) = 21; <strong>Lightness</strong> (Яркость) = -25. Затем переключитесь на канал <strong>Yellow</strong> (Желтый) и установите значения: <strong>Hue</strong> (Оттенок) = 7; <strong>Saturation</strong> (Насыщенность) = 8; <strong>Lightness</strong> (Яркость) = -11. Результат на рис. 7.</p>
+<p><img src="../sites/default/files/forum/images/ris_7_16.jpg" alt="Избыток синего" title="Избыток синего" /></p>
+<p>Теперь добавим «последний штрих». Но его сделать в пространстве <strong>RGB</strong> не так легко. Поэтому на всяк случай сделаем дубликат изображения, а потом конвертируем его в <strong>CMYK</strong>.<br />
+Изображение чуть затемнилось и стало более контрастно в тенях. Теперь воспользуемся тем преимуществом пространства <strong>CMYK</strong>, что с помощью черного канала можно лучше выявить детали. Выполните команду <strong>Adjust &gt; Tone Curve</strong> (Настройка &gt; Цветовая кривая), перейдите на черный канал и измените контраст (рис. 8) (файл кривой приложен).</p>
+<p><img src="../sites/default/files/forum/images/ris_9_15.jpg" alt="Избыток синего" title="Избыток синего" /></p>
+<p>Результат на рис. 9 (его пришлось перевести обратно в RGB для размещения на сайте, отчего он немного изменился).</p>
+<p><img src="../sites/default/files/forum/images/ris_10_12.jpg" alt="Избыток синего" title="Избыток синего" /></p>
+<p>Можете его оставить в <strong>CMYK</strong>, а можете перевести обратно в <strong>RGB</strong>. Конечно, вы можете на свой вкус устанавливать настройки в фильтрах, что-то сделать по-другому, но на скорую руку можно сделать и так. Я бы еще поменял тут и небо…</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="3012.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_1_16.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_1_16-itok=0We991Bj.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_2_16.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_2_16-itok=-G1iNJWM.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_3_16.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_3_16-itok=DoFuOpp7.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_4_16.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_4_16-itok=XUViGsQk.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_5_14.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_5_14-itok=NSdoU4jr.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_6_15.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_6_15-itok=VvlI_V5b.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_7_16.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_7_16-itok=He401s4P.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_9_15.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_9_15-itok=HM5P0A_U.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_10_12.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_10_12-itok=0nqDtomA.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+<div class="dd-attached field field-name-field-forum-files field-type-file field-label-above clearfix">
+      <div class="field-label"><a href="3012.html#" class="cdrSlideAttach">Файлы</a></div>
+    <div class="field-items">
+          <div class="field-item even"><span class="file"><img class="file-icon" alt="" title="application/rar" src="http://cdrpro.local/modules/file/icons/application-octet-stream.png" /> <a href="../sites/default/files/forum/files/rezultat.rar" type="application/rar; length=1636005">rezultat.rar</a></span></div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-9800"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Инга</span></strong> / 08.09.2012, 20:52    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>Кроме того, итак видно, что избыток синего есть везде. Но для старта лучше заглянуть в каналы (рис. 1).</p></blockquote>
+<p>Я иду согласно того, что Вами написано написано. Как Вам удалось увидеть три черно белые изображения?<br />
+Windows-&gt;Dockers-&gt;Chanels не показывает того, что у вас. Можно чуть подробнее, что Вы делаете (нажатие клавиш и т.п.).</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9801"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Baryga88</span></strong> / 08.09.2012, 20:58    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>В докере <strong>Каналы</strong>, Вы и не увидите этого. Надо разбить изображение на каналы: <strong>Image &gt; Split Channels to &gt; RGB</strong> (Изображение &gt; Разбить каналы на &gt; RGB).</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9804"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Инга</span></strong> / 09.09.2012, 23:51    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Спасибо. Все получилось. Для одной фотографии то, что нужно.<br />
+Правда от реальной задачи я отказалась. Мне дали 30 фотографий сделанных этим фотоаппаратом. Все с искажением в сторону синего цвета. Редактировать их таким подходом, заняло бы у меня слишком много времени. Числовые значения, как видно, надо тщательно и кропотливо подбирать. На 30 фотографий ушла бы неделя экскрементов, поэтому отказалась. Думала можно как-то проще. :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9805"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Baryga88</span></strong> / 10.09.2012, 00:26    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><div class="off">Отказываться не стоило :) Это хорошая возможность "набить руку". К тому же, на каждой фотографии подход может быть разным и частенько можно обойтись применением парочки фильтров, т.е. исправить буквально автоматически, то что нам обычно и хочется :)</div>
+</div></div></div>	</div>
+</div>
+<a id="comment-9806"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 10.09.2012, 00:50    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Имхо проще через фильтр Color Balance, а уж про автоматизацию сего дела я молчу :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9807"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Baryga88</span></strong> / 10.09.2012, 01:41    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Можно было бы и с Color Balance стартовать, но без дополнительных телодвижений не обошлось бы все равно. Да и гибкость у Color Balance поскромней, чем у Tone Curve :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9808"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Инга</span></strong> / 10.09.2012, 14:07    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Не плохой результат дает игра в окне Adjust-&gt;Image Adjustment Lab. Однако все исключительно методом тыка, глубоко понимания, какие ползунки важнее в такой ситуации, нет. :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9809"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">mazdie</span></strong> / 11.09.2012, 02:54    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Для обработки фото начинающим советую книгу Дэна Маргулиса по работе в LAB цветах. Свой вариант я сделал за 3 минуты, причем 2 - выделение неба. Делал, правда, в фотошопе, но сути не меняет, т. к. используются кривые и шарп. Над фото нужно, конечно, еще работать, но результат уже съедобный, имхо)</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="3012.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/untitled-1_6.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/untitled-1_6-itok=G4dAatcQ.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-9825"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Инга</span></strong> / 13.09.2012, 21:01    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>В общем получив эти фотографии снова. Нашла для себя такой подход:<br />
+1. Adjust-&gt;Color Balance<br />
+2. Доводка в Adjust-&gt;Image Adjustment Lab<br />
+Набив руку на первых нескольких фотографиях, заметила, что на все последующее уходило не более 30 секунд.</p>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="На страницу номер 2" href="3012-page=1.html">2</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="3012-page=1.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="3012-page=1.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

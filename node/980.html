@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="980.html" />
+<link rel="canonical" href="../forum/5-667-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>«Хвосты» в размерах после bitmap | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">«Хвосты» в размерах после bitmap</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-980" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">8601610</span></strong> / 28.02.2011, 17:43/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../forum/16.html">CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>вечная марока у меня возникает: после растеризации объект становиться с "хвостами". Например, прямоугольник был <b>4,0*5,0 см</b>, а после преобразования в растровый объект стал<b> 4,028 см*5,028 см</b>!!!! Приходиться вручную менять размер до 4,0*5,0 см ((( Скажите, это недоработка программы? Это глюк? (в предыдущих версиях такое же было)</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-5130"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Solowejka</span></strong> / 01.03.2011, 02:27    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>8601610</b>, в Вашем случае непонятно только, почему марока через "а". <br /> Удалите обводку или задайте её без цвета.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5131"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 01.03.2011, 02:57    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Есть такая особенность в Кореле до 15 версии — при растрировании со включенным размытием, к двум из четырёх сторон, добавляется по линии в один пиксел. <br /> Вообще говоря, до Х5, растрирование немного удручало.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5132"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Solowejka</span></strong> / 01.03.2011, 04:28    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Ясно. В Х5 версии при растрировании правильной фигуры идёт привязка к пикселам. <br /> При определённом разрешении пиксел имеет определённый размер. <br /> Пиксел нельзя занять частично. Либо занять, либо не занять. <br /> Размер прямоугольника подгоняется под целое число пикселей.
+</p><p> Например при разрешении 300 dpi размер пикселя: 25,4мм/300=0,08466 мм; <br /> Число пикселей для размера 50 мм: 50мм/0,08466мм=590,59; <br /> Округляя до ближайшего целого значения — 591, размер прямоугольника будет: <br /> 591 х 0,08466 мм=50,034мм (другое значение "хвостика" получилось из-за допущения, что дюйм равен 25,4 мм. <br /> Так, что всё точно.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5133"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 01.03.2011, 07:41    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Хотя может и правда дело в банальном Outline :D</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5134"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">chally</span></strong> / 02.03.2011, 17:25    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Это ж надо так замарачиваться... за 48 лет работы в Кореле ни разу такой потребности не было... :P  :P  :P</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5135"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">8601610</span></strong> / 05.03.2011, 19:53    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Sancho, неа, при Outline=0 хвосты остаются все равно!!!! <br /> просто надо снять галочку при расторизации со сглаживании и.... ву-а-ля ... размер остается чистым.
+</p><p> з.ы. раз затронули этот параметр, какие важные функции кроме сглаживания несет?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5136"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 05.03.2011, 20:04    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>8601610</b>, какой параметр, сглаживание что ли? А какие ещё может нести функции кроме сглаживания? :D</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5137"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">8601610</span></strong> / 05.03.2011, 20:21    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Sancho, да я про Anti-aliasing.
+</p><p> Вопрос в том, при преобразовании растра со снятой галкой с этого параметра впоследствии боком не выйдет какой-то ляп на определенном этапе? Скрытые последствия.. так назовём)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5138"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 05.03.2011, 20:31/20:37    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Самые что ни на есть прямые и видимые последствия отключения галочки (верхнее со сглаживанием, нижнее — без):
+</p><p> <img src="../sites/default/files/forum/images/8147087_9583525.jpg" alt="«Хвосты» в размерах после bitmap" title="«Хвосты» в размерах после bitmap" />
+</p><p> П.С. Я одного не могу понять, что вы так все носитесь с этим лишним пикселом в размере? Что от него конец света произойдёт что ли или что? На ровном месте себе и другим проблемы только создаёте.</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="980.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/8147087_9583525.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/8147087_9583525-itok=dC-Rpes3.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-5139"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">8601610</span></strong> / 06.03.2011, 12:07    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>ну знаешь, Sancho, когда делаешь монтажный лист и хвосты надо постоянно убирать, чтобы каждый макетик был ровненький, и чтобы резчик не ругался после громко на тебя то, уже на 5 раз задалбливает проверять. <br /> При отдаче файлов в закривленном макете должен быть точный, ровный размер. А когда подготавливаешь к печати, убираешь все эффекты, то эти "сопельки" и являются вечными раздражителями...</p>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="На страницу номер 2" href="../forum/5-667-1-page=1.html">2</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="../forum/5-667-1-page=1.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="../forum/5-667-1-page=1.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

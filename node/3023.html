@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="3023.html" />
+<link rel="canonical" href="3023.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Обрезка изображения при импорте PS файла | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Обрезка изображения при импорте PS файла</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-3023" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">MBK</span></strong> / 20.09.2012, 01:40/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../forum/16.html">CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>В ряде случаев, при импорте Postscript interpreted файла в Corel наблюдается неприятный глюк - импортируемое изображение обрезается по размеру примерно 216х276 (letter) начиная с левого нижнего угла. Такое наблюдается, когда импортируемый PS файл был напечатан на нестандартный Custom формат бумаги. Это происходит от того, что в некоторых PPD кастомный формат реализован не через setpagedevice, а через setpageparams, а данная функция, судя по всему, кореловским интерпретатором отрабатывается некорректно. Данный баг существует, как минимум, в ряде билдов версий X3-X5 без подключенного GhostScript.<br />
+Чтобы импортируемое изображение не обрезалось, необходимо задать для него заведомо максимальные размеры полей обрезки. Для этого необходимо найти и отредактировать файл startup.ps Обычно, этот файл находится в каталоге Data или Programs/Data установленного пакета. Открываем этот файл в текстовом редакторе и ищем строку </p>
+<pre class="brush: vb">
+PAPERSIZE cvx exec
+</pre><p>Эту строку необходимо заменить на</p>
+<pre class="brush: vb">
+&lt;&lt;	
+	/PageSize [100000 100000]
+&gt;&gt; setpagedevice
+</pre><p>После этого сохраняем поправленный файл, перезагружать корел при этом не обязательно.</p>
+</div></div></div>    	</div>
+
+	
+	
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

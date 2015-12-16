@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="3029.html" />
+<link rel="canonical" href="3029.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Как автоматически изменить текстовый блок на куче дубликатов одной страницы? | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Как автоматически изменить текстовый блок на куче дубликатов одной страницы?</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-3029" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">pouzeot</span></strong> / 24.09.2012, 16:18/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Нужна консультация матерых корелдрошников.</p>
+<p>В общем, есть, допустим, какие-нибудь грамоты. Их нужно сделать штук 30.<br />
+Все грамоты одинаковые, меняется только, например, имя награждаемого, т. е. текстовый блок.</p>
+<p>Вручную эта работа делается так:<br />
+ 1. Делаем на первой странице грамоту;<br />
+ 2. Дублируем эту страницу на новую со всем содержимым;<br />
+ 3. На этой новой странице изменяем текст с именем;<br />
+ 4. Повторяем процесс 28 раз.</p>
+<p>Разумеется, хочется найти способ как-то автоматизировать эту работу — все-таки XXI век же на дворе, должны же компьютерные технологии помогать человечеству? :-)</p>
+<p>Есть ли какой-нибудь скрипт или макрос (я Иллюстраторщик, не уверен как это в Корелдро называется), который это делает?</p>
+<p>Смотрите, как я это себе представляю:<br />
+ 1. Делаем на первой странице грамоту и когда создаем текстовый блок с именем, как-нибудь присваиваем ему какой-то ID;<br />
+ 2. Запускаем скрипт и в диалоговом окне вбиваем что-то типа: «В текстовом блоке ID на странице 2 текст „Владимир“, на странице 3 текст „Николай“ и т. д.»;<br />
+ 3. Нажимаем ОК и скрипт создает новые страницы, копируя содержимое первой, но с измененным текстом в текстовом блоке, который мы ему указали.</p>
+<p>Есть соображения? Буду очень признателен.</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-9861"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 24.09.2012, 22:58/23:11    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Да чего уж тут ... Print Merge вам в руки<br />
+штатный инструмент - некий аналог иллевского Data Merge</p>
+<p>готовите табличку типа</p>
+<p>поле1 поле2  поле3<br />
+Коля    1А       8 лет<br />
+вася    2Б       9 лет<br />
+Дима и т.д.<br />
+сохраняете в csv</p>
+<p>Готовите шаблон в Кореле<br />
+запускаете File - Print Merge<br />
+говорите импорт из файла - указываете созданный csv - Готово<br />
+из плавающего окне вставляете заголовки<br />
+поле1 поле2  поле3 в нужные места шаблона</p>
+<p>не закрывая плавающего окна<br />
+задаете заголовкам необходимые шрифтовые аттрибуты и цвет с выравниванием<br />
+Когда будет задано - жмите Merge to New document<br />
+результатом будет новый документ основанный на шаблоне с полями и содержащий столько страниц сколько у вас было строк в таблице</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="3029.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/untitled-1_7.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/untitled-1_7-itok=sdKZC061.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-9862"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">pouzeot</span></strong> / 24.09.2012, 23:24    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>dastin</strong>, Ух ты! Спасибо!</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9926"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">DiHand</span></strong> / 07.10.2012, 05:57    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>полезно, спасибо )</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

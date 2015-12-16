@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="3006.html" />
+<link rel="canonical" href="3006.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-3006" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Baryga88</span></strong> / 02.09.2012, 15:55/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../pp-lessons-forum.html">УРОКИ Corel PHOTO-PAINT</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">15.1.0.486/488/489</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>В этом примере мы будем использовать многие из рассмотренных до этого средств Photo-Paint. В нем вы увидите, как можно их совместно использовать для получения нужного результата, а также преимущества совместного использования Photo-Paint и Corel Draw.<br />
+Итак. Постановка задачи… Многие из вас видели в интернете, созданные составные картинки, имитирующие тот или иной эффект. Мы же с вами создадим один из вариантов такого изображения – «выход за пределы монитора». Для этого нам понадобится подходящее исходное изображение и изображение монитора. Кстати, в поисках изображения монитора, я убедился, что найти его оказалось не так уж и просто. После поиска и получения исходных изображений, выяснилось, что они естественно, разных размеров и разрешения, что усложняет несколько задачу, но зато делает более реальным и интересным наш пример.<br />
+На рисунках 1 и 2 показаны исходные изображения (нужные исходные файлы находятся в прикрепленных файлах).</p>
+<p><img src="../sites/default/files/forum/images/ris_1_14.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+<p><img src="../sites/default/files/forum/images/ris_2_14.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+<p>Теперь, когда вы увидели исходные изображения, думаю, вы догадались, что мы будем создавать иллюзию автомобиля «выпрыгивающего из монитора».</p>
+<p><strong>Шаг 1. Анализ изображений.</strong></p>
+<p>После загрузки обеих изображений, (впрочем всегда при создании составного изображения из нескольких) первым делом обращаемся к команде <strong>Resample</strong> (Изменить разрешение) из меню <strong>Image</strong> (Изображение). Просмотр данных об обоих изображениях показал следующие результаты. Изображение с автомобилем имело размеры 130х97 <strong>мм</strong> и разрешение 100 <strong>dpi</strong>. А изображение монитора имело размеры 353х435 <strong>мм</strong> и разрешение <strong>72</strong> dpi. Очевидно, что изображение монитора куда больше, чем изображение с машиной.</p>
+<p>Кроме этого, скорее всего (а чаще всего так и бывает), нам понадобится копия изображений. Для выполнения следующего шага, нам нужно установить разрешения для обеих изображений одинаковым. Для этого в изображении монитора выполним команду <strong>Image &gt; Resample</strong> (Изображение &gt; Изменить разрешение). В диалоговом окне <strong>Resample</strong> (Изменить разрешение), в области <strong>Resolution</strong> (Разрешение), в счетчиках <strong>Horizontal</strong> (По горизонтали) и <strong>Vertical</strong> (По вертикали), установим разрешение 100 <strong>dpi</strong>. На этом этапе, вы можете сохранить изображение монитора под другим именем, чтобы исходное изображение оставалось без изменения.</p>
+<p><strong>Шаг 2. Подготовка к созданию маски автомобиля.</strong></p>
+<p>Т. к. мы решили получить изображение автомобиля, «выезжающего из монитора», то как вы догадались, нам потребуется выделить автомобиль для дальнейшей работы. При ближайшем рассмотрении, можно прийти к выводу, что выделить автомобиль с помощью инструментов выделения по цвету или другим способом практически невозможно. Поэтому мы воспользуемся для этих целей инструментом <strong>Path</strong> (Путь). Но мы немного разнообразим наш пример, тем более, лично мне, выделять таким образом объекты удобнее силами Corel Draw, т. к. в силу своей природы, Corel Draw гораздо лучше, быстрей и точней управляется с кривыми и линиями.</p>
+<p>Откройте Corel Draw и создайте пустой документ с разрешением 100 <strong>dpi</strong> и размером А4, например. Импортируйте изображение в Corel Draw или скопируйте его из Photo-Paint. В Corel Draw создайте еще один слой и обведите автомобиль используя инструмент <strong>Freehand</strong> или <strong>Bezier</strong>, по своему усмотрению. Старайтесь использовать для этого тонкий абрис. У вас в конечном итоге должно получиться так, как на рис. 3.</p>
+<p><img src="../sites/default/files/forum/images/ris_3_14.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+<p>Чтобы лучше было видно на рисунке, я перед созданием скриншота увеличил толщину линии до 2 <em>мм</em> и выделил ее синим цветом, однако на самом деле, линия тонкая и черная. Обратите внимание, что в местах изгиба, количество узлов достаточно велико, это позволяет точно повторить контур автомобиля.</p>
+<p>После обвода линией автомобиля, растровое изображение можно удалить, останется только контур (рис. 4).</p>
+<p><img src="../sites/default/files/forum/images/ris_4_14.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+<p>Сохраните это изображение в родном формате Corel Draw – <strong>cdr</strong>. На этом «помощь» Corel Draw завершена. Вы можете попробовать обвести автомобиль и в Photo-Paint инструментом <strong>Path</strong> (Путь). Чтобы вам было понятно, почему я выбрал именно Corel Draw для этой цели, сделайте этот шаг в обеих программах и сравните, где было легче это сделать (хотя это еще зависит от того, насколько вы хороши ими владеете). Лично я, обвел автомобиль в Corel Draw буквально за пару минут.</p>
+<p>Итак, откройте изображение автомобиля в Photo-Paint и откройте докер <strong>Path</strong> (Путь). Если он у вас не открыт, вы можете его вызвать нажав <strong>Alt + F10</strong>. В меню докера выберите команду <strong>Import Path</strong> (Импортировать путь). В открывшемся диалоговом окне, в списке форматов файлов, выберите <strong>All File Formats</strong> (Все форматы файлов) или <strong>.CDR</strong> и выберите сохраненный нами в Corel Draw файл контура автомобиля. В докере <strong>Path</strong> (Путь) через пару секунд появится миниатюра пути, а в окне изображения появится импортированный контур (путь) (рис. 5).</p>
+<p><img src="../sites/default/files/forum/images/ris_5_13.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+<p>Как видно из рисунка, в докере импортированному контуру было автоматически присвоено название <strong>Path 2</strong> (Путь 2). Но сам новый путь не совпал с автомобилем, он немного смещен относительно него. Пусть вас это не пугает, мы сейчас исправим эту ситуацию.</p>
+<p><strong>Шаг 3. Создание маски.</strong></p>
+<p>Перед созданием маски и дальнейшими манипуляциями, сохраните изображение под другим именем или выполните команду <strong>Image &gt; Duplicate</strong> (Изображение &gt; Дублировать), чтобы у нас всегда был под рукой оригинал. Когда у нас есть готовый путь, нам не составит теперь труда создать маску. Выполните команду <strong>Mask &gt; Create &gt; Mask from Path</strong> (Маска &gt; Создать &gt; Маска из пути) или щелкните на <em>Панели свойств</em> инструмента <strong>Path</strong> (Путь) кнопку <strong>Mask from Path</strong> (Маска из пути). Появится рамка выделения (если у вас отключен режим <strong>Mask Overlay</strong> (Наложение маски)). Сам путь можно удалить, он нам больше не понадобится. Это можно сделать, например, в докере, нажав внизу кнопку, в виде мусорной корзины.</p>
+<p>Нажмите клавишу <strong>М</strong>, чтобы активизировать инструмент <strong>Mask Transform</strong> (Преобразование маски) и перетащите рамку выделения, чтобы совместить ее с автомобилем (рис. 6).</p>
+<p><img src="../sites/default/files/forum/images/ris_6_14.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+<p>Теперь самое время сохранить маску. С практической точки зрения, имеет смысл сохранить маску на диск в том случае, если вы не уверены, что у вас все сразу получится и тогда придется все начинать с нуля, а также, если вы собираетесь прервать работу и продолжить ее в другое время. Если вы уверены в своих силах и имеется в запасе время, тогда можно смело сохранять маску в канал. В нашем примере, мы сохраним маску именно как канал. Для этого откройте докер <strong>Channels</strong> (Каналы) и нажмите внизу кнопку <strong>New Alpha Channel</strong> (Создать альфа-канал). В открывшемся диалоговом окне <strong>New Alpha Channel</strong> (Создать альфа-канал), щелкните <strong>ОК</strong>, а затем в докере нажмите кнопку <strong>Save to Current Channel</strong> (Сохранить в текущий канал).</p>
+<p>Маска создана и сохранена. Можно также удалить маску в докере <strong>Channels</strong> (Каналы), нажав кнопку <strong>Delete Current Channel</strong> (Удалить текущий канал) в виде корзины, т. к. она нам сейчас не нужна, а загрузить ее из альфа-канала, мы сможем в любой момент. Можете свернуть окно изображения, или сохранить его под новым именем, как промежуточный результат. Сохранять следует в формате <strong>.cpt</strong>, т. к. при сохранении в формате <strong>.jpg</strong> маска не сохраняется.</p>
+<p><strong>Шаг 4. Подготовка изображения монитора.</strong></p>
+<p>Т. к. мы на первом шаге изменили разрешение изображения монитора, сейчас нам только остается отделить его от белого фона. Для этого, откройте изображение (если оно было закрыто) и нажмите клавишу <strong>W</strong>, чтобы вызвать инструмент <strong>Magic Wand Mask</strong> (Маска волшебной палочкой). На <em>Панели свойств</em> установите значение параметра <strong>Tolerance</strong> (Допуск), равным 3. Такое малое значение <em>Допуска</em> выбрано потому, что фон белый, а изображение корпуса монитора также очень светлое, поэтому при больших значениях параметра <strong>Tolerance</strong> (Допуск), выделился бы не только фон, но и часть монитора.</p>
+<p>Щелкните инструментом на фоне, а затем на кнопке <strong>Inver mask</strong> (Инвертировать маску), на <em>Стандартной</em> панели инструментов. Маска готова (рис. 7).</p>
+<p><img src="../sites/default/files/forum/images/ris_7_14.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+<p><strong>Шаг 5. Вставка изображения монитора в изображение с машиной.</strong></p>
+<p>После создания маски, все что вам остается, так это нажать кнопку <strong>Copy</strong> (Копировать) на Стандартной панели инструментов или скопировать любым понравившимся вам способом. Теперь разверните окно изображения с машиной и вставьте из Буфера обмена монитор. В этот момент вас поджидает неожиданный «сюрприз» (рис. 8).</p>
+<p><img src="../sites/default/files/forum/images/ris_8_15.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+<p>Как видно из рисунка, монитор оказался гораздо большего размера, чем все изображение с машиной. Может случиться так, что вы будите видеть после вставки только экран монитора, а не большую его часть. Также вас может поставить в затруднение ситуация, если у вас масштаб отображения будет таким, что вы не увидите ограничивающую рамку вставленного монитора. Вам нужно просто уменьшить масштаб и вы увидите рамку и управляющие маркеры, как на рисунке.</p>
+<p>Однако, вас не должно смущать такое положение дел. Если вы посмотрите в докер <strong>Objects</strong> (Объекты), то увидите, что выделенный и скопированный нами монитор, вставился как новый объект.</p>
+<p>Теперь вам остается только потянуть мышью за угловой маркер, чтобы сделать размеры монитора более подходящими для дальнейшей работы (рис. 9). Переместите его ближе к правому краю изображения. Пусть вас на этом этапе не сильно беспокоят точные размеры, мы их подгоним по ходу работы.</p>
+<p><img src="../sites/default/files/forum/images/ris_9_13.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+<p><strong>Шаг 6. Создание прозрачного экрана</strong></p>
+<p>Теперь нам нужно создать иллюзию, что часть изображения с машиной, находится на экране монитора. Для этого нам нужно сделать его прозрачным. Для этих целей в Photo-Paint есть инструмент – <strong>Object Transparency Brush</strong> (Кисть прозрачности объекта).</p>
+<p>Этот инструмент находится в группе инструментов <strong>Interactive/Transparency Tools</strong> (Инструменты интерактивной прозрачности) на панели <strong>Toolbox</strong> (Набор инструментов) (рис. 10). На <em>панели свойств</em> установите значение параметра <strong>Transparency</strong> (Прозрачность) равным 67, а в счетчике <strong>Feather</strong> (Размытие) установите значение 0.</p>
+<p><img src="../sites/default/files/forum/images/ris_10_10.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+<p>Теперь аккуратно «закрасьте» экран монитора, меняя форму и размеры кисти на <em>Панели свойств</em>. В итоге экран монитора должен стать прозрачным, как на рис. 11.</p>
+<p><img src="../sites/default/files/forum/images/ris_11_0_0.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+<p><strong>Шаг 7. Подгонка монитора под изображение с машиной.</strong></p>
+<p>Теперь нам нужно расположить монитор таким образом, чтобы он сочетался с машиной. В Photo-Paint это сделать не сложно с помощью инструмента <strong>Object Pick</strong> (Указатель объектов). Меняя на <em>Панели свойств</em> режимы работы с объектами, выберите оптимальное расположение монитора. Для этого используйте режимы <strong>Perspective</strong> (Перспектива), <strong>Skew</strong> (Наклон) и <strong>Position and size</strong> (Положение и размеры) на <em>Панели свойств</em>. У вас должно получиться примерно, как на рис. 12.</p>
+<p><img src="../sites/default/files/forum/images/ris_12_10.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+<p>Можно конечно еще поэкспериментировать с расположением, наклоном и перспективой монитора. Здесь все ограничивается лишь вашими вкусами и предпочтениями. Важно, что вы уловили смысл и назначение предпринимаемых действий.</p>
+<p>Однако при ближайшем рассмотрении, мы видим, что нас ожидал неприятный сюрприз. Дело в том, что нам нужно разместить монитор на одном уровне с машиной, а у нас ножка монитора находится ниже, что портит все впечатление и делает изображение просто нереальным. Исправить эту ситуацию поднятием монитора выше в изображении с одновременным увеличением его размеров, приведет не к лучшим результатам. Ну что ж. Попробуем справиться и с этой проблемой. Сначала нам потребуется визуальный ориентир для выполнения это работы. В Photo-Paint, как вы помните, это средство называется направляющие. Выполните команду <strong>View &gt; Rulers</strong> (Вид &gt; Линейки). Разместите горизонтальную направляющую на уровне касания земли переднего колеса машины. Нам нужно, чтобы ножка монитора была на том же уровне. Для этого нам нужно сделать «обрезание» ножки.</p>
+<p>Т. к. монитор у нас является объектом, то превратим его в маску, нажав комбинацию клавиш <strong>Ctrl + M</strong>. Так как испортить остальную часть изображения нам ничего не грозит, нажмите клавишу <strong>В</strong>, чтобы активизировать инструмент <strong>Brush Mask</strong> (Маска кисти). На <em>Панели свойств</em> включите режим <strong>Subtractive mode</strong> (Режим вычитания) и закрасьте монитор, кроме ножки. Теперь у нас осталась выделенной только она. Выполним обратное преобразование – маски в объект. Для этого нажмите комбинацию клавиш <strong>Ctrl + Shift + стрелка вверх</strong>, чтобы создать объект вырезанием выделения. Вы можете увидеть, что в докере <strong>Objects</strong> (Объекты) появился еще один объект. Перетащите в окне изображения ножку монитора вверх, как можно выше, чтобы сделать ее максимально короткой. Однако этого недостаточно, монитор по прежнему будет ниже машины. Выделите оба объекта и перетащите их вверх, пока подставка не окажется практически на одном уровне с передним колесом. Ножка монитора сейчас находится на переднем плане, заходя на экран. При выделенной ножке, выберите инструмент <em><strong>Ластик</strong></em> и сотрите лишнюю часть. Т. к. при выделенном объекте (который находится поверх остальных), остальные инструменты воздействуют только на него, то <em><strong>Ластик</strong></em> никак не повредит остальную часть изображения. У вас должно получиться, как на рис. 13.</p>
+<p><img src="../sites/default/files/forum/images/ris_13_8.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+<p><strong>Шаг 8. Создание из машины объекта.</strong></p>
+<p>Пришла пора вспомнить о созданной ранее маске и сохраненной в виде альфа-канала. Выполните команду <strong>Mask &gt; Load &gt; Alpha 1</strong> (Маска &gt; Загрузить &gt; Альфа 1). Инвертируйте маску и нажмите комбинацию клавиш <strong>Ctrl + Shift + стрелка вверх</strong>. Теперь у вас в докере <strong>Objects</strong> (Объекты) должно быть четыре объекта: фон, ножка монитора, верхняя часть монитора и машина.<br />
+Но она по прежнему перекрыта монитором (рис. 14).</p>
+<p><img src="../sites/default/files/forum/images/ris_14_7.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+<p>Нам необходимо ее установить перед ним. И в этом нам поможет докер <strong>Objects</strong> (Объекты), в котором сделать это проще всего. В докере <strong>Objects</strong> (Объекты) просто перетащите «объект-машину» в самый верх списка объектов. Теперь монитор окажется позади машины. Это то, что нам и было нужно (рис. 15).</p>
+<p><img src="../sites/default/files/forum/images/ris_15_6.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+<p>Однако нужно еще немного подкорректировать взаимное расположение машины и монитора, чтобы было похоже, что машина выезжает из экрана монитора. В докере <strong>Objects</strong> (Объекты) выделите монитор и ножку и передвиньте их немного влево (рис 16). Здесь вы вольны в своем выборе, как лучше разместить между собой объекты. Это дело вкуса, как вам покажется лучше, так и можете сделать.</p>
+<p><img src="../sites/default/files/forum/images/ris_16_5.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+<p><strong>Шаг 9. Придание изображению окончательного вида</strong></p>
+<p>Можно было бы закончить этот пример на шаге 8. Наша цель была рассмотреть в действии, так сказать, взаимодействие и совместное применение средств Photo-Paint: масок, путей, каналов и объектов. Другими словами, я хотел еще раз показать, что в реальной работе обычно приходится использовать весь арсенал средств для достижения хорошего результата и последовательность шагов при выполнении такого рода задач. Кстати, при замене неба в фотографии, приходится делать аналогичные действия (за некоторым исключением).</p>
+<p>Для придания окончательного вида нашему изображению, обрежьте его по границе монитора с помощью инструмента <strong>Crop</strong> (Обрезка), а затем <em><strong>Ластиком</strong></em> вытрите «излишки» неба.<br />
+Окончательный вариант изображения представлен на рис. 17.</p>
+<p><img src="../sites/default/files/forum/images/ris_17_5.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+<p>Для дальнейшего улучшения фотографии, можно было бы заменить небо другим фоном, удалить дополнительно к этому людей и т. д. и т. п., как на рис. 18. Здесь все ограничивается только вашей фантазией. Мы же наш пример закончим именно этим шагом. В конце работы, объедините все объекты с фоном, нажав комбинацию клавиш <strong>Ctrl + Shift + стрелка вниз</strong>.</p>
+<p><img src="../sites/default/files/forum/images/ris_18_4.jpg" alt="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" title="Создание эффекта &amp;quot;выхода за пределы изображения&amp;quot; в Photo-Paint" /></p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="3006.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_1_14.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_1_14-itok=FR968moi.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_2_14.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_2_14-itok=RWjwdJUF.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_3_14.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_3_14-itok=iyuDd8eL.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_4_14.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_4_14-itok=2zwHA6xj.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_5_13.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_5_13-itok=zh3aDds0.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_6_14.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_6_14-itok=vXOZZRgI.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_7_14.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_7_14-itok=GeNcNg89.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_8_15.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_8_15-itok=9mACyE0H.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_9_13.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_9_13-itok=3Hyj1dTk.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_10_10.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_10_10-itok=xLk-4q8K.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_11_0_0.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_11_0_0-itok=ug1zKJEO.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_12_10.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_12_10-itok=cZwRql1M.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_13_8.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_13_8-itok=ekTt5IDR.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_14_7.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_14_7-itok=j8zDEwJb.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_15_6.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_15_6-itok=vDQ-z2dO.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_16_5.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_16_5-itok=C2VTdQR5.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_17_5.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_17_5-itok=xtGTTG54.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_18_4.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_18_4-itok=YQO_blDL.jpg" alt="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" title="Создание эффекта &quot;выхода за пределы изображения&quot; в Photo-Paint" /></a>      </div>
+      </div>
+</div>
+<div class="dd-attached field field-name-field-forum-files field-type-file field-label-above clearfix">
+      <div class="field-label"><a href="3006.html#" class="cdrSlideAttach">Файлы</a></div>
+    <div class="field-items">
+          <div class="field-item even"><span class="file"><img class="file-icon" alt="" title="application/rar" src="http://cdrpro.local/modules/file/icons/application-octet-stream.png" /> <a href="../sites/default/files/forum/files/lesson_29.rar" type="application/rar; length=1707273">lesson_29.rar</a></span></div>
+      </div>
+</div>
+    	</div>
+
+	
+	
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/957.html" />
+<link rel="canonical" href="13-644-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Подстановка данных | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Подстановка данных</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-957" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">shark</span></strong> / 09.02.2011, 13:22/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Работа дизайнером это не всегда вдохновенное творчество. Часто приходится заниматься рутинной работой, совершая одни и те же действия несколько раз. Макросы хорошо облегчают жизнь в этом понимании, но как правило, выполняют какую-то одну функцию. Например, заказчик утвердил вариант визитки и прислал список работников с должностями. Можно, конечно, "копи-пастить" вырезая из текста письма необходимые данные или набирать в каждой копии визитки текст заново. Или, как вариант, попробовать воспользоваться моим макросом Numeranger v2.0 <br /> Собственно говоря, принцип работы основных частей макроса подробно описан в другой теме (<a href="http://cdrpro.ru/forum/13-473-0-17">http://cdrpro.ru/forum/13-473-0-17</a>), и можно было бы продолжить описание дополнительных функций там же. Но поскольку работа с переменными данными прямо не относится к "нумерации и размещению объектов", то в этой отдельной теме я и опишу как работает обработка переменных данных. <br /> Итак, у нас есть список сотрудников, должности и телефоны. <br /> Представлено это, скажем в виде
+</p><p> Фамилия И. О., должность, телефон
+</p><p> (любое сходство с настоящими именами, названиями и телефонами считать случайным)
+</p><p> 1. Открываем макет визитки, создаем текстовый объект и заполняем его данными, скопировав их из текста письма или просто последовательно напечатав. <br /> 2. В менеджере объектов присваиваем этому текстовому объекту имя, например, Народ. <br /> 3. В макете визитки создаем три текстовых поля, куда будут подставляться значения. <br /> В первом поле пишем %Народ(1)%, во втором %Народ(4)%, и в третьем %Народ(5)%. Это означает, что для первого поля будут браться значения из текстового объекта с именем народ, который мы создали в п.1. Цифра в скобках означает порядковый номер используемого слова. Для второго поля логичнее было бы использовать "двойку", просто макрос при выборе слова руководствуется символами-разделителями в виде пробела или знаков препинания, поэтому на цифру "2" макрос выберет букву имени, на "3" - букву отчества, на "4" - должность и на "5" соответственно телефон. Символ процента вначале и в конце указывает на использование слова-индентификатора, которое будет заменяться на подставляемое значение из очередной строки. Для каждого поля можно установить нужное выравнивание, влево, по центру или вправо.
+</p><p> Т.е. общий принцип: создаем текстовый объект, один или несколько, со строчными данными и даем ему имя, на которое будем ссылаться. Каждая строка - один набор данных для очередной копии визитки. В макете создаем текст, в котором указываем имя объекта, откуда берем строку данных, и индекс, указывающий какое слово из строки данных использовать и подставлять. При отсутствии индекса подставится вся строка целиком, при неправильном индексе получим предупреждение.
+</p><p> Предположим, что заказчик вспомнил полные имена и отчества своих сотрудников и прислал их новым письмом. Создаем новый текстовый объект, заполняем его именами-отчествами, и даем название, скажем, Имя. В макете визитки делаем текстовую ссылку на %Имя(1)%, как на имя сотрудника, и %Имя(2)% на отчество. <br /> Т.е. наша визитка в качестве источника данных использует два текстовых объекта, содержащих необходимую нам построчную информацию.
+</p><p> Вот и все. Выделяем сгруппированный макет, запускаем макрос и радуемся. :)
+</p><p> На рисунке представлен результат работы макроса. <br /> <a href="../sites/default/files/forum/images/6297790_5483669.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/large/public/forum/images/6297790_5483669-itok=jYyD2vYR.jpg" alt="Подстановка данных" title="Подстановка данных" /></a>
+</p><p> Подобным способом можно, например, заполнять таблицы.
+</p><p> Конечно, подставляемые значения могут быть различными по длине слов и некоторые могут вылезать за пределы визитки. Возможно в следующей версии макроса я добавлю возможность сжатия текста или уменьшения кегля шрифта.
+</p><p> По ряду соображений для нумерации и подстановки данных используются только текстовые объекты, входящие непосредственно в выделенную группу. Т.е. все вложенные группы, в которых также могут быть тексты с числами или идентификаторами - игнорируются. Содержимое поверклипов и символов также не учитывается.
+</p><p> Разумеется у любого макроса, помимо плюсов, должны быть и минусы. Есть они и в моем макросе. Он - бесплатный :) <br /> Шучу, конечно, минусов хватает. Если в одной строке поставить идентификатор для подстановки данных и числовые данные для нумерации - обработается только идентификатор. Кроме того нумерация начинается со второй копии, а подстановка данных - с первой. Идентификаторы отделяются друг от друга пробелами, табуляцией и некоторыми знаками пунктуации, на окне макроса об этом указывают три заблокированных поля. <br /> В общем, пробуйте...</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="13-644-1-page=1.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/6297790_5483669.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/6297790_5483669-itok=PtW3YpPG.jpg" alt="Подстановка данных" title="Подстановка данных" /></a>      </div>
+      </div>
+</div>
+    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-14225"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">natibor</span></strong> / 01.08.2015, 20:35    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>shark, я вас уже давно люблю... :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-14243"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 07.08.2015, 13:29    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>natibor</strong>,  мое чувство - взаимно!  :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-14244"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 07.08.2015, 13:37    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Как-то нечем было заняться и я немного доработал свой макрос Numeranger до 3-й версии.<br />
+Вот что там теперь появилось:</p>
+<p><strong>размещение</strong><br />
+-  появилась возможность размещения круглых объектов в шахматном порядке, выделяете фигуру, нажимаете кнопку с синим "кружком", включаете  режим "предпросмотра" и можно более-менее компактно расположить объекты (рис. 4);</p>
+<p>-  значения отступов, т.е. расстояний между копируемыми объектами, теперь могут быть отрицательными. Как раз для вышеприведенного случая с круглыми объектами;</p>
+<p>-  еще есть кнопка "авторазмещения", (с двумя квадратными скобочками), нажав которую можно "нарисовать" мышкой прямоугольник, внутри которого максимально разместятся копии выделенного объекта, в полях "количества" и "отступа" при этом появятся соответствующие значения. Удобно для быстрой прикидки сколько объектов поместится на листе;</p>
+<p><strong>нумерация</strong><br />
+- здесь ничего не изменилось, все так же текстовый объект (один или несколько) просчитывается и увеличивается на единицу. Простейший пример, скажем, для номерков - создаете текстовый объект с цифрой "1", включаете выравнивание по центру, накладываете на него рамку например, (кружок или прямоугольник), группируете и запускаете макрос, отметив в нем поле "С нумерацией";</p>
+<p><strong>подстановка данных</strong><br />
+- теперь макрос корректно понимает шрифт, подставляемый текст размещается таким же шрифтом, что и в шаблоне;</p>
+<p>- появилась возможность подстановки не только текстовых данных, но и объектов - картинок или групп. </p>
+<p>Вот как это работает:</p>
+<p>"забрасываете" в Корел несколько размещаемых объектов - картинок (или групп) и объединяете их в одну группу объектов. Полученной группе в Менеджере Объектов даете имя, скажем Pictures. Создаете также группу объектов-шаблон (рис. 5), который будет копироваться нужное число раз и в котором будет происходить подстановка данных. Подстановка текстовых данных объяснена в начале статьи, так что не буду повторяться, а вот для подстановки объектов или картинок необходимо будет создать прямоугольник внутри группы-шаблона и дать ему такое же имя, какое вы дали группе подставляемых картинок. Единственное условие имя должно быть заключено с двух сторон символами процента (%). Например, группа картинок называется Pictures, соответственно, имя замещаемого прямоугольника должно быть %Pictures%. Есть еще один момент, связанный с масштабированием подставляемых картинок: по умолчанию картинки выравниваются по левому верхнему углу и подставляются тем же размером, каким вы их загрузили в Корел. Но в имени подставляемого прямоугольника можно указать на возможность пропорционального или непропорционального масштабирования картинки, чтобы она полностью или по ширине/высоте вписалась в этот самый подставляемый прямоугольник. Для этого после %Pictures% можно написать буквы W и/или H. W - это пропорциональное масштабирование по ширине (рис.2), H - пропорциональное масштабирование по высоте (рис. 1), а WH - непропорциональное "вписывание" картинки в размер прямогольника (рис.3).<br />
+ На рисунке 3 изображен пример работы макроса с подстановкой текстовых данных из "параграфных" текстовых объектов names и Address и подстановкой группы объектов Pictures (из трех картинок и одной группы [картинка + наложенный белый ромб]. Это обязательно должен быть один объект-группа, иначе макрос размножит ромб или картинку по-отдельности);</p>
+<p>-  кнопки "пробел" и "табуляция" стали отключаемыми. Если отключить их обе, то макрос в качестве разделителя данных использует только лишь символы "запятая", "двоеточие" и "точка с запятой". В принципе, несложно отключить и их, но таких предложений, вроде бы, пока не поступало.</p>
+<p>Помимо всего прочего, макрос стал немножко интеллектуален, сам отключает ненужные функции при наведении мышкой на форму или же возвращает выделение на объект, если вы его случайно сняли. Также немного переработан "предпросмотр". Еще была задумка "предпросмотровые" объекты сделать не прямоугольниками, как обычно, а повторяющими внешний контур размножаемого объекта. Такую процедуру я написал, но задумался надо ли ее включать в макрос. </p>
+<p>В общем, пробуйте, да пребудет с вами сила VBA  :)<br />
+<a href="../sites/default/files/forum/images/test_matrix3.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/large/public/forum/images/test_matrix3-itok=nx1icus8.jpg" alt="Подстановка данных" title="Подстановка данных" /></a></p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="13-644-1-page=1.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/test_matrix3.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/test_matrix3-itok=1p5dUS-O.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+<div class="dd-attached field field-name-field-forum-files field-type-file field-label-above clearfix">
+      <div class="field-label"><a href="13-644-1-page=1.html#" class="cdrSlideAttach">Файлы</a></div>
+    <div class="field-items">
+          <div class="field-item even"><span class="file"><img class="file-icon" alt="" title="application/octet-stream" src="/modules/file/icons/application-octet-stream.png" /> <a href="../sites/default/files/forum/files/numeranger30.gms" type="application/octet-stream; length=92695">numeranger30.gms</a></span></div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-14245"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">natibor</span></strong> / 07.08.2015, 13:46    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>shark, где у нас смайлик "бью челом"?! ну или хотя бы огромные чмоки...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-14251"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">olegin1</span></strong> / 11.08.2015, 00:21    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>На Х5 работает, на Х7 нет... Хочу перейти с пятёрки, но этот момент существенный. Есть предположения?</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="13-644-1-page=1.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/error-num.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/error-num-itok=oqd81LEs.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-14253"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">olegin1</span></strong> / 11.08.2015, 00:34    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Вторая версия работает на х7. Вот ссылка forum.oberonplace.com/showthread.php?t=7563. Пака работает. Даже успел расстроится, но висит родимая.</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="13-644-1-page=1.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/work_num2_0.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/work_num2_0-itok=c2WxmnxM.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-14254"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 11.08.2015, 13:33    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>olegin1</strong>,  судя по картинке, у вас просто не выделен ни один объект. Нарисуйте хотя бы простейший прямоугольник, выделите его и запустите макрос повторно</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-14255"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">olegin1</span></strong> / 11.08.2015, 16:45    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Действительно, заработало. Спасибо.<br />
+Но вторую версию все же закину в архив тоже.</p>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-first first"><a title="На первую страницу" href="13-644-1.html">« первая</a></li>
+<li class="pager-previous"><a title="На предыдущую страницу" href="13-644-1.html">‹ предыдущая</a></li>
+<li class="pager-item"><a title="На страницу номер 1" href="13-644-1.html">1</a></li>
+<li class="pager-current last">2</li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

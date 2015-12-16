@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/1031.html" />
+<link rel="canonical" href="5-718-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Баг с контурами | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Баг с контурами</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-1031" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">x-makc</span></strong> / 11.04.2011, 14:31/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="16.html">CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Кажеться так и не исправлена проблема со смещением контуров. <br /> Для примера использовал простую кривую из 3х узлов, а так проблема имеет место на любых векторах, хоть замкнутых, хоть открытых, где встречаеться такое место как Узел 2 на примере.
+</p><p> Если имееться стык прямого и кривого сегментов с переломом не более 10 градусов, то при создании контура узлы в этом месте на контуре сглаживаются.
+</p><p> Приходиться всегда проверять контура и такие проблемные делать в других программах. Походу алгоритм контуров косячный.
+</p><p> Сталкивался ли кто-набудь с этой проблемой, можно ли как то решить её?</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="5-718-1.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/2165689_2964220.gif" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/2165689_2964220-itok=ytfig1qy.gif" alt="Баг с контурами" title="Баг с контурами" /></a>      </div>
+      </div>
+</div>
+<div class="dd-attached field field-name-field-forum-files field-type-file field-label-above clearfix">
+      <div class="field-label"><a href="5-718-1.html#" class="cdrSlideAttach">Файлы</a></div>
+    <div class="field-items">
+          <div class="field-item even"><span class="file"><img class="file-icon" alt="" title="image/x-coreldraw" src="/modules/file/icons/image-x-generic.png" /> <a href="../sites/default/files/forum/files/9538879_9398929.cdr" type="image/x-coreldraw; length=32523">9538879_9398929.cdr</a></span></div>
+      </div>
+</div>
+    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-4850"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 11.04.2011, 16:19/16:25    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>входишь в режим редактирования узлов, выделяешь все узлы по Ctrl-A и переводишь их в сглаженные. Как вариант, можно добавить несколько опорных узлов. <br /> Кстати, X3-й корректно делает контур</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4851"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">x-makc</span></strong> / 11.04.2011, 17:26    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>входишь в режим редактирования узлов, выделяешь все узлы по Ctrl-A и переводишь их в сглаженные. Как вариант, можно добавить несколько опорных узлов. <br /> Кстати, X3-й корректно делает контур</p></blockquote>
+<p> Это не вариант - нужно чтобы исходный контур остался прежним (к примеру его прислал заказчик и менять нельзя) <br /> Добавить можно лишний узел на кривом сегменте как можно ближе к узлу 2 - смещённый контур выравнивается. НО! - это лишь подойдёт, когда их не много. А представьте сложный набор узоров, где этих мест окажеться 1000. Вот тут точно приходиться уходить в другие программы.
+</p><p> Верно подмечено - в Х3 такого не было!!!</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4852"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Algis</span></strong> / 11.04.2011, 23:06    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Corel X5 действительно не очень корректно определяет тип узла, и с этим приходится сталкиваться постоянно. В таких случаях, если есть возможность, я делаю копию кривой по верх, задаю толщину абриса "под контур" и перевожу в кривую. Жаль, только одинарный контур так получается. <br /> Но, когда рисунок сложный, так вряд ли подойдет. <br /><br /></p><blockquote>Верно подмечено - в Х3 такого не было!!!</blockquote>
+<p> – в Corel X4 такого тоже не замечал.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4853"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Solowejka</span></strong> / 12.04.2011, 00:45    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Видимо, разработчики так решили, что два сегмента кривой, сопрягающиеся под углом близким к 180 град., следует считать плавно сопрягающимися. <br /> Хотите бороться за эти углы (от 170 до 180 град.), работайте в Х4 версии.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4854"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 12.04.2011, 00:54    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Это просто ошибка. Если будет время и её посчитают достаточно серьёзной, то её исправят к след. версии/обновлению.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4855"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">x-makc</span></strong> / 12.04.2011, 02:04    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Тогда будем ждать обновлений. А пока Корел будем использовать с другим софтом...</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="3201.html" />
+<link rel="canonical" href="3201.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Максимальная ДЛИНА объекта в COREL X13 | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Максимальная ДЛИНА объекта в COREL X13</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-3201" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Slen</span></strong> / 24.01.2013, 16:20	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../forum/16.html">CorelDRAW</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">13.0.0.739 (sp2)</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Привет всем! поставлена  задача распечатать серию флагов на 100 метров ткани.<br />
+Имеется сублимационный принтер по примой печати на ткани.<br />
+ПК Core I5 3.1G Windows XP ОЗУ 8G Видео дискрет 2Г ДДР5 ЖДД  1Тб </p>
+<p>В чем за тык. </p>
+<p>В COREl Пытаюсь создать прямоугольник  шириной 1,8м длиной 100м  чтобы в нем разместить в нужном порядке влаги.<br />
+Максимум что дает это создать длину 45,72м.<br />
+Тоже самое и в ширину.<br />
+Кто ни будь сталкивался с такой проблемой или как ее можно решить?</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-10642"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 24.01.2013, 18:55    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Такие вещи делаются в масштабе, 1:10 например.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-10644"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">MBK</span></strong> / 24.01.2013, 19:04    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>На самом деле все очень просто. Корел до версий X6 все размеры хранит стотысячных долях миллиметра в знаковом 32битном целом. То есть, максимальный размер, который можно задать в кореле равен 0x7FFFFFFF=2147483647 стотысячных миллиметра, то есть, плюс-минус 21 метр<br />
+С X6 дело обстоит лучше - там это число 64битное, ограничения практически не ощущаются.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-10646"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Slen</span></strong> / 24.01.2013, 21:27    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>Sancho</strong>,  А печатать тоже будешь в масштабе?<br /><strong>MBK</strong>,  Ок. понял спасибо за ответ.  значит компоновать будем порциями а PhotoRint  будем компоновать уже по 100 метров.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-10647"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">MBK</span></strong> / 24.01.2013, 21:39    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>А печатать тоже будешь в масштабе?</p></blockquote>
+<p>Почему бы и нет? В диалоговом окошке Print-&gt;Layout есть установка Scale factor - как угодно можно масштабировать векторное изображение без искажений.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-10649"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sokolovich</span></strong> / 25.01.2013, 00:55    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Обычно никто не занимается такой ерундой как верстка 100 метровых печатных полос в графическом редакторе. Для этого существует контроллер печати (аппаратный или программный). В нем можно скомпоновать в одну полосу множество файлов в любой последовательности. Но даже если почему-то нет такой возможности, то что мешает последовательно печатать полосы преемлемой длины в несколько заходов? Тем более, что при рулонной подаче иногда бывает проблемой напечатать без перекосов и 50 метров за раз, а не то что 100.</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="4414.html" />
+<link rel="canonical" href="4414.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Растрирование страниц в документе | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Растрирование страниц в документе</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-4414" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Slovnet</span></strong> / 12.12.2014, 10:04/10:07	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">15.2.0.686 (sp3)</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Дорого времени суток! Имеется документ, будем называть его «коллаж», в нём 20 страниц.  При отправки на печать, отправляет долго по времени, и иногда тени вылетают и прочие объекты. Если растрировать страницу, проблема исчезает. Подскажите, как сделать так, чтобы растрировать сразу все страницы, может есть какой-то макрос или скриптик? Заранее благодарю!</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-13352"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 12.12.2014, 10:36    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>а просто в диалоге печати взвести галку -<br />
+Print as Bitmap - печатать как растр<br />
+или в ранних версиях<br />
+Rasterize entire Page - растрировать страницы с заданным разрешением<br />
+не подойдет?<br /><a href="http://community.coreldraw.com/resized-image/__size/680x1000/__key/CommunityServer.Discussions.Components.Files/543/0511.print.png" target="_blank" rel="nofollow">картинка 1</a></p>
+<p><a href="http://www.islanddesign.com/cdr/corel-x3-print-settings.jpg" target="_blank" rel="nofollow">картинка 2</a></p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13353"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Slovnet</span></strong> / 12.12.2014, 10:43    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Если поставить галочку «печатать как растр» при отправки на печать, скорость отправки сокращается, да, НО не на много...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13354"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 12.12.2014, 11:17    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>ну тогда вот вам<br /><a href="https://community.coreldraw.com/talk/coreldraw_graphics_suite_x4/f/245/t/40039" target="_blank" rel="nofollow">примерчик</a></p>
+<pre class="brush: vb">Sub pagesToBitmap()
+    Dim p As Page, sr As ShapeRange, s As Shape
+   
+    For Each p In ActiveDocument.Pages
+        p.Activate
+        Set sr = ActivePage.Shapes.All
+        If sr.count &gt; 0 Then
+            Set s = sr.Group
+            s.ConvertToBitmapEx cdrRGBColorImage, False, False, 150, cdrNormalAntiAliasing, True, False, 95
+        End If
+    Next p
+End Sub</pre><p>
+отредактируйте под себя и вперёд</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13355"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Slovnet</span></strong> / 12.12.2014, 11:38    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Да верный примерчик. Спасибо огромное!</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13382"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Slovnet</span></strong> / 19.12.2014, 16:47    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Не силён в программировании, сколько потребуется времени и сил создать полноценный макрос с панелью. Пример прилагается</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="4414.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/makros.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/makros-itok=JANbWup-.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-13384"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 19.12.2014, 17:08    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>так найдите wx_ExportJPG - там это всё есть</p>
+<p><a href="http://woxxom.vbabyexample.com/ru.html" target="_blank" rel="nofollow">линк</a></p>
+<p><a href="http://woxxom.vbabyexample.com/images/shot_Export.png" target="_blank" rel="nofollow">линк на интефейс</a></p>
+<p>в Х5 всё работоспособно<br />
+возможно и в Х6</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13388"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Slovnet</span></strong> / 22.12.2014, 14:22    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Если бы я имел хоть чуток представления как это сделать, какой нужный аргумент надо убрать-вставить было бы немного проще. Dastin, цена вопроса?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13389"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 22.12.2014, 14:57    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>а ... ммм... а что делать-то?<br />
+берете макрос от woxxom и пользуетесь - смык, ргб, разрешение, многостраничность, прозрачный фон, индексирование имен ... и ещё куча форматов впридачу ///</p>
+<p>или что-то я не понял в вопросе?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13391"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Slovnet</span></strong> / 22.12.2014, 15:13    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Мне не надо экспортировать, мне надо в документе растрировать все, или выборочные страницы с определённым разрешением, и цветовым профилем</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13392"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 22.12.2014, 15:39    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>а чего не всё? - разве не  проще?<br />
+в макросе только поправить RGB на CMYK и 150 - на то что нужно</p>
+<p>я как бы тоже не писатель :) просто внимательный читатель ;) и чувствую что макрос реализующий ваши условия "поправится" в несколько раз</p>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="На страницу номер 2" href="4414-page=1.html">2</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="4414-page=1.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="4414-page=1.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

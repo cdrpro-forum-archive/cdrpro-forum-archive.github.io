@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/1046.html" />
+<link rel="canonical" href="13-733-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>load textbox | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">load textbox</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-1046" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">dEar</span></strong> / 21.04.2011, 16:15/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Добрый день. <br /> В VB есть возможность сделать массив кнопок из одной, копируя исходную нужное количество раз: <br /> Load TextBox1(n + 1) <br /> В CorelVBA выдает ошибку "Can't load or unload this object" . Это ограничение VBA или я что-то неправильно делаю?</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-5038"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 21.04.2011, 19:17    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Если я правильно помню, то в ВБ есть такая фишка как TextBox1(1), TextBox1(2) и т.д. В ВБА такого нет. В любом случае погугли.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5039"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">dEar</span></strong> / 21.04.2011, 19:47    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Да, там у кнопок есть и индексы, и хэндлы... Гуглил - где-то предлагают сделать класс, через API. Думал, может есть простое решение</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5040"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 21.04.2011, 20:28    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>dEar</b>, вот тебе такой вариант
+</p><p> <code>Private Sub UserForm_Initialize() <br /> Dim Mycmd As Control <br /> Set Mycmd = Controls.Add("Forms.TextBox.1", "", True) <br />     Mycmd.Left = 108 <br />     Mycmd.Top = 12 <br />     Mycmd.Width = 72 <br />     Mycmd.Height = 24 <br /> end sub</code>
+</p><p> попробуй загнать в цикл, далее меняешь координаты и может даже все получится</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5041"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">dEar</span></strong> / 21.04.2011, 21:01    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Работает! <br /> Я было попробовал до этого <br /> Me.Controls.Add "VB.CommandButton" - выдавало ошибку о некорректном классе. Потом отвлекли и...... Буду копать в этом направлении</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5042"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">dEar</span></strong> / 22.04.2011, 00:49    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Что-то я запутался... А как отловить нажатие на него?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5043"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 22.04.2011, 12:44    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>метод Keypress или Click</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5044"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 22.04.2011, 16:01    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>dEar</b>, посмотри <a class="link" href="http://u.to/3iDo" title="http://stackoverflow.com/questions/1083603/vba-using-withevents-on-userforms" rel="nofollow" target="_blank">эту ссылку</a>, там пример создания класса и события.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5045"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">dEar</span></strong> / 22.04.2011, 17:06    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Спасибо, буду в выходные разбираться</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

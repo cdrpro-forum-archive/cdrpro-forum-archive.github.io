@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="3262.html" />
+<link rel="canonical" href="3262.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Нумерация векторных объектов одной группы | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Нумерация векторных объектов одной группы</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-3262" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Валерия</span></strong> / 12.03.2013, 18:43	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">16.0.0.707</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Всем добрый день! Помогите пожалуйста найти способ нумеровать объекты по типу детской раскраски: есть куча векторных контуров (разных), нужно проставить в каждом одну и ту же цифру.  Есть ли способы это сделать? Может существуют макросы для подобных процедур?</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-10919"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 12.03.2013, 20:12    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Может быть <a href="../cardgenerator.html" target="_blank" title="Внутренняя ссылка">Внутренняя ссылка</a> просто не совсем понятно что нужно.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-10920"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Валерия</span></strong> / 12.03.2013, 20:18    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>У меня множество (допуским 100 шт) объектов, просто замкнутых контуров разного размера, в которые нужно проставить цифру (допустим 1). Наверняка это можно сделать просто, но я к сожалению не знаю как). Макрос, который Вы указали делает такую нумерацию?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-10922"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 13.03.2013, 00:14/00:15    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>Валерия</strong>, вообще CardGenerator рассчитан на более сложные задачи.<br />
+Вот вам код макроса который сделает то что вам нужно:</p>
+<pre class="brush: vb">
+Sub MegaPaste()
+  Dim s As Shape, p As Shape
+  For Each s In ActiveSelectionRange
+    Set p = ActiveLayer.Paste
+    p.AlignToShape cdrAlignHCenter + cdrAlignVCenter, s, cdrTextAlignBoundingBox
+  Next
+End Sub
+</pre><p>
+Как установить:<br />
+В CorelDRAW жмём Alt+F11, в открывшемся редакторе слева в списке ищем GlobalMacros, разворачиваем, в нём разворачиваем папку Modules, кликаем на появившийся CorelMacros два раза, что бы открылось окно редактора кода. В него, в конец, вставляем мой код, отбив его абзацами от того кода что будет в окне. Закрываем редактор.</p>
+<p>Как пользовать:<br />
+Рисуете нужную цифру, например 1, вырезаете её в буфер (Ctrl+X), выделяете вашу кучу объектов и запускаете макрос в меню Инструменты &gt; Макросы.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-10923"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Валерия</span></strong> / 13.03.2013, 13:16    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Оболдеть!))) Всё работает! Спасибо большое!!!</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="4530.html" />
+<link rel="canonical" href="4530.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Построение средней (осевой) линии между двумя произвольными кривыми | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Построение средней (осевой) линии между двумя произвольными кривыми</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-4530" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Fly</span></strong> / 23.04.2015, 02:46	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../forum/16.html">CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Добрый день!<br />
+Необходимо построить среднюю (осевую) линию между двумя непараллельными произвольными кривыми. К примеру, провести линию чётко по центру реки с разными по кривизне берегами (как на картах по фарватеру, или когда граница между странами по реке проходит). Пробовал посредством выделения обеих кривых ("берегов") и последующим применением эффекта "Blend" с шагом в 1 ед., но всё-равно визуально видно, что не линия ложится не строго по оси "реки" (в ряде случаев, вообще мазня какая-то получается).  Вручную тоже желаемой точности не достичь (при условии, что это всё на глаз делалось, может, зная определённые математические принципы, это и удастся сделать).   Заранее спасибо!</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-13962"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 23.04.2015, 14:27    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Есть очень немного платных макросы, которые могут ее строить. Штатными средствами Корела ее не сделать, сам неоднократно экспериментировал, только программно. В  свободное время пишу такой макрос по просьбе одного из заказчиков, но еще не полностью закончил. Насчет "математических принципов" могу сказать, что просчитываются две ближайшие точки и между ними строится прямая, половина которой и будет одной из точек этой срединной линии. Примерно, как на этой картинке<br />
+<img src="../sites/default/files/forum/images/lettera2.gif" alt="Построение средней (осевой) линии между двумя произвольными кривыми" title="Построение средней (осевой) линии между двумя произвольными кривыми" /></p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="4530.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/lettera2.gif" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/lettera2-itok=pnACF6Zs.gif" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-13963"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Fly</span></strong> / 23.04.2015, 17:52    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Shark, спасибо за пояснения. По поводу ручного построения требуемой линии - я и сам, в принципе, полагал пойти по подобному пути. Единственное, мне не очень ясно, по какому принципу высчитывать те самые ближайшие точки, между которыми затем проводится соединительный отрезок.  Применительно к Вашему примеру, почему зелёные отрезки проложены именно под такими углами к кривым? Не зная математического алгоритма, я бы их расставлял чисто интуитивно, на глаз (примерно как на рисунке), но это ведь не точно...</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="4530.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/001_15.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/001_15-itok=LqBmnr1w.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-13964"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Baryga88</span></strong> / 24.04.2015, 15:16    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>Fly</strong>. Корел конечно такое чудо не может, но зато такое (и не только) может сделать Corel Designer из пакета CorelDRAW Technical Suite. Если сильно надо, можно его скачать с сайта Корел (пробную версию) и сделать то что необходимо. Он может сохранять свои файлы в формате <strong>.cdr</strong> без всяких проблем и открывать их соответственно тоже.<br />
+Например:</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="4530.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris1_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris1_1-itok=TNVxTqXN.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-13965"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Fly</span></strong> / 24.04.2015, 19:09    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Baryga88, спасибо за совет, на Вашем примере, по ходу, то что мне и нужно. Designer скачал и установил, единственное, не подскажете, каким образом в этой проге мне реализовать желаемое?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13966"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Baryga88</span></strong> / 24.04.2015, 23:47    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>Fly</strong>. Напишу краткую инструкцию... :-) :-)</p>
+<p><strong>Вариант 1</strong></p>
+<p>1. Corel Designer чуточку отличается от Корел, поэтому я настраиваю его по образу и подобию CorelDRAW. Для этого: <strong>Tools &gt; Options</strong>. В "ветке" <strong>Workspace</strong> щелкаем непосредственно на <strong>Toolbox</strong> (рис. 1) и ставим флажок (по умолчанию он сброшен).</p>
+<p><img src="../sites/default/files/forum/images/ris_1_39.jpg" alt="Построение средней (осевой) линии между двумя произвольными кривыми" title="Построение средней (осевой) линии между двумя произвольными кривыми" /></p>
+<p>2. Выбираем (например) инструмент <strong>Freehand</strong> (рис. 2).</p>
+<p><img src="../sites/default/files/forum/images/ris_2_38.jpg" alt="Построение средней (осевой) линии между двумя произвольными кривыми" title="Построение средней (осевой) линии между двумя произвольными кривыми" /></p>
+<p>Почему "например", потому что у Вас может быть уже готовый набросок и тогда к этому инструменту Вам прибегать не придется, а нужно будет просто выделить имеющуюся кривую. Выделение и прочие приемы работы ничем не отличаются от CorelDRAW, за исключением горячих клавиш.</p>
+<p>3. Предполагаю, что рисуем с нуля... Нарисовали кривую. Затем на <em>Панели свойств</em> щелкните кнопку <strong>Enhanced outline styles</strong> (рис. 3).</p>
+<p><img src="../sites/default/files/forum/images/ris_3_38.jpg" alt="Построение средней (осевой) линии между двумя произвольными кривыми" title="Построение средней (осевой) линии между двумя произвольными кривыми" /></p>
+<p>На этой же <em>Панели свойств</em> раскройте список <strong>Line style</strong> и выберите нужный тип линии (рис. 4).</p>
+<p><img src="../sites/default/files/forum/images/ris_4_37.jpg" alt="Построение средней (осевой) линии между двумя произвольными кривыми" title="Построение средней (осевой) линии между двумя произвольными кривыми" /></p>
+<p>4. Может произойти случай, когда Вы не увидите изменений, потому что параметр <strong>Pattern width</strong> имеет малое значение (рис. 5).</p>
+<p><img src="../sites/default/files/forum/images/ris_5_32.jpg" alt="Построение средней (осевой) линии между двумя произвольными кривыми" title="Построение средней (осевой) линии между двумя произвольными кривыми" /></p>
+<p>В этом случае измените (увеличьте) значение и получите нужный результат ( рис. 6).</p>
+<p><img src="../sites/default/files/forum/images/ris_6_33.jpg" alt="Построение средней (осевой) линии между двумя произвольными кривыми" title="Построение средней (осевой) линии между двумя произвольными кривыми" /></p>
+<p><strong>Вариант 2</strong></p>
+<p>Может случиться, что стандартный набор заготовок параллельных линий Вас не устроит. Отредактировать осевую линию, созданную подобным образом не представляется возможным. Тут на помощь приходит новое средство придуманное в CorelDRAW Technical Suite Х7 (в предыдущих версиях не было) - <strong>Parallel drawing</strong> (рис. 7). Данная кнопка также находится на <em>Панели свойств</em> инструмента <strong>Freehand</strong>.</p>
+<p><img src="../sites/default/files/forum/images/ris_7_33.jpg" alt="Построение средней (осевой) линии между двумя произвольными кривыми" title="Построение средней (осевой) линии между двумя произвольными кривыми" /></p>
+<p>После щелчка на этой кнопке появится панель <strong>Parallel drawing</strong> (рис. 8).</p>
+<p><img src="../sites/default/files/forum/images/ris_8_33.jpg" alt="Построение средней (осевой) линии между двумя произвольными кривыми" title="Построение средней (осевой) линии между двумя произвольными кривыми" /></p>
+<p>После создания параллельных линий, можно отредактировать отдельно центральную линию, которая будет осевой. Т. к. Designer создаст три одинаковых линии, то чтобы средняя линия стала осевой, надо изменить абрис. Тут все телодвижения не отличаются от таковых в CorelDRAW. Если что-то не будет получаться или будет не понятно, пишите.</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="4530.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_1_39.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_1_39-itok=OWnC6v0v.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_2_38.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_2_38-itok=KeE22ADe.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_3_38.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_3_38-itok=5ioywWtZ.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_4_37.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_4_37-itok=2TX_0i-y.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_5_32.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_5_32-itok=1TZLdI8H.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_6_33.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_6_33-itok=o1XTHhkE.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_7_33.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_7_33-itok=R0Z7s--5.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_8_33.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_8_33-itok=5aMP3kjD.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-13967"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Fly</span></strong> / 25.04.2015, 02:45    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Baryga88, спасибо большое за развёрнутое пояснение и за потраченное время! Ваш способ создания параллельных кривых существенно облегчает работу, поскольку раньше я делал подобные операции гораздо более сложным способом (увеличением толщины кривой - применением операции "Convert outline to object" - переходом в режим вида "Wireframe" и последующим ручным удалением ненужных "отпараллеленных" кривых и узлов...). Я уверен, что написанная Вами инструкция окажется полезной не только для меня, но и для многих обучающихся работе в программах Corel, поскольку подобные моему вопросы много где поднимаются и зачастую остаются без исчерпывающего пояснения.<br />
+Я как понимаю, Corel Designer - это тот же самый Corel Draw, только с более расширенным функционалом?...<br />
+Но моя проблема заключается несколько в другом. Мне нужно провести осевую линию между не строго параллельными кривыми, а между двумя отличающимися между собой произвольными линиями. То есть, как я понимаю, операции должны производиться не на одной кривой, а на двух.<br />
+Я не случайно в начале темы привёл пример с "берегами реки": хоть в условном приближении в природе берега реки идут примерно параллельно, но при этом неизбежно отличаются от друг друга кривизной контура. Таким образом, меня интересует, возможно ли выделить две разные произвольные кривые (см. рисунок в приложении) и применить какую-либо операцию, чтобы программа сама проложила трассу осевой линии между ними? Возможно, в Corel Design есть такие механизмы (я, правда, скачал Х5 версию)?<br />
+Если возвращаться к моему "географическому" примеру, на многих картах это реализуется (например, границы, навигационная обстановка, линии глубин и т.п.). Это я к тому, что, значит, техническая возможность для этого есть, ведь, наверно, уже все карты сейчас в векторных редакторах создаются...<br />
+Ещё раз спасибо за ответ!</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="4530.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/003_2.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/003_2-itok=0DYydVDG.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-13968"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Baryga88</span></strong> / 25.04.2015, 10:34    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>Fly</strong>. Вы правильно понимаете, Corel Designer - это тот же Corel Draw, но с большим количеством инструментов и больше подходит к технической иллюстрации. Если я правильно понял проблему, то решить ее опять же можно выше описанным способом. Только скачать Вам надо версию Х7, потому что только сейчас появился инструмент <strong>Parallel drawing</strong>. В этой ситуации, я бы сделал так....<br />
+Т. к. у Вас по большому счету "берега реки" имеют разные очертания, то ничего не мешает подредактировать их и осевую линию. Конечно повозиться придется. Но я не думаю, что Вам в этой ситуации требуется точность, до десятых миллиметра. На рис. 1 я показал исходную линию с параллельной и осевой линией.</p>
+<p><img src="../sites/default/files/forum/images/ris_1_40.jpg" alt="Построение средней (осевой) линии между двумя произвольными кривыми" title="Построение средней (осевой) линии между двумя произвольными кривыми" /></p>
+<p>А потом инструментом <strong>Shape</strong> подредактировал форму линий, по образу, как это бывает в руслах рек (рис. 2).</p>
+<p><img src="../sites/default/files/forum/images/ris_2_39.jpg" alt="Построение средней (осевой) линии между двумя произвольными кривыми" title="Построение средней (осевой) линии между двумя произвольными кривыми" /></p>
+<p>Просто я хочу сказать, что выход можно найти. Мне кажется это будет проще или во всяком случае быстрее, чем искать не известно где макрос, которого может в природе и не оказаться.<br />
+Кроме того, мне думается, что Вам нужна не осевая линия в прямом смысле слова, а скорее "центральная линия", так сказать что-то усредненное, но очень похожее на осевую линию.</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="4530.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_1_40.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_1_40-itok=yXUbGFE2.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_2_39.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_2_39-itok=KnCuIdvX.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-13969"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Baryga88</span></strong> / 25.04.2015, 13:40    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Да, кстати, можете попробовать сделать вашу осевую линию с помощью перетекания, указав в перетекании количество объектов - 1. Потом просто разбить его и изменить абрис центральной линии. Вот пример сделанный перетеканием (см. рис. ниже)</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="4530.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_1_41.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_1_41-itok=JAd4fHRe.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-13971"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Fly</span></strong> / 25.04.2015, 22:40    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Baryga88, действительно, абсолютной точности в моей задаче не требуется. Тему завёл, в общем-то, в целях самообразования, хотелось просто понять, возможно ли это к реализации только "кореловскими" автоматическими средствами, чтобы потом потенциально применять в дальнейшем. По поводу макросов, согласен с Вами, в моём единичном эпизоде вряд ли стоит тратить время на их поиски. Так что буду пытаться осуществлять свою задачу в ручном режиме, обладая теперь Вашими приёмами :) Спасибо!</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13972"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Baryga88</span></strong> / 25.04.2015, 22:56    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><div class="off">Не за что :-)  Хорошо, если что-то из этого Вам пригодится :-)</div>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="На страницу номер 2" href="4530-page=1.html">2</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="4530-page=1.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="4530-page=1.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="4257.html" />
+<link rel="canonical" href="4257.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Помогите советом! | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Помогите советом!</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-4257" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Seminarist</span></strong> / 23.05.2014, 02:05	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Есть задача, которую не могу решить. Помогите, плз.<br />
+Есть некоторая кривая, которую нужно вращать вокруг оси только до того момента, пока она "коснется" другой кривой. То есть: у меня есть объект, точку вращения которого я устанавливаю произвольно. Далее я хватаю этот объект за всякое и начинаю крутить вокруг оси, но как только он "соприкасается" с другим объектом, вращение должно остановиться.<br />
+Штатными методами решить не удается. Остается только методом последовательного приближения - а это долго и неудобно.<br />
+Подскажите, может есть какой макрос или скрипт, который меня осчастливит?<br />
+Если нет, то к кому обращаться и сколько это будет стоить?<br />
+Спасибо.</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-12682"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Hepatitis C</span></strong> / 27.05.2014, 16:32    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>А эти объекты с которыми кривая должна соприкоснуться не имеют градусной градации? может поможет выставить вращение на определенный угол, допустим на 30 градусов....</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-12684"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">themadman</span></strong> / 27.05.2014, 17:42    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>нужна анимации или что, я не понял вопроса.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-12700"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Solowejka</span></strong> / 29.05.2014, 05:12    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Задача понятна. Действительно сложная задача. Режим привязки (прилипания) к объектам действительно не работает при повороте. То есть вращаемый объект можно схватить с привязкой к контуру или к точке контура, а вот при касании второго объекта отклика не происходит.<br />
+Однако, выполнять подобные задачи вручную помогает макрос, записанный Макрос-рекордером для команды поворота на угол 0,01 град. и на угол –0,01 град. Величина угла выставляется в Окне настройки "Трансформации". Затем для записанных двух макросов создаёте пользовательские "Быстрые клавиши".<br />
+Каждое сопряжение выполняется в два этапа: сначала объект вращаете до максимального сближения с другим объектом, пользуясь, как обычно, маркером вращения, а затем, сильно увеличив масштаб, сохраняя в поле зрения место сближения объектов, доворачиваете объект с помощью клавиш, контролируя сопряжение визуально.<br />
+При необходимости ещё большей точности угол поворота  можно выставить даже 0,001 град., а толщины линий сопрягаемых контуров 1 мкм.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-12705"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Hepatitis C</span></strong> / 29.05.2014, 13:28    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Но средств как Вы желаете, что бы это сделать в несколько кликов пока нет. Все сводиться к приближению и «ручной» доводки.</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

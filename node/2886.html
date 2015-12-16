@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="2886.html" />
+<link rel="canonical" href="2886.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>После запуска макроса размер объектов не обновляется. | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">После запуска макроса размер объектов не обновляется.</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-2886" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Trezor</span></strong> / 16.05.2012, 13:22/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">13.0.0.739 (sp2)</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>После запуска макроса размер объектов не обновляется.</p>
+<p>Мой опыт в макросах очень скромный, поэтому прошу помочь в моей проблеме.<br />
+Создал свою UserForm:<br />
+<img src="../sites/default/files/forum/images/form.png" alt="После запуска макроса размер объектов не обновляется." title="После запуска макроса размер объектов не обновляется." /><br />
+на кнопки назначил макросы, работают корректно без ошибок, но иногда после запуска макросов возникает проблема: размер объекта в основном интерфейсе не обновляется:<br />
+<img src="../sites/default/files/forum/images/size.jpg" alt="После запуска макроса размер объектов не обновляется." title="После запуска макроса размер объектов не обновляется." /><br />
+т.е. какой бы я объект не выбрал отображается размер выделенного объекта до запуска макроса.<br />
+Размер меняется на правленый, только если выбранный объект переместить или изменить размер мышкой, рамка выделения тоже не обновляется после перемещения или изменения размера тоже мышкой, иногда undo/redo перестаёт работать, т.е. кнопки заморожены.</p>
+<p><a href="http://youtu.be/lWNNHUafsyQ">Видео</a> </p>
+<p>Подскажите пожалуйста что исправить или дописать...<br />
+Заранее спасибо.</p>
+<div class="sp-wrap">
+<div class="sp-head">Код</div>
+<div class="sp-body">
+<pre class="brush: vb">
+Option Explicit
+
+Public c As Color
+
+Dim abriscolor As String
+Dim s As Shape
+Dim a As Double
+
+Private Sub UserForm_Initialize()
+
+    InitOutlineCombo1
+
+    Set c = CreateColor
+    c.CMYKAssign 0, 0, 0, 100
+    abriscolor = c.Name(True)
+
+End Sub
+Private Sub InitOutlineCombo1()
+
+    With cboOutline1
+        .AddItem "0,5 mm"
+        .AddItem "1,0 mm"
+        .AddItem "2,0 mm"
+        .ListIndex = 1
+    End With
+
+End Sub
+Private Sub CommandButton1_Click()
+    
+    'Add Contour to Object
+    ActiveDocument.BeginCommandGroup "Абрис"
+    Set s = ActiveShape
+    If s Is Nothing Then
+    MsgBox "Объект не выбран!", vbInformation, "Внимание!"
+    Exit Sub
+    End If
+    Dim OrigSelection As ShapeRange
+    Set OrigSelection = ActiveSelectionRange
+    Dim width As Double, height As Double, x As Double, y As Double
+    ActiveShape.GetSize width, height
+    ActiveShape.GetPosition x, y
+    Dim s1 As Shape
+    Set s1 = ActiveLayer.CreateGridBoxes(0, 0, width, height, 1, 1)
+    Dim a As Double
+    If cboOutline1.Value = "0,5 mm" Then
+    a = 0.019685
+    ElseIf cboOutline1.Value = "1,0 mm" Then
+    a = 0.03937
+    ElseIf cboOutline1.Value = "2,0 mm" Then
+    a = 0.07874
+    End If
+    s1.Outline.SetProperties a
+    s1.Outline.Color = c
+    s1.Fill.ApplyNoFill
+    s1.SetPosition x, y
+    ActiveSelectionRange.UngroupAllEx
+    ActiveDocument.EndCommandGroup
+
+End Sub
+Private Sub CommandButton2_Click()
+
+    'Object Center Cut
+    ActiveDocument.BeginCommandGroup "50 / 50"
+    Set s = ActiveShape
+    If s Is Nothing Then
+    MsgBox "Объект не выбран!", vbInformation, "Внимание!"
+    Exit Sub
+    End If
+    Dim OrigSelection As ShapeRange
+    Set OrigSelection = ActiveSelectionRange
+    Dim width As Double, height As Double, x As Double, y As Double
+    ActiveShape.GetSize width, height
+    ActiveShape.GetPosition x, y
+    Dim s1 As Shape
+    Set s1 = ActiveLayer.CreateGridBoxes(0, 0, width, height, 2, 1)
+    s1.Outline.SetProperties 0.003
+    s1.Outline.Color = c
+    s1.Fill.ApplyNoFill
+    s1.SetPosition x, y
+    s1.Copy
+    Dim grp1 As ShapeRange
+    Set grp1 = s1.UngroupAllEx
+    grp1.CreateSelection
+    Dim otl1 As ShapeRange
+    Set otl1 = ActiveSelectionRange.ConvertOutlineToObject
+    Dim s2 As Shape
+    Set s2 = otl1(1).Weld(otl1(2), True, True)
+    otl1(2).Delete
+    otl1(1).Delete
+    grp1(1).Delete
+    grp1(2).Delete
+    ActivePage.Shapes.First.CreateSelection
+    ActivePage.Shapes.Last.AddToSelection
+    Dim s3 As Shape
+    Set s3 = s2.Trim(OrigSelection(1), True, True)
+    s2.Delete
+    ActivePage.Shapes.Last.CreateSelection
+    Dim brk1 As ShapeRange
+    Set brk1 = s3.BreakApartEx()
+    OrigSelection.Delete
+    ActiveLayer.Paste
+    Dim Paste1 As ShapeRange
+    Set Paste1 = ActiveSelectionRange
+    Dim grp2 As ShapeRange
+    Set grp2 = Paste1.UngroupAllEx
+    Dim a As Double
+    If cboOutline1.Value = "0,5 mm" Then
+    a = 0.019685
+    ElseIf cboOutline1.Value = "1,0 mm" Then
+    a = 0.03937
+    ElseIf cboOutline1.Value = "2,0 mm" Then
+    a = 0.07874
+    End If
+    grp2.SetOutlineProperties a
+    ActiveDocument.EndCommandGroup
+
+End Sub
+Private Sub CommandButton3_Click()
+
+    'Add Contour + 3 cm
+    ActiveDocument.BeginCommandGroup "Поле 3см"
+    Set s = ActiveShape
+    If s Is Nothing Then
+    MsgBox "Объект не выбран!", vbInformation, "Внимание!"
+    Exit Sub
+    End If
+    Dim OrigSelection As ShapeRange
+    Set OrigSelection = ActiveSelectionRange
+    Dim width As Double, height As Double, x As Double, y As Double
+    ActiveShape.GetSize width, height
+    ActiveShape.GetPosition x, y
+    Dim s1 As Shape
+    Set s1 = ActiveLayer.CreateGridBoxes(0, 0, width + 2.362205, height + 2.362205, 1, 1)
+    Dim a As Double
+    If cboOutline1.Value = "0,5 mm" Then
+    a = 0.019685
+    ElseIf cboOutline1.Value = "1,0 mm" Then
+    a = 0.03937
+    ElseIf cboOutline1.Value = "2,0 mm" Then
+    a = 0.07874
+    End If
+    s1.Outline.SetProperties a
+    s1.Outline.Color = c
+    s1.Fill.ApplyNoFill
+    s1.SetPosition x - 1.181102, y + 1.181102
+    ActiveSelectionRange.UngroupAllEx.OrderToBack
+    ActiveDocument.EndCommandGroup
+    
+End Sub
+Private Sub CommandButton4_Click()
+
+    'Add Contour + 5 cm
+    ActiveDocument.BeginCommandGroup "Поле 5см"
+    Set s = ActiveShape
+    If s Is Nothing Then
+    MsgBox "Объект не выбран!", vbInformation, "Внимание!"
+    Exit Sub
+    End If
+    Dim OrigSelection As ShapeRange
+    Set OrigSelection = ActiveSelectionRange
+    Dim width As Double, height As Double, x As Double, y As Double
+    ActiveShape.GetSize width, height
+    ActiveShape.GetPosition x, y
+    Dim s1 As Shape
+    Set s1 = ActiveLayer.CreateGridBoxes(0, 0, width + 3.937008, height + 3.937008, 1, 1)
+    Dim a As Double
+    If cboOutline1.Value = "0,5 mm" Then
+    a = 0.019685
+    ElseIf cboOutline1.Value = "1,0 mm" Then
+    a = 0.03937
+    ElseIf cboOutline1.Value = "2,0 mm" Then
+    a = 0.07874
+    End If
+    s1.Outline.SetProperties a
+    s1.Outline.Color = c
+    s1.Fill.ApplyNoFill
+    s1.SetPosition x - 1.968504, y + 1.968504
+    ActiveSelectionRange.UngroupAllEx.OrderToBack
+    ActiveDocument.EndCommandGroup
+
+End Sub
+Private Sub CommandButton5_Click()
+
+    'Add Contour + 7 cm
+    ActiveDocument.BeginCommandGroup "Поле 7см"
+    Set s = ActiveShape
+    If s Is Nothing Then
+    MsgBox "Объект не выбран!", vbInformation, "Внимание!"
+    Exit Sub
+    End If
+    Dim OrigSelection As ShapeRange
+    Set OrigSelection = ActiveSelectionRange
+    Dim width As Double, height As Double, x As Double, y As Double
+    ActiveShape.GetSize width, height
+    ActiveShape.GetPosition x, y
+    Dim s1 As Shape
+    Set s1 = ActiveLayer.CreateGridBoxes(0, 0, width + 5.511811, height + 5.511811, 1, 1)
+    Dim a As Double
+    If cboOutline1.Value = "0,5 mm" Then
+    a = 0.019685
+    ElseIf cboOutline1.Value = "1,0 mm" Then
+    a = 0.03937
+    ElseIf cboOutline1.Value = "2,0 mm" Then
+    a = 0.07874
+    End If
+    s1.Outline.SetProperties a
+    s1.Outline.Color = c
+    s1.Fill.ApplyNoFill
+    s1.SetPosition x - 2.755906, y + 2.755906
+    ActiveSelectionRange.UngroupAllEx.OrderToBack
+    ActiveDocument.EndCommandGroup
+    
+End Sub
+Private Sub CommandButton6_Click()
+
+    'Add Contour + 10 cm
+    ActiveDocument.BeginCommandGroup "Поле 10см"
+    Set s = ActiveShape
+    If s Is Nothing Then
+    MsgBox "Объект не выбран!", vbInformation, "Внимание!"
+    Exit Sub
+    End If
+    Dim OrigSelection As ShapeRange
+    Set OrigSelection = ActiveSelectionRange
+    Dim width As Double, height As Double, x As Double, y As Double
+    ActiveShape.GetSize width, height
+    ActiveShape.GetPosition x, y
+    Dim s1 As Shape
+    Set s1 = ActiveLayer.CreateGridBoxes(0, 0, width + 7.874016, height + 7.874016, 1, 1)
+    Dim a As Double
+    If cboOutline1.Value = "0,5 mm" Then
+    a = 0.019685
+    ElseIf cboOutline1.Value = "1,0 mm" Then
+    a = 0.03937
+    ElseIf cboOutline1.Value = "2,0 mm" Then
+    a = 0.07874
+    End If
+    s1.Outline.SetProperties a
+    s1.Outline.Color = c
+    s1.Fill.ApplyNoFill
+    s1.SetPosition x - 3.937008, y + 3.937008
+    ActiveSelectionRange.UngroupAllEx.OrderToBack
+    ActiveDocument.EndCommandGroup
+    
+End Sub
+Private Sub CommandButton10_Click()
+
+    'Select Outline Color
+    c.UserAssignEx
+    If c.Name &lt;&gt; "" Then
+    abriscolor = c.Name
+    Else
+    abriscolor = c.Name(True)
+    End If
+    c.ConvertToRGB
+    CommandButton10.BackColor = RGB(c.RGBRed, c.RGBGreen, c.RGBBlue)
+    c.ConvertToCMYK
+        
+End Sub
+Private Sub CommandButton8_Click()
+
+    'Papper 6x3 Cut 2.0
+    ActiveDocument.BeginCommandGroup "Paper Cut 6x3"
+    Set s = ActiveShape
+    If s Is Nothing Then
+    MsgBox "Объект не выбран!", vbInformation, "Внимание!"
+    Exit Sub
+    End If
+    Dim OrigSelection As ShapeRange
+    Set OrigSelection = ActiveSelectionRange
+    ActiveShape.SetSize 236.220472, 118.110236
+    Dim w As Double, h As Double, x As Double, y As Double
+    ActiveShape.GetSize w, h
+    ActiveShape.GetPosition x, y
+    Dim s1 As Shape
+    Set s1 = ActiveLayer.CreateGridBoxes(0, 0, w, h, 4, 2)
+    s1.Outline.SetProperties 0.003
+    s1.Outline.Color = c
+    s1.SetPosition x, y
+    s1.Copy
+    Dim grp1 As ShapeRange
+    Set grp1 = s1.UngroupAllEx
+    grp1.CreateSelection
+    Dim otl1 As ShapeRange
+    Set otl1 = ActiveSelectionRange.ConvertOutlineToObject
+    Dim s2 As Shape
+    Set s2 = otl1(2).Weld(otl1(1), True, True)
+    s2.OrderBackOf otl1(8)
+    Dim s3 As Shape
+    Set s3 = otl1(3).Weld(s2, True, True)
+    s2.Delete
+    s3.OrderBackOf otl1(8)
+    Dim s4 As Shape
+    Set s4 = otl1(4).Weld(s3, True, True)
+    s3.Delete
+    s4.OrderBackOf otl1(8)
+    Dim s5 As Shape
+    Set s5 = otl1(5).Weld(s4, True, True)
+    s4.Delete
+    s5.OrderBackOf otl1(8)
+    Dim s6 As Shape
+    Set s6 = otl1(6).Weld(s5, True, True)
+    s5.Delete
+    s6.OrderBackOf otl1(8)
+    Dim s7 As Shape
+    Set s7 = otl1(7).Weld(s6, True, True)
+    s6.Delete
+    s7.OrderBackOf otl1(8)
+    Dim s8 As Shape
+    Set s8 = otl1(8).Weld(s7, True, True)
+    s7.Delete
+    s8.OrderBackOf otl1(8)
+    otl1(1).Delete
+    ActiveDocument.CreateSelection otl1(4), otl1(3), otl1(6), otl1(2), otl1(7), otl1(8)
+    ActiveDocument.AddToSelection otl1(5)
+    ActiveSelection.Delete
+    ActiveDocument.CreateSelection grp1(3), grp1(4), grp1(2), grp1(1)
+    ActiveSelection.Delete
+    ActiveDocument.CreateSelection grp1(7), grp1(8), grp1(5), grp1(6)
+    ActiveSelection.Delete
+    ActivePage.Shapes.First.CreateSelection
+    ActivePage.Shapes.Last.AddToSelection
+    Dim s9 As Shape
+    Set s9 = s8.Trim(OrigSelection(1), True, True)
+    s8.Delete
+    ActivePage.Shapes.Last.CreateSelection
+    Dim brk1 As ShapeRange
+    Set brk1 = s9.BreakApartEx()
+    OrigSelection.Delete
+    ActiveLayer.Paste
+    Dim Paste1 As ShapeRange
+    Set Paste1 = ActiveSelectionRange.UngroupAllEx
+    If cboOutline1.Value = "0,5 mm" Then
+    a = 0.019685
+    ElseIf cboOutline1.Value = "1,0 mm" Then
+    a = 0.03937
+    ElseIf cboOutline1.Value = "2,0 mm" Then
+    a = 0.07874
+    End If
+    Paste1.SetOutlineProperties a
+    Paste1.ApplyNoFill
+    ActiveDocument.CreateSelection Paste1(2), Paste1(4), Paste1(6), Paste1(8)
+    ActiveDocument.AddToSelection brk1(2), brk1(4), brk1(6), brk1(8)
+    ActiveSelection.Move 0#, 1.968504
+    ActiveDocument.EndCommandGroup
+    
+End Sub
+Private Sub CommandButton9_Click()
+    
+    'Plenka Cut 6x3 2.0
+    ActiveDocument.BeginCommandGroup "Plenka Cut 6x3"
+    Set s = ActiveShape
+    If s Is Nothing Then
+    MsgBox "Объект не выбран!", vbInformation, "Внимание!"
+    Exit Sub
+    End If
+    Dim OrigSelection As ShapeRange
+    Set OrigSelection = ActiveSelectionRange
+    ActiveShape.SetSize 236.220472, 118.110236
+    Dim w As Double, h As Double, x As Double, y As Double
+    ActiveShape.GetSize w, h
+    ActiveShape.GetPosition x, y
+    Dim s1 As Shape
+    Set s1 = ActiveLayer.CreateGridBoxes(0, 0, w, h, 4, 1)
+    s1.Outline.SetProperties 0.003
+    s1.Outline.Color = c
+    s1.SetPosition x, y
+    s1.Copy
+    Dim grp1 As ShapeRange
+    Set grp1 = s1.UngroupAllEx
+    grp1.CreateSelection
+    Dim otl1 As ShapeRange
+    Set otl1 = ActiveSelectionRange.ConvertOutlineToObject
+    Dim s2 As Shape
+    Set s2 = otl1(2).Weld(otl1(1), True, True)
+    s2.OrderBackOf otl1(4)
+    Dim s3 As Shape
+    Set s3 = otl1(3).Weld(s2, True, True)
+    s2.Delete
+    s3.OrderBackOf otl1(4)
+    Dim s4 As Shape
+    Set s4 = otl1(4).Weld(s3, True, True)
+    s3.Delete
+    s4.OrderBackOf otl1(4)
+    otl1(1).Delete
+    ActiveDocument.CreateSelection otl1(2), otl1(3), otl1(4)
+    ActiveSelection.Delete
+    s4.Locked = True
+    grp1.Delete
+    s4.Locked = False
+    ActivePage.Shapes.First.CreateSelection
+    ActivePage.Shapes.Last.AddToSelection
+    Dim s5 As Shape
+    Set s5 = s4.Trim(OrigSelection(1), True, True)
+    s4.Delete
+    ActivePage.Shapes.Last.CreateSelection
+    Dim brk1 As ShapeRange
+    Set brk1 = s5.BreakApartEx()
+    OrigSelection.Delete
+    ActiveLayer.Paste
+    Dim Paste1 As ShapeRange
+    Set Paste1 = ActiveSelectionRange.UngroupAllEx
+    If cboOutline1.Value = "0,5 mm" Then
+    a = 0.019685
+    ElseIf cboOutline1.Value = "1,0 mm" Then
+    a = 0.03937
+    ElseIf cboOutline1.Value = "2,0 mm" Then
+    a = 0.07874
+    End If
+    Paste1.SetOutlineProperties a
+    Paste1.ApplyNoFill
+    ActiveDocument.EndCommandGroup
+    
+End Sub
+Private Sub CommandButton7_Click()
+    
+    'About
+    MsgBox "Rutility Beta 0.4" &amp; (Chr(10) &amp; Chr(13)) &amp; "i'm computer, i love my user..." &amp; (Chr(10) &amp; Chr(13)) &amp; "05/2012", vbInformation, "Rubiq~Macros © 2012"
+        
+End Sub
+Private Sub UserForm_Terminate()
+
+End Sub
+</pre></div>
+</div>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="2886.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/form.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/form-itok=UuivSiO4.png" alt="После запуска макроса размер объектов не обновляется." title="После запуска макроса размер объектов не обновляется." /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/size.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/size-itok=dmXVsiQg.jpg" alt="После запуска макроса размер объектов не обновляется." title="После запуска макроса размер объектов не обновляется." /></a>      </div>
+      </div>
+</div>
+<div class="dd-attached field field-name-field-forum-files field-type-file field-label-above clearfix">
+      <div class="field-label"><a href="2886.html#" class="cdrSlideAttach">Файлы</a></div>
+    <div class="field-items">
+          <div class="field-item even"><span class="file"><img class="file-icon" alt="" title="application/octet-stream" src="/modules/file/icons/application-octet-stream.png" /> <a href="../sites/default/files/forum/files/rubikutility.gms" type="application/octet-stream; length=593938">rubikutility.gms</a></span></div>
+      </div>
+</div>
+    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-9269"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 16.05.2012, 14:14    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Ну как минимум косяк в том что запускается BeginCommandGroup а потом в условии Exit Sub без EndCommandGroup.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9270"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Trezor</span></strong> / 16.05.2012, 14:55/00:49    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>Sancho</strong>,спс за подсказку, вот я ламо(<br />
+так надеюсь правильно?</p>
+<pre class="brush: vb">
+Private Sub CommandButton1_Click()
+    
+    'Add Contour to Object
+    Set s = ActiveShape
+    If s Is Nothing Then
+    MsgBox "Объект не выбран!", vbInformation, "Внимание!"
+    Exit Sub
+    End If
+    ActiveDocument.BeginCommandGroup "Абрис"
+    Dim OrigSelection As ShapeRange
+    Set OrigSelection = ActiveSelectionRange
+    Dim width As Double, height As Double, x As Double, y As Double
+    ActiveShape.GetSize width, height
+    ActiveShape.GetPosition x, y
+    Dim s1 As Shape
+    Set s1 = ActiveLayer.CreateGridBoxes(0, 0, width, height, 1, 1)
+    Dim a As Double
+    If cboOutline1.Value = "0,5 mm" Then
+    a = 0.019685
+    ElseIf cboOutline1.Value = "1,0 mm" Then
+    a = 0.03937
+    ElseIf cboOutline1.Value = "2,0 mm" Then
+    a = 0.07874
+    End If
+    s1.Outline.SetProperties a
+    s1.Outline.Color = c
+    s1.Fill.ApplyNoFill
+    s1.SetPosition x, y
+    ActiveSelectionRange.UngroupAllEx
+    ActiveDocument.EndCommandGroup
+
+End Sub
+</pre></div></div></div>	</div>
+</div>
+<a id="comment-9271"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">dEar</span></strong> / 16.05.2012, 15:53    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Я так понимаю  a = 0.019685  и прочее - это перевод в дюймы? Не проще ли написать<br />
+ActiveDocument.unit = cdrMillimeter?<br />
+И что произойдет, если к s1 не может быть применена обводка, т.е<br />
+s1.CanHaveOutline =false?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9272"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Trezor</span></strong> / 16.05.2012, 17:28/17:28    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>dEar</strong>, да это дюймы, и да я думал добавить ActiveDocument.unit = cdrMillimeter, а к s1 в любом случае обводка применится(по умолчанию "1.0мм"), или я что то не так понял?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9275"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">dEar</span></strong> / 16.05.2012, 19:36    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Все дело в том, что если выделен объект, к которому неприменима обводка, или в случае возникновения какой-либо другой ошибки - макрос зависает, т.е. Вам надо добавить обработку ошибок On error ... - а далее возникают варианты - либо продолжение его выполнения, либо выход из макроса, но с обязательным ActiveDocument.EndCommandGroup,</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9276"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Trezor</span></strong> / 16.05.2012, 19:52/20:01    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>dEar</strong>, я как раз для этого макрос и написал, что бы добавлять обводку таким объектам, например изображениям. я неочень разбираюсь пока в vb, что за обработка ошибок?<br />
+Пока единственная ошибка которая была, уже вроде устранена <a href="http://cdrpro.ru/comment/9270#comment-9270">тут</a>.</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

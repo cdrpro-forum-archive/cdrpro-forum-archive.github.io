@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="4426.html" />
+<link rel="canonical" href="4426.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>проблема с пересечением в корел дроу | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">проблема с пересечением в корел дроу</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-4426" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">drun777</span></strong> / 01.01.2015, 20:07	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../forum/16.html">CorelDRAW</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">16.1.0.843 (sp1)</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Здравствуйте. У меня такая проблема. Если я нарисовал много прямых линий (расположенных например 1мм друг от друга) параллельно,а затем рисую любой объект к примеру-треугольник и делаю пересечение то линии остаются незамкнутые,что меня очень устраивает.А если я делаю то же самое но с кругами т.е контуры внутри круга с тем же расстоянием,то линии замыкаются превращаясь в отдельные объекты,что очень сильно вредит моей работе,так как каждый объект нужно вручную превращать в линии,а их очень много.Скажите пожалуйста есть ли решение у этой проблемы? (если нужно,могу предоставить фото). С уважением Андрей.</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="4426.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/korldro.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/korldro-itok=QAiqW4tN.jpg" alt="проблема с пересечением в корел дроу" title="проблема с пересечением в корел дроу" /></a>      </div>
+      </div>
+</div>
+    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-13401"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Solowejka</span></strong> / 01.01.2015, 22:50    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Проблемы с пересечением объектов в CorelDRAW нет.<br />
+Есть недопонимание сути того, что Вы делаете.<br />
+Вспомните из школьного курса геометрии: что есть круг, и что есть окружность.<br />
+Вам нужны именно окружности, а работали Вы с кругами, поэтому и получились фигуры пересечения с кругами.<br />
+Что сделать?<br />
+Перед тем как создавать множество концентричных окружностей, возьмите сначала один исходный круг, преобразуйте его в кривые (чтобы получить опорные точки для редактирования), выделите одну из опорных точек и разомкните.<br />
+Затем из этой разомкнутой линии создавайте множество концентричных окружностей.<br />
+Всё будет хорошо.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13402"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 01.01.2015, 23:26    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>поэкспериментировал на Х7 ... рецепт выходит таким:</p>
+<p>Рисуете группу окружностей для обрезки - выделяете их<br />
+- Комбинируете их между собой CTRL+L<br />
+- Вызываете инструмент редактирования узлов F10<br />
+- Выделяете скомбинированную группу окружностей<br />
+- выделяете линию узлов и разрываете их<br />
+ - далее делаете пересечение<br />
+результат на скриншоте</p>
+<p>по моему мнению окружность ( то, что вы называте кругами) является <strong>замкнутой</strong> кривой<br />
+и после применения команды пересечения <strong>старается остаться такой же</strong> - т.е. замкнутой<br />
+- можете поэкспериментировать с 3х-угольниками, 4х-угольниками и пр. замкнутыми кривыми</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="4426.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/br.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/br-itok=RxZnqSPs.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-13403"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">drun777</span></strong> / 02.01.2015, 01:31    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Спасибо Вам всем огромное за помощь,даже не подумал о столь легком решении проблемы,оказывается все просто,в дальнейшем буду внимательнее.Просто я думал,что глюк в программе,а оказалось во мне.Всех с НОВЫМ ГОДОМ ,всего самого наилучшего ВАМ,дай ВАМ БОГ...</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="758.html" />
+<link rel="canonical" href="../forum/13-445-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Помогите написать макрос | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Помогите написать макрос</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-758" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">stacho</span></strong> / 09.07.2010, 22:09/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Дорогие друзья! ) <br /> Помогите мне пожалуйста с VBA кодом в кореле ... мне нужно чтобы он выделял всё, подчёркива- всё, кроме текста (не в кривых конечно)....
+</p><p> Не опытен в програмировании, бьюсь уже неделю... <br /> За помощь заранее благодарен. :)</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-2404"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 12.07.2010, 13:15    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>попробуй CTRL-A :D <br /> изложи подробней как нужно выделять все - средствами Корела (рамочкой) или другим цветом и для чего выделять ?
+</p><p><b>Добавлено</b> (12.07.2010, 10:15)<br />---------------------------------------------<br />а вообще попробуй такой код <br /><code>Sub selectAll() <br /> Dim s As Shape <br /> Dim sr As ShapeRange <br />     ActiveDocument.ClearSelection <br />     Set sr = ActivePage.Shapes.FindShapes <br />     For Each s In sr <br />         If s.Type &lt;&gt; cdrTextShape Then s.AddToSelection <br />     Next s <br /> End Sub</code></p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2405"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">stacho</span></strong> / 14.07.2010, 23:24    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Спасибо, опробую...!!! :) <br /> Это мне для изготовления монтажей к печати, дабы работа казалась раем! )
+</p><p> Есть макет, визитки, например. Пауэр клипы, градиенты, тени и дт. в изобилии. <br /> Работаю обычно в Корел 12 и 14. <br /> Надо этот макет выделить и растрировать, всё кроме текста. размножить и в печать!... <br /> Вот и весь секрет. )</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2406"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 15.07.2010, 00:07    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>выделить и растрировать, всё кроме текста</p></blockquote>
+<p>Я бы у вас не стал печать после такого :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2407"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">stacho</span></strong> / 15.07.2010, 03:05    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Уверяю качество не хуже, если всё оставить как есть. Темболее большую часть всёравно растрировать приходится, ибо слетает...!!!</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2408"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 15.07.2010, 10:43    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>stacho</b>, да ладно, яж не клиент, не надо мне лечить что лучше растр или вектор на печати ;D Хотя опять же нужно посмотреть что там за печатная машина, может на ней и правда нет разницы :) Но это уже тема для отдельного разговора.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2409"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">stacho</span></strong> / 15.07.2010, 10:59    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>... а как Вы видите монтаж для печати, интересно ваше мнение...? )</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2410"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 15.07.2010, 11:41    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>stacho</b>, это философский вопрос :) Соответственно об этом можно долго говорить, и уж точно давно вышли за пределы обсуждения текущей темы. <br /> Помнится мне, тут кто то хотел поднять глобальную тему допечатной подготовки, но так ни кто и не поднял. Можешь создать, да и с себя сразу начать :) Мне бы и самому интересно было как на просторах нашей необъятной родины, да и не только, "готовят пирожки". Чует моя ... с этим делом очень туго как и со всем остальным...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2411"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Solowejka</span></strong> / 15.07.2010, 12:49    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>stacho</b>, <br /> А что Вы понимаете под монтажом для печати?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2412"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 15.07.2010, 13:00    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><div class="CDRadmAlert">Хватит ОФФтопить!</div>
+<p> Если словесных предупреждений не достаточно -- просто закрою тему. Создавайте отдельную тему про допечатку и философьте там.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2413"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Solowejka</span></strong> / 15.07.2010, 13:35/13:40    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>stacho</b>, <br /> если вопрос смакросом не решен, предлагаю воспользоваться доступными средствами: <br /> 1. Создайте новый слой <br /> <img src="../sites/default/files/forum/images/7233361_7112260.jpg" alt="Помогите написать макрос" title="Помогите написать макрос" />
+</p><p> 2. Кликните курсором в указанном месте, чтобы снять выделение с названия слоя, но, чтобы он оставался активным. <br /> <img src="../sites/default/files/forum/images/4217520_9101262.jpg" alt="Помогите написать макрос" title="Помогите написать макрос" />
+</p><p> 3. Выделите весь текст (горячие кл. назначьте свои) <br /> <img src="../sites/default/files/forum/images/6680846_5790049.jpg" alt="Помогите написать макрос" title="Помогите написать макрос" />
+</p><p> 4. Вы видите, что текст выделился во всех слоях <br /> <img src="../sites/default/files/forum/images/2830526_412102.jpg" alt="Помогите написать макрос" title="Помогите написать макрос" />
+</p><p> 5. Сгруппируйте, при этом группа автоматически переместится на новый слой, который оставался активным <br /> <img src="../sites/default/files/forum/images/7124281_611189.jpg" alt="Помогите написать макрос" title="Помогите написать макрос" />
+</p><p> 6. Сделайте новый слой непечатаемым и нередактируемым. <br /> <img src="../sites/default/files/forum/images/4781139_7981307.jpg" alt="Помогите написать макрос" title="Помогите написать макрос" />
+</p><p> 7. Экспортируйте <br /> <img src="../sites/default/files/forum/images/2547173_8986796.jpg" alt="Помогите написать макрос" title="Помогите написать макрос" />
+</p><p> <b>Sancho</b>, <br /> Кстати.Растровое – не значит не печатное. В лазерных принтерах всё равно все векторные объекты растрируются в RIP-е, хотите Вы этого, или не хотите. Даже мелкие шрифты (размер 8-9), растрированные с разрешением 300 dpi, выглядят вполне нормально.</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="758.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/7233361_7112260.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/7233361_7112260-itok=Wvlbr1aY.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/4217520_9101262.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/4217520_9101262-itok=FcHjV3Kt.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/6680846_5790049.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/6680846_5790049-itok=zJvEQ9xZ.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/2830526_412102.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/2830526_412102-itok=2NwkUWjL.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/7124281_611189.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/7124281_611189-itok=VkBmP7mP.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/4781139_7981307.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/4781139_7981307-itok=iJT_cEMp.jpg" alt="" title="" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/2547173_8986796.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/2547173_8986796-itok=YXZX7Pds.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="На страницу номер 2" href="../forum/13-445-1-page=1.html">2</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="../forum/13-445-1-page=1.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="../forum/13-445-1-page=1.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

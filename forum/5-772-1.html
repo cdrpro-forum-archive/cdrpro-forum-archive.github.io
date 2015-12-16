@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/1085.html" />
+<link rel="canonical" href="5-772-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Загадочная позрачность в corel x5 15.2.0.686 | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Загадочная позрачность в corel x5 15.2.0.686</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-1085" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">nav</span></strong> / 10.06.2011, 15:01/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="16.html">CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Описываю интерестный эффект в corel. <br /> Рисуем любой объект(для примера черный текст). Поверх рисуем прямоугольник (к примеру цвета Cyan). Применяем Инструмент "прозрачность" с параметрами Однороный, добавить, начальная прозрачность 0, все. На экране под прямоугольником отображается текст цвета cyan. Но при попытке растрировать данное "изображение" средствами corel получаем белый прямоугольник, а то что проглядывало под прозрачностью не отображается. При "опубликовать в pdf" получаем прямоугольник цвета cyan. <br /> Пытаемся повторить эффект через линзу. ... Поверх рисуем прямоугольник (к примеру цвета Cyan). Выбираем "Эффекты", линза, сложение цветов, 100%, Цвет 100% Cyan. Получаем визуально такой же эффект. Этот эффект растрируется, но получаестя не 100% Cyan (Видимо CMS Вносит свои коррективы). При экспроте в pdf c настройкой "испозовать цвета документа" получаем 100% cyan. </p>
+<p> Вот такоя блин крутизна. Очень часто слышал совет, что при очень сильно "навороченном" документе в плане эффектов, метод растрирования является "выходом". Видимо не в данном случае. <br /> Последнее время все из corel вывожу в pdf c последующей доработкой в acrobat, но что делать в данном случае я не понимаю. <br /> Понятно, что не так часто приносят такие творения, но вероятность получить брак "существует". </p>
+<p> p.s. Если средствами питстопа посмотреть на цвет полученного векторного цвета, то получаем еще один прикол - он будет цвета cyan, даже если часть текста черного цвета будет вылезать за пределы "прозрачного" прямоугольника.</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-5304"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">kpars</span></strong> / 10.06.2011, 16:01    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Не знаю почему, но очень часто обычное растрирование в CMYK приводит не совсем к тому, что мы видим на экране с прозрачностями. В таких случаях, если строгое соответствие цвета не важно (т.е. не нужно строго выдерживать в вашем случае 100% циана), я обычно растрирую сначала в RGB, а затем в CMYK. В данном случае с моими профилями окончательный вариант такого двойного растрирования составил С-81% М-16% остальные 0%. Если же необходимо более строгое соответствие цвета - довожу "руками".</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5305"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Des425</span></strong> / 10.06.2011, 16:09    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>kpars</b>, что бы цвета не искажались при переводе в RGB а потом в CMYK, конвертируй при отключенном профиле, (Simulate Color Management Off) когда включишь, увидишь что цвета схоронились. (А так метод правильный)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5306"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 10.06.2011, 16:23/16:43    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>nav</b>, всё дело в том что эффекты в кореле по умолчанию отображаются через модель RGB. Если ты возьмёшь свой первый пример до растрирования и включишь опцию <b>Simulate Overprints</b> в меню View (вид), ты заодно переключишь отображение эффектов в <b>СМИК</b>, и как следствие увидишь белый прямоугольник. </p>
+<p> П.С. Пруф кстати покажет тот же результат.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5307"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">nav</span></strong> / 10.06.2011, 20:23    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Если я правильно понимаю, то данный эффект, а видимо еще много других эффектов, невозможно перенести в файл pdf, не прибегая к дополнительной помощи "рук"(нахождения таких эффектов и преобразования оных в раст).</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5308"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">kpars</span></strong> / 10.06.2011, 21:10    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Des425 <br /> Спасибо. Отличный совет</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5309"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 10.06.2011, 21:40    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>nav</b>, да, некоторые эффекты не поддерживаются в pdf.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5310"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">nav</span></strong> / 14.06.2011, 02:18    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>Sancho</b>, в таком случае, существует ли инструмент (скрипт или что-то подобное), позволяющий указывать на наличие тех эффектов, которые не поддерживаются в pdf (типа проверки TIL). Естественно речь не идет о визуальном методе через proof. <br /> p.s. планурию приобретение макроса cdrpreflight. Хотел бы узнать, как себя поведет макрос с данной "загадочной прозрачностью"</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5311"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 14.06.2011, 02:25    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Такого инструмента нет с вероятностью в 99%, ибо оно не нужно. <br /> Префлайт растрирует прозрачности если включить соответствующую опцию.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5312"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">nav</span></strong> / 15.06.2011, 15:49    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Префлайт растрирует прозрачности если включить соответствующую опцию. </p>
+<p> Вопрос касается именно данного типа прозрачностей(которые не корректно переводятся в pdf и не отображаются при включении пруф). По какому алгоритму растрирует скрипт - сразу в cmyk (после чего данный эффект пропадает) или в начале в rgb, а потом в cmyk, что позволит сохранить визуальный эффект, который отсутсвтвует визуально при включенной опции пруф</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5313"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 15.06.2011, 17:20    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>сразу в смик</p>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="На страницу номер 2" href="5-772-1-page=1.html">2</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="5-772-1-page=1.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="5-772-1-page=1.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

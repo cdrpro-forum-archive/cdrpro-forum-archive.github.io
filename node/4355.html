@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="4355.html" />
+<link rel="canonical" href="4355.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Изменяется размер растровой картинки | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Изменяется размер растровой картинки</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-4355" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Patent</span></strong> / 12.09.2014, 17:27	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../forum/16.html">CorelDRAW</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">16.1.0.843 (sp1)</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>В макете присутствует объект растровой графики. Этот объект масштабируется, затем - copy/paste. Проблема в том, что объект вставляется в первоначальном размере, т.е. любые операции масштабирования игнорируются. При этом в истории отмен появляется дополнительная строчка "Bitmaps fix dpi". У меня одного такая проблема? И как с этим бороться?</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-13094"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 12.09.2014, 23:58    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>Этот объект масштабируется, затем - copy/paste. </p></blockquote>
+<p>воспроизвести не удалось, но ...<br />
+попробуйте между этих операций вставить - конвертировать в растр  - с нужным ДПИ и цветностью</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13095"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Patent</span></strong> / 13.09.2014, 23:20    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Все. Нашел сам. Дело в некорректной работе макроса <strong><em>wx_fixImportDPI</em></strong> (<a href="http://cdrpro.ru/news/2010-10-16-279">http://cdrpro.ru/news/2010-10-16-279</a>) от <em>wOxxOm</em>. Удалил и все стало нормально.</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

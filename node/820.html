@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="820.html" />
+<link rel="canonical" href="../forum/13-507-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Transformation. Apply to Duplicate | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Transformation. Apply to Duplicate</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-820" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">kuterma2</span></strong> / 15.09.2010, 13:21/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Парни, одолела меня необходимость постоянно тыкать в кнопку "Apply " на панели Transformation... Галочки ставить там ещё к тому-же...
+</p><p> Часто приходится дублировать объекты вправо или влево... вверх или вниз... Хотелось бы макрос замутить на эту тему. Смысл такой - нажимаешь на гор.клавишу и справа (или слева или сверху или снизу) дублируется этот объект...
+</p><p> Попробовал тупо записать сам - не выходит...
+</p><p> Тута нужен спец... Ежели кто может - может кто поможет?!.. а?..
+</p><p> Думаю такой макрос пригодится не только мне...</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-2965"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 15.09.2010, 14:01    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Я думаю что что-то подобное уже точно есть, поищи. <br /> Я бесплатно точно не буду писать, просто некогда.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2966"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">kuterma2</span></strong> / 15.09.2010, 14:18    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>Я думаю что что-то подобное уже точно есть, поищи.</p></blockquote>
+<p> Да в том-то и дело - искал - ничего путного не накопал...
+</p><p> А макрос как мне кажется должен быть прост...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2967"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 15.09.2010, 14:22    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>ну прост/не прост а делать я его всё равно не буду, тем более бесплатно. Время — деньги!</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2968"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 15.09.2010, 17:31    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>давно написал такой макрос, кому нужно - пользуйтесь <br /> только подправьте для своих нужд строку c .Move <br /> (поменяйте функцию на .SizeWidth и параметры местами для копирования влево/вправо) <br /><code>sub Clone_Down <br /> Dim srS, srC As ShapeRange <br />     Set srS = ActiveSelectionRange <br />     With srS <br />         Set srC = .Duplicate <br />         .Move 0#, 0 - .SizeHeight ' копируем снизу от исходного  <br />         .OrderForwardOne <br />     End With <br /> End Sub</code></p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2969"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">kuterma2</span></strong> / 15.09.2010, 19:37/20:08    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>shark</b>, спасибо, попробую поковыряться. <br /> Поковырялся - вверх-вниз - сделал, а вправо-влево - никак... подставляю - SizeWidth - а он копирует вниз с каким-то отступом... (простите, парни, если напрягаю, но я лох в этом деле полный...)
+</p><p> <code>Sub Dup_vniz() <br /> Dim srS, srC As ShapeRange <br />      Set srS = ActiveSelectionRange <br />      With srS <br />          Set srC = .Duplicate <br />          .Move 0#, 0 - .SizeHeight ' копируем снизу от исходного <br />          .OrderForwardOne <br />      End With <br /> End Sub <br /> Sub Dup_Vverx() <br /> Dim srS, srC As ShapeRange <br />      Set srS = ActiveSelectionRange <br />      With srS <br />          Set srC = .Duplicate <br />          .Move 0#, 0 + .SizeHeight ' копируем сверху от исходного <br />          .OrderForwardOne <br />      End With <br /> End Sub <br /> Sub Dup_Vlevo() <br /> Dim srS, srC As ShapeRange <br />      Set srS = ActiveSelectionRange <br />      With srS <br />          Set srC = .Duplicate <br />          .Move 0#, 0 - .SizeWidth ' копируем -- от исходного <br />          .OrderForwardOne <br />      End With <br /> End Sub</code></p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2970"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">dEar</span></strong> / 16.09.2010, 02:14    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Надо SizeWidth ставить на первое место в методе Move([DeltaX As Double], [DeltaY As Double])
+</p><p> Но я бы наверное сделал бы примерно так <br /><code>Sub DupRight() <br />   <br />      If ActiveSelectionRange.Count = 0 Then <br />             MsgBox "Ничего не выделено" <br />             Exit Sub <br />        Else <br />             ActiveSelectionRange.Duplicate(ActiveSelectionRange.SizeWidth, 0).OrderForwardOne <br />        <br />       End If <br /> End Sub</code></p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2971"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">kuterma2</span></strong> / 17.09.2010, 14:03/14:04    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>shark</b>, <b>dEar</b>, спасибо вам, парни.
+</p><p> Да только моих познаний (ну не знаю я Визуала Бейсика... совсеммм) не хватает чтоб довести ваши макросы до ума...
+</p><p> Если кто может - напишите поподробнее для чайника - куда чего точно писать.<br /></p><blockquote>Но я бы наверное сделал бы примерно так</blockquote>
+<p> - твой метод работает, но выделение остается на первом объекте - а мне надо, чтоб был выделен дубликат был...
+</p><p> <b>shark</b>, влево - вправо работает - а вверх - вниз бы вот ещё....
+</p><p> Парни, простите, что занимаюсь попрошайничеством, но... как-то "закантило" меня прям на это дело - хочется крепко...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2972"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 20.09.2010, 16:38    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>kuterma2</b>, ты просто повнимательнее читай <br /><br /></p><blockquote>поменяйте функцию на .SizeWidth и параметры местами для копирования влево/вправо)</blockquote>
+<p> .Move 0#, 0 - .SizeHeight ' копируем вниз <br /> .Move 0#, .SizeHeight ' ... вверх <br /> .Move 0 - .SizeWidth, 0# '... влево, (меняем параметры местами и функцию на SizeWidth) <br /> .Move .SizeWidth, 0# ' ...вправо</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2973"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">kuterma2</span></strong> / 20.09.2010, 18:19/18:23    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>shark</b>, Преогромное спасибо, друг! Благодарю за разжёвывание! Всё работает как часы - быстро да ладно! Назначил гор. клавиши - и теперь всё - просто песня!
+</p><p> Прицепляю готовый GMS - назвал SS_Duplicator - может ещё кому-то надо. <br /> Удобно пользоваться если настроить гор.клавиши. Я настроил так: Ctrl+Alt+Shift+стрелки(вверх, вниз, влево-вправо соответственно)</p>
+</div></div></div><div class="dd-attached field field-name-field-forum-files field-type-file field-label-above clearfix">
+      <div class="field-label"><a href="820.html#" class="cdrSlideAttach">Файлы</a></div>
+    <div class="field-items">
+          <div class="field-item even"><span class="file"><img class="file-icon" alt="" title="application/octet-stream" src="/modules/file/icons/application-octet-stream.png" /> <a href="../sites/default/files/forum/files/SS_4478578.gms" type="application/octet-stream; length=13842">SS_4478578.gms</a></span></div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-2974"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">kuman</span></strong> / 27.09.2010, 12:34    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Спасибо за макрос. Решил переделать его под свои нужды, сделал с интерфейсом и с возможностью отклонения позиции по миллиметрам, вводить в чёрном поле(вроде понятно написал :) ) Справа показан размер объекта, чтобы его обновить нужно нажать на кнопку "Размер", в принципе эти поля не нужны, для наглядности и только. Вопрос возник: как сделать так, чтобы размер вписывался автоматически после выделения объекта, а не так как сейчас реализовано(после нажатия на кнопку)?</p>
+</div></div></div><div class="dd-attached field field-name-field-forum-files field-type-file field-label-above clearfix">
+      <div class="field-label"><a href="820.html#" class="cdrSlideAttach">Файлы</a></div>
+    <div class="field-items">
+          <div class="field-item even"><span class="file"><img class="file-icon" alt="" title="application/octet-stream" src="/modules/file/icons/application-octet-stream.png" /> <a href="../sites/default/files/forum/files/MY_duplicator_4192249.gms" type="application/octet-stream; length=37394">MY_duplicator_4192249.gms</a></span></div>
+      </div>
+</div>
+	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="На страницу номер 2" href="../forum/13-507-1-page=1.html">2</a></li>
+<li class="pager-item"><a title="На страницу номер 3" href="../forum/13-507-1-page=2.html">3</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="../forum/13-507-1-page=1.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="../forum/13-507-1-page=2.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

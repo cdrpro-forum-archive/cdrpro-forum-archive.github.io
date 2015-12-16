@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="2814.html" />
+<link rel="canonical" href="2814.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>SmartBreakApart - макрос для раскомбинирования очень сложных объектов. | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">SmartBreakApart - макрос для раскомбинирования очень сложных объектов.</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-2814" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">MBK</span></strong> / 25.03.2012, 18:33/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Многие сталкивались в своей работе с проблемой превышения допустимого количества узлов на кривых с последующим слетом объектов при печати в PS. Такое очень часто бывает при переводе больших порций текста в кривые, импорта созданных в других программах EPS и PDF, а так же трассированных изображений. Сейчас наткнулся на замечательный макрос, который помогает разобраться с этой проблемой - раскомбинирует сложные кривые на набор из простых объектов, который при простой доводке напильником (глобальной замене цвета), выглядит как исходное изображение. Автор утверждает, что работает в 99% случаев.</p>
+<pre class="brush: vb">
+Option Explicit
+
+Sub smartBreakApart()
+
+Dim s As Shape, sr As ShapeRange, shs As Shape
+Dim sr2 As New ShapeRange, sr3 As ShapeRange
+Dim x As Double, y As Double
+Dim nodecount As Long, tempDis As Double
+
+   On Error GoTo smartBreakApart_Error
+
+If ActiveSelection.Shapes.count = 0 Then Exit Sub
+
+Optimization = True
+EventsEnabled = False
+ActiveDocument.BeginCommandGroup "smart break"
+
+ActiveSelection.UngroupAll
+Set sr2 = ActiveSelection.BreakApartEx
+Set sr = OrderBySize(sr2)
+
+tempDis = 0.005
+
+For Each s In sr
+    s.OrderToFront
+    s.Fill.ApplyUniformFill CreateRGBColor(64, 32, 32)
+    nodecount = 1
+    s.Curve.Nodes(nodecount).GetPosition x, y
+    
+If 1 = 2 Then
+1001:
+    If nodecount &lt;= s.Curve.Nodes.count Then
+        s.Curve.Nodes(nodecount).GetPosition x, y
+    Else
+        GoTo 1002:
+    End If
+End If
+    
+    If s.IsOnShape(x + tempDis, y) = cdrInsideShape And s.IsOnShape(x + tempDis, y) &lt;&gt; cdrOnMarginOfShape Then
+        x = x + tempDis
+        
+    ElseIf s.IsOnShape(x - tempDis, y) = cdrInsideShape And s.IsOnShape(x - tempDis, y) &lt;&gt; cdrOnMarginOfShape Then
+        x = x - tempDis
+        
+    ElseIf s.IsOnShape(x, y + tempDis) = cdrInsideShape And s.IsOnShape(x, y + tempDis) &lt;&gt; cdrOnMarginOfShape Then
+        y = y + tempDis
+        
+    ElseIf s.IsOnShape(x, y - tempDis) = cdrInsideShape And s.IsOnShape(x, y - tempDis) &lt;&gt; cdrOnMarginOfShape Then
+        y = y - tempDis
+        
+    ElseIf s.IsOnShape(x - tempDis, y - tempDis) = cdrInsideShape And s.IsOnShape(x - tempDis, y - tempDis) &lt;&gt; cdrOnMarginOfShape Then
+        y = y - tempDis: x = x - tempDis
+
+    ElseIf s.IsOnShape(x + tempDis, y + tempDis) = cdrInsideShape And s.IsOnShape(x + tempDis, y + tempDis) &lt;&gt; cdrOnMarginOfShape Then
+        y = y + tempDis: x = x + tempDis
+        
+    ElseIf s.IsOnShape(x - tempDis, y + tempDis) = cdrInsideShape And s.IsOnShape(x - tempDis, y + tempDis) &lt;&gt; cdrInsideShape Then
+        y = y + tempDis: x = x - tempDis
+        
+    ElseIf s.IsOnShape(x + tempDis, y - tempDis) = cdrInsideShape And s.IsOnShape(x + tempDis, y - tempDis) &lt;&gt; cdrOnMarginOfShape Then
+        y = y - tempDis:  x = x + tempDis
+        
+    Else
+        nodecount = nodecount + 1
+        's.Fill.ApplyUniformFill CreateRGBColor(255, 0, 0) 'RED - testing
+        GoTo 1001:
+    End If
+1002:
+    Set shs = ActivePage.SelectShapesAtPoint(x, y, False, tempDis / 2) 'notice!!! tempdis /2
+    If Not IsOdd(shs.Shapes.count) Then s.Fill.ApplyUniformFill CreateRGBColor(255, 255, 121)
+    sr2.Add s
+Next s
+
+ActiveDocument.EndCommandGroup
+Optimization = False
+EventsEnabled = True
+ActiveWindow.Refresh
+
+   On Error GoTo 0
+   Exit Sub
+
+smartBreakApart_Error:
+    ActiveDocument.EndCommandGroup
+    Optimization = False
+    EventsEnabled = True
+    ActiveWindow.Refresh
+    MsgBox "Error " &amp; Err.Number &amp; " (" &amp; Err.Description &amp; ") in procedure smartBreakApart of Module newSmartBreakApart"
+    
+End Sub
+
+Private Function IsOdd(i As Long) As Boolean
+    IsOdd = (i Mod 2) &lt;&gt; 0
+End Function
+
+Private Function OrderBySize(sr As ShapeRange) As ShapeRange
+    Dim srSorted As New ShapeRange
+    Dim s As Shape, i As Integer
+    Dim t As Variant, j As Integer, y As Integer
+    Dim iUpper As Integer, Condition1 As Boolean
+    ReDim ShapesAndSizes(sr.count - 1, 1) As Double 'Create an Array to hold area and staticID
+    
+    'Add shape data to array
+    For i = 1 To sr.count
+        ShapesAndSizes(i - 1, 0) = Round(sr(i).SizeWidth * sr(i).SizeHeight, 3) 'Area of the shape
+        ShapesAndSizes(i - 1, 1) = sr(i).StaticID 'Static ID of current shape
+    Next i
+    
+    'A very simple sort
+    For i = LBound(ShapesAndSizes, 1) To UBound(ShapesAndSizes, 1) - 1
+        For j = LBound(ShapesAndSizes, 1) To UBound(ShapesAndSizes, 1) - 1
+            Condition1 = ShapesAndSizes(j, 0) &lt;= ShapesAndSizes(j + 1, 0)
+            If Condition1 Then
+                For y = LBound(ShapesAndSizes, 2) To UBound(ShapesAndSizes, 2)
+                    t = ShapesAndSizes(j, y)
+                    ShapesAndSizes(j, y) = ShapesAndSizes(j + 1, y)
+                    ShapesAndSizes(j + 1, y) = t
+                Next y
+            End If
+        Next
+    Next
+    
+    'Create a ShapeRange from the sorted array
+    For i = 0 To sr.count - 1
+        srSorted.Add ActivePage.FindShape(StaticID:=ShapesAndSizes(i, 1))
+    Next i
+
+    Set OrderBySize = srSorted 'Return the new sorted shaperange
+End Function
+</pre><p>Источник: <a href="http://www.gdgmacros.com/helpful_vba_code_details.php?codeID=11">http://www.gdgmacros.com/helpful_vba_code_details.php?codeID=11</a></p>
+</div></div></div>    	</div>
+
+	
+	
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

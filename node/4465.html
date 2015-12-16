@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="4465.html" />
+<link rel="canonical" href="4465.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Как преобразовать ВЕСЬ простой текст в фигурный  | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Как преобразовать ВЕСЬ простой текст в фигурный </h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-4465" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Виктуар</span></strong> / 10.02.2015, 15:33	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../forum/16.html">CorelDRAW</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">13.0.0.576</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>На странице (сканворд) более сотни рамок простого текста (каждый вопрос-определение к своему слову). Все эти рамки нужно преобразовать в текст фигурный (ctrl+F8)... Можно делать это по одной. Но должен же быть какой-нибудь путь для преобразования ВСЕХ рамок (каждой в отдельности или всех вместе) в фигурные. Буду раз за любые советы...</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-13627"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 10.02.2015, 20:19    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Держите макрос для этого</p>
+<pre class="brush: vb">Sub ArtText()
+Dim sr As ShapeRange, s As Shape
+    Set sr = ActivePage.FindShapes(, cdrTextShape)
+    For Each s In sr
+        If s.Text.Type = cdrParagraphText Then s.Text.ConvertToArtistic
+    Next
+End Sub</pre></div></div></div>	</div>
+</div>
+<a id="comment-13628"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Виктуар</span></strong> / 11.02.2015, 01:52    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Это гениально. Спасибо! Я попробую разобраться в этом, чтобы более не докучать расспросами. Не думал. что для этого потребуется макрос, хотя теперь это очевидно. Работает.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13631"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 11.02.2015, 17:19    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Обращайтесь, если что</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

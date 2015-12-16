@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="2654.html" />
+<link rel="canonical" href="2654.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Коррекция изображений | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Коррекция изображений</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-2654" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Baryga88</span></strong> / 11.12.2011, 23:18/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../pp-lessons-forum.html">УРОКИ Corel PHOTO-PAINT</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>В данном уроке речь пойдет о весьма интересном способе коррекции изображений. Я не смог придумать краткое название этому уроку, которое соответствовало бы его содержанию. Правильней было бы его назвать «Использование масок на основе значений яркости канала, для коррекции изображений». Однако такое длинное название врядли бы уместилось целиком.<br />
+Итак, собственно о чем пойдет речь в данном уроке. Загрузка яркости изображения позволяет преобразовать тональные значения изображения или канала в активную выделенную область, основанную на значениях яркости, превышающих 128. Однако мы не будем в этом уроке использовать это ограничение значения яркости, а просто рассмотрим методу, как использовать значения яркости одного из каналов, для создания выделенной области и последующей коррекции изображения. Выражение «коррекция изображения» может не совсем удачно в данном случае, т. к. речь пойдет не об устранении дефектов изображения, что более часто подразумевается под коррекцией, а об изменении изображения, для получения более интересного результата.<br />
+Приступим. На рис. 1, представлено исходное изображение.</p>
+<p><a href="../sites/default/files/forum/images/038005b.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/large/public/forum/images/038005b-itok=UeqBQx5x.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></a></p>
+<p>В общем-то нормальное изображение и особо придраться здесь не к чему. Наша задача несколько изменить его таким образом, чтобы создавалось ощущение, что скалы разрушались под воздействием солнца и придать изображению некоторое ощущения, что съемка проводилась в жаркий день. К сожалению у меня не оказалось под рукой действительно подходящей фотографии, где можно было бы более "красочно" продемонстрировать результаты данного способы коррекции.</p>
+<p>1. Прежде всего, нам нужно выявить канал, который является самым контрастным. Как правило, это зеленый или красный каналы. Выполните команду <strong>Image &gt; Split Channels to &gt; RGB</strong> (Изображение &gt; Разбить каналы на &gt; RGB). Photo-Paint разобьет изображение на 3 канала и автоматически создаст 3 соответствующих файла. В качестве канала для создания маски на основе яркости используем зеленый канал. Два других файла, соответствующих красному и голубому каналам, можете закрыть (рис. 2).</p>
+<p><img src="../sites/default/files/forum/images/ris_2_1.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></p>
+<p>2. Выполните команду <strong>Image &gt; Transform &gt; Invert</strong> (Изображение &gt; Преобразование &gt; Инвертировать), чтобы инвертировать цветовое значение канала (рис. 3).</p>
+<p><img src="../sites/default/files/forum/images/ris_3_0.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></p>
+<p>3. Выполните команду <strong>Adjust &gt; Tone curve</strong> (Настройка &gt; Цветовая кривая) для увеличения контрастности канала (рис. 4).</p>
+<p><a href="../sites/default/files/forum/images/ris_4_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/large/public/forum/images/ris_4_1-itok=fDYgGDp1.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></a></p>
+<p>4. Выполните команду <strong>Mask &gt; Color Mask</strong> (Маска &gt; Цветовая маска). В диалоговом окне <strong>Color Mask</strong> (Цветовая маска), выберите в раскрывающемся списке команду <strong>Highligts</strong> (рис. 5) и нажмите <strong>ОК</strong>. Конечно, можно поэкспериментировать с выделяемым диапазоном, меняя значение параметра <strong>Threshold</strong> (Порог) в окне <strong>Color Mask</strong> (Цветовая маска), но мы ограничимся предложенными Photo-Paint значениями.</p>
+<p><img src="../sites/default/files/forum/images/ris_5_1.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></p>
+<p>В результате получим маску, как показано на рис. 6.</p>
+<p><img src="../sites/default/files/forum/images/ris_6_1.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></p>
+<p>5. Сохраните маску на диск, выполнив команду <strong>Mask &gt; Save &gt; Save Mask To Disk</strong> (Маска &gt; Сохранить &gt; Сохранить на диск).</p>
+<p>6. Теперь можете закрыть изображение зеленого канала без сохранения. В исходном изображении выполните команду <strong>Mask &gt; Load &gt; Load From Disk</strong> (Маска &gt; Загрузить &gt; Загрузить с диска), чтобы загрузить сохраненную маску (рис. 7).</p>
+<p><a href="../sites/default/files/forum/images/ris_7_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/large/public/forum/images/ris_7_1-itok=NEyVqk89.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></a></p>
+<p>7. Создадим из выделенной области объект: <strong>Object &gt; Create &gt; Object: Copy Selection</strong> (Объект &gt; Создать &gt; Объект: Копировать выделение). Маска исчезнет, но в докере <strong>Objects</strong> (Объекты) появится новый объект. На этом этапе, визуально вы пока не заметите никаких изменений.</p>
+<p>8. Убедитесь, что в докере <strong>Objects</strong> (Объекты) выделен  новый объект и выполните команду <strong>Adjust &gt; Tone curve</strong> (Настройка &gt; Цветовая кривая). Теперь измените форму кривой на S-образную (рис. 8).</p>
+<p><img src="../sites/default/files/forum/images/ris_8_1.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></p>
+<p>Теперь наше исходное изображение станет, как на рис. 9).</p>
+<p><a href="../sites/default/files/forum/images/ris_9_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/large/public/forum/images/ris_9_1-itok=Lghnig5e.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></a></p>
+<p>9. Измените в докере <strong>Objects</strong> (Объекты) режим наложения объекта на <strong>Soft Light</strong>.  Получим конечный результат (рис. 10).</p>
+<p><a href="../sites/default/files/forum/images/ris_10_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/large/public/forum/images/ris_10_1-itok=aKJYoiW_.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></a></p>
+<p>Итак, подведем маленькие итоги и сделаем выводы. Используя данную методику и меняя режимы наложения, можно добиться желаемого изменения изображения, не затрагивая его светлых частей. Если бы мы применили похожие действия непосредственно к исходному изображению, мы бы могли получить затемнение или нежелательное изменение всего изображения. Данную методику целесообразно применять в тех случаях, когда вы хотите подчеркнуть разницу между светами и тенью. Также можно применять этот метод, для придания изображению такого вида, как будто съемка велась в определенное время суток, например, в полдень или вечером. Так что экспериментируя с настройками и режимами наложения, можно достичь интересных результатов.<br />
+Когда эту методику нецелесообразно применять. Эта методика подходит не ко всем изображениям. Если изображение не имеет теневых участков или тени очень темные, то вы можете только ухудшить изображение или получить результат совсем отличный от ожидаемого.</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="2654.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/038005b.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/038005b-itok=YIaVt688.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_2_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_2_1-itok=hxVGVfvn.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_3_0.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_3_0-itok=sk6nuZ5D.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_4_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_4_1-itok=jyc3B91A.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_5_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_5_1-itok=S78xFd8I.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_6_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_6_1-itok=WKNxYjOk.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_7_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_7_1-itok=ZBDWgOP8.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_8_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_8_1-itok=LXek7xUg.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_9_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_9_1-itok=QTBy7xJt.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_10_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_10_1-itok=OStanhul.jpg" alt="Коррекция изображений" title="Коррекция изображений" /></a>      </div>
+      </div>
+</div>
+    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-7990"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 11.12.2011, 23:40    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Вот что меня всегда убивало в PP, так это необходимость разбивать на каналы...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-7991"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Baryga88</span></strong> / 11.12.2011, 23:52/23:53    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Как говорил наш первый президент "Маемо, те шо маемо" (по-русски: "Имеем то, что имеем") :) Почему я и говорил, разработчикам есть простор для деятельности по улучшению ПП :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-7992"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 12.12.2011, 00:21    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Простор то есть, а вот времени нет.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8483"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Инга</span></strong> / 15.02.2012, 03:52    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Спасибо за интересный урок!</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8484"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Baryga88</span></strong> / 16.02.2012, 00:52    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><div class="off">Может в скором времени дойдут руки, попробую написать еще что-нибудь интересное :)</div>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

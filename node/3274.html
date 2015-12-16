@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="3274.html" />
+<link rel="canonical" href="3274.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Что нового в объектной модели CorelDRAW | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Что нового в объектной модели CorelDRAW</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-3274" class="node node-forum node-sticky clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Sancho</span></strong> / 21.03.2013, 17:00/23:46	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><style>
+<!--/*--><![CDATA[/* ><!--*/
+
+	h4 { font-size: 16px; margin-bottom: 16px; }
+	.tab { padding-left: 20px; }
+
+/*--><!]]>*/
+</style><h3>Отличия VGCore X6 (16.0) от VGCore X5</h3>
+
+<h4>Class CommandBarControls</h4>
+<div class="tab">
+    <strong>Methods:</strong>
+    <ul><li>Function <b>AddCustomControl</b> (ByVal <b>ClassName</b> As String, [ByVal <b>AssemblyPath</b> As String = ""], [ByVal <b>Index</b> As Long = 0], [ByVal <b>Temporary</b> As Boolean = False]) As CommandBarControl</li>
+    <li>Function <b>AddToggleButton</b> (ByVal <b>Guid</b> As String, [ByVal <b>Index</b> As Long = 0], [ByVal <b>Temporary</b> As Boolean = False]) As CommandBarControl</li>
+    <li>Sub <b>Remove</b> (ByVal <b>Index</b> As Long)</li>
+    </ul></div>
+
+<h4>Enum cdrCompressionType</h4>
+<div class="tab">
+    <strong>Constants:</strong>
+    <ul><li><b>cdrCompressionZIP</b> As Long=7</li>
+    </ul></div>
+
+<h4>Enum cdrFileVersion</h4>
+<div class="tab">
+    <strong>Constants:</strong>
+    <ul><li><b>cdrVersion16</b> As Long=16</li>
+    </ul></div>
+
+
+<h4>Enum cdrFilter</h4>
+<div class="tab">
+    <strong>Constants:</strong>
+    <ul><li><b>cdrCMX64</b> As Long=1811</li>
+    <li><b>cdrPUB</b> As Long=1349</li>
+    </ul></div></div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-10974"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 21.03.2013, 23:09    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><h3>Отличия VGCore X6 (16.1) от VGCore X6 (16.0)</h3>
+
+<h4>Class IVGApplication</h4>
+<div class="tab">
+<strong>Methods:</strong>
+<ul><li>Function <b>GetSupportedOpenTypeFeatures</b> ()() As String</li>
+</ul></div>
+
+<h4>Class IVGDocument</h4>
+<div class="tab">
+<strong>Properties:</strong>
+<ul><li>Property <b>StyleSheet</b> As IVGStyleSheet</li>
+<li>Property <b>TextFormatter</b> As Long</li>
+</ul></div>
+
+<h4>Class IVGShape</h4>
+<div class="tab">
+<strong>Properties:</strong>
+<ul><li>Property <b>Style</b> As IVGStyle</li>
+</ul><strong>Methods:</strong>
+<ul><li>Sub <b>AlignAndDistribute</b> (ByVal <b>MethodH</b> As cdrAlignDistributeH, ByVal <b>MethodV</b> As cdrAlignDistributeV, [ByVal <b>AlignTo</b> As cdrAlignShapesTo = cdrAlignShapesToLastSelected (0)], [ByVal <b>DistributeArea</b> As cdrDistributeArea = cdrDistributeToSelection (0)], [ByVal <b>UseOutline</b> As Boolean = False], [ByVal <b>TextAlignOrigin</b> As cdrTextAlignOrigin = cdrTextAlignBoundingBox (2)], [ByVal <b>PointX</b> As Double = 0], [ByVal <b>PointY</b> As Double = 0], [ByVal <b>DistributeRect</b> As IVGRect = Nothing])</li>
+</ul></div>
+
+<h4>Class IVGShapeRange</h4>
+<div class="tab">
+<strong>Methods:</strong>
+<ul><li>Sub <b>AlignAndDistribute</b> (ByVal <b>MethodH</b> As cdrAlignDistributeH, ByVal <b>MethodV</b> As cdrAlignDistributeV, [ByVal <b>AlignTo</b> As cdrAlignShapesTo = cdrAlignShapesToLastSelected (0)], [ByVal <b>DistributeArea</b> As cdrDistributeArea = cdrDistributeToSelection (0)], [ByVal <b>UseOutline</b> As Boolean = False], [ByVal <b>TextAlignOrigin</b> As cdrTextAlignOrigin = cdrTextAlignBoundingBox (2)], [ByVal <b>PointX</b> As Double = 0], [ByVal <b>PointY</b> As Double = 0], [ByVal <b>DistributeRect</b> As IVGRect = Nothing])</li>
+</ul></div>
+
+<h4>Class IVGStyle</h4>
+<div class="tab">
+<strong>Properties:</strong>
+<ul><li>Property <b>BasedOn</b> As IVGStyle</li>
+<li>Property <b>CategoryName</b> As String</li>
+<li>Property <b>Character</b> As IVGStyleCharacter</li>
+<li>Property <b>DerivedStyles</b> As IVGStyles</li>
+<li>Property <b>DisplayCategoryName</b> As String</li>
+<li>Property <b>DisplayName</b> As String</li>
+<li>Property <b>Fill</b> As IVGStyleFill</li>
+<li>Property <b>Frame</b> As IVGStyleFrame</li>
+<li>Property <b>IsObjectDefaults</b> As Boolean</li>
+<li>Property <b>IsStyleSet</b> As Boolean</li>
+<li>Property <b>Name</b> As String</li>
+<li>Property <b>Outline</b> As IVGStyleOutline</li>
+<li>Property <b>Paragraph</b> As IVGStyleParagraph</li>
+</ul><strong>Methods:</strong>
+<ul><li>Function <b>ClearProperty</b> (ByVal <b>Name</b> As String) As Boolean</li>
+<li>Function <b>Delete</b> () As Boolean</li>
+<li>Function <b>GetAllPropertyNames</b> ()() As String</li>
+<li>Function <b>GetOverridePropertyNames</b> ()() As String</li>
+<li>Function <b>GetProperty</b> (ByVal <b>Name</b> As String) As Variant</li>
+<li>Function <b>GetPropertyAsString</b> (ByVal <b>Name</b> As String) As String</li>
+<li>Function <b>IsPropertyInherited</b> (ByVal <b>Name</b> As String) As Boolean</li>
+<li>Function <b>Rename</b> (ByVal <b>NewName</b> As String) As Boolean</li>
+<li>Function <b>SetBasedOn</b> (ByVal <b>NewParent</b> As String) As Boolean</li>
+<li>Sub <b>SetProperty</b> (ByVal <b>Name</b> As String, ByVal <b>Value</b> As Variant)</li>
+<li>Function <b>SetPropertyAsString</b> (ByVal <b>Name</b> As String, ByVal <b>Value</b> As String) As Boolean</li>
+<li>Function <b>StringAssign</b> (ByVal <b>StyleString</b> As String) As Boolean</li>
+<li>Function <b>ToString</b> () As String</li>
+</ul></div>
+
+<h4>Class IVGStyleCharacter</h4>
+<div class="tab">
+<strong>Properties:</strong>
+<ul><li>Property <b>Style</b> As IVGStyle</li>
+</ul></div>
+
+<h4>Class IVGStyleFill</h4>
+<div class="tab">
+<strong>Properties:</strong>
+<ul><li>Property <b>EdgePad</b> As Long</li>
+<li>Property <b>FlipColors</b> As Boolean</li>
+<li>Property <b>FountainBlendType</b> As cdrFountainFillBlendType</li>
+<li>Property <b>FountainCenterOffsetX</b> As Long</li>
+<li>Property <b>FountainCenterOffsetY</b> As Long</li>
+<li>Property <b>FountainFillType</b> As cdrFountainFillType</li>
+<li>Property <b>FountainSteps</b> As Long</li>
+<li>Property <b>MidPoint</b> As Long</li>
+<li>Property <b>MirrorFill</b> As Boolean</li>
+<li>Property <b>Overprint</b> As Boolean</li>
+<li>Property <b>PostScriptName</b> As String</li>
+<li>Property <b>PrimaryColor</b> As IVGColor</li>
+<li>Property <b>RotationAngle</b> As Double</li>
+<li>Property <b>SecondaryColor</b> As IVGColor</li>
+<li>Property <b>SkewAngle</b> As Double</li>
+<li>Property <b>Style</b> As IVGStyle</li>
+<li>Property <b>TileHeight</b> As Double</li>
+<li>Property <b>TileOffset</b> As Long</li>
+<li>Property <b>TileOffsetType</b> As cdrTileOffsetType</li>
+<li>Property <b>TileOriginX</b> As Double</li>
+<li>Property <b>TileOriginY</b> As Double</li>
+<li>Property <b>TileWidth</b> As Double</li>
+<li>Property <b>TransformWithShape</b> As Boolean</li>
+<li>Property <b>Type</b> As cdrFillStyleType</li>
+<li>Property <b>WindingFill</b> As Boolean</li>
+</ul></div>
+
+<h4>Class IVGStyleFrame</h4>
+<div class="tab">
+<strong>Properties:</strong>
+<ul><li>Property <b>Style</b> As IVGStyle</li>
+</ul></div>
+
+<h4>Class IVGStyleOutline</h4>
+<div class="tab">
+<strong>Properties:</strong>
+<ul><li>Property <b>BehindFill</b> As Boolean</li>
+<li>Property <b>Color</b> As IVGColor</li>
+<li>Property <b>Justification</b> As cdrOutlineJustification</li>
+<li>Property <b>LineCaps</b> As cdrOutlineLineCaps</li>
+<li>Property <b>LineJoin</b> As cdrOutlineLineJoin</li>
+<li>Property <b>MiterLimit</b> As Double</li>
+<li>Property <b>NibAngle</b> As Double</li>
+<li>Property <b>NibStretch</b> As Long</li>
+<li>Property <b>OverlapArrow</b> As Boolean</li>
+<li>Property <b>Overprint</b> As Boolean</li>
+<li>Property <b>ScaleWithShape</b> As Boolean</li>
+<li>Property <b>ShareArrow</b> As Boolean</li>
+<li>Property <b>Style</b> As IVGStyle</li>
+<li>Property <b>Type</b> As cdrOutlineType</li>
+<li>Property <b>WidelineWidth</b> As Double</li>
+<li>Property <b>Width</b> As Double</li>
+</ul></div>
+
+<h4>Class IVGStyleParagraph</h4>
+<div class="tab">
+<strong>Properties:</strong>
+<ul><li>Property <b>Style</b> As IVGStyle</li>
+</ul></div>
+
+<h4>Class IVGStyles</h4>
+<div class="tab">
+<strong>Properties:</strong>
+<ul><li>Property <b>Count</b> As Long</li>
+<li>Property <b>First</b> As IVGStyle</li>
+<li>Property <b>Item</b> (ByVal <b>Index</b> As Long) As IVGStyle</li>
+<li>Property <b>Last</b> As IVGStyle</li>
+</ul><strong>Methods:</strong>
+<ul><li>Function <b>Find</b> (ByVal <b>Name</b> As String) As IVGStyle</li>
+</ul></div>
+
+<h4>Class IVGStyleSheet</h4>
+<div class="tab">
+<strong>Properties:</strong>
+<ul><li>Property <b>AllStyles</b> As IVGStyles</li>
+<li>Property <b>AllStyleSets</b> As IVGStyles</li>
+<li>Property <b>ObjectDefaults</b> As IVGStyles</li>
+<li>Property <b>Styles</b> As IVGStyles</li>
+<li>Property <b>StyleSets</b> As IVGStyles</li>
+</ul><strong>Methods:</strong>
+<ul><li>Function <b>CreateStyle</b> (ByVal <b>Category</b> As String, [ByVal <b>BasedOn</b> As String], [ByVal <b>Name</b> As String], [ByVal <b>ReplaceExisting</b> As Boolean = False]) As IVGStyle</li>
+<li>Function <b>CreateStyleFromShape</b> (ByVal <b>Shape</b> As IVGShape, ByVal <b>Category</b> As String, [ByVal <b>Name</b> As String], [ByVal <b>ReplaceExisting</b> As Boolean = False]) As IVGStyles</li>
+<li>Function <b>CreateStyleFromShapeRange</b> (ByVal <b>ShapeRange</b> As IVGShapeRange, ByVal <b>Category</b> As String, [ByVal <b>Name</b> As String], [ByVal <b>ReplaceExisting</b> As Boolean = False]) As IVGStyles</li>
+<li>Function <b>CreateStyleFromTextRange</b> (ByVal <b>TextRange</b> As IVGTextRange, ByVal <b>Category</b> As String, [ByVal <b>Name</b> As String], [ByVal <b>ReplaceExisting</b> As Boolean = False]) As IVGStyles</li>
+<li>Function <b>CreateStyleSet</b> ([ByVal <b>BasedOn</b> As String], [ByVal <b>Name</b> As String], [ByVal <b>ReplaceExisting</b> As Boolean = False]) As IVGStyle</li>
+<li>Function <b>CreateStyleSetFromShape</b> (ByVal <b>Shape</b> As IVGShape, [ByVal <b>Name</b> As String], [ByVal <b>ReplaceExisting</b> As Boolean = False]) As IVGStyles</li>
+<li>Function <b>CreateStyleSetFromShapeRange</b> (ByVal <b>ShapeRange</b> As IVGShapeRange, [ByVal <b>Name</b> As String], [ByVal <b>ReplaceExisting</b> As Boolean = False]) As IVGStyles</li>
+<li>Function <b>CreateStyleSetFromTextRange</b> (ByVal <b>TextRange</b> As IVGTextRange, [ByVal <b>Name</b> As String], [ByVal <b>ReplaceExisting</b> As Boolean = False]) As IVGStyles</li>
+<li>Function <b>Export</b> (ByVal <b>FileName</b> As String, [ByVal <b>Styles</b> As Boolean = False], [ByVal <b>StyleSets</b> As Boolean = False], [ByVal <b>ObjectDefaults</b> As Boolean = False], [ByVal <b>ColorStyles</b> As Boolean = False]) As Boolean</li>
+<li>Function <b>FindStyle</b> (ByVal <b>Name</b> As String) As IVGStyle</li>
+<li>Function <b>Import</b> (ByVal <b>FileName</b> As String, [ByVal <b>MergeStyles</b> As Boolean = False], [ByVal <b>Styles</b> As Boolean = False], [ByVal <b>StyleSets</b> As Boolean = False], [ByVal <b>ObjectDefaults</b> As Boolean = False], [ByVal <b>ColorStyles</b> As Boolean = False]) As Boolean</li>
+</ul></div>
+
+<h4>Class IVGTextRange</h4>
+<div class="tab">
+<strong>Properties:</strong>
+<ul><li>Property <b>ObjectStyle</b> As IVGStyle</li>
+<li>Property <b>TextFormatter</b> As Long</li>
+</ul><strong>Methods:</strong>
+<ul><li>Sub <b>ApplyStyle</b> (ByVal <b>StyleName</b> As String)</li>
+<li>Function <b>GetOpenTypeFeature</b> (ByVal <b>Feature</b> As String) As Long</li>
+<li>Sub <b>SetOpenTypeFeature</b> (ByVal <b>Feature</b> As String, ByVal <b>State</b> As Long)</li>
+</ul></div>
+
+<h4>Enum cdrAlignDistributeH</h4>
+<div class="tab">
+<strong>Constants:</strong>
+<ul><li><b>cdrAlignDistributeHNone</b> As Long=0</li>
+<li><b>cdrAlignDistributeHAlignRight</b> As Long=1</li>
+<li><b>cdrAlignDistributeHAlignLeft</b> As Long=2</li>
+<li><b>cdrAlignDistributeHAlignCenter</b> As Long=3</li>
+<li><b>cdrAlignDistributeHDistributeRight</b> As Long=4</li>
+<li><b>cdrAlignDistributeHDistributeLeft</b> As Long=5</li>
+<li><b>cdrAlignDistributeHDistributeCenter</b> As Long=6</li>
+<li><b>cdrAlignDistributeHDistributeSpacing</b> As Long=7</li>
+</ul></div>
+
+<h4>Enum cdrAlignDistributeV</h4>
+<div class="tab">
+<strong>Constants:</strong>
+<ul><li><b>cdrAlignDistributeVNone</b> As Long=0</li>
+<li><b>cdrAlignDistributeVAlignTop</b> As Long=1</li>
+<li><b>cdrAlignDistributeVAlignBottom</b> As Long=2</li>
+<li><b>cdrAlignDistributeVAlignCenter</b> As Long=3</li>
+<li><b>cdrAlignDistributeVDistributeTop</b> As Long=4</li>
+<li><b>cdrAlignDistributeVDistributeBottom</b> As Long=5</li>
+<li><b>cdrAlignDistributeVDistributeCenter</b> As Long=6</li>
+<li><b>cdrAlignDistributeVDistributeSpacing</b> As Long=7</li>
+</ul></div>
+
+<h4>Enum cdrAlignShapesTo</h4>
+<div class="tab">
+<strong>Constants:</strong>
+<ul><li><b>cdrAlignShapesToLastSelected</b> As Long=0</li>
+<li><b>cdrAlignShapesToEdgeOfPage</b> As Long=1</li>
+<li><b>cdrAlignShapesToCenterOfPage</b> As Long=2</li>
+<li><b>cdrAlignShapesToGrid</b> As Long=3</li>
+<li><b>cdrAlignShapesToPoint</b> As Long=4</li>
+</ul></div>
+
+<h4>Enum cdrDistributeArea</h4>
+<div class="tab">
+<strong>Constants:</strong>
+<ul><li><b>cdrDistributeToSelection</b> As Long=0</li>
+<li><b>cdrDistributeToPage</b> As Long=1</li>
+<li><b>cdrDistributeToRect</b> As Long=2</li>
+</ul></div>
+
+<h4>Enum cdrFillStyleType</h4>
+<div class="tab">
+<strong>Constants:</strong>
+<ul><li><b>cdrNoFillStyle</b> As Long=0</li>
+<li><b>cdrUniformFillStyle</b> As Long=1</li>
+<li><b>cdrFountainFillStyle</b> As Long=2</li>
+<li><b>cdrPostscriptFillStyle</b> As Long=3</li>
+<li><b>cdrTwoColorPatternFillStyle</b> As Long=4</li>
+<li><b>cdrBitmapPatternFillStyle</b> As Long=6</li>
+<li><b>cdrTextureFillStyle</b> As Long=8</li>
+<li><b>cdrFullColorPatternFillStyle</b> As Long=9</li>
+<li><b>cdrHatchFillStyle</b> As Long=10</li>
+</ul></div>
+
+<h4>Enum cdrOutlineJustification</h4>
+<div class="tab">
+<strong>Constants:</strong>
+<ul><li><b>cdrOutlineJustificationMiddle</b> As Long=0</li>
+<li><b>cdrOutlineJustificationInside</b> As Long=1</li>
+<li><b>cdrOutlineJustificationOutside</b> As Long=2</li>
+</ul></div></div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

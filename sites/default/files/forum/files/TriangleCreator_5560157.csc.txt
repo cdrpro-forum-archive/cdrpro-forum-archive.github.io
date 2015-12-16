@@ -1,0 +1,742 @@
+rem Title: Triangle Creator V2.03
+rem Author: Peter Clifton
+rem Date: 12th February 2002
+rem Posted: cnews.corel.com
+
+rem Posted in corel.graphic_apps.draw9
+
+rem Function Vconvert and subroutine SetUnits
+rem copyright Alex Vakulenko 1999
+rem Used by kind permission
+
+rem Change History:
+rem V2.03 12th February 2002
+rem  Speed optimization routine added
+rem 
+rem V2.02 31st January 2002
+rem  Added Triangle Height construction line option.
+rem  Modified Dialogue.
+rem  Increased precision in Angles to 3 decimal places, left step value at .1
+rem
+rem V2.01 26th January 02
+rem  Nick Wilkinson of Isocalc fame:- http://www.isocalc.com/
+rem  kindly pointed out that any two angles and any one side are enough
+rem  to define a triangle so I corrected this incorrect assumption on my part,
+rem  and also implemented some of his suggestions.
+rem  
+rem V2.00 24th January 2002
+rem  Further investigation into this subject showed that there are
+rem  three fundamental ways to uniquely define a triangle using sides
+rem  and angles;
+rem  1. Side, Angle, Side
+rem      Where the angle is formed by the two sides.
+rem  2. Angle, Angle, Side
+rem      Any two angles and a side (errata change 24/01/2002)
+rem  3. Side, Side, Side
+rem      Where no one side is longer than the sum of the other two.
+rem  I've also added the facility to add Angle Bisectors and Medians
+rem
+rem
+rem V1.01 10th January 2002
+rem 	Stopped angle changing when adjusting units.
+rem
+rem V1.00 Created 10th January 2002
+rem  Allows creation of triangle given Side, Angle, Side.
+
+rem Credits:
+rem V1.00 originally created to answer a question in corel.graphic_apps.draw9
+rem  posted by Linda on 9th January 2002
+rem
+rem Special thanks to Alex Vakulenko and his site at hhtp://www.vakcer.com/oberon
+rem  examination of his script resources made this program possible.
+rem
+rem Jerry, I implemented your centre and inform suggestions ;-)
+
+rem References:
+rem Some maths information obtained from http://mathforum.org/
+rem  in particular the post - http://mathforum.org/dr.math/problems/dan5.21.98.html
+rem  which explains the Laws of Sines and Cosines.
+rem Rules of allowable side lengths obtained from - http://mathworld.wolfram.com/Triangle.html
+
+
+DECLARE SUB SetUnits(BYVAL u%)
+DECLARE SUB SetStates
+DECLARE SUB CalcMissing
+DECLARE SUB CreateTriangle
+DECLARE SUB TestLineConstructBoxes
+DECLARE SUB AddMedians
+DECLARE SUB AddBisectors
+DECLARE SUB AddPerpendicular
+DECLARE SUB Constructs
+DECLARE SUB ColorBisector
+DECLARE SUB ColorMedian
+DECLARE SUB ColorPerpendicular
+DECLARE FUNCTION VConvert!(BYVAL v!,BYVAL dest%,BYVAL src%)
+
+GLOBAL ShortUnits$(3),Units$(3),UnitSys%(4),Unit%
+ShortUnits$(1)="(mm)"
+ShortUnits$(2)="(in)"
+ShortUnits$(3)="(cm)"
+
+Units$(1)="Millimetres"
+Units$(2)="Inches"
+Units$(3)="Centimetres"
+
+UnitSys(1)=2
+UnitSys(2)=1
+UnitSys(3)=2
+UnitSys(4)=7
+
+GLOBAL SideAB!, SideBC!, SideCA!, GetSideAB!, GetSideBC!, GetSideCA!
+GLOBAL AngleA#, AngleB#, AngleC#, GetAngleA!, GetAngleB!, GetAngleC!, pi#, AngleConst#
+GLOBAL Checked%, DestX&, DestY&, Construct&(8), NoOfConstructs%
+GLOBAL CONST InvParam$="You cannot create a triangle with given dimensions"
+
+BEGIN DIALOG OBJECT Triangle 145, 255, "Triangle Creator V2", SUB TriangleFunc
+	DDLISTBOX  43, 5, 56, 42, .Units
+	CHECKBOX  29, 74, 18, 8, .CheckBoxA, "A"
+	CHECKBOX  65, 74, 22, 8, .CheckBoxAB, "AB"
+	CHECKBOX  100, 74, 18, 8, .CheckBoxB, "B"
+	CHECKBOX  82, 49, 23, 8, .CheckBoxBC, "BC"
+	CHECKBOX  65, 24, 18, 8, .CheckBoxC, "C"
+	CHECKBOX  47, 49, 23, 8, .CheckBoxCA, "CA"
+	SPINCONTROL  14, 116, 45, 13, .GetAngleA
+	SPINCONTROL  14, 134, 45, 13, .GetAngleB
+	SPINCONTROL  14, 152, 45, 13, .GetAngleC
+	SPINCONTROL  92, 116, 45, 13, .GetSideAB
+	SPINCONTROL  92, 134, 45, 13, .GetSideBC
+	SPINCONTROL  92, 152, 45, 13, .GetSideCA
+	CHECKBOX  10, 185, 57, 9, .Bisectors, "Add Bisectors"
+	CHECKBOX  84, 185, 54, 9, .Medians, "Add Medians"
+	CHECKBOX  10, 200, 62, 11, .Perpendicular, "Add Height"
+	CHECKBOX  37, 221, 70, 9, .Suppress, "Suppress Painting"
+	PUSHBUTTON  9, 236, 48, 15, .Create, "Create"
+	CANCELBUTTON  88, 236, 48, 15, .Cancel1
+	TEXT  22, 7, 17, 9, .Text1, "Units"
+	GROUPBOX  2, 88, 141, 83, .GroupBox1, "Triangle Dimensions"
+	TEXT  18, 98, 30, 8, .Text2, "Angles in"
+	TEXT  19, 106, 28, 8, .Text3, "Degrees"
+	TEXT  7, 118, 6, 9, .Text4, "A"
+	TEXT  7, 136, 6, 9, .Text5, "B"
+	TEXT  7, 154, 6, 9, .Text6, "C"
+	TEXT  98, 99, 25, 8, .Text7, "Sides in"
+	TEXT  105, 106, 15, 9, .Unit1, "&mm"
+	TEXT  80, 118, 10, 9, .Text9, "AB"
+	TEXT  79, 136, 10, 8, .Text10, "BC"
+	TEXT  79, 154, 10, 9, .Text11, "CA"
+	GROUPBOX  2, 174, 141, 42, .GroupBox2, "Construction Lines"
+END DIALOG
+
+SUB TriangleFunc(BYVAL ControlID%, BYVAL EventCode%)
+SELECT CASE EventCode
+	CASE 0
+		Triangle.GetSideAB.SETVALUE (100)
+		Triangle.GetSideAB.ENABLE FALSE
+		Triangle.GetSideBC.SETVALUE (100)
+		Triangle.GetSideBC.ENABLE FALSE
+		Triangle.GetSideCA.SETVALUE (100)
+		Triangle.GetSideCA.ENABLE FALSE
+		Triangle.GetAngleA.SETVALUE (60)
+		Triangle.GetAngleA.ENABLE FALSE
+		Triangle.GetAngleB.SETVALUE (30)
+		Triangle.GetAngleB.ENABLE FALSE
+		Triangle.GetAngleC.SETVALUE (90)
+		Triangle.GetAngleC.ENABLE FALSE
+		Triangle.Suppress.SETVALUE 1
+		Triangle.Create.ENABLE FALSE
+	CASE 2
+		SELECT CASE ControlID
+			CASE Triangle.CheckBoxA.GETID()
+				IF Triangle.CheckBoxA.GETVALUE()=1 THEN
+					Checked=Checked+32
+					Triangle.GetAngleA.ENABLE TRUE
+					SetStates
+				ELSE
+					Checked=Checked-32
+					Triangle.GetAngleA.ENABLE FALSE
+					SetStates
+				ENDIF
+			CASE Triangle.CheckBoxAB.GETID()
+				IF Triangle.CheckBoxAB.GETVALUE()=1 THEN
+					Checked=Checked+16
+					Triangle.GetSideAB.ENABLE TRUE
+					SetStates
+				ELSE
+					Checked=Checked-16
+					Triangle.GetSideAB.ENABLE FALSE
+					SetStates
+				ENDIF
+			CASE Triangle.CheckBoxB.GETID()
+				IF Triangle.CheckBoxB.GETVALUE()=1 THEN
+					Checked=Checked+8
+					Triangle.GetAngleB.ENABLE TRUE
+					SetStates
+				ELSE
+					Checked=Checked-8
+					Triangle.GetAngleB.ENABLE FALSE
+					SetStates
+				ENDIF
+			CASE Triangle.CheckBoxBC.GETID()
+				IF Triangle.CheckBoxBC.GETVALUE()=1 THEN
+					Checked=Checked+4
+					Triangle.GetSideBC.ENABLE TRUE
+					SetStates
+				ELSE
+					Checked=Checked-4
+					Triangle.GetSideBC.ENABLE FALSE
+					SetStates
+				ENDIF
+			CASE Triangle.CheckBoxC.GETID()
+				IF Triangle.CheckBoxC.GETVALUE()=1 THEN
+					Checked=Checked+2
+					Triangle.GetAngleC.ENABLE TRUE
+					SetStates
+				ELSE
+					Checked=Checked-2
+					Triangle.GetAngleC.ENABLE FALSE
+					SetStates
+				ENDIF
+			CASE Triangle.CheckBoxCA.GETID()
+				IF Triangle.CheckBoxCA.GETVALUE()=1 THEN
+					Checked=Checked+1
+					Triangle.GetSideCA.ENABLE TRUE
+					SetStates
+				ELSE
+					Checked=Checked-1
+					Triangle.GetSideCA.ENABLE FALSE
+					SetStates
+				ENDIF
+			CASE Triangle.Units.GETID()
+				SetUnits Triangle.Units.GETSELECT()
+			CASE Triangle.create.GETID()
+				SELECT CASE Checked
+					CASE 56
+						AngleA=AngleConvert(1,2,Triangle.GetAngleA.GETVALUE())
+						AngleB=AngleConvert(1,2,Triangle.GetAngleB.GETVALUE())
+						SideAB=Vconvert(Triangle.GetSideAB.GETVALUE(),4,Unit)
+						IF AngleA=0 or SideAB=0 or AngleB=0  or AngleA+AngleB >= AngleConst THEN
+							MESSAGE InvParam$
+							EXIT SUB
+						ENDIF
+						CalcMissing
+						CreateTriangle
+					CASE 14
+						AngleB=AngleConvert(1,2,Triangle.GetAngleB.GETVALUE())
+						AngleC=AngleConvert(1,2,Triangle.GetAngleC.GETVALUE())
+						SideBC=Vconvert(Triangle.GetSideBC.GETVALUE(),4,Unit)
+						IF AngleB=0 or SideBC=0 or AngleC=0  or AngleB+AngleC >= AngleConst THEN
+							MESSAGE InvParam$
+							EXIT SUB
+						ENDIF
+						CalcMissing
+						CreateTriangle
+					CASE 35
+						AngleC=AngleConvert(1,2,Triangle.GetAngleC.GETVALUE())
+						AngleA=AngleConvert(1,2,Triangle.GetAngleA.GETVALUE())
+						SideCA=Vconvert(Triangle.GetSideCA.GETVALUE(),4,Unit)
+						IF AngleC=0 or SideCA=0 or AngleA=0  or AngleC+AngleA >= AngleConst THEN
+							MESSAGE InvParam$
+							EXIT SUB
+						ENDIF
+						CalcMissing
+						CreateTriangle
+					CASE 49
+						SideCA=Vconvert(Triangle.GetSideCA.GETVALUE(),4,Unit)
+						AngleA=AngleConvert(1,2,Triangle.GetAngleA.GETVALUE())
+						SideAB=Vconvert(Triangle.GetSideAB.GETVALUE(),4,Unit)
+						IF  SideCA=0 or AngleA=0 or SideAB=0  THEN
+							MESSAGE InvParam$
+							EXIT SUB
+						ENDIF
+						CalcMissing
+						CreateTriangle
+					CASE 28
+						SideAB=Vconvert(Triangle.GetSideAB.GETVALUE(),4,Unit)
+						AngleB=AngleConvert(1,2,Triangle.GetAngleB.GETVALUE())
+						SideBC=Vconvert(Triangle.GetSideBC.GETVALUE(),4,Unit)
+						IF SideAB=0 or AngleB=0 or SideBC=0  THEN
+							MESSAGE InvParam$
+							EXIT SUB
+						ENDIF
+						CalcMissing
+						CreateTriangle
+					CASE 7
+						SideBC=Vconvert(Triangle.GetSideBC.GETVALUE(),4,Unit)
+						AngleC=AngleConvert(1,2,Triangle.GetAngleC.GETVALUE())
+						SideCA=Vconvert(Triangle.GetSideCA.GETVALUE(),4,Unit)
+						IF SideBC=0 or AngleC=0 or SideCA=0  THEN
+							MESSAGE InvParam$
+							EXIT SUB
+						ENDIF
+						CalcMissing
+						CreateTriangle
+					CASE 21
+						SideAB=Vconvert(Triangle.GetSideAB.GETVALUE(),4,Unit)
+						SideBC=Vconvert(Triangle.GetSideBC.GETVALUE(),4,Unit)
+						SideCA=Vconvert(Triangle.GetSideCA.GETVALUE(),4,Unit)
+						IF not SideAB>0 or not SideBC>0 or not SideCA>0 \\
+						or not SideAB + SideBC > SideCA or not SideBC + SideCA > SideAB \\
+						or not SideCA + SideAB > SideBC  THEN
+							MESSAGE InvParam$
+							EXIT SUB
+						ENDIF
+						CalcMissing
+						CreateTriangle
+					CASE 44
+						AngleA=AngleConvert(1,2,Triangle.GetAngleA.GETVALUE())
+						AngleB=AngleConvert(1,2,Triangle.GetAngleB.GETVALUE())
+						SideBC=Vconvert(Triangle.GetSideBC.GETVALUE(),4,Unit)
+						IF AngleA=0 or SideBC=0 or AngleB=0  or AngleA+AngleB >= AngleConst THEN
+							MESSAGE InvParam$
+							EXIT SUB
+						ENDIF
+						CalcMissing
+						CreateTriangle
+					CASE 41
+						AngleA=AngleConvert(1,2,Triangle.GetAngleA.GETVALUE())
+						AngleB=AngleConvert(1,2,Triangle.GetAngleB.GETVALUE())
+						SideCA=Vconvert(Triangle.GetSideCA.GETVALUE(),4,Unit)
+						IF AngleA=0 or SideCA=0 or AngleB=0  or AngleA+AngleB >= AngleConst THEN
+							MESSAGE InvParam$
+							EXIT SUB
+						ENDIF
+						CalcMissing
+						CreateTriangle
+					CASE 11
+						AngleB=AngleConvert(1,2,Triangle.GetAngleB.GETVALUE())
+						AngleC=AngleConvert(1,2,Triangle.GetAngleC.GETVALUE())
+						SideCA=Vconvert(Triangle.GetSideCA.GETVALUE(),4,Unit)
+						IF AngleB=0 or SideCA=0 or AngleC=0  or AngleB+AngleC >= AngleConst THEN
+							MESSAGE InvParam$
+							EXIT SUB
+						ENDIF
+						CalcMissing
+						CreateTriangle
+					CASE 26
+						AngleB=AngleConvert(1,2,Triangle.GetAngleB.GETVALUE())
+						AngleC=AngleConvert(1,2,Triangle.GetAngleC.GETVALUE())
+						SideAB=Vconvert(Triangle.GetSideAB.GETVALUE(),4,Unit)
+						IF AngleB=0 or SideAB=0 or AngleC=0  or AngleB+AngleC >= AngleConst THEN
+							MESSAGE InvParam$
+							EXIT SUB
+						ENDIF
+						CalcMissing
+						CreateTriangle
+					CASE 50
+						AngleC=AngleConvert(1,2,Triangle.GetAngleC.GETVALUE())
+						AngleA=AngleConvert(1,2,Triangle.GetAngleA.GETVALUE())
+						SideAB=Vconvert(Triangle.GetSideAB.GETVALUE(),4,Unit)
+						IF AngleC=0 or SideAB=0 or AngleA=0  or AngleC+AngleA >= AngleConst THEN
+							MESSAGE InvParam$
+							EXIT SUB
+						ENDIF
+						CalcMissing
+						CreateTriangle
+					CASE 38
+						AngleC=AngleConvert(1,2,Triangle.GetAngleC.GETVALUE())
+						AngleA=AngleConvert(1,2,Triangle.GetAngleA.GETVALUE())
+						SideBC=Vconvert(Triangle.GetSideBC.GETVALUE(),4,Unit)
+						IF AngleC=0 or SideBC=0 or AngleA=0  or AngleC+AngleA >= AngleConst THEN
+							MESSAGE InvParam$
+							EXIT SUB
+						ENDIF
+						CalcMissing
+						CreateTriangle
+				END SELECT
+		END SELECT
+			IF Checked=56 or Checked=14 or Checked=35 or Checked=28 or Checked=7 \\
+			or Checked=49 or Checked=21 or Checked=44 or Checked=41 or Checked=11 \\
+			or Checked=26 or Checked=50 or Checked=38 THEN
+				Triangle.Create.ENABLE TRUE
+			ELSE
+				Triangle.Create.ENABLE FALSE
+			ENDIF
+	END SELECT
+END SUB
+
+
+WITHOBJECT  "CorelDraw.Automation.14" 'Change the number in this line to match your major Draw Version
+
+Triangle.Units.SETARRAY Units$
+Triangle.Units.SETSELECT 1
+Triangle.GetSideAB.SETMINRANGE 0
+Triangle.GetSideAB.SETDOUBLEMODE TRUE
+Triangle.GetSideAB.SETINCREMENT 0.01
+Triangle.GetSideAB.SETPRECISION 3
+Triangle.GetSideBC.SETMINRANGE 0
+Triangle.GetSideBC.SETDOUBLEMODE TRUE
+Triangle.GetSideBC.SETINCREMENT 0.01
+Triangle.GetSideBC.SETPRECISION 3
+Triangle.GetSideCA.SETMINRANGE 0
+Triangle.GetSideCA.SETDOUBLEMODE TRUE
+Triangle.GetSideCA.SETINCREMENT 0.01
+Triangle.GetSideCA.SETPRECISION 3
+Triangle.GetAngleA.SETMINRANGE 0
+Triangle.GetAngleA.SETDOUBLEMODE TRUE
+Triangle.GetAngleA.SETINCREMENT 0.1
+Triangle.GetAngleA.SETPRECISION 3
+Triangle.GetAngleB.SETMINRANGE 0
+Triangle.GetAngleB.SETDOUBLEMODE TRUE
+Triangle.GetAngleB.SETINCREMENT 0.1
+Triangle.GetAngleB.SETPRECISION 3
+Triangle.GetAngleC.SETMINRANGE 0
+Triangle.GetAngleC.SETDOUBLEMODE TRUE
+Triangle.GetAngleC.SETINCREMENT 0.1
+Triangle.GetAngleC.SETPRECISION 3
+Triangle.CheckBoxA.SETTHREESTATE FALSE
+Triangle.CheckBoxAB.SETTHREESTATE FALSE
+Triangle.CheckBoxB.SETTHREESTATE FALSE
+Triangle.CheckBoxBC.SETTHREESTATE FALSE
+Triangle.CheckBoxC.SETTHREESTATE FALSE
+Triangle.CheckBoxCA.SETTHREESTATE FALSE
+Triangle.Medians.SETTHREESTATE FALSE
+Triangle.Bisectors.SETTHREESTATE FALSE
+Triangle.Perpendicular.SETTHREESTATE FALSE
+Triangle.Suppress.SETTHREESTATE FALSE
+
+pi# = atan(1)*4
+AngleConst# = AngleConvert(1,2,180) 'Degrees to radians
+Unit%=1
+SetUnits 1
+ret&=DIALOG (Triangle)
+STOP
+
+SUB SetUnits(BYVAL u%)
+	Triangle.Unit1.SETTEXT ShortUnits$(u)
+	Triangle.GetSideAB.SETVALUE VConvert(Triangle.GetSideAB.GETVALUE(),u,Unit)
+	Triangle.GetSideBC.SETVALUE VConvert(Triangle.GetSideBC.GETVALUE(),u,Unit)
+	Triangle.GetSideCA.SETVALUE VConvert(Triangle.GetSideCA.GETVALUE(),u,Unit)
+	Unit=u
+END SUB
+
+FUNCTION VConvert!(BYVAL v!,BYVAL dest%,BYVAL src%)
+	IF src=1 THEN v=v/10
+	v=LengthConvert(UnitSys(src),UnitSys(dest),v)
+	IF dest=1 THEN v=v*10
+	VConvert=v
+END FUNCTION
+
+SUB SetStates
+	SELECT CASE Checked
+		CASE 48
+			Triangle.CheckBoxBC.ENABLE FALSE
+			Triangle.CheckBoxCA.ENABLE TRUE
+			Triangle.CheckBoxC.ENABLE TRUE
+			Triangle.CheckBoxB.ENABLE TRUE
+		CASE 24			
+			Triangle.CheckBoxCA.ENABLE FALSE
+			Triangle.CheckBoxBC.ENABLE TRUE
+			Triangle.CheckBoxC.ENABLE TRUE
+			Triangle.CheckBoxBC.ENABLE TRUE
+			Triangle.CheckBoxA.ENABLE TRUE
+		CASE 12
+			Triangle.CheckBoxCA.ENABLE FALSE
+			Triangle.CheckBoxA.ENABLE TRUE
+			Triangle.CheckBoxC.ENABLE TRUE
+			Triangle.CheckBoxAB.ENABLE TRUE
+		CASE 6
+			Triangle.CheckBoxAB.ENABLE FALSE
+			Triangle.CheckBoxCA.ENABLE TRUE
+			Triangle.CheckBoxA.ENABLE TRUE
+			Triangle.CheckBoxB.ENABLE TRUE
+		CASE 3
+			Triangle.CheckBoxAB.ENABLE FALSE
+			Triangle.CheckBoxBC.ENABLE TRUE
+			Triangle.CheckBoxB.ENABLE TRUE
+			Triangle.CheckBoxA.ENABLE TRUE
+		CASE 33
+			Triangle.CheckBoxBC.ENABLE FALSE
+			Triangle.CheckBoxC.ENABLE TRUE
+			Triangle.CheckBoxAB.ENABLE TRUE
+			Triangle.CheckBoxB.ENABLE TRUE
+		CASE 36
+			Triangle.CheckBoxAB.ENABLE FALSE
+			Triangle.CheckBoxCA.ENABLE FALSE
+			Triangle.CheckBoxC.ENABLE TRUE
+			Triangle.CheckBoxB.ENABLE TRUE
+		CASE 9
+			Triangle.CheckBoxAB.ENABLE FALSE
+			Triangle.CheckBoxBC.ENABLE FALSE
+			Triangle.CheckBoxC.ENABLE TRUE
+			Triangle.CheckBoxA.ENABLE TRUE
+		CASE 18
+			Triangle.CheckBoxBC.ENABLE FALSE
+			Triangle.CheckBoxCA.ENABLE FALSE
+			Triangle.CheckBoxA.ENABLE TRUE
+			Triangle.CheckBoxB.ENABLE TRUE
+		CASE 40
+			Triangle.CheckBoxC.ENABLE FALSE
+			Triangle.CheckBoxAB.ENABLE TRUE
+			Triangle.CheckBoxBC.ENABLE TRUE
+			Triangle.CheckBoxCA.ENABLE TRUE
+		CASE 10
+			Triangle.CheckBoxA.ENABLE FALSE
+			Triangle.CheckBoxAB.ENABLE TRUE
+			Triangle.CheckBoxBC.ENABLE TRUE
+			Triangle.CheckBoxCA.ENABLE TRUE
+		CASE 34
+			Triangle.CheckBoxB.ENABLE FALSE
+			Triangle.CheckBoxAB.ENABLE TRUE
+			Triangle.CheckBoxBC.ENABLE TRUE
+			Triangle.CheckBoxCA.ENABLE TRUE
+		CASE 20
+			Triangle.CheckBoxA.ENABLE FALSE
+			Triangle.CheckBoxC.ENABLE FALSE
+			Triangle.CheckBoxCA.ENABLE TRUE
+			Triangle.CheckBoxB.ENABLE TRUE
+		CASE 5
+			Triangle.CheckBoxA.ENABLE FALSE
+			Triangle.CheckBoxB.ENABLE FALSE
+			Triangle.CheckBoxAB.ENABLE TRUE
+			Triangle.CheckBoxC.ENABLE TRUE
+		CASE 17
+			Triangle.CheckBoxB.ENABLE FALSE
+			Triangle.CheckBoxC.ENABLE FALSE
+			Triangle.CheckBoxBC.ENABLE TRUE
+			Triangle.CheckBoxA.ENABLE TRUE
+		CASE 49
+			Triangle.CheckBoxB.ENABLE FALSE
+			Triangle.CheckBoxC.ENABLE FALSE
+			Triangle.CheckBoxBC.ENABLE FALSE
+		CASE 28
+			Triangle.CheckBoxA.ENABLE FALSE
+			Triangle.CheckBoxC.ENABLE FALSE
+			Triangle.CheckBoxCA.ENABLE FALSE
+		CASE 7
+			Triangle.CheckBoxA.ENABLE FALSE
+			Triangle.CheckBoxB.ENABLE FALSE
+			Triangle.CheckBoxAB.ENABLE FALSE
+		CASE 56
+			Triangle.CheckBoxC.ENABLE FALSE
+			Triangle.CheckBoxBC.ENABLE FALSE
+			Triangle.CheckBoxCA.ENABLE FALSE
+		CASE 44
+			Triangle.CheckBoxC.ENABLE FALSE
+			Triangle.CheckBoxAB.ENABLE FALSE
+			Triangle.CheckBoxCA.ENABLE FALSE
+		CASE 41
+			Triangle.CheckBoxC.ENABLE FALSE
+			Triangle.CheckBoxAB.ENABLE FALSE
+			Triangle.CheckBoxBC.ENABLE FALSE
+		CASE 50
+			Triangle.CheckBoxB.ENABLE FALSE
+			Triangle.CheckBoxCA.ENABLE FALSE
+			Triangle.CheckBoxBC.ENABLE FALSE
+		CASE 38
+			Triangle.CheckBoxB.ENABLE FALSE
+			Triangle.CheckBoxAB.ENABLE FALSE
+			Triangle.CheckBoxCA.ENABLE FALSE
+		CASE 35
+			Triangle.CheckBoxB.ENABLE FALSE
+			Triangle.CheckBoxAB.ENABLE FALSE
+			Triangle.CheckBoxBC.ENABLE FALSE
+		CASE 26
+			Triangle.CheckBoxA.ENABLE FALSE
+			Triangle.CheckBoxCA.ENABLE FALSE
+			Triangle.CheckBoxBC.ENABLE FALSE
+		CASE 14
+			Triangle.CheckBoxA.ENABLE FALSE
+			Triangle.CheckBoxAB.ENABLE FALSE
+			Triangle.CheckBoxCA.ENABLE FALSE
+		CASE 11
+			Triangle.CheckBoxA.ENABLE FALSE
+			Triangle.CheckBoxAB.ENABLE FALSE
+			Triangle.CheckBoxBC.ENABLE FALSE
+		CASE 21
+			Triangle.CheckBoxA.ENABLE FALSE
+			Triangle.CheckBoxB.ENABLE FALSE
+			Triangle.CheckBoxC.ENABLE FALSE
+		CASE 32 , 16 , 8 , 4 , 2 , 1
+			Triangle.CheckBoxA.ENABLE TRUE
+			Triangle.CheckBoxB.ENABLE TRUE
+			Triangle.CheckBoxC.ENABLE TRUE
+			Triangle.CheckBoxAB.ENABLE TRUE
+			Triangle.CheckBoxBC.ENABLE TRUE
+			Triangle.CheckBoxCA.ENABLE TRUE
+	END SELECT
+END SUB
+
+
+SUB CalcMissing
+	SELECT CASE Checked
+		CASE 56
+ 			AngleC = AngleConst - (AngleA+AngleB)
+ 			SideCA = 1 / (sin(AngleC) / (SideAB * sin(AngleB)))
+			SideBC = 1 / (sin(AngleB) / (SideCA * sin(AngleA)))
+		CASE 14
+			AngleA = AngleConst - (AngleB+AngleC)
+			SideAB = 1 / (sin(AngleA) / (SideBC * sin(AngleC)))
+			SideCA = 1 / (sin(AngleC) / (SideAB * sin(AngleB)))
+		CASE 35
+			AngleB = AngleConst - (AngleC+AngleA)
+			SideBC = 1 / (sin(AngleB) / (SideCA * sin(AngleA)))
+			SideAB = 1 / (sin(AngleA) / (SideBC * sin(AngleC)))
+		CASE 44
+			AngleC = AngleConst -(AngleA+AngleB)
+			SideAB = 1 / (sin(AngleA) / (SideBC * sin(AngleC)))
+			SideCA = 1 / (sin(AngleC) / (SideAB * sin(AngleB)))
+		CASE 41
+			AngleC = AngleConst - (AngleA+AngleB)
+			SideBC = 1 / (sin(AngleB) / (SideCA * sin(AngleA)))
+			SideAB = 1 / (sin(AngleA) / (SideBC * sin(AngleC)))
+		CASE 11
+			AngleA = AngleConst - (AngleB+AngleC)
+			SideBC = 1 / (sin(AngleB) / (SideCA * sin(AngleA)))
+			SideAB = 1 / (sin(AngleA) / (SideBC * sin(AngleC)))
+		CASE 26
+			AngleA = AngleConst - (AngleB+AngleC)
+			SideCA = 1 / (sin(AngleC) / (SideAB * sin(AngleB)))
+			SideBC = 1 / (sin(AngleB) / (SideCA * sin(AngleA)))
+		CASE 50
+			AngleB = AngleConst - (AngleA+AngleC)
+			SideCA = 1 / (sin(AngleC) / (SideAB * sin(AngleB)))
+			SideBC = 1 / (sin(AngleB) / (SideCA * sin(AngleA)))
+		CASE 38
+			AngleB = AngleConst - (AngleA+AngleC)
+			SideAB = 1 / (sin(AngleA) / (SideBC * sin(AngleC)))
+			SideCA = 1 / (sin(AngleC) / (SideAB * sin(AngleB)))
+		CASE 49
+			SideBC = sqr(SideCA^2+SideAB^2 - (2*SideCA*SideAB*cos(AngleA)))
+			AngleB = acos((SideAB^2 + SideBC^2 - SideCA^2)/(2*SideAB*SideBC))
+			AngleC = AngleConst - (AngleA+AngleB)
+		CASE 28
+			SideCA = sqr(SideAB^2+SideBC^2-(2*SideAB*SideBC*cos(AngleB)))
+			AngleC = acos((SideBC^2 + SideCA^2 - SideAB^2)/(2*SideBC*SideCA))
+			AngleA = AngleConst - (AngleB+AngleC)
+		CASE 7
+			SideAB = sqr(SideBC^2+SideCA^2-(2*SideBC*SideCA*cos(AngleC)))
+			AngleA = acos((SideCA^2 + SideAB^2 - SideBC^2)/(2*SideCA*SideAB))
+			AngleB = AngleConst - (AngleA+AngleC)
+		CASE 21
+			AngleA = acos((SideCA^2 + SideAB^2 - SideBC^2)/(2*SideCA*SideAB))
+			AngleB = acos((SideAB^2 + SideBC^2 - SideCA^2)/(2*SideAB*SideBC))
+			AngleC = acos((SideBC^2 + SideCA^2 - SideAB^2)/(2*SideBC*SideCA))
+	END SELECT
+END SUB
+
+
+SUB CreateTriangle
+	IF Triangle.Suppress.GETVALUE()=1 THEN .SuppressPainting
+	NoOfConstructs=0
+	DestX = cos(AngleA)* SideCA
+	DestY = sin(AngleA)* SideCA
+	.BeginDrawCurve SideAB, 0
+	.DrawCurveLineTo 0, 0
+	.EndDrawCurve
+	.AppendCurveLine 0,0,DestX,DestY
+	.AppendCurveLine DestX,DestY,SideAB, 0
+	Constructs
+	TestLineConstructBoxes
+	.SelectObjectOfCDRStaticID Construct&(1)
+	FOR X = 2 TO NoOfConstructs
+		.AppendObjectToSelection Construct&(X)
+	NEXT
+	.Group
+	.AlignToCenterOfPage 3,3
+	.Ungroup
+	.ResumePainting
+	MESSAGE "Triangle created"
+END SUB
+
+SUB TestLineConstructBoxes
+	IF Triangle.Bisectors.GETVALUE()=1 THEN AddBisectors
+	IF Triangle.Medians.GETVALUE()=1 THEN AddMedians
+	IF Triangle.Perpendicular.GETVALUE()=1 and AngleConvert(2,1,AngleA)<> 90 and AngleConvert(2,1,AngleB)<> 90 THEN
+		AddPerpendicular
+	ELSEIF Triangle.Perpendicular.GETVALUE()=1 THEN
+		Message "Triangle Height not added, equal to side CA or side BC"
+	ENDIF
+END SUB
+	
+SUB AddBisectors
+	STATIC TempAngle#,Bisect!
+	'BisectA
+	TempAngle=AngleConst - ((AngleA/2) + AngleB)
+	Bisect= 1 / (sin(TempAngle) / (SideAB * sin(AngleB)))
+	.BeginDrawCurve 0,0
+	.DrawCurveLineTo cos(AngleA/2)* Bisect, sin(AngleA/2)* Bisect
+	.EndDrawCurve
+	ColorBisector
+	Constructs
+	'BisectB
+	TempAngle=AngleConst - ((AngleB/2) + AngleC)
+	Bisect= 1 / (sin(TempAngle) / (SideBC * sin(AngleC)))
+	.BeginDrawCurve SideAB,0
+	.DrawCurveLineTo SideAB+(cos(AngleConst-(AngleB/2))* Bisect), sin(Angleconst-(AngleB/2))* Bisect
+	.EndDrawCurve
+	ColorBisector
+	Constructs
+	'BisectC
+	TempAngle=AngleConst - ((AngleC/2) + AngleA)
+	Bisect= 1 / (sin(TempAngle) / (SideCA * sin(AngleA)))
+	.BeginDrawCurve DestX, DestY
+	.DrawCurveLineTo DestX+(cos(AngleConst+AngleA+(AngleC/2))* Bisect), DestY+(sin(AngleConst+AngleA+(AngleC/2))* Bisect)
+	.EndDrawCurve
+	ColorBisector
+	Constructs
+END SUB
+
+SUB AddMedians
+	STATIC TempAngle#, Median!
+	'MedianBC
+	Median=sqr((SideBC/2)^2+SideAB^2 - (2*(SideBC/2)*SideAB*cos(AngleB)))	
+	TempAngle=acos((Median^2 + SideAB^2 - (SideBC/2)^2)/(2*Median*SideAB))	
+	.BeginDrawCurve 0,0
+	.DrawCurveLineTo cos(TempAngle)* Median, sin(TempAngle)* Median
+	.EndDrawCurve
+	ColorMedian
+	Constructs
+	'MedianCA
+	Median=sqr((SideCA/2)^2+SideAB^2 - (2*(SideCA/2)*SideAB*cos(AngleA)))
+	TempAngle=acos((SideAB^2 + Median^2 - (SideCA/2)^2)/(2*SideAB*Median))
+	.BeginDrawCurve SideAB,0
+	.DrawCurveLineTo sideAB+(cos(AngleConst-(TempAngle))* Median), sin(Angleconst-(TempAngle))* Median
+	.EndDrawCurve
+	ColorMedian
+	Constructs
+	'MedianAB
+	Median=sqr(SideCA^2+(SideAB/2)^2 - (2*SideCA*(SideAB/2)*cos(AngleA)))
+	TempAngle=acos((Median^2 + SideCA^2 - (SideAB/2)^2)/(2*Median*SideCA))
+	.BeginDrawCurve DestX,DestY
+	.DrawCurveLineTo DestX+(cos(AngleConst+AngleA+TempAngle)* Median), DestY+(sin(AngleConst+AngleA+TempAngle)* Median)
+	.EndDrawCurve
+	Constructs
+	ColorMedian
+END SUB
+
+SUB AddPerpendicular
+	.BeginDrawCurve DestX,DestY
+	.DrawCurveLineTo DestX,0
+	.EndDrawCurve
+	Constructs
+	ColorPerpendicular
+END SUB
+
+SUB Constructs
+	NoOfConstructs=NoOfConstructs+1
+	Construct&(NoOfConstructs)=.GetObjectsCDRStaticID()
+END SUB
+
+SUB ColorBisector
+	.StoreColor 3, 255, 255, 0, 0, 0, 0, 0
+	.SetOutlineColor
+	rem Uncomment the following line and comment the above two, to make the program work in Draw 7
+	'.SetOutlineColor 3, 255, 255, 0, 0
+END SUB
+
+SUB ColorMedian
+	.StoreColor 3, 0, 255, 255, 0, 0, 0, 0
+	.SetOutlineColor
+	rem Uncomment the following line and comment the above two, to make the program work in Draw 7
+	'.SetOutlineColor 3, 0, 255, 255, 0
+END SUB
+
+SUB ColorPerpendicular
+	.StoreColor 3, 0, 255, 0, 0, 0, 0, 0
+	.SetOutlineColor
+	rem Uncomment the following line and comment the above two, to make the program work in Draw 7
+	'.SetOutlineColor 3, 0, 255, 0, 0
+END SUB
+
+END WITHOBJECT
+

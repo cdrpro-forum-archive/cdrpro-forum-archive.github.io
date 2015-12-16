@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="2706.html" />
+<link rel="canonical" href="2706.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Как ускорить обработку макросом | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Как ускорить обработку макросом</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-2706" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">ekali</span></strong> / 21.01.2012, 21:34/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>При большом количестве объектов макросы медленно работают. Знаю, что есть способы ускорить процесс, но в справке не нашла. Только вот на форумах практические команды:</p>
+<pre class="brush: vb">
+ActiveDocument.BeginCommandGroup "Scatter clones"
+Optimization = True
+EventsEnabled = False
+ActiveDocument.PreserveSelection = False
+
+'код код код
+
+ActiveDocument.EndCommandGroup
+Optimization = False
+EventsEnabled = True
+ActiveDocument.PreserveSelection = True
+
+CorelScript.RedrawScreen
+</pre><p>
+Вот как тут синтаксис понять? Если честно, я себе просто вставила эти куски и оно залетало! но прикол в том, что у меня-то код - отнюдь не про клонирование. А как правильно поменять, не знаю, даже где почитать, непонятно. В справке по VBA в Кореле эта функция BeginCommandGroup просто названа, и все, понимайте, как хотите.</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-8246"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 22.01.2012, 00:25    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Вообще то в справке есть описание с примерами. Вот например кусок:</p>
+<blockquote><p>The BeginCommandGroup method marks the start of a group of commands. By starting a command group, you define a sequence of document handling commands that you can undo in a single step. </p></blockquote>
+</div></div></div>	</div>
+</div>
+<a id="comment-8247"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">ekali</span></strong> / 22.01.2012, 11:08    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Спасибо. В моем CorelDraw VBA Help ничего подобного близко нет. </p>
+<p>CorelScript.BeginCommandGroup<br />
+Function BeginCommandGroup(UndoString As String) As Long<br />
+Member of CorelScript<br />
+Parameters  Description<br />
+UndoString</p>
+<p>И ни слова больше. И так про все. Работать ужасно неудобно. Где же эти справочники найти?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8248"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">ekali</span></strong> / 22.01.2012, 11:15    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Нашла: надо было искать не через "слово" - F1, а задать в строке поиска, и выбрать из результатов не первый раздел, а где-то ниже, "Document.BeginCommandGroup". Там действительно есть кое-какие важные подробности.</p>
+<p>Но такая навигация, конечно, это жесть.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8249"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 22.01.2012, 11:56    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>На самом деле всё очень просто — ставится курсор на BeginCommandGroup в коде (или на любую другую функцию, свойство...) или в браузере объектов, и нажимается клавиша F1. И ни чего не нужно искать.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8250"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">ekali</span></strong> / 22.01.2012, 12:22    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Sancho, спасибо, я именно так и ищу всегда, вот пишу же в предыдущем посте (слово -&gt; F1). Только тут выдача абсолютно неинформативная получается. До более подробной информации по этой функции только через поиск по справке.</p>
+<p>И еще такой вопрос - они там предупреждают о риске слета. Да, у меня так пару раз слетало, когда макрос прерывался до разморозки экрана. Надо так понимать, что в таком случае достаточно закрыть активный документ? Или весь Корел перезагрузить? А то толком не помню, там что-то вроде тогда стало и в панелях глючить... а восстанавливать ситуацию и экспериментировать что-то желания нет.</p>
+<p>Или, допустим, вернуться в редактор и запустить разморозку (финальную часть кода) отдельно?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8252"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 22.01.2012, 12:39/01:40    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>ekali</strong>, не знаю что за версия такая где не работает справка, у меня Х5 (sp3 + hf) и всё работает как нужно. А по поводу риска, нужно просто делать обработчик ошибок, например вот так:</p>
+<pre class="brush: vb">Sub DoSomething()
+  On Error GoTo myEndSub
+  boostStart "Something"
+  
+  'code here
+  
+  boostFinish True
+  Exit Sub
+myEndSub:
+  boostFinish True
+  MsgBox Err.Number &amp; vbCr &amp; Err.Description, vbCritical, "Error"
+End Sub
+
+Public Sub boostStart(Optional ByVal unDo$ = "")
+  On Error Resume Next
+  If unDo &lt;&gt; "" Then ActiveDocument.BeginCommandGroup unDo
+  Optimization = True
+  EventsEnabled = False
+  ActiveDocument.SaveSettings
+  ActiveDocument.PreserveSelection = False
+End Sub
+
+Public Sub boostFinish(Optional ByVal endUndoGroup% = False)
+  On Error Resume Next
+  ActiveDocument.PreserveSelection = True
+  ActiveDocument.RestoreSettings
+  EventsEnabled = True
+  Optimization = False
+  Application.CorelScript.RedrawScreen
+  If endUndoGroup Then ActiveDocument.EndCommandGroup
+  CorelDRAW.Refresh
+End Sub</pre></div></div></div>	</div>
+</div>
+<a id="comment-8253"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">ekali</span></strong> / 22.01.2012, 13:57    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Спасибо, очень прикольно. У меня X4, происхождение не помню.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8254"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 22.01.2012, 14:20    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>происхождение не помню</p></blockquote>
+<p>Прочитайте правила портала, если ещё этого не сделали. :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8255"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">ekali</span></strong> / 22.01.2012, 14:28/14:36    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><div class="off">при чем здесь правила, я его у себя на съемном диске в декабре нашла.</div>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

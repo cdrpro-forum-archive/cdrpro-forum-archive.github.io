@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="3129.html" />
+<link rel="canonical" href="3129.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Проверка существования объекта и переменной | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Проверка существования объекта и переменной</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-3129" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Давид</span></strong> / 05.12.2012, 18:21	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>В макросе есть ссылка на картинку в CorelDraw.  Картинку удалили вручную, а макрос этого не знает и<br />
+при попытке удалить эту картинку программно выдает ошибку.<br />
+    Вопрос:   Как в макросе проверить,, есть ли объект, по сохранившейся ссылке.</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-10249"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 05.12.2012, 19:04/19:06    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Вот код, проверяет ActiveSelectionRange, если его нет делает выход.</p>
+<pre class="brush: vb">
+Sub test()
+    If ActiveSelectionRange Is Nothing Then Exit Sub
+    'Do something
+End Sub
+</pre></div></div></div>	</div>
+</div>
+<a id="comment-10250"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Давид</span></strong> / 05.12.2012, 21:26    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Дорогой Sancho, спасибо за ответ! Однако в конкретном случае не получается.<br />
+      Макрос  TestFirst строит окружность (см. ниже).<br />
+      Макрос  TestSecond  стирает построенную и строит новую большего размера.<br />
+      При повторном запуске  стирает построенную и строит новую меньшего размера.<br />
+      Далее все будет повторяться.<br />
+     Но если перед запуском TestSecond удалить окружность средствами corelDraw,<br />
+     возникает ошибка  "The referensed object no longer exists".<br />
+     Хотелосъ бы обойти  удаление  окржности  sss.Delete,, узнав заранее ,<br />
+ что the referensed object no longer exists!<br />
+-------------------------------------------------------------------------<br />
+Public sss As Shape<br />
+Public xxx As Double<br />
+-------------------------------------------------------------------------<br />
+Sub TestFirst()<br />
+Set sss = ActiveDocument.ActiveLayer.CreateEllipse(0#, 0#, 100#, 100#)<br />
+End Sub<br />
+-------------------------------------------------------------------------<br />
+Sub TestSecond()<br />
+sss.Delete<br />
+If xxx = 100# Then xxx = 200# Else xxx = 100#<br />
+Set sss = ActiveDocument.ActiveLayer.CreateEllipse(0#, 0#, xxx, xxx)<br />
+End Sub<br />
+---------------------------------------------------------------------</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-10251"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 05.12.2012, 21:31    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>После sss.Delete юзай</p>
+<pre class="brush: vb">Set sss = Nothing</pre><p>Тогда проверка Is Nothing должна сработать.</p>
+<div class="off">П.С. оформляй код в сообщениях с помощью соответствующей кнопки.</div>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/493.html" />
+<link rel="canonical" href="5-180-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Настройка направляющих в 14 Кореле | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Настройка направляющих в 14 Кореле</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-493" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">ТатьянаИ</span></strong> / 27.12.2008, 17:57/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="16.html">CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Как настроить направляющие, что бы они отображались на каждой новой странице ??? В 13 Кореле таких моментов не возникало. В 14 приходится настраивать направляющие на каждой новой странице, ибо предыдущих просто не видно. Или я что-то не так делаю?</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-2524"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">ailuj</span></strong> / 02.04.2010, 14:25    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>корел 14.0.0.567 английский, вот прин скрин) <br /> <a href="../sites/default/files/forum/images/0236871_3595272.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/large/public/forum/images/0236871_3595272-itok=0jaCFFsw.jpg" alt="Настройка направляющих в 14 Кореле" title="Настройка направляющих в 14 Кореле" /></a></p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="5-180-1-page=1.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/0236871_3595272.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/0236871_3595272-itok=I4U5VnRI.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-2525"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 02.04.2010, 16:09/16:12    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>1. Должна быть версия 14.0.0.701 (для этого должен быть установлен SP2) <br /> 2. GuidelinesOnMasterPage - это название параметра, тип Reg_sz со значением = "1" (без кавычек, только одна единица).
+</p><p> Проще всего не лезть в реестр, а просто создать txt файл с содержимым:
+</p><p> <code>Windows Registry Editor Version 5.00 </code></p>
+<p> [HKEY_CURRENT_USER\Software\Corel\CorelDRAW\14.0\CorelDRAW\Application Preferences\Guides]  <br /> "GuidelinesOnMasterPage"="1" <br /> и переименовать расширение этого файла из txt в reg. <br /> А затем двойным кликом его запустить и на вопросы отвечать ОК.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2526"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">nata</span></strong> / 29.07.2010, 18:12    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>А как сделать наоборот? У меня версия Корела SP2 retail. И мне нужны по умолчанию локальные направляющие, а сейчас по умолчанию все направляющие идут на главную страницу.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2527"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 29.07.2010, 18:39    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>nata</b>, "GuidelinesOnMasterPage"="0"</p>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-first first"><a title="На первую страницу" href="5-180-1.html">« первая</a></li>
+<li class="pager-previous"><a title="На предыдущую страницу" href="5-180-1.html">‹ предыдущая</a></li>
+<li class="pager-item"><a title="На страницу номер 1" href="5-180-1.html">1</a></li>
+<li class="pager-current last">2</li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

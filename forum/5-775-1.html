@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/1088.html" />
+<link rel="canonical" href="5-775-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>настройка dpi в экспортируемом eps файле | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">настройка dpi в экспортируемом eps файле</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-1088" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">nav</span></strong> / 14.06.2011, 02:40/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="16.html">CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Столкнулся с проблемой, уже описаной в теме про пакетный эспорт в pdf, но не увидел ответа. <br /> При экспорте файлов из corel x5 в формат eps разрешение растровых изображений в eps оказывается равным 400 dpi, несмотря на то что разрешение исходного документа ниже. В чем проблема и как избавиться от ресемплинга.</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-5298"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Des425</span></strong> / 14.06.2011, 03:21    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>nav</b>, настройки экспорта измени. <br /> <img src="../sites/default/files/forum/images/1624070_3757743.png" alt="настройка dpi в экспортируемом eps файле" title="настройка dpi в экспортируемом eps файле" /></p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="5-775-1.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/1624070_3757743.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/1624070_3757743-itok=XddFkPdj.png" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-5299"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">kpars</span></strong> / 14.06.2011, 19:58    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Des425 <br /> То, что ты указал не разрешение экпортируемого растровых картинок, а разрешение превьюхи епса. Т.е. с этим разрешением епс будет виден в какой-либо верстальной программе типа пейджмейкера, кварка и.т.п. У меня в этом окошке вообще стоит 96 дпи и грейскейл, но растр экпортируетя с тем же разрешением и цветом, как в документе, хоть 300, хоть 900. У nav какая-то другая проблема.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5300"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 14.06.2011, 20:54/20:59    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>EPS не поддерживает прозрачности в их "чистых" проявлениях, поэтому оные при экспорте конвертируются в растр 400dpi без сглаживания, и соответственно без прозрачности. Насколько мне известно, данное поведение ни коим образом не настраивается.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5301"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">nav</span></strong> / 15.06.2011, 14:38    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Sansho, дело в том, что речь не идет о прозрачностях. Речь идет о любых растровых объектах в исходном файле corel x5. В х4 поведение экспорта было иное. Если в исходном файле стояло разрешение файла, к примеру, 300 dpi, то и в экпортируемом файле это разрешение было 300 dpi, разрешение самого растрового объекта тоже отбрасывалось. <br /> А сейчас 400dpi и нет ни какой возможности на это повлиять.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5302"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 15.06.2011, 15:11    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Прозрачности это не только эффект прозрачность, но и к примеру прозрачные пикселы в растре, о чём и речь!</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5303"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">nav</span></strong> / 15.06.2011, 19:06    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>дело в том, что даже если нет прозрачных пикселов в растре, то он все равно экспортирует как 400dpi</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-6386"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">splxgf</span></strong> / 27.06.2011, 14:29    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Экспортнул eps из корела, картинка как была 72 dpi, так и осталась.<br />
+Может цвета native помогут, а может с прозрачностью и эффектами баловаться надо меньше.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-6390"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">mmgs</span></strong> / 27.06.2011, 15:23    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>а почему вам так уперся епс?<br />
+я уже года два конверчу если не в пдф то в аи цс2 (!) и все нормально, даже прозрачности сохраняются.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-6391"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">divingdog</span></strong> / 27.06.2011, 17:01    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Епс всёжеж векторный формат и на дпи он чихал большей частью так что перед экспортом растровых картиночек в него попользуй ресемпл.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-6392"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">divingdog</span></strong> / 27.06.2011, 17:05    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Это относиться и к иллюстратору.</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

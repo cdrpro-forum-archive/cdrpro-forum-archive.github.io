@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/1079.html" />
+<link rel="canonical" href="5-766-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>пакетное сохрание в pdf | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">пакетное сохрание в pdf</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-1079" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">navan</span></strong> / 02.06.2011, 16:18/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="16.html">CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>День добрый! <br /> Искал по форуму, но не нашел. <br /> Проблема: <br /> Принесли пополосно макет из 320 страниц (один файл - одна страница). <br /> Хотел бы пакетно сохранить в pdf через "опубликовать в pdf", но не знаю как это сделать. <br /> Пробовал через fileconverter.gms преобразовывать в *.eps, чтобы потом прогнать дистиллиром, но столнулся с проблемой. При экспорте в *.eps в итоговом файле разрешение меняется на 400dpi. (разрешение документа 300dpi, никаких настроек про ресемплинг при экпротре в eps я не нашел). <br /> Хотелось бы сохранить разрешение файлов в документе. <br /> corel 15.2.0.686 RU лицензия <br /> Win 7 x84 bit RU лицензия </p>
+<p> Заранее спасибо.</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-5169"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 02.06.2011, 17:11    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Встроенный файл-конвертер, судя по всему, не умеет в пдф. <br /> Научить его можно быстро, но это если есть знания ВБА. </p>
+<p> Как вариант можно попробовать поискать макрос который собирает файлы в один, если такой есть, затем выгнать пдф, а дальше делать с ним что угодно.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5170"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">navan</span></strong> / 02.06.2011, 18:06    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Sancho будь другом - подружи. Я думаю это будет востребованно. Сам не смогу - не умею. <br /> Не понятно почему при экспорте в eps идет такой глюк. <br /> В x4 разрешение в eps равно разрешению документа, а d x5 - нет.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5171"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">kuterma2</span></strong> / 02.06.2011, 18:54/18:56    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Есть простое решение. </p>
+<p> 1) Открываешь корелом (я так понимаю у тебя кореловские файлы исходные, да!?) эти файлы. Все 320 не надо, а вот штук 10-20-50 вполне можно попробовать (зависит от тяжести файла. <br /> 2) Жмёшь "Publish to PDF" в меню File (или просто жмёшь Ctrl+H) <br /> 3) Жмёшь в открывшемся окне кнопку 'Settings' и там ставишь галочку "Documents" в разделе "Export Range" (Там же не забываешь настроить остальные необходимые тебе параметры экспорта в пдф) </p>
+<p> и собственно всё - на выходе многостраничный ПДФ из открытых в данный момент в Кореле файлов... (Тут главное уследить порядок страниц - чтоб не перепутались. а если что - потом в акробате этот порядок поправить) <br /> P.S. А эти несколько многостраничных (тех самых 10-20-50-страничных) пдф легко соединить при помощи того-же банального Акробата, или всяких-разных pdf-tools'ов от сторонних разработчиков...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5172"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">navan</span></strong> / 02.06.2011, 19:18    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Списабо за вариант. <br /> Он действительно работает, если файлы небольшого размера. <br /> К сожалению, мне привезли диск с 32Gb исходников, т.е. файлы доходят до 400 Мб. При таких файлах способ не работает. </p>
+<blockquote><p>(Тут главное уследить порядок страниц - чтоб не перепутались</p></blockquote>
+<p> Вот этого как раз и не хочется отслеживать. <br /> Человеческий фактор, есть человеческий фактор.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5173"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">kuterma2</span></strong> / 02.06.2011, 19:29    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>К сожалению, мне привезли диск с 32Gb исходников</p></blockquote>
+<p> м-да... это очень тяжёлый случай... Как-же я не люблю большие файлы.... </p>
+<p> Думаю придётся всё-таки вручную шарашить каждый в pdf... <br /> Чего-ж они такие большие?...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5174"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">navan</span></strong> / 02.06.2011, 19:45    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Криворукий дизайнер :), если вообще этого человека можно назвать дизайнером. :) <br /> На каждой странице есть несколько изображений по 600 -900 dpi каждое (большинство - отсканированные с каталогов) <br /> Понятно, что мне такие разрешения не нужны. <br /> Просто хотелось автоматизировать процесс. Уменьшить разрешение планировал уже в акробате.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5175"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">kuterma2</span></strong> / 02.06.2011, 20:14    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>ясно. Да-а... брутальный дизайнер шарашил... <br /> думаю остаётся тока вручную (хотя по себе знаю - я бы день отдал попыткам сделать это автоматически по-любому... а потом-бы со спокойной душой делал-бы вручную, скрипя зубами...) <br /> А кстати - для такого дизайна - есть проверенный дедовский способ - всё битмапить на фиг. Там небось косяков помимо 900dpi имеется горы - всякие чОрные в 4 краски, эффектов ворох и тд.. <br /> Как справишься - расскажи - как ты в результате поступил, интересно)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5176"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">navan</span></strong> / 02.06.2011, 20:24    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Честно говоря на свой страх и риск через fileconverter в eps. При ближайшем рассмотрении кроме гигантских разрешений других косяков нет, или вернее текст все- таки лежит сверху, а не под прозрачным фоном. <br /> EPS получаются с 400 dpi (повторюсь - неясно почему). Потом дистиллер и объединяю в файлы по 32 страницы. <br /> Все страницы попытался объединить - фиг, слишком большой файл. <br /> И т.к. приходил отдел "К", спуск только в индезайне, блин. <br /> Нарисовал шаблон на 32 страницы и потом линкую .....</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="2623.html" />
+<link rel="canonical" href="2623.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Вставка фона на все страницы | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Вставка фона на все страницы</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-2623" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Sancho</span></strong> / 10.11.2011, 22:42/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Этот очень маленький макрос вставляет содержимое буфера обмена на каждую страницу документа и перемещает его в самый низ.</p>
+<p><code>Sub PasteForEachPage()<br />
+  Dim sr As New ShapeRange, p As Page<br />
+  For Each p In ActiveDocument.Pages<br />
+    p.Activate<br />
+    Set sr = ActiveDocument.ActivePage.ActiveLayer.PasteEx<br />
+    sr.OrderToBack<br />
+    Refresh<br />
+  Next<br />
+End Sub</code></p>
+<p><strong>Как использовать:</strong></p>
+<ol><li>Вырезаем (Ctrl+X) со страницы необходимые объекты</li>
+<li>Запускаем макрос</li>
+</ol><p>Может пригодиться для пользователей макроса <a href="../cardgenerator.html" target="_blank">cdrpro.ru/cardgenerator</a></p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-7620"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">i_Mikha</span></strong> / 11.11.2011, 10:34/10:36    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>На мой взгляд, немного слабое место этого макроса это (Ctrl+X)или(Ctrl+C). Дело в том, что на компьютерах у дизайнеров бывает много установленных программ, а Корел сохраняет для каждой из них свою версию буфера обмена. В результате копирование иногда занимает много времени. Мне кажется, что везде, где только можно лучше использовать дублирование(Ctrl+D)(в данном примере, можно переместить на поле рядом со страницей, там надублировать, а дальше по тексту)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-7625"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">mmgs</span></strong> / 11.11.2011, 13:55    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>а не проще ли мастер-слой использовать?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-7632"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">i_Mikha</span></strong> / 11.11.2011, 15:24/15:32    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>В некоторых случаях страницы оказываются под мастер-слоем и надо лезть в интерфейс и потом на каждой странице перемещать слои. А страниц в Кореле 999 шт.<br />
+Кроме того, Корел используют офис-менеджеры, секретари, разные торговые агенты и пр. - люди, которые пользуются программой четыре раза в год и каждый раз с трудом вспоминают, как начать ввод текста. Таким людям не надо знать ничего про слои</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-7633"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Des425</span></strong> / 11.11.2011, 15:52    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>i_Mikha</strong>, хватает и одного слоя чтобы переместились все.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-7634"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Des425</span></strong> / 11.11.2011, 15:53    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>Sancho</strong>,  может добавишь этот код в SanM_Tools - sToolsClipboard</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-7635"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">i_Mikha</span></strong> / 11.11.2011, 16:51    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>хватает и одного слоя чтобы переместились все</p></blockquote>
+<p>Некоторые люди сталкивались с противоположным явлением и потом почему-то становились очень агрессивны</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-7636"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 11.11.2011, 17:24    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Как вас легко тролить :D</p>
+<p><strong>Des425</strong> тут всё сложно, времени нет... боюсь что новые версии всех макросов будут только после выхода Х6...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-7645"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 11.11.2011, 20:50    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>i_Mikha</strong>, откуда инфа про 999 страниц? :) я смог добавить 1500 вот таким простым макросом:</p>
+<p><code>Sub AddPages()<br />
+  For i = 1 To 1500<br />
+    ActiveDocument.AddPages 1<br />
+  Next<br />
+End Sub</code></p>
+<p>Правдо пришлось подождать, даже на моём i5</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="2938.html" />
+<link rel="canonical" href="2938.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Ошибка при чтении изображения в файле /Error reading a bitmap in file | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Ошибка при чтении изображения в файле /Error reading a bitmap in file</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-2938" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Zigzain</span></strong> / 03.07.2012, 15:15/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../forum/16.html">CorelDRAW</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">15.2.0.686 (sp3)</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Доброго всем времени суток! При открытии файла вылетает ошибка Error reading a bitmap in file, после нажатия кнопки Пропустить, Корел зависает.<br />
+Сохранил несколько версий файла, но ни один файл, в том числе и бэкапы не открываются! Можно ли как-то вытащить битое изображение из файла и открыть его? </p>
+<p><div class="img-title-wrap" style="width:730px;"><a href="../sites/default/files/forum/images/snimok_5.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/large/public/forum/images/snimok_5-itok=VJ7ffyqX.png" alt="Сообщение Корела" title="Ошибка при чтении изображения в файле /Error reading a bitmap in file" /><span>Сообщение Корела</span></a></div><br />
+<div class="img-title-wrap" style="width:730px;"><a href="../sites/default/files/forum/images/snimok3.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/large/public/forum/images/snimok3-itok=PlJ-vPYF.png" alt="Сообщение после нажатия кнопки Пропустить" title="Ошибка при чтении изображения в файле /Error reading a bitmap in file" /><span>Сообщение после нажатия кнопки Пропустить</span></a></div></p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="2938.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/snimok_5.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/snimok_5-itok=QO8io8Vf.png" alt="Сообщение Корела" title="Ошибка при чтении изображения в файле /Error reading a bitmap in file" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/snimok3.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/snimok3-itok=MiZfFdAF.png" alt="Сообщение после нажатия кнопки Пропустить" title="Ошибка при чтении изображения в файле /Error reading a bitmap in file" /></a>      </div>
+      </div>
+</div>
+    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-9555"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">karpenator</span></strong> / 06.07.2012, 11:17    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Можно вначале открыть пустой документ, в настройках отключить управление цветом, а потом в него экспортнуть битый файл. Помогает редко, но бывает.<br />
+Вообще это может быть проблема не Corel, а Corel + железки.<br />
+Может файло весит больше 2 гигов а ось стоит на FAT, правда судя по превью - win7. Попробуй пооткрывать файл на разных машинах.<br />
+Еще вариант - сбросить настройки Корела на дефолт (жмем f8 при его запуске), потом открываем документ.<br />
+Поскольку формат cdr zip-ориентированный, поменяй расширение файла на zip и вытащи оттуда например winrar-ом riffData.cdr<br />
+Перебить в HEX-редакторе CDRE в шапке файла на CDR9... как-то так...<br />
+Мона еще с помощью утилиты cdrfind выдрать вектор.<br />
+На худой конец запустить chkdsk и затем открыть файл, возможно это глюк<br />
+с индексированием, заголовком файла и т.п.</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/844.html" />
+<link rel="canonical" href="13-531-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Макрос DuplicateOrderBack | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Макрос DuplicateOrderBack</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-844" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Sancho</span></strong> / 01.10.2010, 13:01/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even">Есть в Иллюстраторе очень удобная мелочь - вставка скопированного под текущий выделенный объект. Решил сделать подобие для CorelDRAW. <br /> Этот макрос дублирует выделенный объект так, что его дубль помещается под него и выделяется. Вешаем на Ctrl+B и кайфуем. <p> <code>Sub DuplicateOrderBack() <br />        Dim sr As ShapeRange, s As Shape <br />        Set sr = ActiveSelectionRange <br />        If sr.Shapes.Count &lt;&gt; 1 Then Exit Sub <br />        ActiveDocument.ClearSelection <br />        Set s = sr(1).Duplicate(0, 0) <br />        s.OrderBackOf sr(1) <br />        s.AddToSelection <br /> End Sub</code> </p><p> А если нужно именно вставлять из буфера, тогда меняем строку <br /><b>Set s = sr(1).Duplicate(0, 0)</b> на <b>Set s = sr(1).Layer.Paste</b></p></div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-3006"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">kuterma2</span></strong> / 01.10.2010, 13:26    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even">Нужная вещь. Хоть и мелочь, а приятно!!!!!</div></div></div>	</div>
+</div>
+<a id="comment-3007"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Des425</span></strong> / 01.10.2010, 21:22    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even">Согласен, мелочь а приятно!</div></div></div>	</div>
+</div>
+<a id="comment-3008"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 02.10.2010, 17:23    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even">Может я зануда =) <br /> Но <p> [+] на цифровой клавиатуре при выделенном объекте <br /> (т.е. копия объекта над оригиналом) <br /> Alt+click <br /> ( выделение объекта лежащего под выделенным) </p><p> не делает того же? </p><p> Второе применение - представляется более полезным - т.к. из буфера втыкается всегда на самый верх</p></div></div></div>	</div>
+</div>
+<a id="comment-3009"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">kuterma2</span></strong> / 04.10.2010, 12:07    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><b>dastin</b>, <br /> а <blockquote>[+] на цифровой клавиатуре при выделенном объекте</blockquote> - никто и не отменял! <br /> а DuplicateOrderBack в этом случае "экономит" лишний "альт-клик"</div></div></div>	</div>
+</div>
+<a id="comment-3010"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 04.10.2010, 14:52/14:55    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even">Кстати в Люстре же ещё есть возможность вставить над выделенным. Тоже удобненько. Если не ошибаюсь то там это Ctrl+F, а вот код для Корела: <p> <code>Sub PasteOrderFront() <br />      Dim sr As ShapeRange, s As Shape <br />      Set sr = ActiveSelectionRange <br />      If sr.Shapes.Count &lt;&gt; 1 Then Exit Sub <br />      ActiveDocument.ClearSelection <br />      Set s = sr(1).Layer.Paste <br />      s.OrderFrontOf sr(1) <br />      s.AddToSelection <br /> End Sub</code> </p><p> П.С. Посетила меня мысля: В Цс5 люстре есть очень удобная фигня - режимы: рисовать под, ...над, и ...в. Такое вполне можно реализовать и в Кореле. Если будет когда время, может сделаю. :) </p></div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

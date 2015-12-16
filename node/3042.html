@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="3042.html" />
+<link rel="canonical" href="3042.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Обновление wx.SyncWindowsToggle | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Обновление wx.SyncWindowsToggle</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-3042" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Dryundel</span></strong> / 06.10.2012, 23:36/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Прекрасный макрос <strong>wx.SyncWindowsToggle</strong> до сих пор не имеет поддержки X4, X5 и X6. Помогите адаптировать его к X6. В принципе на X6 он работает но с багами.<br />
+К сожалению автор на просьбы не отвечает, а работать в X3 уже как то не камильфо.</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-9924"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">wOxxOm</span></strong> / 07.10.2012, 01:22/01:25    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>не видел никаких просьб О_О<br />
+в аттаче та же версия без переделок, только добавлена совместимость с X6 64bit<br />
+переделать очень легко, могу рассказать как, но сам не особо хочу т.к. для редких работ с вектором зватает Х3 выше крыши.</p>
+<p>и да - что за баги-то?</p>
+</div></div></div><div class="dd-attached field field-name-field-forum-files field-type-file field-label-above clearfix">
+      <div class="field-label"><a href="3042.html#" class="cdrSlideAttach">Файлы</a></div>
+    <div class="field-items">
+          <div class="field-item even"><span class="file"><img class="file-icon" alt="" title="application/x-7z-compressed" src="/modules/file/icons/package-x-generic.png" /> <a href="../sites/default/files/forum/files/wx_syncwindows_x3-x6_3264bit.7z" type="application/x-7z-compressed; length=8302">wx_syncwindows_x3-x6_3264bit.7z</a></span></div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-9928"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 07.10.2012, 14:50    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>баги ТС обрисовал <a href="http://cdrpro.ru/news/2010-08-19-264">в статье о макросе</a><br />
+с новой версией синхронность отображения нарекания не вызывает, у меня впрочем не вызывало и ранее, но то что активное окно всегда переключатся в Enhanced View - это было и осталось</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9929"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">wOxxOm</span></strong> / 07.10.2012, 22:18    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>всегда переключатся в Enhanced View</p></blockquote>
+<p>в описании макроса: Настройка режимов просмотра — в коде макроса (Tools-&gt;VisualBasic-&gt;Editor или удобнее через MacroInstaller)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9930"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 08.10.2012, 00:04/00:31    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>про настройки понятно, но прошено было не о том, насколько я понял ...</p>
+<p>Предположим настройки по умолчанию - те что в макросе</p>
+<p><strong>Const ViewModeMAIN = cdrEnhancedView<br />
+Const ViewModeOther = cdrWireframeView</strong></p>
+<p>вот мы что-то делаем  в активном окне с режимом Enhanced View,<br />
+а во втором окне наблюдаем макет в режиме Wireframe View ...<br />
+и тут мятущемуся уму захотелось что-то поправить не в режиме Enhanced View,<br />
+а в режиме Wireframe View ...<br />
+естественно рука тянется перескочить во второе окно и там ...<br />
+...а вот и ... не получается - активированное второе окно немедленно переключается в Enhanced View ...<br />
+а хотелось БЫ, чтобы оно так и оставалось в Wireframe View<br />
+первое EnhancedView<br />
+второе Wireframe View ( ну или что там кому захочется настроить)<br />
+НАСМЕРТЬ! ГВОЗДЯМИ!</p>
+<p>Dryundel - я правильно излагаю?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9931"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Dryundel</span></strong> / 08.10.2012, 01:06    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Да, спасибо dastin, именно так, невозможность работы в окне с каркасным режимом весьма огорчает. Как только переходишь в это окно оно сразу переключается в расширенный режим просмотра, тогда как окно с расширенным режимом переходит в каркасный режим. То есть они (окна) меняются местами и активное окно всегда в расширенном режиме. Беда просто.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9932"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Dryundel</span></strong> / 08.10.2012, 01:46    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Я конечно понимаю, что можно поменять местами режимы окон в редакторе, но это не удобно.<br />
+А хотелось бы работать как в одном режиме (окне) так и в другом (оперативно).<br />
+Хорошо dastin сказал - точно. ПРИБИТЬ БЫ ГВОЗДЯМИ РЕЖИМЫ К ОКНАМ ! Так чтоб они не зависели от того, активно окно или нет.<br />
+Еще лучше было бы выбирать режим каждого окна прямо из строки меню "Вид", но это наверное сложно осуществить. Поэтому хотя бы "ПРИБИТЬ ГВОЗДЯМИ". :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9933"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Dryundel</span></strong> / 08.10.2012, 02:32    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Да, к стати в X6 (во всяком случае 32bit) наблюдаются реальные баги с синхронностью при масштабировании и перетаскивании инструментом "Рука(H)".<br />
+Проверено на двух машинах.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9934"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">wOxxOm</span></strong> / 08.10.2012, 06:14    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>да, действительно, так было бы удобнее...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9943"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">YuraYur</span></strong> / 08.10.2012, 19:31    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Также присоидиняюсь к пожеланию <strong>dastin</strong> по поводу гвоздей))) било би очень здорово</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-9948"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">wOxxOm</span></strong> / 08.10.2012, 22:31    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>ок, поскрипел мозгом, вот версия с гвоздями</p>
+</div></div></div><div class="dd-attached field field-name-field-forum-files field-type-file field-label-above clearfix">
+      <div class="field-label"><a href="3042.html#" class="cdrSlideAttach">Файлы</a></div>
+    <div class="field-items">
+          <div class="field-item even"><span class="file"><img class="file-icon" alt="" title="application/x-7z-compressed" src="/modules/file/icons/package-x-generic.png" /> <a href="../sites/default/files/forum/files/wx_syncwindows_x3-x6_3264bit_0.7z" type="application/x-7z-compressed; length=14017">wx_syncwindows_x3-x6_3264bit.7z</a></span></div>
+      </div>
+</div>
+	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="На страницу номер 2" href="3042-page=1.html">2</a></li>
+<li class="pager-item"><a title="На страницу номер 3" href="3042-page=2.html">3</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="3042-page=1.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="3042-page=2.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

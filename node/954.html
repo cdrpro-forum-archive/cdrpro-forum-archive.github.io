@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="954.html" />
+<link rel="canonical" href="../forum/5-641-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Выделение нескольких объектов в группе | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Выделение нескольких объектов в группе</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-954" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Alex000r</span></strong> / 03.02.2011, 19:39/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../forum/16.html">CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>как выделить несколько объектов в группе не разгруппировывая их? (т.е. в группе 3 объекта. как выделить 2 из них)</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-3920"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 03.02.2011, 19:59    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>не разгруппировывая группу можно выделить лишь один объект - с нажатым Ctrl клацнуть мышкой. При использовании VBA, если я не ошибаюсь, можно выделить произвольное количество объектов внутри группы "набрав" объектов в переменную типа ShapeRange и вызвав метод .CreateSelection</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3921"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">kuterma2</span></strong> / 11.02.2011, 01:32    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Хорошая тема, кстати, частенько бывает хочу такую штучку... <br /> Ещё хочу регулярно, чтобы один объект с группы можно было сдублировать по быстрому, чтоб он оказался вне группы, и без буфера обмена чтоб - стопудово - удобно было-бы</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3922"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 12.02.2011, 01:38    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>kuterma2</b>, держи макрос для такого случая
+</p><p> <code>Sub Out_Copy <br /> Dim s As Shape <br /> Dim s1 As Shape <br />     Set s = ActiveShape <br />     If Not s Is Nothing Then <br />         Set s1 = s.ParentGroup <br />         If Not s1 Is Nothing Then <br />             Set s = s.Duplicate <br />             s.OrderFrontOf s1 <br />             s.CreateSelection <br />         End If <br />     End If <br /> End Sub</code></p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

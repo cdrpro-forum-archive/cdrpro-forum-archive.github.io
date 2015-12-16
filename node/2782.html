@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="2782.html" />
+<link rel="canonical" href="2782.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Смещение заливок и прозрачностей в написанных макросах | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Смещение заливок и прозрачностей в написанных макросах</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-2782" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Zigzain</span></strong> / 08.03.2012, 23:29/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">15.2.0.686 (sp3)</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Вопрос таков: записал макрос на создание вот такого текста</p>
+<p><a href="../sites/default/files/forum/images/1_0.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/large/public/forum/images/1_0-itok=PEsTaZWX.png" alt="Смещение заливок и прозрачностей в написанных макросах" title="Смещение заливок и прозрачностей в написанных макросах" /></a></p>
+<p>При использовании его для другого текста, градиентная заливка привязывается к исходному месту, где была сделана при записи, а не к объекту. Как сделать, чтоб заливка была привязана к объекту? Та же фигня и с прозрачностью кстати...</p>
+<p><a href="../sites/default/files/forum/images/2_1.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/large/public/forum/images/2_1-itok=kOVJkBgi.png" alt="Смещение заливок и прозрачностей в написанных макросах" title="Смещение заливок и прозрачностей в написанных макросах" /></a></p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="2782.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/1_0.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/1_0-itok=RrNan6T5.png" alt="Смещение заливок и прозрачностей в написанных макросах" title="Смещение заливок и прозрачностей в написанных макросах" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/2_1.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/2_1-itok=sx-XreVW.png" alt="Смещение заливок и прозрачностей в написанных макросах" title="Смещение заливок и прозрачностей в написанных макросах" /></a>      </div>
+      </div>
+</div>
+    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-8715"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 09.03.2012, 00:34    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>Zigzain</strong>, вообще то при подобного рода вопросах принято показывать код, а не скриншоты всего корела.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8722"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Zigzain</span></strong> / 09.03.2012, 02:15/02:16    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Если это там, где Edit, то вот код: </p>
+<div class="sp-wrap">
+<div class="sp-head">Спойлер</div>
+<div class="sp-body">
+Sub Text()<br />
+    ' Recorded 08.03.2012<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 0.873217, 10.142165, 300<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 0.977382, 10.326193, 600<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.032941, 10.209874, 1200<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.03728, 10.210744, 2400<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.037717, 10.210744, 4800<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.044224, 10.207272, 9600<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.045197, 10.198701, 4800<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.046724, 10.196957, 2400<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.046291, 10.213449, 1200<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.056709, 10.214315, 600<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.304976, 10.301122, 300<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.388319, 10.155283, 600<br />
+    With ActiveLayer.Shapes(1).Fill.ApplyFountainFill(CreateRGBColor(0, 0, 0), CreateCMYKColor(0, 0, 0, 0), cdrLinearFountainFill, 270#, 0, 0, 50, cdrDirectFountainFillBlend)<br />
+        .StartX = 1.313669<br />
+        .StartY = 10.271606<br />
+        .EndX = 1.313669<br />
+        .EndY = 10.054591<br />
+    End With<br />
+    With ActiveLayer.Shapes(1).Fill.ApplyFountainFill(CreateRGBColor(0, 0, 0), CreateCMYKColor(0, 0, 0, 0), cdrLinearFountainFill, 270#, 0, 17, 50, cdrDirectFountainFillBlend)<br />
+        .StartX = 1.313669<br />
+        .StartY = 10.271606<br />
+        .EndX = 1.313669<br />
+        .EndY = 10.198421<br />
+    End With<br />
+    With ActiveLayer.Shapes(1).Fill.ApplyFountainFill(CreateRGBColor(0, 0, 0), CreateRGBColor(153, 153, 153), cdrLinearFountainFill, 270#, 0, 30, 50, cdrDirectFountainFillBlend)<br />
+        .StartX = 1.313669<br />
+        .StartY = 10.271606<br />
+        .EndX = 1.313669<br />
+        .EndY = 10.198421<br />
+    End With<br />
+    With ActiveLayer.Shapes(1).Fill.ApplyFountainFill(CreateRGBColor(0, 0, 0), CreateRGBColor(128, 128, 128), cdrLinearFountainFill, 270#, 0, 30, 50, cdrDirectFountainFillBlend)<br />
+        .StartX = 1.313669<br />
+        .StartY = 10.271606<br />
+        .EndX = 1.313669<br />
+        .EndY = 10.198421<br />
+    End With<br />
+    With ActiveLayer.Shapes(1).Fill.ApplyFountainFill(CreateRGBColor(0, 0, 0), CreateRGBColor(102, 102, 102), cdrLinearFountainFill, 270#, 0, 30, 50, cdrDirectFountainFillBlend)<br />
+        .StartX = 1.313669<br />
+        .StartY = 10.271606<br />
+        .EndX = 1.313669<br />
+        .EndY = 10.198421<br />
+    End With<br />
+    With ActiveLayer.Shapes(1).Fill.ApplyFountainFill(CreateRGBColor(0, 0, 0), CreateRGBColor(102, 102, 102), cdrLinearFountainFill, 270#, 0, 30, 50, cdrDirectFountainFillBlend)<br />
+        .StartX = 1.110543<br />
+        .StartY = 10.328898<br />
+        .EndX = 1.110543<br />
+        .EndY = 10.198421<br />
+    End With<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.101862, 10.306327, 1200<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.105335, 10.316744, 2400<br />
+    With ActiveLayer.Shapes(1).Fill.ApplyFountainFill(CreateRGBColor(0, 0, 0), CreateRGBColor(102, 102, 102), cdrLinearFountainFill, 270#, 0, 1, 50, cdrDirectFountainFillBlend)<br />
+        .StartX = 1.110543<br />
+        .StartY = 10.326728<br />
+        .EndX = 1.110543<br />
+        .EndY = 10.198421<br />
+    End With<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.122697, 10.32152, 1200<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.122689, 10.321516, 600<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.204291, 10.307618, 300<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.263327, 10.186083, 600<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    Dim s1 As Shape<br />
+    Set s1 = ActiveLayer.Shapes(1).Duplicate<br />
+    ActiveDocument.ReferencePoint = cdrBottomMiddle<br />
+    s1.Stretch 1#, -1#<br />
+    s1.OrderToFront<br />
+    ActiveDocument.ReferencePoint = cdrTopMiddle<br />
+    s1.Stretch 1#, -1#<br />
+    s1.OrderFrontOf ActiveLayer.Shapes(25)<br />
+    s1.Fill.UniformColor.RGBAssign 255, 255, 255<br />
+    s1.Move 0#, -0.003937<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 0.976866, 10.319764, 300<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.188681, 10.326709, 150<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.369244, 9.812819, 75<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.216465, 9.965594, 150<br />
+    Dim eff1 As Effect<br />
+    Set eff1 = s1.CreateDropShadow(cdrDropShadowFlat, 11, 27, 0#, 0#, CreateRGBColor(0, 0, 0), cdrFeatherAverage, cdrEdgeLinear, MergeMode:=cdrMergeNormal)<br />
+    Windows.FindWindow("Untitled-1").ActiveView.ZoomIn<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 2.978618, 9.960386, 150<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 2.548059, 10.092335, 75<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 0.534173, 10.050665, 150<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 0.728614, 10.1965, 300<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.31889, 10.425665, 600<br />
+    Set eff1 = s1.CreateDropShadow(cdrDropShadowFlat, 4, 27, 0#, 0#, CreateRGBColor(0, 0, 0), cdrFeatherAverage, cdrEdgeLinear, MergeMode:=cdrMergeNormal)<br />
+    ActiveDocument.Undo<br />
+    Set eff1 = s1.CreateDropShadow(cdrDropShadowFlat, 9, 27, 0#, 0#, CreateRGBColor(0, 0, 0), cdrFeatherAverage, cdrEdgeLinear, MergeMode:=cdrMergeNormal)<br />
+    Set eff1 = s1.CreateDropShadow(cdrDropShadowFlat, 9, 22, 0#, 0#, CreateRGBColor(0, 0, 0), cdrFeatherAverage, cdrEdgeLinear, MergeMode:=cdrMergeNormal)<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.324102, 10.470807, 300<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.428264, 9.859693, 150<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.282433, 10.213858, 400<br />
+End Sub<br />
+Sub Text1()<br />
+    ' Recorded 08.03.2012<br />
+    Dim OrigSelection As ShapeRange<br />
+    Set OrigSelection = ActiveSelectionRange<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 2.839079, 6.21485, 200<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    ' Recording of this command is not supported: TextEdit<br />
+    With ActiveSelection.Fill.ApplyFountainFill(CreateRGBColor(77, 77, 77), CreateCMYKColor(0, 0, 0, 0), cdrLinearFountainFill, 90#, 0, 0, 50, cdrDirectFountainFillBlend)<br />
+        .StartX = 3.682469<br />
+        .StartY = 6.395067<br />
+        .EndX = 3.682469<br />
+        .EndY = 6.728402<br />
+    End With<br />
+    With ActiveSelection.Fill.ApplyFountainFill(CreateRGBColor(77, 77, 77), CreateRGBColor(0, 0, 0), cdrLinearFountainFill, 90#, 0, 4, 50, cdrDirectFountainFillBlend)<br />
+        .StartX = 3.682469<br />
+        .StartY = 6.395067<br />
+        .EndX = 3.682469<br />
+        .EndY = 6.728402<br />
+    End With<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.693244, 6.332909, 100<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.832138, 6.305126, 50<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 2.998799, 6.721783, 100<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.846016, 6.263457, 50<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.346028, 7.291228, 100<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.443252, 6.694008, 50<br />
+    Dim eff1 As Effect<br />
+    Set eff1 = OrigSelection(1).CreateDropShadow(cdrDropShadowFlat, 11, 27, 0#, 0#, CreateRGBColor(0, 0, 0), cdrFeatherAverage, cdrEdgeLinear, MergeMode:=cdrMergeNormal)<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 0.276591, 4.388449, 100<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.109925, 6.263445, 200<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.109929, 6.263449, 100<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.151598, 6.541217, 50<br />
+    ActiveDocument.Undo<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.346055, 7.374559, 100<br />
+    Dim dup1 As ShapeRange<br />
+    Set dup1 = OrigSelection.Duplicate<br />
+    ActiveDocument.ReferencePoint = cdrBottomMiddle<br />
+    dup1.Stretch 1#, -1#<br />
+    dup1.OrderToFront<br />
+    ActiveDocument.ReferencePoint = cdrTopMiddle<br />
+    dup1.Stretch 1#, -1#<br />
+    dup1.OrderFrontOf ActiveLayer.Shapes(3)<br />
+    dup1.Move 0#, -0.000898<br />
+    dup1.ApplyUniformFill CreateRGBColor(255, 255, 255)<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.65161, 6.485677, 200<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.644665, 6.499567, 400<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.682862, 6.437067, 800<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.681126, 6.430122, 400<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.674189, 6.41276, 200<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.674197, 6.412764, 100<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.757531, 6.468315, 200<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.688087, 6.36415, 400<br />
+    dup1.Move 0#, -0.006941<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.438087, 6.35026, 200<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.597819, 6.246094, 100<br />
+    ActiveDocument.Undo<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.389484, 6.315535, 200<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.486705, 6.232201, 400<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.601287, 6.426642, 800<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.57872, 6.417965, 400<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.568303, 6.407539, 200<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.568303, 6.407539, 100<br />
+    ActiveDocument.Redo<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.804417, 5.72698, 50<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 2.387748, 4.782528, 25<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.221079, 7.11585, 50<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.387744, 7.171406, 100<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.512744, 6.601961, 50<br />
+    Dim eff2 As Effect<br />
+    Set eff2 = dup1(1).CreateDropShadow(cdrDropShadowFlat, 11, 27, 0#, 0#, CreateRGBColor(0, 0, 0), cdrFeatherAverage, cdrEdgeLinear, MergeMode:=cdrMergeNormal)<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 2.151634, 6.074173, 100<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 2.457189, 6.074173, 200<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 1.019685, 6.456118, 100<br />
+End Sub<br />
+Sub Text2()<br />
+    ' Recorded 08.03.2012<br />
+    Dim OrigSelection As ShapeRange<br />
+    Set OrigSelection = ActiveSelectionRange<br />
+    ActiveSelection.ApplyStyle "New Artistic Text"<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.948512, 9.513437, 200<br />
+    OrigSelection.ApplyUniformFill CreateRGBColor(102, 102, 102)<br />
+    With ActiveSelection.Fill.ApplyFountainFill(CreateRGBColor(102, 102, 102), CreateCMYKColor(0, 0, 0, 0), cdrLinearFountainFill, 270#, 0, 0, 50, cdrDirectFountainFillBlend)<br />
+        .StartX = 4.438098<br />
+        .StartY = 9.471772<br />
+        .EndX = 4.438098<br />
+        .EndY = 8.971772<br />
+    End With<br />
+    With ActiveSelection.Fill.ApplyFountainFill(CreateRGBColor(102, 102, 102), CreateRGBColor(102, 102, 102), cdrLinearFountainFill, 270#, 0, 0, 50, cdrDirectFountainFillBlend)<br />
+        .StartX = 4.438098<br />
+        .StartY = 9.471772<br />
+        .EndX = 4.438098<br />
+        .EndY = 8.971772<br />
+    End With<br />
+    With ActiveSelection.Fill.ApplyFountainFill(CreateRGBColor(102, 102, 102), CreateRGBColor(51, 51, 51), cdrLinearFountainFill, 270#, 0, 0, 50, cdrDirectFountainFillBlend)<br />
+        .StartX = 4.438098<br />
+        .StartY = 9.471772<br />
+        .EndX = 4.438098<br />
+        .EndY = 8.971772<br />
+    End With<br />
+    With ActiveSelection.Fill.ApplyFountainFill(CreateRGBColor(102, 102, 102), CreateRGBColor(0, 0, 0), cdrLinearFountainFill, 270#, 0, 0, 50, cdrDirectFountainFillBlend)<br />
+        .StartX = 4.438098<br />
+        .StartY = 9.471772<br />
+        .EndX = 4.438098<br />
+        .EndY = 8.971772<br />
+    End With<br />
+    With ActiveSelection.Fill.ApplyFountainFill(CreateRGBColor(102, 102, 102), CreateRGBColor(0, 0, 0), cdrLinearFountainFill, 270#, 0, 0, 50, cdrDirectFountainFillBlend)<br />
+        .StartX = 4.438098<br />
+        .StartY = 9.336354<br />
+        .EndX = 4.438098<br />
+        .EndY = 8.971772<br />
+    End With<br />
+    With ActiveSelection.Fill.ApplyFountainFill(CreateRGBColor(102, 102, 102), CreateRGBColor(0, 0, 0), cdrLinearFountainFill, 269.118545, 0, 21, 50, cdrDirectFountainFillBlend)<br />
+        .StartX = 4.776642<br />
+        .StartY = 9.482189<br />
+        .EndX = 4.771433<br />
+        .EndY = 9.143646<br />
+    End With<br />
+    With ActiveSelection.Fill.ApplyFountainFill(CreateRGBColor(102, 102, 102), CreateRGBColor(0, 0, 0), cdrLinearFountainFill, 90#, 0, 12, 50, cdrDirectFountainFillBlend)<br />
+        .StartX = 4.938098<br />
+        .StartY = 9.10198<br />
+        .EndX = 4.938098<br />
+        .EndY = 9.466563<br />
+    End With<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 2.93289, 9.383228, 100<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.630807, 9.633228, 200<br />
+    Dim dup1 As ShapeRange<br />
+    Set dup1 = OrigSelection.Duplicate<br />
+    ActiveDocument.ReferencePoint = cdrBottomMiddle<br />
+    dup1.Stretch 1#, -1#<br />
+    dup1.OrderToFront<br />
+    ActiveDocument.ReferencePoint = cdrTopMiddle<br />
+    dup1.Stretch 1#, -1#<br />
+    dup1.OrderFrontOf ActiveLayer.Shapes(9)<br />
+    dup1.Move 0#, -0.01389<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.896429, 8.784272, 100<br />
+    dup1.ApplyUniformFill CreateRGBColor(255, 255, 255)<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 2.53185, 6.596768, 200<br />
+    dup1.Move 0#, 0.01389<br />
+    dup1.Move 0#, -0.01389<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.787055, 8.487394, 100<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.787055, 8.445728, 50<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.766228, 8.445724, 25<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.807902, 10.404059, 50<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.891232, 8.279059, 100<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.484988, 9.581146, 200<br />
+    ActiveDocument.Undo<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.469362, 9.37802, 400<br />
+    dup1.Move 0#, -0.01389<br />
+    dup1.Move 0#, 0.006945<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.766236, 9.310311, 200<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.750614, 9.310315, 100<br />
+    Dim eff1 As Effect<br />
+    Set eff1 = dup1(1).CreateDropShadow(cdrDropShadowFlat, 11, 27, 0#, 0#, CreateRGBColor(0, 0, 0), cdrFeatherAverage, cdrEdgeLinear, MergeMode:=cdrMergeNormal)<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.771445, 8.591559, 200<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.115197, 9.601976, 400<br />
+    Dim dup2 As ShapeRange<br />
+    Set dup2 = OrigSelection.Duplicate<br />
+    ActiveDocument.ReferencePoint = cdrBottomMiddle<br />
+    dup2.Stretch 1#, -1#<br />
+    dup2.OrderToFront<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.401657, 8.935311, 200<br />
+    dup2.ApplyUniformFill CreateRGBColor(255, 255, 255)<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 3.120402, 8.805098, 100<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.797488, 9.034264, 200<br />
+    ActiveDocument.Undo<br />
+    dup2.CreateSelection<br />
+    With ActiveSelection.Transparency.ApplyFountainTransparency(0, 100, cdrLinearFountainFill, 270#, 256, 0, 50)<br />
+        .StartX = 4.818323<br />
+        .StartY = 9.409264<br />
+        .EndX = 6.530921<br />
+        .EndY = 8.711346<br />
+    End With<br />
+    With ActiveSelection.Transparency.ApplyFountainTransparency(0, 100, cdrLinearFountainFill, 270#, 256, 0, 50)<br />
+        .StartX = 4.818323<br />
+        .StartY = 10.294681<br />
+        .EndX = 6.530921<br />
+        .EndY = 8.711346<br />
+    End With<br />
+    With ActiveSelection.Transparency.ApplyFountainTransparency(0, 100, cdrLinearFountainFill, 270#, 256, 0, 50)<br />
+        .StartX = 4.818323<br />
+        .StartY = 10.294681<br />
+        .EndX = 6.530921<br />
+        .EndY = 8.851972<br />
+    End With<br />
+    With ActiveSelection.Transparency.ApplyFountainTransparency(0, 100, cdrLinearFountainFill, 270#, 256, 4, 50)<br />
+        .StartX = 4.818323<br />
+        .StartY = 11.247807<br />
+        .EndX = 6.530921<br />
+        .EndY = 8.851972<br />
+    End With<br />
+    Windows.FindWindow("Untitled-1").ActiveView.SetViewPoint 4.901654, 9.456138, 100<br />
+    dup2.Move 0#, -0.02778<br />
+    dup2.Move 0#, -0.02778<br />
+    dup2.Move 0#, -0.02778<br />
+    dup2.Move 0#, -0.02778<br />
+    dup2.Move 0#, -0.02778<br />
+End Sub
+</div>
+</div>
+</div></div></div>	</div>
+</div>
+<a id="comment-8723"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">chally</span></strong> / 09.03.2012, 21:36/21:37    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Глядя на скриншоты с Макрос Менеджером чуствую свою убогость -- неужто автор темы их все пользует... O_o</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8724"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 09.03.2012, 22:00    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>Zigzain</strong>, заглянул под спойлер и увидел ужас :D<br />
+Проблема в том что запись макросов в 99% случаев можно использовать только как справочник, и то не всегда. Советую изучить этот код, что бы понять что именно тебе нужно будет писать в нормальном макросе.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8731"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Zigzain</span></strong> / 10.03.2012, 21:01    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Я его изучил. Возможно дело как раз в применении заливки относительно координат системы, а не самого объекта? как сделать заливку, привязанную именно к объекту?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8735"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 11.03.2012, 12:59/01:44    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>Zigzain</strong>, брать координаты самого объекта, а затем относительно их задавать координаты для узлов градиента. Вот простой пример:</p>
+<pre class="brush: vb">Dim s As Shape, d As Document, X#, Y#, ff As FountainFill
+Set s = ActiveSelectionRange(1)
+
+Set d = ActiveDocument
+d.ReferencePoint = cdrCenter
+d.Unit = cdrMillimeter
+s.GetPosition X, Y
+
+Set ff = s.Fill.ApplyFountainFill(CreateCMYKColor(0, 0, 0, 100), CreateCMYKColor(0, 0, 0, 0), cdrRadialFountainFill, 0#, 0, 0, 50, cdrDirectFountainFillBlend)
+ff.StartX = X
+ff.StartY = Y
+ff.EndX = X + 20
+ff.EndY = Y</pre></div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="894.html" />
+<link rel="canonical" href="../forum/5-581-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Тяжелый файл cdr | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Тяжелый файл cdr</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-894" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">spiny</span></strong> / 16.11.2010, 15:49/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../forum/16.html">CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Здравствуйте, пожалуйста подскажите, как сделать cdr-файл легче? К примеру, у меня отрисованный логотип, одноцветный, простенький, а весит очень много, 1,5 мб, хотя там нечему столько весить. Можно как-то сделать размер поменьше?</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-3452"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 16.11.2010, 16:09    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Ну из известного — стили (цветовые и просмотра) <br /> Вот что поиск по сайту подсказал: <br /><a class="link" target="_blank" href="http://cdrpro.ru/forum/5-206-1" rel="nofollow">http://cdrpro.ru/forum/5-206-1</a> <br /><a class="link" target="_blank" href="http://www.cdrpro.ru/forum/5-392-1" rel="nofollow">http://www.cdrpro.ru/forum/5-392-1</a></p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3453"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">spiny</span></strong> / 16.11.2010, 16:32    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Огроменное спасибо!!! Просто спасли меня</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3454"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">mmgs</span></strong> / 17.11.2010, 16:15    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>как бы еще корел обучить чтобы он сразу их не загружал. <br /> где-то тут на форуме видел тему про это а теперь не могу найти :(</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3455"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 18.11.2010, 14:06    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>убивать стили просмотра при загрузке можно следующим образом: <br /> если вы немного знакомы с ВБА, открываете редактор макросов (Alt-F11) <br /> в списке проектов находите GlobalMacros (GlobalMacros.gms) <br /> дважды клацаете мышкой, выбираете ThisMacroStorage <br /> в открывшемся окошке слева вверху в списке заменяете General на GlobalMacroStorage <br /> а справа в списке отыскиваете строку DocumentOpen <br /> в появившуюся процедуру <br /> Private Sub GlobalMacroStorage_DocumentOpen(ByVal Doc As Document, ByVal FileName As String) <br /> копируете код, упомянутый Sancho, т.е. <br /><code>Private Sub GlobalMacroStorage_DocumentOpen(ByVal Doc As Document, ByVal FileName As String) <br /> Dim Vws As Views <br />   Set Vws = ActiveDocument.Views <br />   While Vws.Count &lt;&gt; 0 <br />    Vws(Vws.Count).Delete <br />   Wend <br />   Set Vws = Nothing <br /> End Sub</code> <br /> теперь при открытии любого документа стили просмотра будут убиваться</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3456"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">mmgs</span></strong> / 18.11.2010, 17:07    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>огромное спасибо! после работы попробую. <br /> а то уже опух от файлов одной клиентки, которая постоянно таскает файлы с этим барахлом. кому интересно прилагаю файло на экспертизу.
+</p><p> такое ощущение, что она пользует этот вью менеджер вместо зум тула и сослепу лупит не по значкам с лупой, а по этим плюсам и минусам, отчего в файле уже бессчетное количество стилей.
+</p><p> а еще есть подозрение что возможно это все барахло как-то записывается в дефолтные настройки.
+</p><p><b>Добавлено</b> (18.11.2010, 14:05)<br />---------------------------------------------<br />в 13 кореле вышеприведенный макрос не сработал :( <br /> при этом файл открывался еще дольше чем обычно.
+</p><p><b>Добавлено</b> (18.11.2010, 14:07)<br />---------------------------------------------<br />в смысле все миллион стилей просмотра остались</p>
+</div></div></div><div class="dd-attached field field-name-field-forum-files field-type-file field-label-above clearfix">
+      <div class="field-label"><a href="894.html#" class="cdrSlideAttach">Файлы</a></div>
+    <div class="field-items">
+          <div class="field-item even"><span class="file"><img class="file-icon" alt="" title="image/x-coreldraw" src="/modules/file/icons/image-x-generic.png" /> <a href="../sites/default/files/forum/files/8649988_7574487.cdr" type="image/x-coreldraw; length=1027150">8649988_7574487.cdr</a></span></div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-3457"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 19.11.2010, 15:13    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>mmgs</b>, загрузил твой файл с мегатканью <br /> открыл - ни одного стиля ! <br /> после первого запуска Корела макрос может не сработать по каким-то причинам, видимо, пока не активируется подсистема VBA <br /> попробуй запусти какой-нибудь макрос, или запусти редактор VBA, потом просто открой любой документ и проверь еще раз. <br /> я тоже пользуюсь Х3
+</p><p><b>Добавлено</b> (19.11.2010, 12:13)<br />---------------------------------------------<br />кстати, при создании документа куча стилей также появляется <br /> поэтому там же, в GlobalMacroStorage создайте процедуру <br /><code>Private Sub GlobalMacroStorage_DocumentNew(ByVal Doc As Document, ByVal FromTemplate As Boolean, ByVal Template As String, ByVal IncludeGraphics As Boolean) <br />     GlobalMacroStorage_DocumentOpen Doc, FileName <br /> End Sub</code> <br /> чтобы также убить все стили в зародыше, не дублируя код. <br /> А в конец процедуры GlobalMacroStorage_DocumentOpen добавьте строку <br /> ActiveWindow.ActiveView.ToFitAllObjects <br /> это позволит при загрузке документа отобразить сразу все видимые объекты (не придется лишний раз нажимать F4)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3458"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">mmgs</span></strong> / 19.11.2010, 17:46    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>прям интересно стало. надо поизучать скриптинг корела :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-3459"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 19.11.2010, 17:51    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Это не "скриптинг", это "макросинг", если можно так сказать. <br /> Макросы и скрипты в Кореле это разные вещи!</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

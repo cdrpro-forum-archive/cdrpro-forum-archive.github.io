@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/976.html" />
+<link rel="canonical" href="13-663-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>как запустить макрос | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">как запустить макрос</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-976" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">masja</span></strong> / 24.02.2011, 11:28/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>как правильно чайнику запустить макрос корела находящийся в файле хх.cdr находящийся в VBAProject(хх) в папке "modules" в модуле "модуль1" - sub МакросДляЗапуска ()
+</p><p> запускать этот макрос надо например из другого макроса другого VBAProject(хх22) или из екселя
+</p><p> и желательно не выдергивать макрос из этого файла в гмс, а просто запустить /макрос и картинки в одном файле должны быть всегда/</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-4129"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 24.02.2011, 12:50    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>выбираете Tools-Visual Basic-Play... (или Инстурменты-Макросы-Запустить макрос), далее выбираете имя файла и в списке ниже запускаете нужный вам макрос</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4130"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 24.02.2011, 13:58/14:00    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Из справки:
+</p><p> <b>GMSManager.RunMacro </b> <br /> Function <b>RunMacro</b>(ModuleName As String, MacroName As String, Parameter() As Variant) As Variant
+</p><p> Пример: <br /><code>GMSManager.RunMacro "GlobalMacros", "MyModule.MyTestSub"</code></p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4131"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">masja</span></strong> / 24.02.2011, 16:42    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>GMSManager.RunMacro "GlobalMacros", "MyModule.MyTestSub"
+</p><p> - эта конструкция почемуто точно не работает (из ексела). пишет модуль не найден. <br /> эта конструкция для файлов хх.cdr должна работать? в принципе... <br /> что может мешать? для не гмс-файлов
+</p><p> Инстурменты-Макросы-Запустить макрос <br /> надо же програмно бы... не через инструмент</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4132"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 24.02.2011, 17:14    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>masja</b>, должно работать. Видимо что-то неправильно делаешь.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4133"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">masja</span></strong> / 24.02.2011, 17:57/19:51    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>видимо да <br /> но вот, что? можно текст екселя?:
+</p><p> <code>Dim cDraw As Object 'CorelDRAW.Application <br /> Dim curDoc As Object </code></p>
+<p> Set cDraw = CreateObject("CorelDRAW.Application.12") <br /> cDraw.Visible = True </p>
+<p> Set curDoc = cDraw.OpenDocument("D:\с12.cdr") <br /> curDoc.ActivePage.Layers("График").Editable = True <br /> ... <br /> curDoc.ActivePage.Layers("Распределение").Editable = True </p>
+<p> ss = cDraw.InitializeVBA <br /> 'Set gms = cDraw.GMSManager <br /> 'dd = cDraw.GMSManager.UserGMSPath </p>
+<p> cDraw.GMSManager.RunMacro "с12", "Module1.ПокраситьКартуСерым" 'че не так ей <br /> ??? </p>
+<p> curDoc.SaveAs "D:\11111.cdr", SaveOptions <br /> curDoc.Close 'здесь этот макрос работает <br /> cDraw.Quit</p>
+</div></div></div><div class="dd-attached field field-name-field-forum-files field-type-file field-label-above clearfix">
+      <div class="field-label"><a href="13-663-1.html#" class="cdrSlideAttach">Файлы</a></div>
+    <div class="field-items">
+          <div class="field-item even"><span class="file"><img class="file-icon" alt="" title="image/x-coreldraw" src="/modules/file/icons/image-x-generic.png" /> <a href="../sites/default/files/forum/files/12_6377698.cdr" type="image/x-coreldraw; length=42060">12_6377698.cdr</a></span></div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-4134"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 24.02.2011, 20:31    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>masja</b>, <br /> 1. используй тег code на форуме (сообщение отредактировал) <br /> 2. Не используй русских названий в именах функций и модулей )))
+</p><p> И... П.С. Посмотрел, походу GMSManager не видит макросы внутри файлов cdr.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4135"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">masja</span></strong> / 25.02.2011, 09:57    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>GMSManager не видит макросы внутри файлов cdr</p></blockquote>
+<p> по ходу да... <br /> что будет(может) видеть этот макрос внутри файлов cdr?
+</p><p> что-то типа <br /> ThisDocument.ПокраситьКрасноКоричневым <br /> запущееное в кореле очень даже работает /если в general от ThisDocument вставить Sub ПокраситьКрасноКоричневым() /, и даже само после точки выбирается <br /> а вот в экселе эта конструкция же уже не работает /похоже ThisDocument для экселя не совсем виден?/... почему так может быть?
+</p><p> оно конечно ThisDocument надо может как-то не так оформить? <br /> но вот ThisDocument.name и Documents(1).name вроде одно итоже выдает. а макрос ни тот ни другой не видит...
+</p><p> как оно правильно должно быть написано, чтоб заработало?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4136"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 25.02.2011, 10:44/10:47    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>А что за версия то корела, кстати говоря? ) <br /> Вообще ThisDocument, насколько я помню, это внутреннее псевдо-имя старых версий Корела. Сейчас же он использует ThisMacroStorage. Логично что к этому имени со вне обращаться нельзя. А вот если это имя изменить ручками, то возможно прокатит.
+</p><p> А зачем нужно использовать хранение макроса в документе? Почему нельзя решить вопрос, создав GMS файл, в котором будет всё что нужно?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4137"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">masja</span></strong> / 25.02.2011, 15:52    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>корел=12 /лицензирование - есть тормоз прогрэсса (с)/ <br /> офис=2003 /есть еще 2007- тоже на цепочке лицензионной/<br /></p><blockquote>хранение макроса в документе? Почему нельзя решить вопрос, создав GMS файл</blockquote>
+<p> макрос только для картинки причем только для этой, причем только для 12 корела <br /> макрос только эту картинку трансформирует собственно
+</p><p> кудато гмс таскать-вставлять - тетки не будут. максимум 2 файлика осилят: один рисует(корел), в другом данные и кнопки (эксель) /при условии кшно, что не перепутают тетки кого первого открывать/ эту связку файлов надо на разные машины таскать
+</p><p> да и по жизни ж надо знать как это чудо запускать в принципе<br /></p><blockquote>если это имя изменить ручками, то возможно прокатит</blockquote>
+<p> можно подробнее: что и как ручками надо сделать?<br /></p><blockquote>ThisMacroStorage</blockquote>
+<p> - нету такого... вроде
+</p><p><b>Добавлено</b> (25.02.2011, 12:52)<br />---------------------------------------------<br />есть какое нибудь чтиво приличное об этих модульных макросах и зисдокументах? на руском бы еще желательно /чета по аглицки не доходит видать/</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4138"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 25.02.2011, 16:01    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>можно подробнее</p></blockquote>
+<p>В посте №9 всё написано.<br /></p><blockquote>как это чудо запускать в принципе</blockquote>
+<p>Сомнительная надобность. Напиши всё в одном месте, например в макросе (в экселе). Не вижу смысла, в данном случае, разбрасывать код по приложениям.
+</p><p> <code>Set curDoc = cDraw.OpenDocument("D:\с12.cdr")  <br /> curDoc.ActivePage.Layers("График").Editable = True <br /> И продолжай здесь же код свой... <br /> .... <br /> ...в конце curDoc.Save <br /> curDoc.Close</code></p>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="На страницу номер 2" href="13-663-1-page=1.html">2</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="13-663-1-page=1.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="13-663-1-page=1.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

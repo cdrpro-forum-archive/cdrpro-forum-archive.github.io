@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="3005.html" />
+<link rel="canonical" href="3005.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Делаем виньетку в Photo-Paint | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Делаем виньетку в Photo-Paint</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-3005" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Baryga88</span></strong> / 01.09.2012, 11:40/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../pp-lessons-forum.html">УРОКИ Corel PHOTO-PAINT</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">15.1.0.486/488/489</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>В этом, достаточно большом уроке, мы рассмотрим не только создание виньетки, но и попутно рассмотрим коррекцию проблемного фото.<br />
+На рис. 1 показана исходная фотография, она же находится в прикрепленных файлах.</p>
+<p><img src="../sites/default/files/forum/images/ris_1_13.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Если мы внимательно посмотри на лицо, то обнаружим, что фото имеет довольно характерные дефекты, имеющиеся на многих цифровых фотографиях. Но перед началом экспериментов, как это рекомендуют профессионалы, а я присоединяюсь к их пожеланиям – сделаем дубликат оригинала и сохраним его под новым именем. Выполните команду <strong>Image &gt; Duplicate</strong> (Изображение &gt; Дублировать). Я сохранил новый файл под именем <strong>Vignette_copy</strong>.<br />
+Чтобы с чего-то стартовать, давайте посмотрим сначала на источник наших проблем. Предварительно заглянув в докер <strong>Info</strong>, мы обнаружим слишком большие значения красного на лице девочки. Чтобы всё это имело наглядность, давайте разобьем изображение на каналы. Выполните команду <strong>Image &gt; Split Channels to &gt; RGB</strong> (Изображение &gt; Разбить каналы на &gt; RGB) (рис. 2).</p>
+<p><img src="../sites/default/files/forum/images/rgb_channels_2.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>На скриншоте видно, что красный канал слишком светлый, что и объясняет избыток красного цвета в изображении, но не очень хорошо заметны дефекты из-за сильного уменьшения. Поэтому, на рис. 3 показан увеличенный фрагменты красного и синего каналов.</p>
+<p><img src="../sites/default/files/forum/images/rb_channels_3.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Как и положено «по закону жанра», в синем канале больше всего дефектов, но к сожалению, красный тоже не может похвастать отсутствием оных. В зеленом канале их меньше, но они там тоже присутствуют. В такой ситуации, попытка улучшить фотографию обычными средствами, типа фильтра <strong>Tone curve</strong> (Цветовая кривая), фильтрами размытия и т. п., надлежащего результата не даст, т. к. дефекты расположены неравномерно, в разных каналах они расположены в разных участках фото и имеют довольно большой размер. Поэтому используем несколько другую методику и обратимся за помощью к другому цветовому пространству, а конкретно к <strong>Lab</strong>. Т. к. мы все-таки дальнейшую работу проводить все-таки в <strong>RGB</strong>, то сделаем копию файла <strong>Vignette_copy</strong>. Для этого снова выполните команду <strong>Image &gt; Duplicate</strong> (Изображение &gt; Дублировать). Photo-Paint создаст дубликат с «дежурным названием» -- <strong>Untitled-1.cpt</strong>. Теперь преобразуем файл <strong>Untitled-1.cpt</strong> из <strong>RGB</strong> в <strong>Lab</strong>. Выполните команду <strong>Image &gt; Convert to &gt; Lab Color (24-bit)</strong> (Изображение &gt; Преобразовать в &gt; Lab Color (24-bit)). Визуально с нашим дубликатом ничего не произойдет, но когда мы разобьем его на каналы, мы увидим там существенную разницу с каналами <strong>RGB</strong>. Т. к. каналы <strong>a</strong> и <strong>b</strong> представляют из себя «серую мешанину», то они нас не интересуют, а вот канал <strong>L</strong> нам как раз очень подойдет. Если вы на него внимательно посмотрите (рис. 4), то увидите, что он практически лишен тех дефектов, которые присутствовали в красном и синем канале.</p>
+<p><img src="../sites/default/files/forum/images/l_channel_4.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Следующий  наш шаг – замена дефектного канала на канал <strong>L</strong>. Нам в этом поможет команда <strong>Calculations</strong> (Вычисления). Однако канал <strong>L</strong> чуточку темнее красного канала и мы сделаем замену его «осветленной» версией. Конечно, надо понимать, что осветление красного канала приведет к появлению избытка красного цвета во всем изображении. Но этот «побочный эффект» мы потом исправим.</p>
+<p>Выполните команду <strong>Image &gt; Calculations</strong> (Изображение &gt; Вычисления). В появившемся диалоговом окне <strong>Channel Calculations</strong> (Вычисления над каналами) установить настройки, как показано на рис. 5.</p>
+<p><img src="../sites/default/files/forum/images/calculations_5.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Установка флажка <strong>Use mask from</strong> (Использовать маску из) и выбор красного канала для маски, позволяет «предохранить» значения яркости красного канала от изменений. Кроме того, чтобы немного «ослабить» влияние Метода наложения <strong>Add</strong> на результат, я установил в счетчике <strong>Opacity</strong> (Непрозрачность) значение – 80. Результат показан на рис. 6.</p>
+<p><img src="../sites/default/files/forum/images/ris_6_13.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Как я и говорил, в изображении появился избыток красного. После этого вы можете избавиться от ненужного теперь дубликата, <strong>Untitled-1.cpt</strong>, закрыв его. Сейчас мы исправим избыток красного цвета.<br />
+Выполните команду <strong>Adjust &gt; Tone Curve</strong> (Настройка &gt; Цветовая кривая). Изменим форму кривой, как показано на рис. 7.</p>
+<p><img src="../sites/default/files/forum/images/ris_7_13.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p><strong>Примечание</strong> – Файл самой кривой также находится в прикрепленных файлах и если захотите повторить урок используя это фото, то сможете воспользоваться этим файлом при использовании фильтра <strong>Tone Curve</strong> (Цветовая кривая).</p>
+<p>Результат показан на рис. 8.</p>
+<p><img src="../sites/default/files/forum/images/ris_8_14.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Результат намного лучше, чем оригинал, в том смысле, что исчезли те цветовые отливы, которые были в исходнике.<br />
+Теперь немного улучшим фото, хотя при желании, улучшения можно было бы и закончить. Воспользуемся <em>Лабораторией настройки изображений</em>. Выполните команду <strong>Adjust &gt; Image Adjustment Lab</strong> (Настройка &gt; Лаборатория по корректировке изображений). В открывшемся диалоговом окне воспользуемся сначала автоматическими средствами коррекции, для чего нажмите кнопку <strong>Auto Adjust</strong> (Автонастройка) (рис. 9).</p>
+<p><img src="../sites/default/files/forum/images/ris_9_12.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>В данной ситуации автонастройка сработала довольно неплохо, хотя контраст «зашкаливает». Подправим немного эти результаты, установив в этом же окне значения параметров, как на рис. 10.</p>
+<p><img src="../sites/default/files/forum/images/ris_10_9.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Теперь изображение приобрело желаемый вид. Во всяком случае, я остановлюсь именно на этом результате.<br />
+Второй этап нашего урока – создание виньетки. Но сначала нужно отделить девочку от фона. Создадим еще один дубликат изображения, чтобы наши действия случайно не повредили результат. Снова выполните команду <strong>Image &gt; Duplicate</strong> (Изображение &gt; Дублировать). В дубликате выполните команду <strong>Adjust &gt; Desaturate</strong> (Настройка &gt; Убрать насыщенность), в результате чего, изображение станет черно-белым. Теперь нам надо максимально усилить контраст, чтобы можно было легко выполнить выделение. Выполните команду <strong>Adjust &gt; Tone Curve</strong> (Настройка &gt; Цветовая кривая), чтобы увеличить контраст (рис. 11).</p>
+<p><img src="../sites/default/files/forum/images/ris_11_8.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Результат показан на рис. 12.</p>
+<p><img src="../sites/default/files/forum/images/ris_12_9.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Теперь возьмите инструмент <strong><em>Ластик</em></strong> (горячая клавиша <strong>Х</strong>) и сотрите лишние линии и пятна на заднем плане, чтобы получилось, как на рис. 13.</p>
+<p><img src="../sites/default/files/forum/images/ris_13_site.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Закрасьте девочку с помощью черной кисти. Чтобы не закрасить случайно просветы в украшении на голове, переключите на <em>Панели свойств</em> на режим наложения на <strong>Overlay</strong>. Те пряди волос, которые остались серыми, не закрашивайте, потому что это будет достаточно трудно сделать, а для создания маски и последующей работы, это мешать не будет. После закраски, у вас должно получиться, как на рис. 14.</p>
+<p><img src="../sites/default/files/forum/images/ris_14_6.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Теперь создадим маску, которую в данной ситуации можно легко сделать. Для этого выберите инструмент <strong>Magic Wand Mask</strong> (Маска волшебной палочкой), нажав горячую клавишу <strong>W</strong>. На <em>Панели свойств</em>, установите низкое значение параметра <strong>Tolerance</strong> (Допуск) = 3 и щелкните на белом фоне. Однако у вас останутся не выделены части (просветы) между прядями волос и в украшении на голове. Чтобы выделить и их, выполните команду <strong>Mask &gt; Mask Outline &gt; Similar</strong> (Маска &gt; Абрис маски &gt; Подобное).</p>
+<p>Теперь пришло время эту маску сохранить, чтобы использовать в цветном изображении. Можно было бы сохранить полученную маску на диск, а потом загрузить ее в цветном изображении. Но я покажу в этом уроке другой способ загрузки маски, с помощью команды <strong>Calculations</strong> (Вычисления), чтобы «расширить ассортимент» применяемых команд и чтобы урок был более полезным для начинающих пользователей.</p>
+<p>Выполните команду <strong>Image &gt; Calculations</strong> (Изображение &gt; Вычисления). В появившемся диалоговом окне <strong>Channel Calculations</strong> (Вычисления над каналами) установить настройки, как показано на рис. 15.</p>
+<p><img src="../sites/default/files/forum/images/ris_15_5.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Я сейчас скажу пару слов, чтобы объяснить настройки на рис. 15.<br />
+Т. к. нам нужно загрузить в цветное изображение (у меня оно имеет текущее название, <strong>Ris_8_correct.jpg</strong>) созданную маску из черно-белого изображения, которое у меня имеет название <strong>Untitled-10.cpt</strong>, то в качестве <strong>Source 1</strong> (Источника 1) и <strong>Source 2</strong> (Источника 2) было выбрано черно-белое изображение., что видно в раскрывающихся списках <strong>Image</strong> (Изображение). В списках <strong>Channel</strong> (Канал), находящихся ниже, выбран пункт <strong>Mask</strong> (Маска). Таким образом мы задали источник и то, что мы из этого источника будем использовать. А в области <strong>Destination</strong> (Назначение), естественно указал, куда эту самую маску нужно разместить, т. е. в наш цветной файл <strong>Ris_8_correct.jpg</strong>. А в раскрывающемся списке <strong>Channel</strong> (Канал) также выбрал <strong>Mask</strong> (Маску), т. к. нам нужно, чтобы маска загрузилась в маску цветного изображения.</p>
+<p>После загрузки маски в цветное изображение, просто нажмите клавишу <strong>Delete</strong>, чтобы удалить окружающий девочку фон (если у вас конечно при этом активен инструмент выделения, иначе фон по нажатию клавиши не удалится)(рис. 16). Небольшой фрагмент пряди волос с фоном, слева, надо будет подчистить ластиком.</p>
+<p><img src="../sites/default/files/forum/images/ris_16_4.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Пусть вас не очень смущает фрагмент фона между волосами, т. к. в дальнейшем нам он мешать не будет.<br />
+Теперь приступим к завершающей части работы.<br />
+Создайте в докере <strong>Objects</strong> (Объекты) новый объект, щелкнув внизу докера на кнопке <strong>New Object</strong> (Создать объект). Теперь установим следующий цвет заливки: <strong>R:</strong> 216; <strong>G:</strong> 207; <strong>B:</strong> 63. Нажмите клавишу <strong>F</strong>, чтобы выбрать инструмент <strong>Fill</strong> (Заливка) и щелкните в окне изображения. Все изображение зальется желтым цветом. В верхней части докера выберите режим наложения <strong>Add</strong> и установите значение параметра <strong>Opacity</strong> (Непрозрачность) = 14.</p>
+<p>Аналогичным образом создайте еще один объект, но в качестве цвета заливки выберите цвет: <strong>R:</strong> 122; <strong>G:</strong> 107; <strong>B:</strong> 71. Режим наложения выберите <strong>Multiply</strong>, установите значение параметра <strong>Opacity</strong> (Непрозрачность) = 100. Продублируйте этот объект, нажав комбинацию клавиш <strong>Ctrl + D</strong>. В докере <strong>Objects</strong> (Объекты) теперь у вас должно быть 3 объекта, как на рис. 17.</p>
+<p><img src="../sites/default/files/forum/images/ris_17_4.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Теперь для объектов 2 и 3, создадим по маске обрезки. Для этого нажмите кнопку <strong>Create Clip Mask</strong> (Создать маску обрезки) в верхней части докера. Т. к. в настоящий момент у меня выделен <em>Объект 3</em>, то Photo-Paint создаст маску обрезки именно для него. Щелкните на <em>Объекте 2</em> и создайте для него аналогичным образом маску обрезки.<br />
+Открепите для обоих объектов маски обрезки, щелкнув в докере <strong>Objects</strong> (Объекты) на маленьком значке «<strong>+</strong>» между объектом и его маской. Щелкните в докере на маске обрезки для <em>Объекта 2</em>. На экранной палитре выберите в качестве цвета краски – 60 % серого и закрасьте часть изображения, как на рис. 18.</p>
+<p><img src="../sites/default/files/forum/images/ris_18_3.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Далее выберите цвет краски – 40 % серого и закрасьте маску обрезки для <em>Объекта 3</em>. Должно получиться, как на рис. 19.</p>
+<p><img src="../sites/default/files/forum/images/ris_19_1.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Докер <strong>Objects</strong> (Объекты) показан на рис. 20.</p>
+<p><img src="../sites/default/files/forum/images/ris_20_1.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Теперь установите цвет краски черным и аккуратно закрасьте девочку.  Для этого сначала щелкните на маске обрезки верхнего объекта и закрасьте, а потом повторите процедуру для <em>Объекта 2</em>. Если вы немного «захватили» кистью область вокруг девочки и проступил белый фон, ничего страшного, но желательно чтобы этого не происходило. После закраски верхнего объекта, изображение показано на рис. 21, а после закраски <em>Объекта 2</em> на рис. 22.</p>
+<p><img src="../sites/default/files/forum/images/ris_21_1.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p><img src="../sites/default/files/forum/images/ris_22_1.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Теперь применим размывку для обоих объектов. Для <em>Объекта 2</em> выполните команду <strong>Effects &gt; Blur &gt; Gaussian Blur</strong> (Эффекты &gt; Размытость &gt; Размытость по Гауссу). В диалоговом окне, с помощью ползунка установите значение параметра <strong>Radius</strong> (Радиус) равным 56,0. Если вам не очень нравится такой результат, можно сделать большее размытие (или на предыдущих шагах немного большую область обработайте серой кистью) и фон станет более однородным и с более плавным переходом. Сделайте то же самое для <em>Объекта 3</em>. Результат показан на рис. 23.</p>
+<p><img src="../sites/default/files/forum/images/ris_23_1.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Можно было бы остановиться на этом шаге, но я решил еще немного изменить фото. Добавьте в докере <strong>Objects</strong> (Объекты) линзу <strong>Color balance</strong> (Баланс цветов) и установите значения: <strong>Cyan-Red:</strong> +6, <strong>Magenta-Green:</strong> -6, <strong>Yellow-Blue:</strong> +20. Результат показан на рис. 24, а докер <strong>Objects</strong> (Объекты) на рис. 25.</p>
+<p><img src="../sites/default/files/forum/images/ris_24_1.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p><img src="../sites/default/files/forum/images/ris_25_1.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>Если вам кажется, что девочка слишком контрастирует с фоном, можно ее сделать объектом и применить размывку, чтобы переход к фону был более плавным. Также можно варьировать с цветом фона и другими настройками, как например на рис. 26 или использовать дополнительные фильтры на свой вкус. В конце объедините все объекты с фоном.</p>
+<p><img src="../sites/default/files/forum/images/ris_26_1.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></p>
+<p>В этом уроке мы задействовали довольно много инструментов Photo-Paint. Надеюсь, что рассказанный здесь материал, пригодится вам.  Также в прикрепленных файлах есть конечный файл, в котором объекты с фоном не объединены и вы можете просмотреть его у себя.</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="3005.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_1_13.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_1_13-itok=APS2D8OQ.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/rgb_channels_2.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/rgb_channels_2-itok=q-Q_6wf3.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/rb_channels_3.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/rb_channels_3-itok=kYnvEgaj.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/l_channel_4.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/l_channel_4-itok=AIfzF8oo.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/calculations_5.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/calculations_5-itok=MSRvfJT6.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_6_13.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_6_13-itok=YndfRNcj.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_7_13.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_7_13-itok=c7aIV4Ug.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_8_14.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_8_14-itok=lkhbGUey.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_9_12.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_9_12-itok=RgehYJVx.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_10_9.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_10_9-itok=LX6kobbN.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_11_8.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_11_8-itok=yIvD6nAZ.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_12_9.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_12_9-itok=nzZQgxaO.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_13_site.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_13_site-itok=vhyzQDdY.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_14_6.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_14_6-itok=atTcon0M.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_15_5.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_15_5-itok=8OGv7yaz.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_16_4.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_16_4-itok=MamNZhEw.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_17_4.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_17_4-itok=PLxwAgNl.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_18_3.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_18_3-itok=ouad4aZ4.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_19_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_19_1-itok=drGBlyoB.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_20_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_20_1-itok=v69WXTim.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_21_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_21_1-itok=8m6-FiHC.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_22_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_22_1-itok=6ls9oSZw.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_23_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_23_1-itok=4rudDcf5.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_24_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_24_1-itok=x58-U286.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_25_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_25_1-itok=pEi90wu0.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/ris_26_1.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/ris_26_1-itok=yws5HPbl.jpg" alt="Делаем виньетку в Photo-Paint" title="Делаем виньетку в Photo-Paint" /></a>      </div>
+      </div>
+</div>
+<div class="dd-attached field field-name-field-forum-files field-type-file field-label-above clearfix">
+      <div class="field-label"><a href="3005.html#" class="cdrSlideAttach">Файлы</a></div>
+    <div class="field-items">
+          <div class="field-item even"><span class="file"><img class="file-icon" alt="" title="application/rar" src="/modules/file/icons/application-octet-stream.png" /> <a href="../sites/default/files/forum/files/lesson_28.rar" type="application/rar; length=431881">lesson_28.rar</a></span></div>
+      </div>
+</div>
+    	</div>
+
+	
+	
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

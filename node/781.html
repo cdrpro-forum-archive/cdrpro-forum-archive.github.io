@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="781.html" />
+<link rel="canonical" href="../forum/13-468-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>VBA и Corel | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">VBA и Corel</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-781" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">koffeinman</span></strong> / 26.07.2010, 18:10/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Уважаемые знатоки помогите кто может <br /> Раскажу в чём суть: нужно сравнить данные(код товара)из Excel с Corel и если они совпадают скопировать данные из Excel и вставить в Corel <br /> (цена товара). Я это сделал так: из Corel по средствам макроса открываю Excel файл, записываю 2 столбца (код товара и его цена) в массив, <br /> Потом перебираю первый столбец массива и ищу его значение в corel если нахожу заменяю значение на цену. <br /> Проблема в том, что не знаю как в Corel VBA написать замену текста <br /> Вот код: <br /><code>Sub GET_DATA1() <br /> Dim EXCELAPP As Object <br /> Dim EXCEL_DATA_FILE As String <br /> Dim s As Shape <br /> Dim sh As Shape <br /> Dim p As Page <br /> Dim q As Integer <br /> q = 1 <br /> aa = ActiveDocument.Pages.Count <br /> EXCEL_DATA_FILE = "123.xls" <br /> Set EXCELAPP = CreateObject("excel.application") <br /> EXCELAPP.Visible = False <br /> EXCELAPP.Workbooks.Open (ActiveDocument.FilePath &amp; "\" &amp; EXCEL_DATA_FILE) <br /> Dim a(10, 2) <br /> For i = 1 To 10 <br /> a(i, 1) = EXCELAPP.ActiveWorkbook.Worksheets("Лист1").Cells(i, 1).Value <br /> a(i, 2) = EXCELAPP.ActiveWorkbook.Worksheets("Лист1").Cells(i, 2).Value <br /> Next </code></p>
+<p> 'EXCELAPP.Visible = True <br /> For j = 1 To aa <br /> Set p = ActiveDocument.Pages(j) <br /> Set s = p.FindShape(Name:=a(q, 1), Type:=cdrTextShape) <br /> If s Is Nothing Then <br /> Else </p>
+<p> MsgBox "Yes " <br /> Set s = ActiveLayer.CreateArtisticText(s.PositionX, s.PositionY, a(q, 2)) </p>
+<p> End If <br /> q = q + 1 <br /> Next <br /> End Sub</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-2500"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 26.07.2010, 21:47    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Если полностью заменить текст то <b>Shape.Text.Story.Text = "текст"</b>, а если что то конкретное в тексте тогда <b>Shape.Text.Story.Replace(...)</b>.</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

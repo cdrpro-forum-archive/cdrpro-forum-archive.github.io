@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="2776.html" />
+<link rel="canonical" href="2776.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Странный глюк. Некомбинируемая группа объектов. | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Странный глюк. Некомбинируемая группа объектов.</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-2776" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">MBK</span></strong> / 06.03.2012, 11:37/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../forum/16.html">CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>В приложенном файле 5 совсем простых объектов. Вместе они составляют лого хундая. Однако, нормально скомбинировать их не получается - при комбинировании дырки не вырезаются из фона, а закрашиваются тем же цветом. То же самое получается и при использовании логических операций (Trim, Minus ...) Что в этих овальчиках не так, где скрытая засада? У меня получилось правильно объединить их только через задний проход, создав Boundary от каждогою :-(</p>
+</div></div></div><div class="dd-attached field field-name-field-forum-files field-type-file field-label-above clearfix">
+      <div class="field-label"><a href="2776.html#" class="cdrSlideAttach">Файлы</a></div>
+    <div class="field-items">
+          <div class="field-item even"><span class="file"><img class="file-icon" alt="" title="image/x-coreldraw" src="/modules/file/icons/image-x-generic.png" /> <a href="../sites/default/files/forum/files/hyu.cdr" type="image/x-coreldraw; length=168284">hyu.cdr</a></span></div>
+      </div>
+</div>
+    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-8682"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 06.03.2012, 12:40    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Это не глюк, по крайней мере, не программы :D<br />
+Просто надо поменять направление (Reverse direction) внешней кривой.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8683"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">mmgs</span></strong> / 06.03.2012, 13:09    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>либо бывает что там две кривых одна поверх другой.<br />
+а так да, если дырки не делаются, то надо поменять направление через "второй" инструмент.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8685"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">MBK</span></strong> / 06.03.2012, 13:44    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Надо ж, и впрямь работает! Все перепробовал а до направления кривой не дошел.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8686"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">mmgs</span></strong> / 06.03.2012, 20:00    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>причем иногда бывает что куча этих кривых в рисунке и при комбинировании некоторые прорезаются а некоторые нет. тогда достаточно пик-тулом (вторым) выделить один узел кривой и нажать "обратить направление" и вся кривая чудесным образом прорезается :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8687"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">MBK</span></strong> / 06.03.2012, 21:44    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Ну все равно я считаю, что это недоработка программы. Неужели, они не могут такие вещи на автомате отслеживать при комбинировании и логических операциях?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8689"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">mmgs</span></strong> / 07.03.2012, 14:05    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>чисто математически очень сложно понять с какой стороны должна быть заливка при обходе пути особенно при большом количестве кривых которые при этом еще и могут пересекаться, поэтому такие проверки не делают.<br />
+при том что все решается изменением направления пути.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8690"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">MBK</span></strong> / 07.03.2012, 14:57    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>На самом деле, чисто математически никаких проблем нет, если использовать метод even-odd rule<br /><a href="http://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0_%D0%BE_%D0%BF%D1%80%D0%B8%D0%BD%D0%B0%D0%B4%D0%BB%D0%B5%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D1%82%D0%BE%D1%87%D0%BA%D0%B8_%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA%D1%83#cite_note-haines-0">http://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0_%D0%BE...</a><br />
+По всей логике,он и должен применяться, но они почему-то используют winding rule :-(</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8691"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">mmgs</span></strong> / 07.03.2012, 15:17    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>во первых это алгоритм для точки а не для заливки :)<br />
+а во вторых как раз по обоим этим алгоритмам будет пролет, потому что там как раз все завязано на направление обхода кривой, которое в том случае однонаправленное.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8692"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">MBK</span></strong> / 07.03.2012, 16:27/16:28    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Да какая разница, она то разворачивает многоугольник построчно именно этими алгоритмами.<br />
+Кстати, направление обхода критично только на непересекающихся контурах. На пересекающихся она раскладывает как надо even-odd</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="2776.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/test.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/test-itok=7p7F1Gwq.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-8693"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 07.03.2012, 20:08/01:43    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Хлопцы, чтоб вы знали, CorelDRAW поддерживает два режима заливки: Alternate и Winding. Так вот Winding это тот самый режим в котором "прорези" тоже имеют заливку. Вот макрос который меняет режим заливки на противоположный:</p>
+<pre class="brush: vb">Sub ChangeFillMode()
+  If ActiveSelectionRange.Count = 0 Then Exit Sub
+  Dim s As Shape
+  For Each s In ActiveSelectionRange
+    If s.CanHaveFill Then
+      If s.Fill.Type &lt;&gt; cdrNoFill Then
+        If s.FillMode = cdrFillAlternate Then _
+          s.FillMode = cdrFillWinding Else _
+          s.FillMode = cdrFillAlternate
+      End If
+    End If
+  Next
+End Sub</pre></div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="На страницу номер 2" href="2776-page=1.html">2</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="2776-page=1.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="2776-page=1.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

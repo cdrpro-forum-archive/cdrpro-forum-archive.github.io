@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/594.html" />
+<link rel="canonical" href="13-281-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>new Color | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">new Color</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-594" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">GoodvinVV</span></strong> / 21.02.2010, 00:25/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Суть вопроса: <br /> Есть имя цвета в Label1.Caption= "Pantone 176C" <br /> Нужно назначить переменной <br /> Dim myColor As new Color <br /> Подскажите как это сделать?
+</p><p> Set myColor...????????????????????......= Label1.Caption</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-1548"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 21.02.2010, 11:50    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>На ваше же сообщение ответ ну другом форуме:
+</p><p> <code>Function paletteSearch(colorName$) As Color <br />     Dim pal As Palette, var As Variant, index&amp;, i&amp;, bClose As Boolean <br />      <br />     On Error Resume Next <br />     For Each var In Array(cdrTRUMATCH, cdrPANTONEProcess, cdrPANTONECorel8, cdrFOCOLTONE, cdrSpectraMaster, cdrTOYO, cdrDIC, cdrLab, cdrHKS, cdrWebSafe, cdrPANTONEMetallic, cdrPANTONEPastelCoated, cdrPANTONEPastelUncoated, cdrPANTONEHexCoated, cdrPANTONEHexUncoated, cdrPANTONEMatte, cdrPANTONECoated, cdrPANTONEUncoated, cdrPANTONEProcessCoatedEURO, cdrPANTONESolid2ProcessEURO) <br />          <br />         'keep user opened palettes <br />         bClose = True <br />         For i = 1 To Palettes.Count <br />             If Palettes(i).PaletteID = var Then bClose = False: Exit For <br />         Next <br />          <br />         'search palette <br />         Set pal = Palettes.OpenFixed(var) <br />         If Not pal Is Nothing Then <br />             index = pal.FindColor(colorName) <br />              <br />             If bClose Then <br />                 ' close palette bug workaround <br />                 For i = 1 To Palettes.Count <br />                     If Palettes(i).PaletteID = pal.PaletteID Then Palettes(i).Close: Exit For <br />                 Next <br />             End If <br />             Set pal = Nothing <br />              <br />             'found? <br />             If index &gt; 0 Then <br />                 Set paletteSearch = CreateFixedColor(var, index) <br />                 Exit Function 'color is found <br />             End If <br />         End If <br />     Next <br />     ' color was not found, 'paletteSearch' is nothing <br /> End Function</code></p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

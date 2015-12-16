@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/845.html" />
+<link rel="canonical" href="55-532-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Размер Artboard по размеру выделенного | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Размер Artboard по размеру выделенного</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-845" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Sancho</span></strong> / 01.10.2010, 17:09/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../ai-forum.html">Adobe Illustrator</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even">Собственно что тут объяснять то :) Всё в заголовке. <p> <code>app.activeDocument.cropBox = app.activeDocument.visibleBounds; <br /> var z, v = app.activeDocument.activeView; <br /> z = v.zoom;  v.zoom *= 1.01; v.zoom = z;</code> </p><p> Сохраняем код в текстовый файл и переименовываем его как <b>Crop to Art.jsx</b> </p><p> <span style="font-size:6pt;"><b>© Copyright by wOxxOm</b> <br /><span style="color:red">Запрещается копирование и публикация материала на других сайтах без письменного согласия автора. <br /> No part of this story can be copied/pasted on any other website without the author's express written permission.</span></span></p></div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-2992"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Des425</span></strong> / 01.10.2010, 21:20    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even">клева! :) </div></div></div>	</div>
+</div>
+<a id="comment-2993"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">itt</span></strong> / 02.10.2010, 00:13    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even">Очень нужный скрипт,но есть косяк ,обводка уходит за границы Artbord <p> <img src="../sites/default/files/forum/images/2739622_3536944.jpg" alt="Размер Artboard по размеру выделенного" title="Размер Artboard по размеру выделенного" /></p></div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="55-532-1.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/2739622_3536944.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/2739622_3536944-itok=rqgf2QVZ.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-2994"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">wOxxOm</span></strong> / 02.10.2010, 13:02/13:17    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even">спасибо вам, дорогой, за дебаггинг)) исправляем <b>geometricBounds</b> на <b>visibleBounds</b> <br /> кстати, если кто не знал - можно также использовать и встроенный Artboard tool (Shift-O), хотя лично мне в 99% случаев удобнее скриптом.</div></div></div>	</div>
+</div>
+<a id="comment-2995"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">qsedftghk</span></strong> / 02.10.2010, 16:30/16:38    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even">Всё это чудесно но для CS3 и ниже не покатит. Поэтому те же яйки только в профиль (для CS3) :D см. аттач <p> открывает док <br /> выделяет всё, создает новый док, с размер артбоарда = размеру выделенного <br /> копирует выделенное в новый док <br /> закрывает старый док <br /> сохраняет новый док по тому же пути с тем же именем в формате .ai <br /> закрывает новый док </p><p> ЗЫ. Может можно и проще, но дареному коню в зубы не смотрят гыгыгы... <br /> ЗЫЫ. Адобовцы - мосговыносители. Если в CS6 снова поменяют объектную модель, то пусть сами скрипты и пишут. :D <br /> ЗЫЫЫ. Санчосо, я правильно догоняю, что последние две строки твоего скрипта не особо актуальны, а точнее только для наглядности? Ну, извини, некогда читать эти мануалы. =) Голова бобо :D =)) Ой! это же скрипт wOxxOm`a! =) (Эх... бабка-то совсем слепа =) ) Многоуважаемый WOxxOm, тогда вопрос переадресуется к тебе.</p></div></div></div><div class="dd-attached field field-name-field-forum-files field-type-file field-label-above clearfix">
+      <div class="field-label"><a href="55-532-1.html#" class="cdrSlideAttach">Файлы</a></div>
+    <div class="field-items">
+          <div class="field-item even"><span class="file"><img class="file-icon" alt="" title="application/rar" src="http://cdrpro.local/modules/file/icons/application-octet-stream.png" /> <a href="../sites/default/files/forum/files/lsd_4394621.rar" type="application/rar; length=1261">lsd_4394621.rar</a></span></div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-2996"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">wOxxOm</span></strong> / 02.10.2010, 20:39    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even">последние две строки форсируют обновление экрана, т.к. я в адобовском скриптинге ни в зуб ногой и другого способа не нашел...</div></div></div>	</div>
+</div>
+<a id="comment-2997"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">qsedftghk</span></strong> / 02.10.2010, 22:38    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even">Понятненько. Мне бы так "ни в зуб ногой" :D </div></div></div>	</div>
+</div>
+<a id="comment-2998"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">itt</span></strong> / 03.10.2010, 01:32    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><b>wOxxOm</b>, <br /> Спасибо теперь работает как нужно. <p> Кстати,скрипты можно запускать через Асtion,правда с перезапуском программы <br /> Асtion слетает, но если нужно многократное применение скрипта в течении дня,то игра стоит свеч.</p></div></div></div>	</div>
+</div>
+<a id="comment-2999"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">qsedftghk</span></strong> / 03.10.2010, 03:19/03:21    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><b>Alt</b> держим, затем нажимаем <b>F</b>, затем нажимаем <b>R</b> - достаточно быстро добираешься до скриптов. (Пианисты оценят :D ) <p> Хотя лично я себе замутил <a class="link" href="http://u.to/7Zpt" title="http://forum.rudtp.ru/showthread.php?t=41614" rel="nofollow" target="_blank">хук в системе (XP SP3)</a> и сделал горячие кнопочки. Работает. Но понятное дело, это тупо костыл, ибо SDK некогда постигать, а жаль.</p></div></div></div>	</div>
+</div>
+<a id="comment-3000"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">itt</span></strong> / 03.10.2010, 03:53    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even">Тоже дело нужное, но на одну кнопку жать всё же намного легче ;)  :D </div></div></div>	</div>
+</div>
+<a id="comment-10623"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">kr0k</span></strong> / 21.01.2013, 15:06    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Проблема в следующем, этот способ отлично работает для объектов и групп, но вот в случае когда иллюстрация находиться под clipping mask, артбоард вместо того чтобы принять ее размеры, принимает размеры ее содержимого. To есть вокруг иллюстрации возникает пустая рамка до краев арбоард-а, равная тому насколько замаскированый объект выступает из clipping mask.  Нет ли метода разрешения этой проблемы. Нужно чтоб скрипт действовал аналогично функции Artboard&gt;"Fit to Artwork Bounds".                P.S. Illustrator CS6</p>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="На страницу номер 2" href="55-532-1-page=1.html">2</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="55-532-1-page=1.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="55-532-1-page=1.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

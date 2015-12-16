@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/762.html" />
+<link rel="canonical" href="5-449-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>ВОПРОС / ОТВЕТ ДЛЯ НАЧИНАЮЩИХ | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">ВОПРОС / ОТВЕТ ДЛЯ НАЧИНАЮЩИХ</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-762" class="node node-forum node-sticky clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">polzovatel-902</span></strong> / 13.07.2010, 09:21/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="16.html">CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Объясню на примере, чтоб было понятней... Открываю в кореле картинку (футболку с надписью) в формате JPG, мне нужно вытянуть из футболки надпись, т.е разъеденить файл... Говорят нужно формат изменить, еще что-то... Объясните, пожалуйста, что нужно сделать для этого...? Заранее спасибо.</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-5521"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Velius</span></strong> / 02.02.2011, 00:19    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Есть вопрос... Может и ламерский.... <br /> Записываю макрос.....
+</p><p> Нужно к НЕСКОЛЬКИМ объектам применить определенную заливку (PS).... А этот гад записывает что применить нужно к АКТИВНОМУ объекту тоесть к последнему выделенному... Как изменить переменную так чтбы применял он заливку ко ВСЕМ выделенным объектам, а не к ТЕКУЩЕМУ
+</p><p><b>Добавлено</b> (01.02.2011, 21:19)<br />---------------------------------------------<br />Версия 13 щас то же самое записал в 15 там все в норме а текст макроса тот же, что язык изменился?
+</p><p> Вот текст макроса
+</p><p> Sub Macro2() <br /> ' Recorded 01.02.2011 <br /> Dim OrigSelection As ShapeRange <br /> Set OrigSelection = ActiveSelectionRange <br /> ActiveSelection.Fill.ApplyPostscriptFill("Hatching").SetProperties 100, 100, 7, 45, 0 <br /> End Sub</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5522"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 02.02.2011, 01:42/01:43    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>Velius</b>, цикл по объектам внутри выделения: <br /><code>Dim s As Shape <br /> For Each s In ActiveSelectionRange <br /> s.Fill... <br /> Next</code></p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5523"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Velius</span></strong> / 02.02.2011, 15:02    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>Velius, цикл по объектам внутри выделения: </p></blockquote>
+<p> Хм... Черт а нельзя ли в моем коде подправить и все вместе написать, я правда не очень разбираюсь
+</p><p><b>Добавлено</b> (02.02.2011, 11:41)<br />---------------------------------------------<br />А все понял, сделал, ОГРОБНЫЙ БИГ СЕНКС, все работает
+</p><p><b>Добавлено</b> (02.02.2011, 12:02)<br />---------------------------------------------<br />Немного хочу обнаглеть.... <br /> Есть и другая задача.... <br /> Связанная с предыдущей. <br /> Это я так исправляю файлы импортированные в Corel из Mapinfo Формат для перехода использую WMF никакой другой не идет...
+</p><p> Там использую еще в Mapinfo заливку полупрозрачную на неких объектах чтобы их легко было определить в кореле, WMF формат в корел переносит их как 2-х битовую растровую заливку причем каждая заливка разная (в исходнке например может быть на топокарте выделено болото заливкой которая тоже станет битовой) но они разные <br /> Задача в Кореле выделить прямо из Сгруппированного WMF только НУЖНЫЕ объекты помеченные определенной 2-х битовой заливкой например косые линиии штриховки, а все остальные что там МОГУТ попасться не выделять например заливка болота тоже 2-х битная но крест накрест.... И потом применить мою заливку как в макросе выше.... <br /> Если писать макрос с выбором объектов средствами Корела (Выбор объекта, соответствующего выделенному) то все он делает только в макрос зараза не пишет что именно выбрать и что сделать... <br /> Можно сделать выбор Утиляхой что тут на сайте нашел (Jeff's Select Same) Отличная штука.... Но... она не различает ТИП растровой штриховки тоесть гребет все растровые двухбитные штриховки сразу. не видя разницу в них.... <br /> Как записать в макросе чтобы он выбрал ВСЕ объекты в соответствии с моими параметрами выбора, причем как и эта тулза "Jeff's Select Same" прямо ВНУТРИ группы не разгруппировывая ее.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5524"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">kimych5700</span></strong> / 03.02.2011, 12:28/14:11    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Здравствуйте! Как справиться вот с этим при создании нового документа правой кнопкой мыши? Вроде должно быть в настройках, но не нашёл
+</p><p> <img src="../sites/default/files/forum/images/2039860_6229753.png" alt="ВОПРОС / ОТВЕТ ДЛЯ НАЧИНАЮЩИХ" title="ВОПРОС / ОТВЕТ ДЛЯ НАЧИНАЮЩИХ" /></p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="5-449-1-page=20.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/2039860_6229753.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/2039860_6229753-itok=Zip7QKQ8.png" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-5525"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 03.02.2011, 14:14    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Смотрите на настройки прав доступа в системе и конкретной папке, проблема скорее всего в них, т.к. файл создает система а не корел.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5526"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">kimych5700</span></strong> / 03.02.2011, 14:46    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>настройки прав доступа в системе....</p></blockquote>
+<p> Разрешил и пользователям и авторам, вообщем всем, а результат тот же</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5527"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Velius</span></strong> / 04.02.2011, 10:41    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>Sancho</b>, <br /> А на мой вопрос... Не поможете?<br /></p><blockquote>Немного хочу обнаглеть.... <br /> Есть и другая задача.... <br /> Связанная с предыдущей. </blockquote>
+<p></p></div></div></div>	</div>
+</div>
+<a id="comment-5528"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 04.02.2011, 10:52    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>Velius</b>, я могу написать только то, что нужно учить хотя бы основы ВБА, благо литературы в интернете предостаточно.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5529"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">kimych5700</span></strong> / 04.02.2011, 11:13    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Больше нет вариантов?? <br /> Может скрины какие сделать? Чтоб нагляднее. <br /> Как справиться вот с этим при создании нового документа правой кнопкой мыши? Вроде должно быть в настройках, но не нашёл</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-5530"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Fluffy</span></strong> / 09.02.2011, 19:49    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>скажите, где в x5 в настройках память, англ версия стоит, не нашла :(</p>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-first first"><a title="На первую страницу" href="5-449-1.html">« первая</a></li>
+<li class="pager-previous"><a title="На предыдущую страницу" href="5-449-1-page=19.html">‹ предыдущая</a></li>
+<li class="pager-ellipsis">…</li>
+<li class="pager-item"><a title="На страницу номер 17" href="5-449-1-page=16.html">17</a></li>
+<li class="pager-item"><a title="На страницу номер 18" href="5-449-1-page=17.html">18</a></li>
+<li class="pager-item"><a title="На страницу номер 19" href="5-449-1-page=18.html">19</a></li>
+<li class="pager-item"><a title="На страницу номер 20" href="5-449-1-page=19.html">20</a></li>
+<li class="pager-current">21</li>
+<li class="pager-item"><a title="На страницу номер 22" href="5-449-1-page=21.html">22</a></li>
+<li class="pager-item"><a title="На страницу номер 23" href="5-449-1-page=22.html">23</a></li>
+<li class="pager-item"><a title="На страницу номер 24" href="5-449-1-page=23.html">24</a></li>
+<li class="pager-item"><a title="На страницу номер 25" href="5-449-1-page=24.html">25</a></li>
+<li class="pager-ellipsis">…</li>
+<li class="pager-next"><a title="На следующую страницу" href="5-449-1-page=21.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="5-449-1-page=95.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

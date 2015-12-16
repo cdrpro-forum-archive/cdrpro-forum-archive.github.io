@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="700.html" />
+<link rel="canonical" href="../forum/13-387-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Export to plt | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Export to plt</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-700" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Abarmot</span></strong> / 26.05.2010, 21:10/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Доброго времени суток уважаемые ....вот уже который день мучусь над макросом для автоматического экспорта в формат plt и никак он коректно сохранять не желает . <br /> Суть проблемы такова: есть некий чертёж на листе, при его экспорте в plt должно сохраняться растояние от краю листа к началу чертежа как по x так и по y. Если это делать в ручную с выставлением всех опций в диалоговых окнах (прикреплины ) , то сохраняет нормально, а при сохранении через макрос(приведён ниже) эти отступы не пляшут.
+</p><p> Sub saveplt() <br /> Dim expflt As ExportFilter <br /> Dim d As Page <br /> Dim expopt As StructExportOptions <br /> If ActiveDocument.FilePath = "" Then MsgBox " Збережіть документ спочатку" <br /> If ActiveDocument.FilePath = "" Then Beep: Exit Sub <br /> MsgBox ActivePage.Name <br /> ActiveDocument.Unit = cdrMillimeter <br /> Set expflt = ActiveDocument.ExportEx(ActiveDocument.FilePath &amp; ActivePage.Name &amp; ".plt", cdrPLT, cdrCurrentPage) <br /> expflt.Finish <br /> End Sub
+</p><p> Может кто подскажет, как указанные диалоговые окна прописать в VBA или как сделать чтоб plt сохранялось всегда с одинаковыми опциями в диалоговом окне . <br /> Corel 14 , SP1. <br /> Спасибо!</p>
+</div></div></div><div class="dd-attached field field-name-field-forum-files field-type-file field-label-above clearfix">
+      <div class="field-label"><a href="700.html#" class="cdrSlideAttach">Файлы</a></div>
+    <div class="field-items">
+          <div class="field-item even"><span class="file"><img class="file-icon" alt="" title="image/x-ms-bmp" src="/modules/file/icons/image-x-generic.png" /> <a href="../sites/default/files/forum/files/9234625_4180977.bmp" type="image/x-ms-bmp; length=459246">9234625_4180977.bmp</a></span></div>
+          <div class="field-item odd"><span class="file"><img class="file-icon" alt="" title="image/x-ms-bmp" src="/modules/file/icons/image-x-generic.png" /> <a href="../sites/default/files/forum/files/5780708_7116758.bmp" type="image/x-ms-bmp; length=472750">5780708_7116758.bmp</a></span></div>
+          <div class="field-item even"><span class="file"><img class="file-icon" alt="" title="image/x-ms-bmp" src="/modules/file/icons/image-x-generic.png" /> <a href="../sites/default/files/forum/files/9609421_8932585.bmp" type="image/x-ms-bmp; length=450774">9609421_8932585.bmp</a></span></div>
+      </div>
+</div>
+    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-1904"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Black</span></strong> / 27.05.2010, 10:11    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Включи запись макроса, и экспортни в нужный формат с нужными настройками. Потом останови запись и посмотри что записалось.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-1905"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Abarmot</span></strong> / 27.05.2010, 13:37    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>Black</b>, спасибо пробывал раньше ,но показывает только одну опцию которая в plt и ни причём : <br /> Sub Macro2() <br /> ' Recorded 27.05.2010 <br /> Dim expopt As StructExportOptions <br /> Set expopt = CreateStructExportOptions <br /> expopt.UseColorProfile = False <br /> Dim expflt As ExportFilter <br /> Set expflt = ActiveDocument.ExportEx("D:\Робочі файли\Graphic1.plt", cdrHPGL, cdrAllPages, expopt) <br /> expflt.Finish <br /> End Sub <br /> Пробовал сохранять через записаный макрос , результат тот же .
+</p><p> Может кто знает как в драйвере подправить значения ?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-1906"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Black</span></strong> / 27.05.2010, 16:42/16:47    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Рыться нужно в dll этого фильтра, там может быть прописаны свойства. <br /> О! нашёл! Всё прописано в IEHPGLintl.dll
+</p><p> А вообще если не критично, то можно показать диалоговое окно настроек <br /><code>expflt.ShowDialog</code>
+</p><p> П.С. Если сам не разберёшься, то Sancho, я думаю, поможет. Ну естественно не за просто так :D</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-1907"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Abarmot</span></strong> / 27.05.2010, 19:19    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>Black</b>, да вот от диалогов и хотелось избавиться , достанет по 100 раз на день галочки ставить . <br /> Ну .......молчит он пока :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-1908"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 27.05.2010, 20:21    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>Ну .......молчит он пока</p></blockquote>
+<p>А я что то должен сказать? :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-1909"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Abarmot</span></strong> / 27.05.2010, 20:58    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Да посоветовать как сделать по проще , если идея есть ;)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-1910"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 27.05.2010, 21:16    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>Abarmot</b>, а что я ещё скажу... Black всё правильно сказал, всё что нужно находится в <b>IEHPGLintl.dll</b>, разбирайся. <br /> Могу и я макрос написать, но время -- деньги ))))</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-1911"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Abarmot</span></strong> / 27.05.2010, 21:27    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>Sancho</b>, спасибо .</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

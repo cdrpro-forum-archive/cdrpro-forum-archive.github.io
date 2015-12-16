@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/683.html" />
+<link rel="canonical" href="13-370-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Копирование из cdr в ai | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Копирование из cdr в ai</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-683" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Sancho</span></strong> / 06.05.2010, 15:09/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even">Много тем было про то как вставить макет из иллюстратора в корел для последующего редактирования. Проблема решается <a class="link" href="http://cdrpro.ru/news/2009-08-30-179" rel="nofollow" target="_blank">макросом Copy To Adobe Illustrator</a>, который так же позволяет копировать и наоборот из корела в иллюстратор. Однако часто возникают проблемы со шрифтами. Они либо вообще не вставляются в иллюстратор, либо кракозябрами. Можно конечно переносить текст как кривые, но это не выход если потом потребуется редактирование текста. Немного поковырявшись в вышеупомянутом макросе, я нашёл способ заставить его переносить и текст с сохранением форматирования и возможностью последующего редактирования. В редких случаях требуется заменить пропавшие шрифты, потому что по каким то причинам некоторые шрифты имеют разные имена в кореле и иллюстраторе. К тому же заметил что переносятся маски, прозрачность, режимы наложения и т.д. <p> Итак, открываем макрос в редакторе VBA, и с помощью поиска, в модуле <b>CopyPaste</b>, находим строку <b>With Activedocument.PDFSettings</b> </p><p> и заменяем код, начиная с <i>With Activedocument.PDFSettings</i> до <i>End With</i> на следующий: </p><p> <code>With Activedocument.PDFSettings <br />    .BitmapCompression = 3 ' CdrPDFVBA.pdfZIP <br />    .ColorMode = 3 ' CdrPDFVBA.pdfNative <br />    .EmbedFonts = True <br />    .EmbedBaseFonts = True <br />    .TrueTypeToType1 = True <br />    .SubsetFonts = True <br />    .SubsetPct = 80 <br />    .CompressText = True <br />    .FileInformation = False <br />    .Encoding = 1 ' CdrPDFVBA.pdfBinary <br />    .Hyperlinks = False <br />    .IncludeBleed = False <br />    .Linearize = True <br />    .MaintainOPILinks = True <br />    .Overprints = True <br />    .pdfVersion = 8 ' CdrPDFVBA.pdfVersion17 <br />    .PublishRange = pdfSelection <br />    .RegistrationMarks = False <br />    .SpotColors = True <br />    .Startup = 0 ' CdrPDFVBA.pdfPageOnly <br />    .SubsetFonts = False <br />    .TextAsCurves = False <br />    .TextExportMode = 0 ' CdrPDFVBA.pdfTextAsUnicode <br />    .Thumbnails = False <br />    .UseColorProfile = False <br /> End With</code> <br /> В настройках макроса нужно снять все галочки кроме использования PDF формата. <br /> Тестировалось на CD X4 и AI CS4</p></div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-1872"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Des425</span></strong> / 07.05.2010, 15:13    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even">Спасибо!</div></div></div>	</div>
+</div>
+<a id="comment-1873"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">lud--mila-s</span></strong> / 09.05.2010, 10:34    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote>Проблема решается макросом Copy To Adobe Illustrator,</blockquote> <br /> подскажите как установить этот макрос?</div></div></div>	</div>
+</div>
+<a id="comment-1874"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Black</span></strong> / 09.05.2010, 15:25    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><b>lud--mila-s</b>, на сайте есть ПОИСК, который при том же запросе приведёт вас к ответу <a class="link" target="_blank" href="http://cdrpro.ru/news/2009-08-02-127" rel="nofollow">http://cdrpro.ru/news/2009-08-02-127</a></div></div></div>	</div>
+</div>
+<a id="comment-1875"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">kuterma2</span></strong> / 20.05.2010, 18:07    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even">В 14-м работает, но на радиальный градиент - при вставке его в Иллюстратор - ругается (как и раньше) "Обнаружен неизвестный тип теней!... И вставляет его как "сторонний объект". Во как.... Жаль... Может можно чтото с этим поколдовать? <br /> (Corel X4, Ill CS4) <p> П.С. А в 15-м не работает - по прежнему...</p><p><b>Добавлено</b> (20.05.2010, 18:07)<br />---------------------------------------------<br />Потыркался ещё с этой вставкой - если в опциях макроса отмечена только галка "Adobe Illustrator (7-8)" тогда радиальные градиенты копируются в Илл нормально... Вот бы ещё это работало и в случае с галочкой "PDF (Adobe Illustrator 9-11)!..</p></div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

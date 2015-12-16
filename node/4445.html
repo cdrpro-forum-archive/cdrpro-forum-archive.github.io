@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="4445.html" />
+<link rel="canonical" href="4445.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Кнопка &quot;Стиль линии&quot; на &quot;Панели свойств&quot; | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Кнопка &quot;Стиль линии&quot; на &quot;Панели свойств&quot;</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-4445" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">alich</span></strong> / 20.01.2015, 21:08/21:30	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../forum/16.html">CorelDRAW</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">16.4.0.1280 (sp4)</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Как оказалось, настройка "Панели свойств" (далее - ПС) не совсем тривиальная задача.</p>
+<p>Первый вопрос, на который хотелось бы получить ответ: что из себя представляет функция "Стиль линии" и где она "живет"? В списке команд её нет, в отличии от "Толщины абриса". При открытом списке команд (Инструменты - Настройка - Команды - Все) нажатие на этой кнопке не приводит к выбору такой команды из списка всех команд. При нажатии на другие кнопки на ПС происходит автоматическое выделение соответствующей команды в списке. Это что, команда-невидимка? ))</p>
+<p>Данная функция автоматически появляется на ПС при выборе инструмента рисования линии. А вот при выборе фигуры замкнутого контура такой функции в ПС не предоставляется и для изменения стиля контура надо открывать "Свойства объекта".<br />
+Тем не менее, мне (а может это произошло случайно, хотя я менял состав ПС) ранее каким-то образом удалось поместить на ПС эту кнопку при рисовании прямоугольника. Теперь на рисунке есть прямоугольник (несколько копий его с разными размерами), выделение которого приводит к появлению работающей кнопки "Стиль линии" на ПС. Если же рисовать новый прямоугольник через инструменты, то ее уже нет.<br />
+Вот откуда появилась кнопка  "Стиль линии" на ПС при рисовании примоугольника и как ее туда снова поместить так, чтобы она там появлялась "по умолчанию" при выборе в инструментах любого замкнутого контура?</p>
+<p>ЗЫ искал в инсрукциях, но ответа не нашел.</p>
+<p>Нашел причину различия для прямоугольников. Прямоугольник был преобразован в "кривую", что можно обнаружить в свойствах объекта. ))<br />
+Остался вопрос о том, "где живет" команда "Стиль линии"?</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-13478"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 20.01.2015, 23:28    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>F12 - <strong>Style</strong>  и кнопка  <strong>Edit Style</strong><br />
+это  не команда - это стиль :) стиль контура<br />
+или в одной корзине - в докере <strong>Object Style</strong> - <strong>[CTRL+F5]</strong></p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13480"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">alich</span></strong> / 21.01.2015, 00:04    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Спасибо, dastin.<br />
+Однако у меня осталось некоторое недоумение. Дело в том, что создав контур "прямоугольника" и не преобразуя его в "кривые", мы можем зайти в "Свойства объекта" и там изменить стиль линии контура. В связи с этим и возникает логичный вопрос - а почему нет возможности вынести эту функцию в форме кнопки на ПС? Это раз.<br />
+По  [CTRL+F5] действительно открывается меню "Стили объектов". Но (!) в нем в одном ряду со стилем линии присутствуют такие функции, как толщина и цвет абриса (линии), которые, стало быть, также являются стилями объекта. Это не мешает данным стилям присутствовать в списке команд , что позволяет юзеру произвольно разместить кнопки этих функций на ПС. Это два. </p>
+<p>Я не вижу кардинальной разницы между толщиной абриса и стилем (сплошная - прерывистая) этого абриса. Толщина - тоже стиль. И то и другое изменяет формулу, по которой формируется линия контура. Так почему одно можно поместить в список команд (создать кнопку на ПС), а другое - нельзя?<br />
+Есть логичный ответ? ))</p>
+<p>ЗЫ а чем стиль отличается от команды с т.з. действия юзера? И то и другое вызывается к жизни наведением курсора на некое указующее изображение и нажатие кнопки на мыше, что эквивалентно действию "Команда". Само-то не меняется, только по команде. ))</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13482"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Baryga88</span></strong> / 21.01.2015, 01:01    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>alich</strong>, Вы сами ответили на свой вопрос, стиль - это не свойства абриса (т. е. не только толщина). Что касается кнопки на ПС, все очень просто. Скопируйте эту кнопку из ПС инструмента Линия на другую панель, а потом перетащите ее на ПС прямоугольника. Для копирования, удерживайте <strong>Ctrl</strong> + <strong>Alt</strong>, а для перемещения <strong>Alt</strong>. В настройках этой кнопки действительно нет.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13483"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">alich</span></strong> / 21.01.2015, 02:05    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Baryga88, спасибо за науку!<br />
+Значит все-таки можно! ))<br />
+Стиль - это и толщина, и цвет, и форма.  Иногда и запах. ))<br />
+Вот что пишется в официальной справке <a href="http://product.corel.com/help/CorelDRAW/540240626/Main/RU/Doc/wwhelp/wwhimpl/js/html/wwhelp.htm?context=CorelDRAW_Help&topic=IDDH_DEFAULT_HELP_PAGE&single=:" rel="nofollow" target="_blank" class="outside-link">Внешняя ссылка</a><br />
+"Форматирование линий и абрисов<br />
+ Параметры линий настраиваются так же(!) , как параметры абрисов замкнутых фигур, например эллипсов и многоугольников. В некоторых программах абрисы называются мазками или толстыми линиями.<br />
+ Отображение линий и абрисов можно изменить с помощью элементов управления в области Абрис окна настройки Свойства объекта, в диалоговом окне Перо абриса и на панели свойств(!). Например, можно настроить цвет, ширину и стиль линий и абрисов."<br />
+Т.е. говорится о "форматировании" как общем принципе изменения свойств как линии так и абрисов. Причем не абрис уподобляется линии, а наоборот, линия представлена как часть абриса ("так же"). И обратите внимание, что за словами  "...и на панели свойств" перечисляются все команды стилевого форматирования. Значит для абриса обязательно наличие на ПС кнопки "Стиль линии". Но в справке ничего не сказано о том, как исхитриться и скопировать кнопку из ПС одного инструмента в ПС другого. Куда проще было добавить эту кнопку в перечень команд для абриса наряду с толщиной и цветом.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13484"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">alich</span></strong> / 21.01.2015, 02:21    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Baryga88, спасибо за науку!<br />
+Значит все-таки можно! ))<br />
+Стиль - это и толщина, и цвет, и форма. Иногда и запах. ))<br />
+Официальная справка не делает принципиальных различий между этими функциями "форматирования".<br />
+Если бы было "все очень просто", то это было бы прописано в краткой официальной справке. Но там этого нет (перенос кнопки из ПС одного инструмента в ПС другого).<br />
+Проще было бы разместить "Стиль линии" в списке команд по форматированию абриса.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13485"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Baryga88</span></strong> / 21.01.2015, 12:55    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>alich</strong>,  Справка - это конечно хорошо и похвально, что Вы ее читаете (многие почему-то даже это не делают). Но мой совет, читайте также и подсказки (см. рис.).</p>
+<p><img src="../sites/default/files/forum/images/untitled-1_25.jpg" alt="Кнопка &quot;Стиль линии&quot; на &quot;Панели свойств&quot;" title="Кнопка &quot;Стиль линии&quot; на &quot;Панели свойств&quot;" /></p>
+<p>Как видите, в самом окне Параметры, есть четкие инструкции, как настраивать Панели инструментов (если есть такая возможность), без обращения к конкретным командам в Настройках.</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="4445.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/untitled-1_25.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/untitled-1_25-itok=iWmU7TZq.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-13487"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">alich</span></strong> / 22.01.2015, 05:08    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Baryga88, согласен, что это можно считать подсказкой.<br />
+Однако опять-таки обращаю ваше внимание на то , что речь идет о панели КОМАНД.<br />
+Я попытался найти эту команду в штатном списке команд, но не нашел. У меня не было нужды перетаскивать команды из одной панели в другую, т.к. настраивал панель СВОЙСТВ конкретного инструмента  "Прямоугольник" согласно официальной справки. В приведенной вами подсказке из настройки речь идет о панели команд, в которой панель свойств является только её частью. Следуя справке невозможно напрямую перетащить команду из одной панели свойств в другую, так как "внутри" этого действия необходимо переключать инструменты.<br />
+Как видите, сама возможность перетаскивания кнопки "Стиль линии" по намеку в "Настройке" о модификации панели КОМАНД прямо указывает на то, что "Стиль линии" является командой, что еще раз подтверждает вывод из текста официальной справки - панель свойств, где находится "Стиль линии", является одной из панелей команд  ("панель стилей", не являющаяся панелью команд, не существует). И место этой команде в списке команд  "Заливка и абрис".  Это чисто логический вывод из контекста справки и подсказки по настройке, а также метода использования данной команды в сравнении с другими командами.</p>
+<p>ЗЫ Еще одна странность логики программеров Корела: подсказка есть, а четкого описания в справке нет. ))</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="4481.html" />
+<link rel="canonical" href="4481.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>gaussian blur не работает в записи макроса | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">gaussian blur не работает в записи макроса</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-4481" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">cheesus</span></strong> / 26.02.2015, 11:42	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">17.2.0.688</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>был у меня раньше макрос (делал просто через запись) такой вот<br />
+- любой объект копируется на те же координаты<br />
+- опускается на уровень вниз<br />
+- сдвигается на 1 мм вниз и вправо<br />
+- через яркость/контраст/интенсивность (ctrl+b) делается черным (всё по -99)<br />
+- растрируется с прозрачным фоном (ну скажем 80 dpi и CMYK)<br />
+- gaussian blur на 10px</p>
+<p>вот раньше сам записывал на новом месте, теперь блюр почему то не хочет работать<br />
+подскажите пожалуйста что не так делаю или как по другому написать</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-13733"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 03.03.2015, 16:27    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>это вы тень такую делали?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13738"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">cheesus</span></strong> / 04.03.2015, 06:46    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>ага, очень удобно когда например какую нибудь листовку собираешь или баннер где много разных наименований</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13739"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 04.03.2015, 20:31    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>эффекты обычно вызываются через метод ApplyBitmapEffect. Выложите код макроса, может быть, получится помочь вам</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13742"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">cheesus</span></strong> / 05.03.2015, 07:13    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>как-то так<br />
+Sub test()<br />
+    ' Recorded 05.03.2015<br />
+    '<br />
+    ' Description:<br />
+    '     test<br />
+    Dim OrigSelection As ShapeRange<br />
+    Set OrigSelection = ActiveSelectionRange<br />
+    Dim dup1 As ShapeRange<br />
+    Set dup1 = OrigSelection.Duplicate<br />
+    dup1.OrderBackOne<br />
+    dup1.Move 0.03937, 0#<br />
+    dup1.Move 0#, -0.03937<br />
+    dup1.ApplyEffectBCI -100, -100, -100<br />
+    Dim s1 As Shape<br />
+    Set s1 = dup1.ConvertToBitmapEx(5, False, True, 72, 1, True, False, 95)<br />
+End Sub<br />
+на сколько я понимаю, блюр вообще не записывается...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13743"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">cheesus</span></strong> / 05.03.2015, 09:47    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>поставил шестой корел, в нем записалось, вот такая строчка:<br />
+s1.Bitmap.ApplyBitmapEffect "GaussianBlur", "GaussianBlurEffect GaussianBlurRadius=500,GaussianBlurResampled=0"<br />
+500 - это вроде как 5  пикселей размытие.<br />
+вот у меня вопрос по ConvertToBitmap, что там значения означают? я понимаю только 72 это dpi<br />
+и по Move в каких единицах смещение происходит?<br />
+и еще: как мне сохранить готовый .gms</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13744"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">dastin</span></strong> / 05.03.2015, 12:18    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>ConvertToBitmapEx(5, False, True, 72, 1, True, False, 95)</p></blockquote>
+<p>Function ConvertToBitmapEx<br />
+([Mode As cdrImageType = cdrRGBColorImage], ...Const cdrCMYKColorImage = 5<br />
+[Dithered As Boolean = False], ... False - нет<br />
+[Transparent As Boolean = False], .... True - да<br />
+[Resolution As Long = 72], ....72<br />
+[AntiAliasing As cdrAntiAliasingType = cdrNormalAntiAliasing],  0 - нетб 1 - да<br />
+[UseColorProfile As Boolean = True],  да<br />
+[AlwaysOverprintBlack As Boolean = False],  нет<br />
+[OverprintBlackLimit As Long = 95]) As Shape ...Automatic overprinting is controlled by the Overprint Limit setting. The default setting of 95 percent</p>
+<blockquote><p> Move в каких единицах смещение происходит?</p></blockquote>
+<p>в пунктах</p>
+<blockquote><p>как мне сохранить готовый .gms</p></blockquote>
+<p><a href="http://cdrpro.ru/news/2009-11-03-203" target="_blank" rel="nofollow">Как создать новый gms файл</a></p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13745"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 05.03.2015, 13:53    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>в ConvertToBitmapEx не обязательно прописывать все параметры. В вашем случае можно написать просто<br />
+Set s1 = dup1.ConvertToBitmapEx(5, , True ), т.е. конвертируем в CMYK и добавляем прозрачность, остальное всё по умолчанию. Две строчки с Move тоже можно убрать, написав эти значения в скобочках после Duplicate, т.е. Set dup1 = OrigSelection.Duplicate(0.03937,0.03937), это сделает копию с заданным смещением</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13746"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">cheesus</span></strong> / 05.03.2015, 14:24    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>спасибо ^^</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13747"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">cheesus</span></strong> / 05.03.2015, 14:44    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>а вот еще такая штука интересует, мимо темы в кореле есть такая горячая клавиша ctrl+shift+E (если выделен вектор включает пипетку которой можно взять цвет для этого вектора), можно ли сделать так же только для аутлайна?  сама горячая клавиша на сколько я понял вообще баг, потому что в документации она приписана к мешам</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-13748"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">blizzz</span></strong> / 05.03.2015, 16:03    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>cheesus</strong>, никакого бага не заметил: на панели свойств инструмента "Mesh" есть кнопка с пипеткой. А что мешает навести пипетку на Outline?</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="4481.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/sshot.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/sshot-itok=0bTogDUN.png" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="На страницу номер 2" href="4481-page=1.html">2</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="4481-page=1.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="4481-page=1.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

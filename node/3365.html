@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="3365.html" />
+<link rel="canonical" href="3365.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Какая функция возвращает количество страниц в док-те корел | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Какая функция возвращает количество страниц в док-те корел</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-3365" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">ravend</span></strong> / 28.05.2013, 14:55/15:05	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Какая процедура/функция  может позволить присвоить перемененной количество страниц  в документе?<br />
+  а3=?<br />
+нужно для корректной (приятной )работы макроса   дабы не вышибало на дебаг   по  окончании страниц в документе...<br />
+тело  вот,  тайны нет , сам   прогил тока на делфе и с ++  10 лет назад , поэтму   писанно методом копипастра с через редактировать  макрос и  гугл поиск... </p>
+<pre class="brush: vb">Sub Text_in_cr_all_pages()
+    ' Recorded 28.05.2013
+
+    Dim a2 As Variant
+    Dim s2 As String
+    Dim a3 As Variant
+  a3=???
+  For a2 = 1 To 100  '/a3
+        s2 = CStr(a2)
+        'ActiveDocument.Pages(s2).Shapes.All.CreateSelection
+        ActiveDocument.Pages(s2).Shapes.All.UngroupAllEx
+        ActiveSelection.ConvertToCurves
+        
+ Next a2
+End Sub</pre></div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-11367"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 28.05.2013, 15:03/15:06    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>ActiveDocument.Pages.Count, юзай F2.<br />
+П.С. ConvertToCurves для всего... интересно что вы этим хотите добиться?<br />
+И ещё - на форуме есть спец. кнопка для вставки кода, если что :) Сообщение исправил.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-11368"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">ravend</span></strong> / 28.05.2013, 15:40    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>спс.  макрос топорный признаю.  нужен исключительно  для личного пользования  кривить  кучу визиток  текстовых . с этой целью справится .   через ALL text  (OrigSelection.ConvertToCurves)  не всегда  почему то кривит... особенно если есть  растр  через страницу  ..<br />
+Спасибо!</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-11369"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">ravend</span></strong> / 28.05.2013, 18:22    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Сделал так .  Кому нужно пользуйтесь<br />
+Предупреждаю   сразу   все на ваш риск и  страх  (я не профессиональный прогер ) слепил  из того, что вижу . Возможны  баги в заливках(плашки и тп ),  из за перевода  всех объектов в кривые .Подойдёт  тем , кто по каким то либо причинам предпочитает кривить  шрифты на  многостраничном документе .<br />
+Лично я стараюсь  сделать  PDF  с экспортом  шрифтов в кривых , дабы исключить вылет на рипах (такое  бывает  как не странно ). Но  тут  попросили почему то именно корел.... А кривить руками было лень...</p>
+<pre class="brush: vb">Sub Text_in_cr_all_pages()
+    ' Recorded 28.05.2013
+
+    Dim a2 As Variant
+    Dim a3 As Variant
+    Dim s2 As String
+    Dim s3 As String
+    
+   a2 = ActiveDocument.Pages.Count
+   s2 = CStr(a2)
+  For a3 = 1 To s2
+        s3 = CStr(a3)
+        ActiveDocument.Pages(s3).Shapes.All.CreateSelection 
+        ActiveDocument.Pages(s3).Shapes.All.UngroupAllEx 
+        ActiveDocument.Pages(s3).Shapes.All.ConvertToCurves
+        
+  Next a3
+End Sub</pre></div></div></div>	</div>
+</div>
+<a id="comment-11370"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 28.05.2013, 23:29    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>ravend</strong>, на сам деле, макросов типа перевести весь текст в кривые, полно.<br />
+Гуглить не пробовал? :)</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

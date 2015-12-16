@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/1082.html" />
+<link rel="canonical" href="5-769-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Глюки Object Manager | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Глюки Object Manager</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-1082" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">kpars</span></strong> / 05.06.2011, 15:08/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="16.html">CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Об этих глюках я писал еще в форуме посвященном ошибкам Corel X5. Поскольку внятного ответа не получил, описываю суть проблемы. В процессе работы, особенно часто после операций копирования/вставки объектов из других файлов, при перетаскивании векторной или растровой графики из виндовых окон, окно со слоями в Object Manager становится абсолютно пустым. Если перетащить окно из закрепленной области в другое место, то слои появятся, но их включение/отключение будет показываться некорректно. Т.е. отключаю "глаз" - слой файла становится невидимым, но в Object Manager "глаз" по-прежнему включен. Иногда при сворачивании окна корела и работе с папками на рабочем столе и, затем, вновь разворота окна корела в Object Manager отображается вид рабочего стола с папками и т.д. Никаких специальных действий, приводящих к этому глюку, обнаружить не удалось. Также не существует никакой закономерности между описанным глюком и определенными операциями с файлами, "весом" файлов, продолжительности работы с файлом и т.д. <br /> Проявляется глюк не на всех машинах. Например, дома у меня две ОС - Win XP SP3 Eng и Win7x64 Ultimate RUS. На обоих системах описанного глюка не наблюдалось, хотя специально пытался этого добиться. А вот на работе - Win XP SP3 RUS - глюк возникает постоянно. Смена видеокарты, переустановка системы проблемы не решили. <br /> Корел (английский) с офсайта, СП3.</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-11094"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">ildar_1988</span></strong> / 10.04.2013, 00:41    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Как-то скачал чужой макрос (для авторазметки люверсов), он был не оптимизирован и опустошал и "подвешивал" диспетчер объектов (хоть и несодержал ошибок). В процессе отладки своих макросов часто наталкивался на зависание рабочей области (это уже из-за ошибок в коде). Вывел на панель инструментов кнопку для такой процедуры:</p>
+<pre class="brush: vb">
+Sub RedrawAll(): On Error Resume Next
+    If ActiveDocument Is Nothing Then Exit Sub
+    ActiveDocument.EndCommandGroup: Optimization = True: ActiveWindow.Refresh: Refresh
+    Optimization = False: HideGuideLines: ActiveDocument.Undo
+End Sub
+</pre><p> ... и назначил клавишу F5, как в браузере для обновления страницы. При нажатии рабочая область и диспетчер объектов "оживают".<br />
+Попробуйте, может, сработает.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-11170"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">blizzz</span></strong> / 25.04.2013, 12:35    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Давно смирился с этим. Просто перезагружаю Corel</p>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-first first"><a title="На первую страницу" href="5-769-1.html">« первая</a></li>
+<li class="pager-previous"><a title="На предыдущую страницу" href="5-769-1.html">‹ предыдущая</a></li>
+<li class="pager-item"><a title="На страницу номер 1" href="5-769-1.html">1</a></li>
+<li class="pager-current last">2</li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

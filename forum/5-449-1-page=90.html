@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/762.html" />
+<link rel="canonical" href="5-449-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>ВОПРОС / ОТВЕТ ДЛЯ НАЧИНАЮЩИХ | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">ВОПРОС / ОТВЕТ ДЛЯ НАЧИНАЮЩИХ</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-762" class="node node-forum node-sticky clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">polzovatel-902</span></strong> / 13.07.2010, 09:21/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="16.html">CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Объясню на примере, чтоб было понятней... Открываю в кореле картинку (футболку с надписью) в формате JPG, мне нужно вытянуть из футболки надпись, т.е разъеденить файл... Говорят нужно формат изменить, еще что-то... Объясните, пожалуйста, что нужно сделать для этого...? Заранее спасибо.</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-14169"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">NemoSUN</span></strong> / 15.07.2015, 18:24    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>shark</strong>,  а как добавить сбор информации не только постранично, но и с листов. Т.е. если открыты два и более файлов.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-14170"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 15.07.2015, 19:00    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>делается цикл по всем документам, получаемым через ActiveDocument.Application.Documents. А дальше всё как в том макросе - цикл по страницам, слоям и так далее</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-14171"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">ildar_1988</span></strong> / 15.07.2015, 22:20    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>С учётом советов:</p>
+<pre class="brush: vb">
+Sub exportImagesFromCDR()
+  Dim d As Document, p As Page, l As Layer, s As Shape, b As Bitmap
+  Dim FileName$, filePath$, Counter&amp;, ef As ExportFilter
+  Dim expOpts As New StructExportOptions
+  
+  On Error GoTo NextDoc
+  For Each d In Documents
+    d.Activate
+    'Сохраняет в папку с документом, вновь созданные (несохранённые) документы игнорируются
+    If Len(d.filePath) Then filePath = d.filePath Else GoTo NextDoc
+    Counter = 1
+    For Each p In d.Pages
+        For Each s In p.FindShapes(, cdrBitmapShape, True)
+          FileName = Counter &amp; "_" &amp; IIf(Len(s.Name), s.Name, "Image")
+          Set b = s.Bitmap
+          On Error Resume Next
+          ' Сначала пробуем «родное» сохранение растров.
+          Set ef = b.SaveAs(filePath &amp; FileName &amp; ".jpg", cdrJPEG)
+          If Err.Number = 0 Then
+            ef.Finish
+          Else
+            ' «Родное» сохранение растра «провалилось» — используем стандартный экспорт
+            p.Activate: s.CreateSelection
+            expOpts.ImageType = b.Mode
+            expOpts.AntiAliasingType = cdrNoAntiAliasing
+            expOpts.ResolutionX = b.ResolutionX
+            expOpts.ResolutionY = b.ResolutionY
+            expOpts.SizeX = b.SizeWidth
+            expOpts.SizeY = b.SizeHeight
+            ActiveDocument.Export filePath &amp; FileName &amp; ".jpg", cdrJPEG, cdrSelection, expOpts
+          End If
+          Counter = Counter + 1
+          ' Открывает папку с сохранёнными растрами
+          If Counter = 2 Then Shell "explorer /select," + Chr(34) + filePath &amp; FileName &amp; ".jpg" + Chr(34), vbMaximizedFocus
+        Next s
+    Next p
+NextDoc:
+  Next d
+End Sub
+</pre><p>Проходит по всем открытым сохранённым документам. Группы обрабатываются, контейнеры — нет. Цветовой режим (RGB/CMYK) сохраняется, как и размеры с разрешенем.<br />
+(Часть растров не сохраняется предназначенной для этого функцией, к ним применяется стандартный экспорт. Ну, это чисто технический комментарий...)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-14197"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">NemoSUN</span></strong> / 20.07.2015, 15:00    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>ildar_1988</strong> Нет слов )))   Сохраняет со ВСЕХ документов !!!!!! НО! Группы, не обрабатываются. Я приложил файл для примера. Может я что-то не так понимаю.<br />
+P.S. Не мог сразу ответить - работы, спину не разогнуть.</p>
+</div></div></div><div class="dd-attached field field-name-field-forum-files field-type-file field-label-above clearfix">
+      <div class="field-label"><a href="5-449-1-page=90.html#" class="cdrSlideAttach">Файлы</a></div>
+    <div class="field-items">
+          <div class="field-item even"><span class="file"><img class="file-icon" alt="" title="image/x-coreldraw" src="/modules/file/icons/image-x-generic.png" /> <a href="../sites/default/files/forum/files/str-01.cdr" type="image/x-coreldraw; length=1777732">str-01.cdr</a></span></div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-14198"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">ildar_1988</span></strong> / 20.07.2015, 17:22    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>NemoSUN</strong>, в этом файле всего два растра (судя по свойствам документа и по поиску) и они оба экспортируются. Может, другие файлы проблемные? Приложите их. Или версии Корела у нас разные... У меня 16-я, какая у Вас?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-14199"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">NemoSUN</span></strong> / 20.07.2015, 18:02    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>ildar_1988</strong>,  я говорю не о растре, а об обработке сгруппированных обьектов, которое не идёт. Там где вырезы в стекле.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-14200"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">ildar_1988</span></strong> / 20.07.2015, 18:24    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>NemoSUN</strong>, то есть Вам требуются <em>растры</em> и <em>группы </em>объектов? Если так, то группы любые (все подряд)?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-14201"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">NemoSUN</span></strong> / 20.07.2015, 18:28    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>ildar_1988</strong>,  так вот же "...Проходит по всем открытым сохранённым документам. Группы обрабатываются, контейнеры — нет..." - писАлось в посте #906. Или имелись какие либо иные группы ? И какие группы тогда СЕЙЧАС обрабатываются ?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-14202"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">ildar_1988</span></strong> / 20.07.2015, 18:31    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>NemoSUN</strong>,  я имел в виду, что макрос теперь способен отыскать растры в группах. (Изначально ведь обсуждалась проблема «вытащить» разом все растры из документа.)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-14203"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">NemoSUN</span></strong> / 20.07.2015, 19:45    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>ildar_1988</strong>, ааа, ну да. Великолепно получилось !!! С меня премия )<br />
+А есть VBA опции чтобы можно было сохранять также ТОЛЬКО группу обьектов при условии что в них нет растра  ?</p>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-first first"><a title="На первую страницу" href="5-449-1.html">« первая</a></li>
+<li class="pager-previous"><a title="На предыдущую страницу" href="5-449-1-page=89.html">‹ предыдущая</a></li>
+<li class="pager-ellipsis">…</li>
+<li class="pager-item"><a title="На страницу номер 87" href="5-449-1-page=86.html">87</a></li>
+<li class="pager-item"><a title="На страницу номер 88" href="5-449-1-page=87.html">88</a></li>
+<li class="pager-item"><a title="На страницу номер 89" href="5-449-1-page=88.html">89</a></li>
+<li class="pager-item"><a title="На страницу номер 90" href="5-449-1-page=89.html">90</a></li>
+<li class="pager-current">91</li>
+<li class="pager-item"><a title="На страницу номер 92" href="5-449-1-page=91.html">92</a></li>
+<li class="pager-item"><a title="На страницу номер 93" href="5-449-1-page=92.html">93</a></li>
+<li class="pager-item"><a title="На страницу номер 94" href="5-449-1-page=93.html">94</a></li>
+<li class="pager-item"><a title="На страницу номер 95" href="5-449-1-page=94.html">95</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="5-449-1-page=91.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="5-449-1-page=95.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

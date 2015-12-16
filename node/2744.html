@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="2744.html" />
+<link rel="canonical" href="2744.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Почему в Corel VBA такая непонятная работа с элементами интерфейса? | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Почему в Corel VBA такая непонятная работа с элементами интерфейса?</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-2744" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">MBK</span></strong> / 16.02.2012, 14:04/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Я, конечно, понимаю, что это редко кому бывает нужно, но все таки. Бывают ситуации, когда хочется, чтобы макрос сам создавал себе пункт меню, кнопку для вызова и т.д., без ручного лазания по менюшкам. И тут сразу сталкиваемся с проблемой, что корректного программного решения не существует: свойства CommandBars и MainMenu до сих пор недокументированы, а значит, работа через них - чистое хакерство! :-( Ну а раз хакерство, то и поддержка соответствующая. Начать с того, что добавить можно только "Пользовательскую кнопку" через CommandBars().Controls.AddCustomButton . То есть, ни нормальный пункт меню, ни подменю, ни что иное создать невозможно - только дурацкую надпись с иконочкой, положение которой к тому же нельзя регулировать. Причем, даже такую штуку можно создать только в верхнем основном меню или на некоторых панелях - никуда в другое место поставить ее просто невозможно. Удалить или переместить ее тоже программно нельзя, поменять действие на ней или, хотя бы посмотреть его - тоже нельзя! Такие свойства в объекте Control просто отсутствуют. Можно, разве что, поменять заголовок и подсказку, но смысла в этом нет никакого - ведь при перезапуске корела изменения теряются! Зато, для какой-то уму не постижимой цели, создатели VBA специальным параметром сделали в AddCustomButton возможность создавать "временную" кнопку, которая пропадает при переоткрытии панели. Что они курили перед этим, я даже боюсь представить.<br />
+И в довершение ко всему - в VBA напрочь отсутствует возможность прямого доступа к уже существующей кнопке. То есть, чтобы найти интересующий пункт меню, даже если знаешь его ID, нужно обязательно перебирать все Controls, пока нужный не найдешь. Причем, данная операция тоже не является корректной! Я пару раз встречал ситуацию, когда Controls.Count возвращал "левое" количество элементов, а, как известно, обращение к несуществующему элементу вызывает физический крах всего корела и никакие обработчики ошибок тут не спасают.<br />
+Так вот, мне кто-нибудь объяснит - все действительно так сурово или я туплю?</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-8487"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 16.02.2012, 14:53    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Ты же у нас ценитель С++, вот и пиши макросы на нём :D<br />
+А все притензии к себе самому ну и к Майкрософту :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8488"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 17.02.2012, 11:51/11:51    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>свойства CommandBars и MainMenu до сих пор недокументированы, а значит, работа через них - чистое хакерство!</p></blockquote>
+<p>Заблуждение №1, т.к. через браузер объектов можно посмотреть все свойства и функции класса CommandBar с небольшими подсказками. (MainMenu — тот же CommandBar).</p>
+<blockquote><p>добавить можно только "Пользовательскую кнопку" через CommandBars().Controls.AddCustomButton</p></blockquote>
+<p>Заблуждение №2, т.к. есть ещё CommandBarControls.Add(), но AddCustomButton() достаточно. И это не только кнопка в понимании пользователя, это и комманда меню, и позицию можно задавать сколько угодно.</p>
+<blockquote><p>возможность создавать "временную" кнопку</p></blockquote>
+<p>Заблуждение №3, т.к. временная кнопка часто используется при написании плагинов.</p>
+<p>...и т.д.</p>
+<blockquote><p>Так вот, мне кто-нибудь объяснит - все действительно так сурово или я туплю?</p></blockquote>
+<p>Объясняю, тупиш :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8489"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">MBK</span></strong> / 17.02.2012, 12:06    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>Заблуждение №1, т.к. через браузер объектов можно посмотреть все свойства и функции класса CommandBar с небольшими подсказками. (MainMenu — тот же CommandBar).</p></blockquote>
+<p>Вот, все, что в хелпе про CommandBars:</p>
+<blockquote><p>Application.CommandBars<br />
+Property CommandBars As CommandBars </p>
+<p>Description<br />
+Member of Application </p>
+<p>The CommandBars property returns a collection of all command bars. </p>
+<p>The CommandBars property returns a read-only value.
+</p></blockquote>
+<p>Про само описание класса - ни слова. А по подсказкам свойства изучать - мазохизм.</p>
+<blockquote><p>Заблуждение №2, т.к. есть ещё CommandBarControls.Add(), но AddCustomButton() достаточно. И это не только кнопка в понимании пользователя, это и комманда меню, и позицию можно задавать сколько угодно.</p></blockquote>
+<p>Add - вообще практически бесполезная команда, с трудом себе представляю, что ей можно добавить нормально. А позицию можно задавать только в верхнем меню и то непонятно, как получить, скажем, позицию добавленного элемента, не перебирая все.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8490"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 17.02.2012, 12:26/12:34    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Ну может хоть это тебя чему то научит, а то слова как всегда бесполезны :D</p>
+<p><img src="../sites/default/files/forum/images/objbr.png" alt="Почему в Corel VBA такая непонятная работа с элементами интерфейса?" title="Почему в Corel VBA такая непонятная работа с элементами интерфейса?" /></p>
+<p>П.С. Стрельба из лука учит нас, как надо искать истину. Когда стрелок промахивается, он не винит других, а ищет вину в самом себе. (с) Конфуций.</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="2744.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/objbr.png" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/objbr-itok=hxdS83TZ.png" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-8491"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">mmgs</span></strong> / 17.02.2012, 12:59    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><div class="off">ууууу, хакерство какое нужно чтоб плагинчик написать...</div>
+</div></div></div>	</div>
+</div>
+<a id="comment-8492"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">MBK</span></strong> / 17.02.2012, 14:04    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>Ну может хоть это тебя чему то научит, а то слова как всегда бесполезны :D</p></blockquote>
+<p>Для этого должен быть установлен VGCore, а он, как я понимаю, есть не везде. У меня, например, нету, класс CommandBarsControl даже поиском по хелпу и браузеру не находится. Предвидя возражения, что это лично мои сексуальные проблемы (кстати, я по трем разным корелам искал - нету нигде), отвечу, что даже недокументированность в данном случае не самое существенное. Отсутствуют жизненно необходимые свойства и методы для работы с пунктами меню.</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

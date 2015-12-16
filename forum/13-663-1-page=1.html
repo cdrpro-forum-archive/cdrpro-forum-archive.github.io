@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="../node/976.html" />
+<link rel="canonical" href="13-663-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>как запустить макрос | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">как запустить макрос</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-976" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">masja</span></strong> / 24.02.2011, 11:28/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>как правильно чайнику запустить макрос корела находящийся в файле хх.cdr находящийся в VBAProject(хх) в папке "modules" в модуле "модуль1" - sub МакросДляЗапуска ()
+</p><p> запускать этот макрос надо например из другого макроса другого VBAProject(хх22) или из екселя
+</p><p> и желательно не выдергивать макрос из этого файла в гмс, а просто запустить /макрос и картинки в одном файле должны быть всегда/</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-4139"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">masja</span></strong> / 25.02.2011, 18:06    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>И продолжай здесь же код свой..</p></blockquote>
+<p> упс... ага страниц 15 так напродолжать надо... причем сначала на офс 2003, потом на осф 2007... для сорелов 11 и 12 -го... поочереди...
+</p><p> а потом повторить в следующей разукрашке... <br /> горе то, горе то какое...
+</p><p><b>Добавлено</b> (25.02.2011, 15:06)<br />---------------------------------------------<br />да файл кореловский уже с макросом готовым... был</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4140"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 26.02.2011, 16:45    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><b>masja</b>, не вижу проблему - вам нужно из экселя открыть кореловский файл и так чтобы там сработал макрос ? Так это элементарно. Перемещаете вызов процедуры макроса в секцию Document_Open <br /> например, записав в кореловский файл такой код <br /><code>Private Sub Document_Open() <br />     MsgBox "привет !" <br /> End Sub <br /></code> <br /> при каждом открытии файла Корелом будет выводится сообщение "привет !"</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4141"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">masja</span></strong> / 28.02.2011, 09:18    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote><p>Перемещаете вызов процедуры макроса в секцию Document_Open</p></blockquote>
+<p> проблема таки есть: <br /> документ уже открыт. екселем половину параметров вбито. макрос надо запускать не на входе или выходе(как в моем примере), а именно в произвольном поряке бы... вернее их там несколоко макросов. и какой запустить еще определиться надо /из екселя/
+</p><p> а чего там еще и куда можно вписать (кроме как в события)? може соорудить чего надо... типа объект какой где прописать? <br /> и чего люди добрые про это читают? на руском...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4142"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 28.02.2011, 12:48    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>а вам обязательно именно программно запускать макрос ? Может сделать диалоговую форму, которая запустится при открытии файла и там сделать выбор макросов для запуска пользователем ?</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4143"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">masja</span></strong> / 28.02.2011, 14:28    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>желательно... именно програмно... ибо данные нужные из екселя забиться должны успеть до запуска макроса, но после открытия файла
+</p><p> НЕльзя при открытии. а при закрытии не красиво как то уже получается... как то по английски...</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4144"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">shark</span></strong> / 28.02.2011, 16:44    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>может быть вам подойдет такой вариант - из экселя запускается Кореловский файл, в котором сразу же запускается стартовый макрос в состоянии ожидания. В нужный момент из экселя посылается команда в Корел. Эта команда обрабатывается стартовым макросом и он уже запускает так необходимый вам макрос.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-4145"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">masja</span></strong> / 28.02.2011, 17:21    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>а как называется стартовый макрос? как его в состояние ожидания перевести и потом из эксела в корел команду послать?
+</p><p> если можно лучше пример... потому как экселем в кореле рисую тока с прошлого понедельника.</p>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-first first"><a title="На первую страницу" href="13-663-1.html">« первая</a></li>
+<li class="pager-previous"><a title="На предыдущую страницу" href="13-663-1.html">‹ предыдущая</a></li>
+<li class="pager-item"><a title="На страницу номер 1" href="13-663-1.html">1</a></li>
+<li class="pager-current last">2</li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

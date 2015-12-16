@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="2713.html" />
+<link rel="canonical" href="2713.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Неправильные размеры при экспорте в pdf | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Неправильные размеры при экспорте в pdf</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-2713" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Yuzef</span></strong> / 25.01.2012, 03:13/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../forum/16.html">CorelDRAW</a></div></div></div><div class="field field-name-field-program-version field-type-list-text field-label-inline clearfix"><div class="field-label">Версия программы:&nbsp;</div><div class="field-items"><div class="field-item even">15.2.0.686 (sp3)</div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Добрый вечер! Ребят, нужна помощь! Проблема такая, делал макет визитки в Corel X5 (рус. вер.) по требованию типографии нужен pdf с вылетом обреза 4мм. При экспорте в pdf ставлю  bleed как положено и получаю на выходе размер визитки 94.7Х54.7мм. Откуда берется 0.7мм, как исправить! У меня с дефолтом косяк )))) ставит чего сам захочет! Сам вектор проверил обводки там нету (красный фон визитки)</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="2713.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/viz.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/viz-itok=GmiMt0ki.jpg" alt="Неправильные размеры при экспорте в pdf" title="Неправильные размеры при экспорте в pdf" /></a>      </div>
+      </div>
+</div>
+    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-8277"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Des425</span></strong> / 25.01.2012, 03:15    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>Yuzef</strong>, а ты не ставь bleed в PDF, а ставь в самом Corel</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8278"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 25.01.2012, 04:05    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Сделал документ 90х50, прямоугольник 94х54, экспортировал в pdf с параметром bleed = 2mm. Открыл полученный файл в ридере и в пропертис вижу 94х54. Так что думай где ошибся :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8283"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Yuzef</span></strong> / 25.01.2012, 14:01    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><strong>Sancho</strong>, я понял где моя ошибка! Делал макет на А4, а надо тоже ставить размер документа 90х50 и дальше все как обычно.<br />
+Если вылет обреза задан в самом макете вектора 94х54 и потом при экспорте bleed 2мм. Будет на выходе 8мм. Ведь функцыя bleed накидывает 2мм на каждую сторону прямоугольника.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8285"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 25.01.2012, 14:16    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Если страница 90х50, bleed 2мм, нужно экспортировать не выделенное, а страницу.<br />
+Тогда на выходе будет 94х54.</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-8287"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Yuzef</span></strong> / 25.01.2012, 18:28    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Спасибо Sancho!</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="3165.html" />
+<link rel="canonical" href="3165.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Программно удалить базовую линию | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Программно удалить базовую линию</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-3165" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Aeliot</span></strong> / 31.12.2012, 12:53	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../macros-forum.html">Макросы и скрипты</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Есть объекты, созданные кистью (ArtisticMediaBrush).<br />
+Хочу программно отделить кисть от базовой линии и удалить последнюю.<br />
+Отделить кисть от базовой линии не проблема, но удалить базовую линию не получается. код выдаёт ошибку, что ссылка на объект больше не существует. </p>
+<div class="sp-wrap">
+<div class="sp-head">Вот код.</div>
+<div class="sp-body">
+<pre class="brush: vb">    Dim shp As CorelDRAW.Shape
+    
+    Set shp = ActiveLayer.Shapes(2)
+    shp.CreateSelection
+    shp.Shapes(1).AddToSelection
+    ActiveSelection.Separate
+
+    shp.Delete
+
+    Set shp = Nothing
+</pre></div>
+</div>
+<p>При передаче массива объектов в ShapeRange во время разделения тоже не выдаёт ошибку.</p>
+<div class="sp-wrap">
+<div class="sp-head">Вот код.</div>
+<div class="sp-body">
+<pre class="brush: vb">    Dim shp As CorelDRAW.Shape
+    Dim shp As CorelDRAW.ShapeRange
+    
+    Set shprng = ActiveLayer.Shapes(2)
+    shp.CreateSelection
+    shp.Shapes(1).AddToSelection
+    Set shprng  = ActiveSelection.Separate
+    ...
+</pre></div>
+</div>
+<p>Может кто-то знает как выполнить эту задачу по другому.</p>
+</div></div></div>    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-10453"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Aeliot</span></strong> / 31.12.2012, 12:55    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>В первом посте есть описка.<br />
+Вместо </p>
+<pre class="brush: vb">Dim shp As CorelDRAW.ShapeRange</pre><p> должно быть </p>
+<pre class="brush: vb">Dim shprng As CorelDRAW.ShapeRange</pre></div></div></div>	</div>
+</div>
+<a id="comment-10454"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 31.12.2012, 15:37    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>А не проще использовать уже готовый макрос <a href="http://cdrpro.ru/cdrtools" target="_blank">sToolsShape.DeArtBrush</a>? :)</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-10460"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Alexxx1</span></strong> / 01.01.2013, 23:25    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Сань! я загубил  свою х6 - 64 поставив этот макрос sToolsShape.DeArtBrush) сейчас вспоминаю как его название что бы удалить ..</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-10461"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 02.01.2013, 01:14    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><div class="off"><strong>Alexxx1</strong>, макросы "губить" программу не умеют :D</div>
+</div></div></div>	</div>
+</div>
+<a id="comment-10462"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Alexxx1</span></strong> / 02.01.2013, 12:16    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Вот такая хрень выскакивает , и потом все висит )</p>
+</div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="3165.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/02-01-2013_11-12-52.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/02-01-2013_11-12-52-itok=oH5VqzGo.jpg" alt="" title="" /></a>      </div>
+      </div>
+</div>
+	</div>
+</div>
+<a id="comment-10463"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">MBK</span></strong> / 02.01.2013, 12:34    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Так ведь буквально только недавно писали: <a href="../news/2009-08-19-157.html" target="_blank" title="ColorReplacer">ColorReplacer</a><br />
+В GetKeyState после Declare вставить PtrSafe</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-10465"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 02.01.2013, 12:38/12:42    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><div class="off"><strong>Alexxx1</strong>, так я и не понял, причём тут мой макрос sToolsShape.DeArtBrush. Судя по скрину он даже не установлен у тебя.</div>
+</div></div></div>	</div>
+</div>
+<a id="comment-10466"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">MBK</span></strong> / 02.01.2013, 12:46    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><div class="off">Вот и я говорю.<br />
+Санчес, а чего это у тебя на форуме комменты ни удалить ни поправить нельзя?</div>
+</div></div></div>	</div>
+</div>
+<a id="comment-10467"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 02.01.2013, 12:56    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><div class="off"><strong>MBK</strong>, править можно как обычно в течении 30 минут. Удалять нельзя. Сколько можно повторять то уже...</div>
+</div></div></div>	</div>
+</div>
+<a id="comment-10468"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">MBK</span></strong> / 02.01.2013, 13:00    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><div class="off">А чего ты кнопочку удаления не сделаешь?</div>
+</div></div></div>	</div>
+</div>
+<h2 class="element-invisible">Страницы</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="На страницу номер 2" href="3165-page=1.html">2</a></li>
+<li class="pager-next"><a title="На следующую страницу" href="3165-page=1.html">следующая ›</a></li>
+<li class="pager-last last"><a title="На последнюю страницу" href="3165-page=1.html">последняя »</a></li>
+</ul></div></div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>

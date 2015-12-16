@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../sites/all/themes/cdrpro2/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="shortlink" href="769.html" />
+<link rel="canonical" href="../forum/45-456-1.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>Автонумерация | CDRPRO.RU - сообщество CorelDRAW</title>
+
+
+
+
+<style type="text/css" media="all">@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shCore-nzf3o4.css");
+@import url("../sites/all/libraries/syntaxhighlighter_3.0.83/styles/shThemeDefault-nzf3o4.css");
+</style>
+<style type="text/css" media="all">@import url("../sites/all/themes/cdrpro2/styles-nzf3o4.css");
+</style>
+</head>
+<body>
+<div id="content" class="page-content">
+    <h1 id="page-title">Автонумерация</h1>      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-769" class="node node-forum clearfix">
+
+	<div class="submitted">
+		<strong><span class="username">Solowejka</span></strong> / 16.07.2010, 13:53/00:41	</div>
+
+
+	<div class="content">
+	<div class="field field-name-taxonomy-forums field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Форум:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../lessons-forum.html">УРОКИ CorelDRAW</a></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Этот способ создания различных билетов, талонов, бирок, шильдиков с нумерацией основан на использовании возможности автонумерации страниц в программе CorelDRAW.
+</p><p> Количество печатаемых за раз номеров ограничено значением 999 (столько страниц позволяет пронумеровать программа). <br /> Так как нет возможности автонумерации тысячной страницы, то для номеров с последними тремя нулями придётся создавать отдельный файл. <br /> На создание файла с номерами от 1 до 999 уйдёт примерно час. Зато последующие номера легко получить, изменением цифры в старших разрядах буквально за три клика, и можно печатать хоть до 100 млн. (или ещё больше), но за раз на печать отправляется файл из 999 номеров. Например, если на листе формата А4 помещается 8 талонов, то будет напечатано 125 листов, или если на листе 40 талончиков, то будет напечатано 25 листов.
+</p><p> Достоинствами способа можно считать то, что всё делается в <b>CorelDRAW</b>, не прибегая к помощи сторонних программ, а также то, что любой лист с любыми номерами может быть легко перепечатан при необходимости (например принтер зажевал бумагу, и определённые номера испорчены). Для этого при отправке на печать просто указываете эти номера как номера страниц, которые необходимо напечатать (без учёта цифр в старших разрядах, которые добавляются на шаблоне).
+</p><p> Прежде чем начать работу, создайте для удобства горячие клавиши для следующих команд: <br /></p><li>добавить страницу (лучше для одной клавиши, а не для сочетания клавиш, например +); <br /></li><li>перейти к следующей странице; <br /></li><li>предыдущая страница.
+<p> Итак, сначала создайте формат страницы с размерами вашего билета (в нашем примере 50 х 25)
+</p><p> <img src="../sites/default/files/forum/images/5719489_8194170.jpg" alt="Автонумерация" title="Автонумерация" />
+</p><p> Затем создайте слой-шаблон и на нём все изображения вашего билета. Учтите, что несмотря на то, что слой-шаблон в диспетчере объектов расположен на самом нижнем уровне, в действительности он накрывает все страницы, как бы располагаясь выше их. Поэтому, если есть фон, то в нём должно быть прорезано окошко под числовое поле, через которое будут видны номера. Напечатайте пробный номер, чтобы определиться со шрифтом, с размером шрифта и координатами, которые Вы будете задавать в настройках макроса нумерации страниц.
+</p><p> <img src="../sites/default/files/forum/images/9981794_5633821.jpg" alt="Автонумерация" title="Автонумерация" />
+</p><p> Затем, простым нажатием подряд соответствующей клавиши добавьте все 999 страниц. На это уйдёт около 6-7 минут. <br /> Затем выбирете макрос нумерации страниц (Инструменты – Макросы – Запустить макрос). В открывшемся окне выбираете в окошке Macros in: Global Macros и далее в окошке Macros name: CorelMacros.PageNumbering <br /> На вкладке General установите: координаты относительно краёв листа.Если ваш номер располагается на горизонтали по центру листа, то окошко Left/Right Margins игнорируйте.
+</p><p> <img src="../sites/default/files/forum/images/9976530_4724323.jpg" alt="Автонумерация" title="Автонумерация" />
+</p><p> На вкладке Font установите: шрифт, положение номера относительно краёв листа, размер шрифта.
+</p><p> <img src="../sites/default/files/forum/images/9950606_8075987.jpg" alt="Автонумерация" title="Автонумерация" />
+</p><p> Нажмите: Применить (Apply) и можете несколько минут отдохнуть. <br /> Когда макрос закончит нумерацию, нажмите Exit. <br /> Затем придётся вручную добавить для первых 99 номеров недостающие нули. <br /> Затем создайте дубль номера со страницы 999 и перетащите его (в диспетчере объектов) на слой-шаблон, добавьте перед ним через пробел две триады нулей (или другое количество), смените выравнивание текста на выравнивание по левому краю и удалите 999. Таким образом мы добавили старшие разряды чисел (для наглядности показаны на рисунке красным цветом), которые можно поэтапно редактировать в слое-шаблоне перед отправкой на печать очередной порции билетов.
+</p><p> <img src="../sites/default/files/forum/images/2833565_8644164.jpg" alt="Автонумерация" title="Автонумерация" />
+</p><p> Теперь перейдём к созданию виртуальной раскладки в настройках печати. Откройте окно Печать. Если справа не открыто окно предварительного просмотра, то откройте нажатием кнопки со сдвоенной стрелкой справа от кнопки Просмотр (слева, внизу). Ждите, когда появится в окне предварительного просмотра изображение Вашего билета. Нажмите кнопку Просмотр. В открывшемся окне нажмите кнопку Компоновка макета (слева, вверху, кнопка с пиктограммой в виде сложенного буклета). На панели вверху в окошках, возле которых изображение таблицы, установите число строк и столбцов Вашей раскладки.
+</p><p> <img src="../sites/default/files/forum/images/3963912_2088100.jpg" alt="Автонумерация" title="Автонумерация" />
+</p><p> Закройте окно Просмотр. В окне предварительного просмотра появится Ваша Раскладка с номерами. Просмотреть для контроля номера покрупнее можно, снова зайдя в окно Просмотр. На панели внизу можно выбрать любой из печатных листов для просмотра и контроля.
+</p><p> <img src="../sites/default/files/forum/images/5788042_9100498.jpg" alt="Автонумерация" title="Автонумерация" />
+</p><p> <img src="../sites/default/files/forum/images/7068519_6816967.jpg" alt="Автонумерация" title="Автонумерация" />
+</p><p> Примечание: если Вы хотите создать раскладку на формате отличном от А4, то в окне Печать после выбора принтера нажмите Свойства и в открывшемся окне настроек принтера установите нужный формат печатного листа.
+</p><p> <b>Специально для CDRPRO.RU</b>
+</p><p> © Копирование и публикация любым способом данного урока без письменного согласия автора запрещено!</p>
+</li></div></div></div>
+<div class="dd-attached field field-name-field-forum-images field-type-image field-label-above clearfix">
+      <div class="field-label"><a href="769.html#" class="cdrSlideAttach">Изображения</a></div>
+    <div class="field-items clearfix">
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/5719489_8194170.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/5719489_8194170-itok=t3l6Bfyy.jpg" alt="Автонумерация" title="Автонумерация" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/9981794_5633821.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/9981794_5633821-itok=KR9fn3xT.jpg" alt="Автонумерация" title="Автонумерация" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/9976530_4724323.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/9976530_4724323-itok=xsMZfQSH.jpg" alt="Автонумерация" title="Автонумерация" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/9950606_8075987.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/9950606_8075987-itok=Rr40h8U1.jpg" alt="Автонумерация" title="Автонумерация" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/2833565_8644164.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/2833565_8644164-itok=RRngQb8C.jpg" alt="Автонумерация" title="Автонумерация" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/3963912_2088100.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/3963912_2088100-itok=26Sz1eNi.jpg" alt="Автонумерация" title="Автонумерация" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/5788042_9100498.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/5788042_9100498-itok=2t2jqJuu.jpg" alt="Автонумерация" title="Автонумерация" /></a>      </div>
+          <div class="field-item">
+				<a href="../sites/default/files/forum/images/7068519_6816967.jpg" target="_blank" class="colorbox"><img src="../sites/default/files/styles/40x40/public/forum/images/7068519_6816967-itok=xlAe-X9c.jpg" alt="Автонумерация" title="Автонумерация" /></a>      </div>
+      </div>
+</div>
+    	</div>
+
+	
+	<div id="comments" class="comment-wrapper">
+  <a id="comment-2417"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Des425</span></strong> / 16.07.2010, 15:35/15:43    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Супер, за идею 5+</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2418"></a>
+<div class="comment comment-by-node-author clearfix">
+    <div class="submitted">
+        <strong><span class="username">Solowejka</span></strong> / 16.07.2010, 15:53    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Спасибо !!!</p>
+</div></div></div>	</div>
+</div>
+<a id="comment-2419"></a>
+<div class="comment clearfix">
+    <div class="submitted">
+        <strong><span class="username">Sancho</span></strong> / 16.07.2010, 18:45    </div>
+	<div class="content">
+		<div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Вообще по подобной теме есть и другие макросы, достаточно просто погуглить. У каждого свои плюсы и минусы. Даже я что то подобное писал, с привязкой к месту. Тоесть не нужно создавать один элемент на отдельной странице, можно создать все на одной. Но я больше писал не для нумерации (вписать это 2 счёта), а для верстки переменных данных экспортируемых из Эксела (текста, формы, картинки, штрих-коды...)</p>
+</div></div></div>	</div>
+</div>
+</div>
+
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>
